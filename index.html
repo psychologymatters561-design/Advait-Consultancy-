@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Advait Consultancy | Institutional Intelligence Layer</title>
+
+<meta name="description" content="Institutional capital alignment platform focused on India's infrastructure velocity, real estate structuring, and asymmetric growth opportunities.">
+<meta name="keywords" content="institutional capital india, real estate strategy india, infrastructure investments, UHNW advisory india">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box}
+body {
+    background:#000;
+    color:#fff;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+/* GLOBAL */
+.section {
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.center {
+    text-align:center;
+    max-width:900px;
+}
+
+/* HERO */
+.hero-text {
+    font-size:2.5rem;
+    opacity:0;
+}
+
+/* GRID DATA */
+.data-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    opacity:0;
+}
+
+.data-box {
+    border:1px solid #222;
+    padding:30px;
+}
+
+/* TERMINAL */
+.terminal {
+    position:fixed;
+    bottom:40px;
+    right:40px;
+    width:420px;
+    background:#050505;
+    border:1px solid #222;
+    padding:20px;
+    font-size:13px;
+    display:none;
+}
+
+.terminal input, .terminal textarea {
+    width:100%;
+    background:black;
+    color:white;
+    border:none;
+    border-bottom:1px solid #333;
+    margin-top:10px;
+}
+
+/* BLOG */
+.blog {
+    padding:100px;
+}
+.blog-item {
+    margin-bottom:50px;
+    border-bottom:1px solid #222;
+    padding-bottom:20px;
+}
+
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:40px;
+    opacity:.3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section">
+    <div class="center hero-text">
+        Capital in isolation is dying.
+    </div>
+</section>
+
+<!-- MACRO -->
+<section class="section">
+    <canvas id="macro"></canvas>
+</section>
+
+<!-- DATA GRID -->
+<section class="section">
+    <div class="data-grid">
+        <div class="data-box">India Inflows ↑</div>
+        <div class="data-box">China Debt ↓</div>
+        <div class="data-box">Infrastructure Velocity ↑</div>
+    </div>
+</section>
+
+<!-- 3D VISUAL -->
+<section class="section">
+    <canvas id="three"></canvas>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section">
+    <div class="center">
+        You are not investing in assets.<br><br>
+        You are aligning with systemic force.
+    </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog">
+    <h2>Institutional Insights</h2>
+    <div id="blogContainer"></div>
+</section>
+
+<!-- TERMINAL -->
+<div class="terminal" id="terminal">
+    <div id="termText">Advait Intelligence Terminal<br><br>State your constraint:</div>
+    <div id="termOptions">
+        <button onclick="step1()">Capital inefficiency</button><br>
+        <button onclick="step1()">Access limitation</button><br>
+        <button onclick="step1()">Exit ambiguity</button>
+    </div>
+</div>
+
+<footer>
+Advait Collective • Institutional Alignment Layer
+</footer>
+
+<script>
+
+/* HERO */
+gsap.to(".hero-text",{opacity:1,duration:2,delay:1});
+
+/* SCROLL ANIMATIONS */
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".data-grid",{
+    opacity:0,
+    y:100,
+    duration:1,
+    scrollTrigger:{
+        trigger:".data-grid",
+        start:"top 80%"
+    }
+});
+
+/* MACRO CANVAS */
+const macro = document.getElementById("macro");
+const ctx = macro.getContext("2d");
+macro.width = window.innerWidth;
+macro.height = window.innerHeight;
+
+let t = 0;
+
+function drawMacro(){
+    ctx.clearRect(0,0,macro.width,macro.height);
+
+    ctx.strokeStyle="white";
+
+    ctx.beginPath();
+    ctx.moveTo(100,500);
+    ctx.lineTo(100+t,500-t*0.4);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100,100);
+    ctx.lineTo(100+t,100+t*0.3);
+    ctx.stroke();
+
+    t+=2;
+    if(t<800) requestAnimationFrame(drawMacro);
+}
+drawMacro();
+
+/* THREE ADVANCED */
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+const renderer = new THREE.WebGLRenderer({canvas:document.getElementById("three")});
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+const geometry = new THREE.IcosahedronGeometry(1,1);
+const material = new THREE.MeshBasicMaterial({wireframe:true});
+const mesh = new THREE.Mesh(geometry,material);
+scene.add(mesh);
+
+camera.position.z = 3;
+
+function animate(){
+    requestAnimationFrame(animate);
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.01;
+    renderer.render(scene,camera);
+}
+animate();
+
+/* TERMINAL TRIGGER (BEHAVIOR BASED) */
+let scrollDepth = 0;
+
+window.addEventListener("scroll",()=>{
+    scrollDepth += 1;
+    if(scrollDepth > 30){
+        document.getElementById("terminal").style.display="block";
+    }
+});
+
+/* TERMINAL FLOW */
+function step1(){
+    document.getElementById("termText").innerHTML =
+    "Choose alignment:";
+    document.getElementById("termOptions").innerHTML =
+    `<button onclick="step2()">Mid-term velocity</button><br>
+     <button onclick="step2()">Long-term preservation</button>`;
+}
+
+function step2(){
+    document.getElementById("termText").innerHTML =
+    "Access conditionally granted.<br>Submit credentials:";
+    document.getElementById("termOptions").innerHTML =
+    `<input placeholder="Name"><br>
+     <input placeholder="Contact"><br>
+     <textarea placeholder="Capital Intent"></textarea>`;
+}
+
+/* BLOG SYSTEM */
+const blogs = [
+{title:"Institutional Capital Migration",content:"Global funds reallocating into India’s infrastructure grid."},
+{title:"Dark Stores & Data Centers",content:"Velocity assets redefining urban economics."},
+{title:"Asymmetric Leverage Models",content:"Equity amplification via structured debt."}
+];
+
+const container = document.getElementById("blogContainer");
+
+blogs.forEach(b=>{
+    const d=document.createElement("div");
+    d.className="blog-item";
+    d.innerHTML=`<h3>${b.title}</h3><p>${b.content}</p>`;
+    container.appendChild(d);
+});
+
+</script>
+
+</body>
+</html>
