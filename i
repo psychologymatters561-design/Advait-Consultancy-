@@ -55,7 +55,7 @@
             cursor: pointer; position: relative; transition: transform 0.5s var(--ease);
         }
         #uOrb:hover { transform: scale(1.1); }
-        #uOrb::after { content: 'अ'; font-family: var(--font-dev); font-size: 1.8rem; color: #000; font-weight: bold; }
+        #uOrb::after { content: '0'; font-family: var(--font-dev); font-size: 1.8rem; color: #000; font-weight: bold; }
         #uMantra { position: absolute; bottom: -40px; font-family: var(--font-m); font-size: 0.5rem; letter-spacing: 0.5em; color: var(--gold); text-transform: uppercase; white-space: nowrap; }
 
         /* ── NAVIGATION ── */
@@ -121,7 +121,7 @@
 
     <div id="universe">
         <div id="uOrb" onclick="enterSite()">
-            <div id="uMantra">Begin Transmission</div>
+            <div id="uMantra">Tap to begin ! आरंभ </div>
         </div>
     </div>
 
@@ -170,7 +170,7 @@
                 <div class="intel-card rv">
                     <span class="ic-num">01.1</span>
                     <h3 class="ic-title">Capital Entry</h3>
-                    <p class="ic-body">Precision entry for Sovereign Wealth Funds and Global PE looking for high-barrier Indian assets.</p>
+                    <p class="ic-body">Precision entry for Funds to co-create high-barrier Indian assets.</p>
                 </div>
                 <div class="intel-card rv">
                     <span class="ic-num">01.2</span>
@@ -190,8 +190,10 @@
             <h2 class="sec-title">High-Value <em>Frontiers.</em></h2>
             <div class="intel-grid" style="background: var(--bg);">
                 <div class="intel-card rv">
-                    <h3 class="ic-title">Hyperscale Data</h3>
-                    <p class="ic-body">The backbone of India's digital sovereign. We focus on tier-4 compliant brownfield sites.</p>
+                    <h3 class="ic-title">​The Institutional Acquisition of India </h3>
+                    <p class="ic-body">To understand the current market, one must look at the geopolitical mechanics of capital. Historically, unprecedented national growth—such as China’s staggering 300% debt-fueled expansion between 2006 and 2016—relied on a closed economic loop. Foreign capital could purchase Chinese manufactured goods, but it was heavily restricted from acquiring the underlying physical land. The bubble was internal.
+​India’s substrate represents a fundamentally superior, open mathematical model. As the state strategically channels debt to lay down macro-infrastructure, the smartest capital on earth is executing a silent, aggressive acquisition of our physical framework. Global asset managers, foreign institutions, and sovereign wealth funds are not merely observing India’s demographic dividend; they are buying the concrete, the steel, and the commercial corridors that will house it. They are injecting billions of dollars to own the physical nodes where the Indian economy operates.
+​When foreign institutional capital rotates through a local economy, it dictates the direction of the market. The independent investor must stop guessing local trends and begin aligning with this global institutional flow..</p>
                 </div>
                 <div class="intel-card rv">
                     <h3 class="ic-title">Micro-Fulfillment</h3>
@@ -209,7 +211,7 @@
             <h2 class="sec-title">Begin the <em>Intelligence Cycle.</em></h2>
             <p class="h-sub">Engagement is strictly limited to institutional principals and qualified investors.</p>
             <div class="res-input-wrap rv">
-                <input type="email" placeholder="Institutional Email" class="res-input">
+                <input type="email" placeholder=" Your Email" class="res-input">
                 <button class="res-btn">Request Access →</button>
             </div>
         </section>
