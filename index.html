@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Advait Consultancy — Institutional Real Estate Intelligence · India</title>
+<meta name="description" content="Advait Consultancy engineers purpose-built infrastructure capital systems for India's institutional epoch. Exclusive advisory for aligned capital seeking asymmetric real estate returns across data centers, logistics, and grade-A assets."/>
+<meta name="keywords" content="institutional real estate India, infrastructure investment advisory, UHNW real estate India, data center investment India, alternative investments India, real estate think tank, Blackstone India real estate, institutional grade assets India, real estate capital advisory, India macro investment thesis"/>
+<meta property="og:title" content="Advait Consultancy — Where Capital Finds Its Purpose"/>
+<meta property="og:description" content="Exclusive institutional real estate intelligence. Aligned capital. Systemic force. Nation scale."/>
+<meta property="og:type" content="website"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://advaitconsultancy.in"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<style>
+/* ================================================================
+   RESET & VARIABLES
+================================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ob:#04040a;
+  --s1:#090910;
+  --s2:#101018;
+  --s3:#18181f;
+  --g:#c9a84c;
+  --gd:#8a6f32;
+  --gx:rgba(201,168,76,0.12);
+  --w:#f0ede6;
+  --wd:rgba(240,237,230,0.45);
+  --wdd:rgba(240,237,230,0.15);
+  --bl:#3b82f6;
+  --bld:#1d4ed8;
+  --rd:#ef4444;
+  --bor:rgba(201,168,76,0.14);
+  --borw:rgba(240,237,230,0.07);
+}
+html{font-size:16px;scroll-behavior:smooth;}
+body{
+  background:var(--ob);
+  color:var(--w);
+  font-family:'DM Mono',monospace;
+  font-weight:300;
+  overflow-x:hidden;
+  cursor:none;
+}
+::-webkit-scrollbar{width:2px;}
+::-webkit-scrollbar-track{background:var(--ob);}
+::-webkit-scrollbar-thumb{background:var(--gd);}
+a{text-decoration:none;color:inherit;}
+
+/* ================================================================
+   CURSOR
+================================================================ */
+#cdot,#cring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);}
+#cdot{width:5px;height:5px;background:var(--g);}
+#cring{width:34px;height:34px;border:1px solid rgba(201,168,76,0.5);transition:width .2s,height .2s,background .2s,border-color .2s;}
+#cring.h{width:56px;height:56px;border-color:var(--g);background:rgba(201,168,76,0.04);}
+
+/* ================================================================
+   PAGE LOADER
+================================================================ */
+#loader{
+  position:fixed;inset:0;
+  background:var(--ob);
+  z-index:99999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:32px;
+}
+.ld-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:300;
+  letter-spacing:.6em;color:var(--g);text-transform:uppercase;
+}
+.ld-bar{
+  width:200px;height:1px;
+  background:var(--borw);
+  position:relative;overflow:hidden;
+}
+.ld-fill{
+  position:absolute;inset:0 100% 0 0;
+  background:var(--g);
+  animation:lfill 1.8s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes lfill{to{right:0;}}
+.ld-text{
+  font-size:.55rem;letter-spacing:.4em;color:var(--wd);text-transform:uppercase;
+  animation:lfade 1.8s ease forwards;
+}
+@keyframes lfade{0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
+
+/* ================================================================
+   NOISE GRAIN
+================================================================ */
+#noise{
+  position:fixed;inset:0;z-index:9998;pointer-events:none;
+  opacity:.028;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ================================================================
+   NAVIGATION
+================================================================ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:26px 64px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,backdrop-filter .4s;
+}
+nav.sc{background:rgba(4,4,10,.88);backdrop-filter:blur(24px);}
+nav.sc::after{opacity:1;}
+nav::after{
+  content:'';position:absolute;bottom:0;left:64px;right:64px;
+  height:1px;background:var(--bor);opacity:0;transition:opacity .4s;
+}
+.nl{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:300;
+  letter-spacing:.35em;color:var(--w);text-transform:uppercase;
+}
+.nl em{color:var(--g);font-style:normal;}
+.nr{display:flex;gap:40px;list-style:none;}
+.nr a{
+  font-size:.58rem;letter-spacing:.22em;color:var(--wd);
+  text-transform:uppercase;transition:color .3s;position:relative;
+}
+.nr a::after{
+  content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;
+  background:var(--g);transition:width .3s;
+}
+.nr a:hover{color:var(--g);}
+.nr a:hover::after{width:100%;}
+
+/* ================================================================
+   SECTION BASICS
+================================================================ */
+.si{max-width:1240px;margin:0 auto;padding:140px 64px;}
+.sl{
+  font-size:.52rem;letter-spacing:.42em;color:var(--g);
+  text-transform:uppercase;margin-bottom:28px;
+  display:flex;align-items:center;gap:16px;
+}
+.sl::before{content:'';width:32px;height:1px;background:var(--g);}
+.st{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.4rem,4.8vw,4.8rem);
+  font-weight:300;line-height:1.08;color:var(--w);margin-bottom:28px;
+}
+.st em{font-style:italic;color:var(--g);}
+.sb{font-size:.72rem;line-height:2;color:var(--wd);max-width:560px;}
+
+/* ================================================================
+   HERO
+================================================================ */
+#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+#hcv{position:absolute;inset:0;z-index:0;}
+.hcon{position:relative;z-index:1;text-align:center;max-width:940px;padding:0 48px;}
+.hey{
+  font-size:.54rem;letter-spacing:.45em;color:var(--g);
+  text-transform:uppercase;margin-bottom:44px;opacity:0;transform:translateY(20px);
+  display:flex;align-items:center;justify-content:center;gap:20px;
+}
+.hey::before,.hey::after{content:'';flex:1;max-width:80px;height:1px;background:var(--bor);}
+.hh{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,8.5vw,8rem);font-weight:300;line-height:1.02;
+  color:var(--w);opacity:0;transform:translateY(32px);margin-bottom:36px;
+}
+.hh em{font-style:italic;color:var(--g);}
+.hs{
+  font-size:.72rem;line-height:1.9;color:var(--wd);
+  max-width:580px;margin:0 auto 60px;opacity:0;transform:translateY(24px);
+}
+.hb{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:.6rem;letter-spacing:.3em;color:var(--g);
+  text-transform:uppercase;border:1px solid var(--bor);
+  padding:15px 36px;opacity:0;position:relative;overflow:hidden;
+  transition:color .4s;
+}
+.hb::before{
+  content:'';position:absolute;inset:0;background:var(--g);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s;z-index:-1;
+}
+.hb:hover{color:var(--ob);}
+.hb:hover::before{transform:scaleX(1);}
+.sci{
+  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;
+}
+.sci span{font-size:.5rem;letter-spacing:.35em;color:var(--wd);text-transform:uppercase;}
+.scl{
+  width:1px;height:56px;
+  background:linear-gradient(to bottom,var(--g),transparent);
+  animation:scpulse 2s ease-in-out infinite;
+}
+@keyframes scpulse{0%,100%{opacity:.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(.7);}}
+
+/* ================================================================
+   MARQUEE
+================================================================ */
+.mqt{
+  overflow:hidden;border-top:1px solid var(--borw);border-bottom:1px solid var(--borw);
+  padding:18px 0;background:var(--s1);
+}
+.mqi{display:flex;gap:72px;animation:mq 35s linear infinite;white-space:nowrap;}
+.mqm{
+  font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:300;
+  letter-spacing:.18em;color:var(--wd);text-transform:uppercase;
+  display:flex;align-items:center;gap:16px;flex-shrink:0;
+}
+.mqm::after{content:'◆';font-size:.38rem;color:var(--g);}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ================================================================
+   MACRO THESIS
+================================================================ */
+#macro{background:var(--s1);}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:80px;}
+.cbox{
+  background:rgba(255,255,255,.018);border:1px solid var(--bor);
+  padding:32px;border-radius:2px;position:relative;overflow:hidden;
+}
+.cbox::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:.4;
+}
+.ctitle{font-size:.56rem;letter-spacing:.3em;color:var(--wd);text-transform:uppercase;margin-bottom:20px;}
+#mccv{width:100%;display:block;}
+.cleg{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap;}
+.cli{display:flex;align-items:center;gap:8px;font-size:.52rem;letter-spacing:.18em;color:var(--wd);text-transform:uppercase;}
+.cld{width:7px;height:7px;border-radius:50%;}
+.mstats{display:flex;flex-direction:column;gap:36px;}
+.msb{border-left:1px solid var(--bor);padding-left:28px;transition:border-color .3s;}
+.msb:hover{border-color:var(--g);}
+.msn{
+  font-family:'Bebas Neue',sans-serif;font-size:3.8rem;line-height:1;
+  color:var(--w);margin-bottom:10px;
+}
+.msn em{color:var(--g);font-style:normal;}
+.msl{font-size:.58rem;letter-spacing:.15em;color:var(--wd);text-transform:uppercase;line-height:1.7;}
+.iblock{margin-top:60px;padding-top:40px;border-top:1px solid var(--borw);}
+.ilabel{font-size:.5rem;letter-spacing:.32em;color:var(--wd);text-transform:uppercase;margin-bottom:22px;}
+.irow{display:flex;gap:40px;flex-wrap:wrap;align-items:center;}
+.iname{
+  font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;
+  letter-spacing:.14em;color:rgba(240,237,230,.18);text-transform:uppercase;
+  transition:color .4s;
+}
+.iname:hover{color:rgba(240,237,230,.55);}
+
+/* ================================================================
+   ASSET INTELLIGENCE
+================================================================ */
+#assets{background:var(--ob);}
+.alay{display:grid;grid-template-columns:420px 1fr;gap:64px;align-items:center;margin-top:80px;}
+.amap{
+  position:relative;
+  background:rgba(255,255,255,.012);border:1px solid var(--bor);
+  border-radius:2px;overflow:hidden;
+}
+#imap{width:100%;display:block;}
+.acards{display:flex;flex-direction:column;gap:20px;}
+.acard{
+  border:1px solid var(--borw);padding:26px 28px;
+  position:relative;overflow:hidden;
+  transition:border-color .35s,background .35s;cursor:default;
+}
+.acard::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:0;
+  background:var(--g);transition:height .4s;
+}
+.acard:hover{background:rgba(255,255,255,.025);border-color:var(--bor);}
+.acard:hover::before{height:100%;}
+.actype{font-size:.48rem;letter-spacing:.38em;text-transform:uppercase;margin-bottom:10px;}
+.actitle{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:300;margin-bottom:6px;}
+.acmetric{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;line-height:1;margin-bottom:8px;}
+.acdesc{font-size:.58rem;line-height:1.85;color:var(--wd);}
+
+/* ================================================================
+   LEVERAGE ARCHITECTURE
+================================================================ */
+#leverage{background:var(--s1);}
+.llay{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:80px;}
+.lsteps{display:flex;flex-direction:column;}
+.lstep{padding:26px 0;border-bottom:1px solid var(--borw);display:flex;gap:20px;}
+.lstep:first-child{border-top:1px solid var(--borw);}
+.lnum{
+  font-family:'Bebas Neue',sans-serif;font-size:2.2rem;line-height:1;
+  color:var(--g);opacity:.3;min-width:44px;transition:opacity .3s;
+}
+.lstep:hover .lnum{opacity:.8;}
+.ltit{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;margin-bottom:8px;}
+.ldsc{font-size:.58rem;line-height:1.85;color:var(--wd);}
+.cylwrap{display:flex;flex-direction:column;align-items:center;gap:24px;padding:32px;}
+#cylsvg{width:180px;}
+.cylcap{font-size:.5rem;letter-spacing:.25em;color:var(--wd);text-transform:uppercase;text-align:center;}
+
+/* ================================================================
+   COLLECTIVE
+================================================================ */
+#collective{background:var(--ob);}
+.cmani{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3.2vw,2.8rem);font-weight:300;line-height:1.55;
+  max-width:820px;margin:60px 0;
+}
+.cmani em{font-style:italic;color:var(--g);}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--borw);margin-top:64px;}
+.pcell{background:var(--ob);padding:44px 32px;transition:background .3s;}
+.pcell:hover{background:rgba(255,255,255,.018);}
+.pnum{
+  font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--g);
+  opacity:.25;margin-bottom:20px;transition:opacity .3s;
+}
+.pcell:hover .pnum{opacity:.6;}
+.ptit{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;margin-bottom:14px;}
+.pdsc{font-size:.58rem;line-height:1.9;color:var(--wd);}
+
+/* ================================================================
+   INTELLIGENCE HUB
+================================================================ */
+#intel{background:var(--s1);}
+.hctrl{
+  display:flex;gap:28px;margin-top:56px;margin-bottom:44px;
+  border-bottom:1px solid var(--borw);padding-bottom:20px;
+}
+.hflt{
+  font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--wd);background:none;border:none;cursor:pointer;
+  padding:6px 0;position:relative;transition:color .3s;
+}
+.hflt::after{
+  content:'';position:absolute;bottom:-21px;left:0;width:0;height:1px;
+  background:var(--g);transition:width .3s;
+}
+.hflt.act{color:var(--g);}
+.hflt.act::after{width:100%;}
+.hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--borw);}
+.hcard{
+  background:var(--s1);padding:36px 28px;
+  position:relative;overflow:hidden;transition:background .3s;
+  display:block;color:var(--w);
+}
+.hcard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--g);transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.hcard:hover{background:var(--s2);}
+.hcard:hover::before{transform:scaleX(1);}
+.hcmeta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.hctype{font-size:.46rem;letter-spacing:.36em;text-transform:uppercase;}
+.hcdate{font-size:.46rem;color:var(--wd);letter-spacing:.18em;}
+.hctitle{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:300;line-height:1.38;margin-bottom:12px;}
+.hcexc{font-size:.58rem;line-height:1.8;color:var(--wd);margin-bottom:20px;}
+.hclink{font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--g);display:flex;align-items:center;gap:10px;}
+.hcard:hover .hcarr{transform:translateX(6px);}
+.hcarr{transition:transform .3s;display:inline-block;}
+
+/* ================================================================
+   TERMINAL / CHATBOT
+================================================================ */
+#terminal{background:var(--ob);min-height:100vh;display:flex;align-items:center;}
+.tlay{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.tintro{}
+.tbox{
+  background:rgba(9,9,16,.95);border:1px solid rgba(201,168,76,.25);
+  border-radius:4px;overflow:hidden;
+  box-shadow:0 0 100px rgba(201,168,76,.04),0 40px 80px rgba(0,0,0,.4);
+}
+.tbar{
+  background:rgba(201,168,76,.06);border-bottom:1px solid rgba(201,168,76,.12);
+  padding:12px 20px;display:flex;align-items:center;gap:8px;
+}
+.tdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.08);}
+.tdot:nth-child(1){background:rgba(239,68,68,.55);}
+.tdot:nth-child(2){background:rgba(245,158,11,.55);}
+.tdot:nth-child(3){background:rgba(16,185,129,.55);}
+.tbtitle{margin:0 auto;font-size:.5rem;letter-spacing:.3em;color:var(--wd);text-transform:uppercase;}
+.tbody{padding:28px;min-height:500px;display:flex;flex-direction:column;gap:14px;overflow-y:auto;max-height:500px;}
+.tline{font-size:.68rem;line-height:1.65;display:flex;gap:10px;align-items:flex-start;}
+.tpr{color:var(--g);white-space:nowrap;user-select:none;margin-top:1px;}
+.ttx{color:var(--w);}
+.ttx.dim{color:var(--wd);}
+.ttx.gld{color:var(--g);}
+.topts{display:flex;flex-direction:column;gap:7px;padding-left:0;width:100%;}
+.topt{
+  font-family:'DM Mono',monospace;font-size:.62rem;color:var(--wd);
+  background:none;border:1px solid var(--borw);padding:10px 14px;
+  text-align:left;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;gap:10px;width:100%;
+}
+.topt::before{content:attr(data-k);color:var(--g);font-size:.5rem;min-width:14px;}
+.topt:hover{border-color:var(--g);color:var(--w);background:rgba(201,168,76,.04);}
+.topt.sel{border-color:var(--g);color:var(--g);background:rgba(201,168,76,.07);}
+.topt:disabled{pointer-events:none;}
+.tcur{display:inline-block;width:7px;height:13px;background:var(--g);animation:blink 1.1s step-end infinite;vertical-align:text-bottom;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.tfrm{border:1px solid rgba(201,168,76,.15);padding:20px;background:rgba(201,168,76,.015);border-radius:2px;width:100%;}
+.tflabel{font-size:.5rem;letter-spacing:.3em;color:var(--g);text-transform:uppercase;margin-bottom:14px;}
+.tfrow{display:flex;gap:10px;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--borw);padding-bottom:10px;}
+.tinp{flex:1;background:none;border:none;outline:none;font-family:'DM Mono',monospace;font-size:.66rem;color:var(--w);caret-color:var(--g);}
+.tsub{
+  font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--g);background:none;
+  border:1px solid var(--bor);padding:9px 18px;cursor:pointer;
+  transition:all .3s;margin-top:12px;width:100%;
+}
+.tsub:hover{background:var(--g);color:var(--ob);}
+.taccess{
+  border-left:1px solid var(--bor);padding-left:22px;margin-top:40px;
+}
+.taclab{font-size:.5rem;letter-spacing:.3em;color:var(--g);text-transform:uppercase;margin-bottom:12px;}
+.tacitem{font-size:.62rem;line-height:1.8;color:var(--wd);margin-bottom:4px;}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+footer{background:var(--s1);border-top:1px solid var(--borw);padding:80px 64px 56px;}
+.fi{max-width:1240px;margin:0 auto;}
+.ftop{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:60px;margin-bottom:72px;}
+.flogo{
+  font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;
+}
+.flogo em{color:var(--g);font-style:normal;}
+.ftag{font-size:.58rem;line-height:1.85;color:var(--wd);}
+.fh{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--g);margin-bottom:22px;}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.flinks a{font-size:.6rem;color:var(--wd);transition:color .3s;}
+.flinks a:hover{color:var(--w);}
+.fbot{display:flex;align-items:center;justify-content:space-between;padding-top:36px;border-top:1px solid var(--borw);flex-wrap:wrap;gap:20px;}
+.fcp{font-size:.5rem;color:var(--wd);letter-spacing:.08em;}
+.fmis{font-family:'Cormorant Garamond',serif;font-size:.88rem;font-style:italic;color:var(--wd);}
+.fchk{opacity:.25;transition:opacity .4s;}
+.fchk:hover{opacity:.55;}
+
+/* ================================================================
+   HORIZONTAL RULE / DIVIDERS
+================================================================ */
+.hrul{width:100%;height:1px;background:var(--borw);}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media(max-width:1100px){
+  .mgrid,.alay,.llay,.tlay{grid-template-columns:1fr;}
+  .pgrid,.hgrid{grid-template-columns:1fr 1fr;}
+  .ftop{grid-template-columns:1fr 1fr;}
+  nav{padding:20px 32px;}
+  nav::after{left:32px;right:32px;}
+  .si{padding:100px 32px;}
+  .alay{grid-template-columns:1fr;}
+}
+@media(max-width:680px){
+  .nr{display:none;}
+  .pgrid,.hgrid,.ftop{grid-template-columns:1fr;}
+  .si{padding:80px 24px;}
+  footer{padding:60px 24px 40px;}
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div id="loader">
+  <div class="ld-logo">Advait</div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+  <div class="ld-text">Initializing Intelligence Terminal</div>
+</div>
+
+<!-- NOISE -->
+<div id="noise"></div>
+
+<!-- CURSOR -->
+<div id="cdot"></div>
+<div id="cring"></div>
+
+<!-- NAV -->
+<nav id="mnav">
+  <a href="#hero" class="nl">Advait <em>◆</em> Consultancy</a>
+  <ul class="nr">
+    <li><a href="#macro">Research</a></li>
+    <li><a href="#assets">Intelligence</a></li>
+    <li><a href="#leverage">Architecture</a></li>
+    <li><a href="#collective">Collective</a></li>
+    <li><a href="#intel">Insights</a></li>
+    <li><a href="#terminal">Terminal</a></li>
+  </ul>
+</nav>
+
+<!-- ================================================================
+     HERO
+================================================================ -->
+<section id="hero">
+  <canvas id="hcv"></canvas>
+  <div class="hcon">
+    <p class="hey" id="hey">Institutional Intelligence &nbsp;·&nbsp; India's Epoch</p>
+    <h1 class="hh" id="hh">Capital in<br/>isolation<br/>is <em>dying.</em></h1>
+    <p class="hs" id="hs">We engineer asymmetric infrastructure capital systems for India's institutional epoch — where purpose-built assets compound beyond inflation, beyond convention, beyond borders.</p>
+    <a href="#macro" class="hb" id="hb">Enter the Thesis &nbsp;→</a>
+  </div>
+  <div class="sci" id="sci">
+    <span>Scroll</span>
+    <div class="scl"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqt">
+  <div class="mqi">
+    <span class="mqm">Data Centers · 4GW by 2030</span>
+    <span class="mqm">India Institutional Inflows · $10.4B · 2024</span>
+    <span class="mqm">Blackstone · Brookfield · GIC · Aligned Capital</span>
+    <span class="mqm">Asymmetric Leverage Architecture</span>
+    <span class="mqm">Quick Commerce Dark Stores</span>
+    <span class="mqm">Grade-A Institutional Infrastructure</span>
+    <span class="mqm">Nation-Scale Capital Systems</span>
+    <span class="mqm">Data Centers · 4GW by 2030</span>
+    <span class="mqm">India Institutional Inflows · $10.4B · 2024</span>
+    <span class="mqm">Blackstone · Brookfield · GIC · Aligned Capital</span>
+    <span class="mqm">Asymmetric Leverage Architecture</span>
+    <span class="mqm">Quick Commerce Dark Stores</span>
+    <span class="mqm">Grade-A Institutional Infrastructure</span>
+    <span class="mqm">Nation-Scale Capital Systems</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     MACRO THESIS
+================================================================ -->
+<section id="macro">
+  <div class="si">
+    <p class="sl">01 — The Macro Substrate</p>
+    <h2 class="st">While the world de-risks,<br/><em>India compounds.</em></h2>
+
+    <div class="mgrid">
+      <div>
+        <div class="cbox">
+          <p class="ctitle">Capital Migration · 2019 — 2024</p>
+          <canvas id="mccv" height="260"></canvas>
+          <div class="cleg">
+            <div class="cli"><div class="cld" style="background:#ef4444"></div>China Sentiment Index</div>
+            <div class="cli"><div class="cld" style="background:#3b82f6"></div>India Real Estate Inflows</div>
+          </div>
+        </div>
+
+        <div class="iblock">
+          <p class="ilabel">Institutions Currently Deployed in India's Infrastructure</p>
+          <div class="irow">
+            <span class="iname">Blackstone</span>
+            <span class="iname">Brookfield</span>
+            <span class="iname">GIC</span>
+            <span class="iname">CPPIB</span>
+            <span class="iname">Warburg Pincus</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mstats">
+        <div class="msb" data-ct="10.4">
+          <div class="msn"><em>$</em><span class="cnt">0</span><em>B</em></div>
+          <p class="msl">Institutional inflows into Indian real estate in 2024 — a record high, driven by data centers and grade-A logistics. The world's most sophisticated allocators have decided.</p>
+        </div>
+        <div class="msb" data-ct="4">
+          <div class="msn"><span class="cnt">0</span><em>GW</em></div>
+          <p class="msl">Projected data center capacity for India by 2030, requiring $50B+ in purpose-built infrastructure capital. The digital epoch demands physical real estate.</p>
+        </div>
+        <div class="msb" data-ct="15">
+          <div class="msn"><span class="cnt">0</span><em>%</em></div>
+          <p class="msl">Target equity yield threshold engineered by the Advait leverage architecture. UHNW capital aligned with institutional infrastructure generates returns retail markets cannot access.</p>
+        </div>
+        <p class="sb" style="margin-top:8px">The window for aligned private capital is narrow and narrowing. Blackstone, Brookfield, GIC — they are not speculating. They are engineering. The question is whether your capital is alongside theirs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     ASSET INTELLIGENCE
+================================================================ -->
+<section id="assets">
+  <div class="si">
+    <p class="sl">02 — Asset Intelligence</p>
+    <h2 class="st">Where capital<br/><em>is migrating.</em></h2>
+    <p class="sb">Traditional retail and residential assets are being structurally displaced. The velocity of yield now lives in purpose-built, tech-integrated infrastructure — invisible to most capital, essential to the Collective.</p>
+
+    <div class="alay">
+      <div class="amap">
+        <svg id="imap" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- India outline (simplified) -->
+          <path d="M195,28 L215,32 L240,42 L262,58 L278,78 L290,100 L298,126 L302,148 L296,168 L304,190 L310,214 L306,236 L298,254 L294,276 L290,298 L282,316 L270,334 L258,352 L244,370 L230,388 L218,406 L208,424 L200,442 L195,424 L185,408 L172,392 L158,374 L144,354 L132,334 L120,316 L110,298 L104,278 L100,256 L96,236 L92,214 L98,192 L106,172 L100,150 L104,128 L112,106 L124,84 L140,66 L158,50 L178,36 Z" stroke="rgba(201,168,76,0.22)" stroke-width="1.5" fill="rgba(201,168,76,0.015)"/>
+          <!-- State borders simplified -->
+          <path d="M200,80 L200,440" stroke="rgba(240,237,230,.04)" stroke-width=".8"/>
+          <path d="M104,200 L302,200" stroke="rgba(240,237,230,.04)" stroke-width=".8"/>
+          <path d="M110,300 L296,300" stroke="rgba(240,237,230,.04)" stroke-width=".8"/>
+          <path d="M124,150 L282,150" stroke="rgba(240,237,230,.04)" stroke-width=".8"/>
+
+          <!-- DATA CENTER NODES (Blue) -->
+          <!-- Mumbai -->
+          <circle class="pnode dc" cx="148" cy="295" r="5" fill="#3b82f6" filter="url(#glow)"/>
+          <circle class="pring" cx="148" cy="295" r="14" fill="#3b82f6" opacity=".12"/>
+          <text x="162" y="292" fill="rgba(240,237,230,.35)" font-size="8" font-family="DM Mono">Mumbai</text>
+          <!-- Delhi -->
+          <circle class="pnode dc" cx="196" cy="150" r="5" fill="#3b82f6" filter="url(#glow)"/>
+          <circle class="pring" cx="196" cy="150" r="14" fill="#3b82f6" opacity=".12"/>
+          <text x="210" y="147" fill="rgba(240,237,230,.35)" font-size="8" font-family="DM Mono">Delhi NCR</text>
+          <!-- Bengaluru -->
+          <circle class="pnode dc" cx="188" cy="368" r="5" fill="#3b82f6" filter="url(#glow)"/>
+          <circle class="pring" cx="188" cy="368" r="14" fill="#3b82f6" opacity=".12"/>
+          <text x="202" y="365" fill="rgba(240,237,230,.35)" font-size="8" font-family="DM Mono">Bengaluru</text>
+          <!-- Hyderabad -->
+          <circle class="pnode dc" cx="210" cy="320" r="4" fill="#3b82f6" filter="url(#glow)"/>
+          <circle class="pring" cx="210" cy="320" r="11" fill="#3b82f6" opacity=".1"/>
+          <text x="224" y="317" fill="rgba(240,237,230,.3)" font-size="7" font-family="DM Mono">Hyderabad</text>
+          <!-- Chennai -->
+          <circle class="pnode dc" cx="208" cy="395" r="4" fill="#3b82f6" filter="url(#glow)"/>
+          <text x="218" y="392" fill="rgba(240,237,230,.3)" font-size="7" font-family="DM Mono">Chennai</text>
+
+          <!-- DARK STORE NODES (Gold) -->
+          <circle class="pnode ds" cx="145" cy="287" r="3.5" fill="#c9a84c" filter="url(#glow)"/>
+          <circle class="pnode ds" cx="193" cy="144" r="3.5" fill="#c9a84c" filter="url(#glow)"/>
+          <circle class="pnode ds" cx="185" cy="362" r="3.5" fill="#c9a84c" filter="url(#glow)"/>
+          <circle class="pnode ds" cx="178" cy="240" r="3.5" fill="#c9a84c" filter="url(#glow)"/>
+          <circle class="pnode ds" cx="240" cy="215" r="3.5" fill="#c9a84c" filter="url(#glow)"/>
+
+          <!-- GRADE-A OFFICE (dim white) -->
+          <circle class="pnode ga" cx="250" cy="285" r="3" fill="rgba(240,237,230,.35)"/>
+          <circle class="pnode ga" cx="182" cy="204" r="3" fill="rgba(240,237,230,.35)"/>
+          <circle class="pnode ga" cx="160" cy="186" r="3" fill="rgba(240,237,230,.35)"/>
+
+          <!-- Legend -->
+          <circle cx="24" cy="480" r="4" fill="#3b82f6"/>
+          <text x="34" y="484" fill="rgba(240,237,230,.45)" font-size="7.5" font-family="DM Mono">Data Centers</text>
+          <circle cx="24" cy="496" r="4" fill="#c9a84c"/>
+          <text x="34" y="500" fill="rgba(240,237,230,.45)" font-size="7.5" font-family="DM Mono">Dark Stores</text>
+          <circle cx="24" cy="512" r="4" fill="rgba(240,237,230,.35)"/>
+          <text x="34" y="516" fill="rgba(240,237,230,.45)" font-size="7.5" font-family="DM Mono">Grade-A Office</text>
+        </svg>
+      </div>
+
+      <div class="acards">
+        <div class="acard">
+          <p class="actype" style="color:#3b82f6">● Data Centers — Digital Infrastructure</p>
+          <h3 class="actitle">Compute Real Estate</h3>
+          <p class="acmetric" style="color:#3b82f6">4 GW by 2030</p>
+          <p class="acdesc">AI proliferation, cloud expansion, and India's digital public infrastructure stack are creating irreversible, structural demand for purpose-built compute real estate across Tier-1 metros. This is not a cycle. It is a decade-long structural shift.</p>
+        </div>
+        <div class="acard">
+          <p class="actype" style="color:#c9a84c">● Dark Stores — Quick Commerce Nodes</p>
+          <h3 class="actitle">Logistics Layer</h3>
+          <p class="acmetric" style="color:#c9a84c">10-Minute Economy</p>
+          <p class="acdesc">The 10-minute delivery economy is permanently restructuring urban logistics real estate. Dark store density is becoming the defining infrastructure of India's consumption layer — and traditional retail spaces are being displaced at scale.</p>
+        </div>
+        <div class="acard">
+          <p class="actype" style="color:rgba(240,237,230,.45)">● Grade-A Office — Global Capability Centers</p>
+          <h3 class="actitle">Cognitive Infrastructure</h3>
+          <p class="acmetric" style="color:rgba(240,237,230,.6)">1,700+ GCCs</p>
+          <p class="acdesc">India hosts the world's cognitive workforce. 1,700+ Global Capability Centers demand premium, tech-integrated workspace — driving sustained, institutional-grade demand for Grade-A office assets in key micro-markets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     LEVERAGE ARCHITECTURE
+================================================================ -->
+<section id="leverage">
+  <div class="si">
+    <p class="sl">03 — The Leverage Architecture</p>
+    <h2 class="st">The mathematics of<br/><em>asymmetric return.</em></h2>
+
+    <div class="llay">
+      <div class="lsteps">
+        <div class="lstep">
+          <div class="lnum">01</div>
+          <div>
+            <h3 class="ltit">15% Client Equity Entry</h3>
+            <p class="ldsc">Your capital enters as 15% of total asset value. Institutional debt structures the remaining 85% — creating a leveraged position in purpose-built infrastructure from day one. Your exposure: minimal. Your upside: disproportionate.</p>
+          </div>
+        </div>
+        <div class="lstep">
+          <div class="lnum">02</div>
+          <div>
+            <h3 class="ltit">Institutional Debt Architecture</h3>
+            <p class="ldsc">We engineer the debt layer with institutional partners — ensuring optimal LTV ratios, covenant structures, and exit optionality that preserve your capital's priority claim position throughout the hold period.</p>
+          </div>
+        </div>
+        <div class="lstep">
+          <div class="lnum">03</div>
+          <div>
+            <h3 class="ltit">50% Asset Appreciation Scenario</h3>
+            <p class="ldsc">As the underlying infrastructure appreciates 50% — driven by structural demand, not speculation — your 15% equity position compounds exponentially. The debt remains static. The gain is yours, asymmetrically.</p>
+          </div>
+        </div>
+        <div class="lstep">
+          <div class="lnum">04</div>
+          <div>
+            <h3 class="ltit">Pre-Defined Exit Architecture</h3>
+            <p class="ldsc">Every investment is engineered with a pre-defined exit thesis — REIT listing, institutional block sale, or strategic refinancing. Capital velocity, not capital imprisonment, is the Advait design principle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cylwrap">
+        <svg id="cylsvg" viewBox="0 0 180 460" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <defs>
+            <linearGradient id="bgrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1d4ed8"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+            <linearGradient id="ggrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#374151"/>
+              <stop offset="100%" stop-color="#4b5563"/>
+            </linearGradient>
+            <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="rgba(255,255,255,.06)"/>
+              <stop offset="50%" stop-color="rgba(255,255,255,.01)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,.07)"/>
+            </linearGradient>
+            <clipPath id="cclip"><rect x="20" y="28" width="140" height="394" rx="3"/></clipPath>
+          </defs>
+          <!-- Shell -->
+          <rect x="20" y="28" width="140" height="394" rx="3" fill="rgba(255,255,255,.015)" stroke="rgba(201,168,76,.2)" stroke-width="1"/>
+          <!-- Debt fill (animated) -->
+          <rect id="df" x="21" y="29" width="138" height="0" rx="2" fill="url(#ggrad)" clip-path="url(#cclip)"/>
+          <!-- Equity fill (animated) -->
+          <rect id="ef" x="21" y="421" width="138" height="0" rx="2" fill="url(#bgrad)" clip-path="url(#cclip)"/>
+          <!-- Shine -->
+          <rect x="20" y="28" width="140" height="394" rx="3" fill="url(#shine)"/>
+          <!-- Top ellipse -->
+          <ellipse cx="90" cy="28" rx="70" ry="11" fill="rgba(201,168,76,.08)" stroke="rgba(201,168,76,.28)" stroke-width="1"/>
+          <!-- Bottom ellipse -->
+          <ellipse cx="90" cy="422" rx="70" ry="11" fill="rgba(201,168,76,.04)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+          <!-- Labels -->
+          <text id="dlbl" x="90" y="195" text-anchor="middle" font-family="DM Mono" font-size="8.5" fill="rgba(240,237,230,.35)" opacity="0">Institutional Debt</text>
+          <text id="dpct" x="90" y="218" text-anchor="middle" font-family="Bebas Neue" font-size="26" fill="rgba(240,237,230,.4)" opacity="0">85%</text>
+          <text id="elbl" x="90" y="410" text-anchor="middle" font-family="DM Mono" font-size="8.5" fill="#3b82f6" opacity="0">Client Equity</text>
+          <text id="epct" x="90" y="395" text-anchor="middle" font-family="Bebas Neue" font-size="26" fill="#3b82f6" opacity="0">15%</text>
+          <!-- Appreciation marker -->
+          <line id="apln" x1="166" y1="365" x2="166" y2="422" stroke="rgba(201,168,76,0)" stroke-width="1" stroke-dasharray="4,3"/>
+          <text id="aplb" x="170" y="398" font-family="DM Mono" font-size="7" fill="rgba(201,168,76,0)">+50%</text>
+          <text id="aplb2" x="170" y="408" font-family="DM Mono" font-size="7" fill="rgba(201,168,76,0)">appreciation</text>
+        </svg>
+        <p class="cylcap">Equity Waterfall Visualizer</p>
+        <p style="font-size:.5rem;color:var(--wd);text-align:center;line-height:1.7;max-width:180px">15% equity exposure / exponential upside as asset appreciates</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     THE COLLECTIVE
+================================================================ -->
+<section id="collective">
+  <div class="si">
+    <p class="sl">04 — The Collective</p>
+
+    <p class="cmani">
+      You are not a <em>client.</em><br/>
+      You are an aligned force<br/>
+      within a systemic thesis<br/>
+      built for <em>nation-scale impact.</em>
+    </p>
+
+    <p class="sb">The Advait Collective is not an advisory service. It is a closed circle of capital aligned with India's most consequential infrastructure epoch. We do not work with everyone. We work with those whose capital has the velocity and intention to matter.</p>
+
+    <div class="pgrid">
+      <div class="pcell">
+        <div class="pnum">I</div>
+        <h3 class="ptit">Institutional Alignment</h3>
+        <p class="pdsc">We structure your capital alongside — not below — the world's largest institutional allocators. Your entry terms are engineered to reflect the intelligence of the Collective, not the naivety of retail markets. Access is the original alpha.</p>
+      </div>
+      <div class="pcell">
+        <div class="pnum">II</div>
+        <h3 class="ptit">Systemic Force</h3>
+        <p class="pdsc">Individual investments are points. Our thesis is a vector — directional, intentional, compounding. Every position is part of a macro architecture that accelerates national infrastructure while generating asymmetric returns for the Collective.</p>
+      </div>
+      <div class="pcell">
+        <div class="pnum">III</div>
+        <h3 class="ptit">Nation-Scale Vision</h3>
+        <p class="pdsc">Advait is Sanskrit for "non-dual" — the principle that the investor and the nation are not separate forces. When India's infrastructure matures, so does your capital. This is not philanthropy. It is aligned self-interest at civilizational scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     INTELLIGENCE HUB (Blog)
+================================================================ -->
+<section id="intel">
+  <div class="si">
+    <p class="sl">05 — Intelligence Hub</p>
+    <h2 class="st">Research.<br/><em>Perspectives. Theses.</em></h2>
+    <p class="sb">Advait publishes its macro thinking openly. Intellectual capital, freely shared. Strategic capital, exclusively deployed. Read. Think. Decide if you are aligned.</p>
+
+    <div class="hctrl">
+      <button class="hflt act" data-f="all">All</button>
+      <button class="hflt" data-f="article">Research Notes</button>
+      <button class="hflt" data-f="video">Video Intelligence</button>
+      <button class="hflt" data-f="thread">Field Notes</button>
+    </div>
+
+    <div class="hgrid" id="hgrid">
+      <!-- Rendered by JS. Edit CONTENT_DATA array in script below to add posts -->
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     TERMINAL / CHATBOT
+================================================================ -->
+<section id="terminal">
+  <div class="si">
+    <div class="tlay">
+      <div class="tintro">
+        <p class="sl">06 — Intelligence Terminal</p>
+        <h2 class="st" style="margin-bottom:32px">Aligned capital<br/>finds its <em>thesis here.</em></h2>
+        <p class="sb" style="margin-bottom:44px">The Terminal is not a sales instrument. It is an intellectual filter. If your capital's objective resonates with our macro thesis, the dialogue begins. If not, there are other advisors — and that is perfectly fine.</p>
+        <div class="taccess">
+          <p class="taclab">Alignment Criteria</p>
+          <p class="tacitem">Capital Horizon: 3 — 7 year institutional exit</p>
+          <p class="tacitem">Objective: Infrastructure-grade return architecture</p>
+          <p class="tacitem">Minimum Deployment: ₹2 Crore aligned capital</p>
+          <p class="tacitem">Disposition: Patient, intentional, thesis-driven</p>
+        </div>
+      </div>
+
+      <div class="tbox">
+        <div class="tbar">
+          <div class="tdot"></div>
+          <div class="tdot"></div>
+          <div class="tdot"></div>
+          <span class="tbtitle">advait_intelligence_terminal · v2.0</span>
+        </div>
+        <div class="tbody" id="tbody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer>
+  <div class="fi">
+    <div class="ftop">
+      <div>
+        <div class="flogo">Advait <em>◆</em></div>
+        <p class="ftag">Institutional real estate intelligence<br/>engineered for India's infrastructure epoch.<br/>Systemic force. Nation scale. Non-dual.</p>
+      </div>
+      <div>
+        <p class="fh">Navigate</p>
+        <ul class="flinks">
+          <li><a href="#macro">The Macro Thesis</a></li>
+          <li><a href="#assets">Asset Intelligence</a></li>
+          <li><a href="#leverage">Leverage Architecture</a></li>
+          <li><a href="#collective">The Collective</a></li>
+          <li><a href="#intel">Intelligence Hub</a></li>
+          <li><a href="#terminal">Access Terminal</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="fh">Asset Classes</p>
+        <ul class="flinks">
+          <li><a href="#assets">Data Center Infrastructure</a></li>
+          <li><a href="#assets">Quick Commerce Real Estate</a></li>
+          <li><a href="#assets">Grade-A Institutional Office</a></li>
+          <li><a href="#leverage">Leverage Architecture</a></li>
+          <li><a href="#macro">India Macro Thesis</a></li>
+          <li><a href="#collective">GCC Micro-Markets</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fbot">
+      <p class="fcp">© 2024 Advait Consultancy. All Rights Reserved. · Institutional Real Estate Advisory · India</p>
+
+      <!-- Ashoka Chakra (gold, monochromatic) -->
+      <svg class="fchk" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" title="Advait — Nation Scale">
+        <circle cx="26" cy="26" r="24" stroke="#c9a84c" stroke-width="1"/>
+        <circle cx="26" cy="26" r="5" stroke="#c9a84c" stroke-width="1"/>
+        <g stroke="#c9a84c" stroke-width=".8" opacity=".9">
+          <!-- 24 spokes of Ashoka Chakra -->
+          <line x1="26" y1="21" x2="26" y2="3"/>
+          <line x1="26" y1="31" x2="26" y2="49"/>
+          <line x1="21" y1="26" x2="3" y2="26"/>
+          <line x1="31" y1="26" x2="49" y2="26"/>
+          <line x1="22.47" y1="22.47" x2="9.22" y2="9.22"/>
+          <line x1="29.53" y1="29.53" x2="42.78" y2="42.78"/>
+          <line x1="29.53" y1="22.47" x2="42.78" y2="9.22"/>
+          <line x1="22.47" y1="29.53" x2="9.22" y2="42.78"/>
+          <line x1="23.55" y1="21.29" x2="15.28" y2="4.86"/>
+          <line x1="28.45" y1="30.71" x2="36.72" y2="47.14"/>
+          <line x1="30.71" y1="23.55" x2="47.14" y2="15.28"/>
+          <line x1="21.29" y1="28.45" x2="4.86" y2="36.72"/>
+          <line x1="28.45" y1="21.29" x2="36.72" y2="4.86"/>
+          <line x1="23.55" y1="30.71" x2="15.28" y2="47.14"/>
+          <line x1="21.29" y1="23.55" x2="4.86" y2="15.28"/>
+          <line x1="30.71" y1="28.45" x2="47.14" y2="36.72"/>
+          <line x1="24.69" y1="21.08" x2="20.45" y2="2.88"/>
+          <line x1="27.31" y1="30.92" x2="31.55" y2="49.12"/>
+          <line x1="30.92" y1="24.69" x2="49.12" y2="20.45"/>
+          <line x1="21.08" y1="27.31" x2="2.88" y2="31.55"/>
+          <line x1="27.31" y1="21.08" x2="31.55" y2="2.88"/>
+          <line x1="24.69" y1="30.92" x2="20.45" y2="49.12"/>
+          <line x1="21.08" y1="24.69" x2="2.88" y2="20.45"/>
+          <line x1="30.92" y1="27.31" x2="49.12" y2="31.55"/>
+        </g>
+      </svg>
+
+      <p class="fmis">Advait — Non-dual. Nation. Scale.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================================================================
+     JAVASCRIPT — ALL LOGIC
+================================================================ -->
+<script>
+// ================================================================
+// CONTENT LIBRARY
+// ================================================================
+// HOW TO ADD NEW POSTS:
+// 1. Add a new object to CONTENT_DATA
+// 2. Set type: 'article' (LinkedIn), 'video' (YouTube), or 'thread' (Field Note)
+// 3. Set url to your actual LinkedIn post or YouTube video URL
+// 4. Save the file — content appears automatically
+// ================================================================
+const CONTENT_DATA = [
+  {
+    title:"Why India's Data Center Boom is a Decade-Long Infrastructure Play",
+    excerpt:"The $50B data center opportunity is not a technology bet — it is a real estate and infrastructure thesis dressed in silicon. Here is the structural case for aligned capital.",
+    type:"article",date:"Dec 2024",
+    url:"https://linkedin.com", // ← Replace with your LinkedIn URL
+    cat:"Data Infrastructure"
+  },
+  {
+    title:"The Velvet Rope of Indian Real Estate: Why Blackstone Wins and Retail Loses",
+    excerpt:"The gap between institutional and retail real estate returns in India is not luck. It is access. We dissect the precise architecture of institutional advantage and what it takes to be on the right side.",
+    type:"article",date:"Nov 2024",
+    url:"https://linkedin.com", // ← Replace with your LinkedIn URL
+    cat:"Institutional Intelligence"
+  },
+  {
+    title:"Dark Stores and the Rewriting of Urban Logistics Real Estate",
+    excerpt:"10-minute delivery is not a consumer trend. It is a structural reshaping of the urban real estate layer — and the capital that recognized this early is already compounding.",
+    type:"video",date:"Oct 2024",
+    url:"https://youtube.com", // ← Replace with your YouTube URL
+    cat:"Quick Commerce"
+  },
+  {
+    title:"The China Displacement: Where $10.4 Billion of Institutional Capital is Migrating",
+    excerpt:"The record inflow into Indian real estate in 2024 is not a coincidence. It is the logical consequence of de-risking from overexposed China positions into structurally undervalued Indian infrastructure.",
+    type:"article",date:"Oct 2024",
+    url:"https://linkedin.com", // ← Replace with your LinkedIn URL
+    cat:"Macro Thesis"
+  },
+  {
+    title:"Asymmetric Leverage: The Mathematics No One Explains Honestly",
+    excerpt:"15% equity. 85% institutional debt. 50% appreciation. The compounding effect is not complicated — it is simply never explained clearly. This video does exactly that.",
+    type:"video",date:"Sep 2024",
+    url:"https://youtube.com", // ← Replace with your YouTube URL
+    cat:"Leverage Architecture"
+  },
+  {
+    title:"GCCs and the Grade-A Office Renaissance: Why 1,700 Global Corporations Chose India",
+    excerpt:"1,700+ Global Capability Centers operate from India. Each demands premium workspace. This is not a cycle — it is a structural shift in where the world does its most valuable cognitive work.",
+    type:"thread",date:"Sep 2024",
+    url:"https://linkedin.com", // ← Replace with your LinkedIn URL
+    cat:"Office Intelligence"
+  }
+];
+
+// ================================================================
+// GSAP SETUP
+// ================================================================
+gsap.registerPlugin(ScrollTrigger);
+
+// ================================================================
+// CURSOR
+// ================================================================
+const cdot=document.getElementById('cdot');
+const cring=document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cdot.style.cssText=`left:${mx}px;top:${my}px;`;});
+
+(function animCursor(){
+  rx+=(mx-rx)*.13;ry+=(my-ry)*.13;
+  cring.style.cssText=`left:${rx}px;top:${ry}px;`;
+  requestAnimationFrame(animCursor);
+})();
+
+document.querySelectorAll('a,button,.acard,.hcard,.topt,.lstep,.pcell').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cring.classList.add('h'));
+  el.addEventListener('mouseleave',()=>cring.classList.remove('h'));
+});
+
+// ================================================================
+// NAV SCROLL
+// ================================================================
+window.addEventListener('scroll',()=>{
+  document.getElementById('mnav').classList.toggle('sc',scrollY>80);
+});
+
+// ================================================================
+// PAGE LOADER
+// ================================================================
+setTimeout(()=>{
+  gsap.to('#loader',{
+    opacity:0,duration:.9,ease:'power2.out',delay:.2,
+    onComplete:()=>{
+      document.getElementById('loader').style.display='none';
+      initHero();
+    }
+  });
+},2000);
+
+// ================================================================
+// THREE.JS HERO — PARTICLE FIELD
+// ================================================================
+(function initThree(){
+  const canvas=document.getElementById('hcv');
+  const rend=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  rend.setPixelRatio(Math.min(devicePixelRatio,2));
+  rend.setSize(innerWidth,innerHeight);
+  rend.setClearColor(0,0);
+
+  const scene=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,1000);
+  cam.position.z=90;
+
+  // Particles
+  const N=2400;
+  const pos=new Float32Array(N*3);
+  for(let i=0;i<N;i++){
+    pos[i*3]=(Math.random()-.5)*220;
+    pos[i*3+1]=(Math.random()-.5)*220;
+    pos[i*3+2]=(Math.random()-.5)*180;
+  }
+  const geo=new THREE.BufferGeometry();
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+
+  // Two layers — gold and dim white
+  const pts1=new THREE.Points(geo,new THREE.PointsMaterial({color:0xc9a84c,size:.35,transparent:true,opacity:.35,sizeAttenuation:true}));
+  const pts2=new THREE.Points(geo,new THREE.PointsMaterial({color:0xf0ede6,size:.18,transparent:true,opacity:.1,sizeAttenuation:true}));
+  scene.add(pts1,pts2);
+
+  // Grid plane
+  const grid=new THREE.GridHelper(260,48,0x1a1a28,0x111118);
+  grid.position.y=-50;grid.rotation.x=.05;
+  scene.add(grid);
+
+  // Lines connecting nearby particles (sparse)
+  const lGeo=new THREE.BufferGeometry();
+  const lPts=[];
+  for(let i=0;i<60;i++){
+    const a=Math.floor(Math.random()*N)*3;
+    const b=Math.floor(Math.random()*N)*3;
+    lPts.push(pos[a],pos[a+1],pos[a+2],pos[b],pos[b+1],pos[b+2]);
+  }
+  lGeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(lPts),3));
+  const lines=new THREE.LineSegments(lGeo,new THREE.LineBasicMaterial({color:0xc9a84c,transparent:true,opacity:.04}));
+  scene.add(lines);
+
+  let tx=0,ty=0,ax=0,ay=0;
+  document.addEventListener('mousemove',e=>{tx=(e.clientX/innerWidth-.5)*.4;ty=(e.clientY/innerHeight-.5)*.2;});
+
+  const clock=new THREE.Clock();
+  (function tick(){
+    requestAnimationFrame(tick);
+    const t=clock.getElapsedTime();
+    ax+=(tx-ax)*.04;ay+=(ty-ay)*.04;
+    pts1.rotation.y=t*.04+ax;pts1.rotation.x=ay*.25;
+    pts2.rotation.y=t*.04+ax;pts2.rotation.x=ay*.25;
+    lines.rotation.y=t*.04+ax;
+    rend.render(scene,cam);
+  })();
+
+  window.addEventListener('resize',()=>{
+    cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();
+    rend.setSize(innerWidth,innerHeight);
+  });
+})();
+
+// ================================================================
+// HERO TEXT ANIMATION
+// ================================================================
+function initHero(){
+  gsap.set(['#hey','#hh','#hs','#hb'],{y:32});
+  const tl=gsap.timeline({delay:.2});
+  tl.to('#hey',{opacity:1,y:0,duration:.9,ease:'power3.out'})
+    .to('#hh',{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=.5')
+    .to('#hs',{opacity:1,y:0,duration:.9,ease:'power3.out'},'-=.6')
+    .to('#hb',{opacity:1,y:0,duration:.7,ease:'power3.out'},'-=.5')
+    .to('#sci',{opacity:1,duration:.6},'-=.3');
+}
+
+// ================================================================
+// MACRO CHART
+// ================================================================
+(function initChart(){
+  const canvas=document.getElementById('mccv');
+  const ctx=canvas.getContext('2d');
+  const dpr=devicePixelRatio||1;
+  const W=canvas.parentElement.clientWidth-64;
+  const H=260;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  ctx.scale(dpr,dpr);
+
+  const yrs=['2019','2020','2021','2022','2023','2024'];
+  const china=[.86,.76,.65,.55,.40,.26];
+  const india=[.18,.24,.34,.50,.68,.92];
+  const PAD={t:18,b:38,l:18,r:18};
+  const cw=W-PAD.l-PAD.r,ch=H-PAD.t-PAD.b;
+
+  function gx(i){return PAD.l+(i/(yrs.length-1))*cw;}
+  function gy(v){return PAD.t+(1-v)*ch;}
+
+  function draw(p){
+    ctx.clearRect(0,0,W,H);
+    // Grid
+    ctx.strokeStyle='rgba(255,255,255,.04)';ctx.lineWidth=.5;
+    for(let i=0;i<=4;i++){const y=PAD.t+(i/4)*ch;ctx.beginPath();ctx.moveTo(PAD.l,y);ctx.lineTo(W-PAD.r,y);ctx.stroke();}
+    // Year labels
+    ctx.font=`8.5px 'DM Mono'`;ctx.fillStyle='rgba(240,237,230,.28)';ctx.textAlign='center';
+    yrs.forEach((y,i)=>ctx.fillText(y,gx(i),H-10));
+    // How many points to draw
+    const n=Math.max(2,Math.ceil(p*(yrs.length-1))+1);
+    const frac=(p*(yrs.length-1))%1;
+    function drawLine(data,color,glow){
+      ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=1.8;
+      ctx.shadowColor=color;ctx.shadowBlur=glow?10:0;
+      for(let i=0;i<Math.min(n,yrs.length);i++){
+        let x=gx(i),y;
+        if(i===n-1&&frac>0&&i<yrs.length-1) y=gy(data[i-1]+(data[i]-data[i-1])*frac);
+        else y=gy(data[i]);
+        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      }
+      ctx.stroke();ctx.shadowBlur=0;
+    }
+    drawLine(china,'#ef4444',true);
+    drawLine(india,'#3b82f6',true);
+    // End dots
+    const li=Math.min(n-1,yrs.length-1);
+    [[china,'#ef4444'],[india,'#3b82f6']].forEach(([d,c])=>{
+      ctx.beginPath();ctx.fillStyle=c;ctx.shadowColor=c;ctx.shadowBlur=8;
+      ctx.arc(gx(li),gy(d[li]),3.5,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+    });
+  }
+  draw(0);
+
+  ScrollTrigger.create({
+    trigger:'#macro',start:'top 65%',once:true,
+    onEnter:()=>gsap.to({v:0},{v:1,duration:2.6,ease:'power2.out',
+      onUpdate:function(){draw(this.targets()[0].v);}})
+  });
+})();
+
+// ================================================================
+// STAT COUNTERS
+// ================================================================
+document.querySelectorAll('[data-ct]').forEach(el=>{
+  const tgt=parseFloat(el.dataset.ct);
+  const cnt=el.querySelector('.cnt');
+  ScrollTrigger.create({trigger:el,start:'top 80%',once:true,
+    onEnter:()=>gsap.to({v:0},{v:tgt,duration:2.1,ease:'power2.out',
+      onUpdate:function(){cnt.textContent=tgt%1!==0?this.targets()[0].v.toFixed(1):Math.round(this.targets()[0].v);}})
+  });
+});
+
+// ================================================================
+// MAP PULSE ANIMATION
+// ================================================================
+ScrollTrigger.create({trigger:'#assets',start:'top 60%',once:true,onEnter:()=>{
+  document.querySelectorAll('.pring').forEach((r,i)=>{
+    const cx=r.getAttribute('cx'),cy=r.getAttribute('cy');
+    const origR=parseFloat(r.getAttribute('r'));
+    gsap.to(r,{attr:{r:origR*2.5,opacity:0},duration:1.8,delay:i*.25,repeat:-1,repeatDelay:.4,ease:'power2.out'});
+  });
+}});
+
+// ================================================================
+// CYLINDER ANIMATION
+// ================================================================
+ScrollTrigger.create({trigger:'#leverage',start:'top 55%',once:true,onEnter:()=>{
+  const totH=392;
+  const eqH=totH*.15;
+  const dtH=totH*.85;
+
+  gsap.to('#df',{attr:{height:dtH,y:29},duration:1.6,ease:'power2.inOut',
+    onComplete:()=>gsap.to(['#dlbl','#dpct'],{opacity:1,duration:.5})});
+  gsap.to('#ef',{attr:{height:eqH,y:422-eqH},duration:1.6,delay:.35,ease:'power2.inOut',
+    onComplete:()=>{
+      gsap.to(['#elbl','#epct'],{opacity:1,duration:.5});
+      setTimeout(()=>{
+        // Show appreciation expansion
+        gsap.to('#ef',{attr:{height:eqH*3.2,y:422-eqH*3.2},duration:1.1,ease:'power3.out'});
+        gsap.to(['#apln','#aplb','#aplb2'],{attr:{stroke:'rgba(201,168,76,.55)',fill:'rgba(201,168,76,.7)'},duration:.5,delay:.2});
+      },900);
+    }
+  });
+}});
+
+// ================================================================
+// INTELLIGENCE HUB
+// ================================================================
+function renderHub(f='all'){
+  const data=f==='all'?CONTENT_DATA:CONTENT_DATA.filter(c=>c.type===f);
+  const typeMap={article:{lbl:'◆ Research Note',col:'var(--g)'},video:{lbl:'▶ Video Intelligence',col:'#3b82f6'},thread:{lbl:'≡ Field Note',col:'var(--wd)'}};
+  document.getElementById('hgrid').innerHTML=data.map(d=>{
+    const t=typeMap[d.type]||{lbl:d.type,col:'var(--wd)'};
+    return`<a href="${d.url}" target="_blank" rel="noopener noreferrer" class="hcard">
+      <div class="hcmeta"><p class="hctype" style="color:${t.col}">${t.lbl}</p><p class="hcdate">${d.date}</p></div>
+      <h3 class="hctitle">${d.title}</h3>
+      <p class="hcexc">${d.excerpt}</p>
+      <div class="hclink">Read More <span class="hcarr">→</span></div>
+    </a>`;
+  }).join('');
+}
+renderHub();
+document.querySelectorAll('.hflt').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.hflt').forEach(x=>x.classList.remove('act'));
+    b.classList.add('act');renderHub(b.dataset.f);
+  });
+});
+
+// ================================================================
+// TERMINAL CHATBOT
+// ================================================================
+let tState={step:0,q1:null,q2:null};
+
+function addLine(prompt,text,cls='',delay=0){
+  return new Promise(res=>setTimeout(()=>{
+    const body=document.getElementById('tbody');
+    const d=document.createElement('div');
+    d.className='tline';
+    d.innerHTML=`<span class="tpr">${prompt}</span><span class="ttx ${cls}">${text}</span>`;
+    body.appendChild(d);body.scrollTop=body.scrollHeight;res();
+  },delay));
+}
+
+function addOptions(opts,onClick){
+  return new Promise(res=>setTimeout(()=>{
+    const body=document.getElementById('tbody');
+    const wrap=document.createElement('div');wrap.className='tline';
+    const od=document.createElement('div');od.className='topts';
+    opts.forEach(o=>{
+      const b=document.createElement('button');
+      b.className='topt';b.dataset.k=o.k;b.textContent=o.t;
+      b.addEventListener('click',()=>{
+        od.querySelectorAll('.topt').forEach(x=>{x.disabled=true;});
+        b.classList.add('sel');
+        onClick(o);
+      });
+      od.appendChild(b);
+    });
+    wrap.appendChild(od);body.appendChild(wrap);body.scrollTop=body.scrollHeight;res();
+  },0));
+}
+
+async function runTerminal(){
+  const body=document.getElementById('tbody');
+  body.innerHTML='';
+
+  await addLine('$','advait_terminal > boot sequence initiated','dim',300);
+  await addLine('','connection: encrypted · identity: unverified','dim',900);
+  await addLine('','',''  ,200);
+  await addLine('◆','Advait Intelligence Terminal','gld',1600);
+  await addLine('›','Access restricted to intellectually aligned capital.',''  ,2100);
+  await addLine('','','',300);
+  await addLine('?','What is the primary friction your capital is navigating?','gld',2700);
+
+  await addOptions([
+    {k:'A',t:'Capital stagnating against inflation — seeking structural velocity.'},
+    {k:'B',t:'No access to institutional-grade deal flow or assets.'},
+    {k:'C',t:'I need a time-bound exit thesis, not open-ended exposure.'},
+    {k:'D',t:'Portfolio concentrated — seeking intelligent diversification.'}
+  ],async(opt)=>{
+    tState.q1=opt.t;
+    await addLine('›',`Logged: ${opt.t}`,'gld',200);
+    await addLine('','',''  ,200);
+    await addLine('›','Advait engineers for specific macro windows.',''  ,700);
+    await addLine('?','What is the temporal architecture of your capital intent?','gld',1300);
+
+    await addOptions([
+      {k:'A',t:'Aggressive mid-term velocity — 3–5 year digital infrastructure cycle.'},
+      {k:'B',t:'Long-term legacy — generational wealth through nation-scale assets.'}
+    ],async(opt2)=>{
+      tState.q2=opt2.t;
+      await addLine('›',`Objective: ${opt2.t}`,'gld',200);
+      await addLine('','',''  ,300);
+      await addLine('◆','Your parameters align with the current Advait macro-thesis.','gld',900);
+      await addLine('','',''  ,200);
+      await addLine('›','To initiate a strategic alignment review,',''  ,1400);
+      await addLine('›','submit your credentials. This is not a lead form — it is an introduction.',''  ,1800);
+      await addLine('','',''  ,300);
+
+      setTimeout(()=>{
+        const body=document.getElementById('tbody');
+        const d=document.createElement('div');
+        d.className='tline';
+        d.innerHTML=`<div class="tfrm" style="width:100%">
+          <p class="tflabel">Strategic Review Request</p>
+          <div class="tfrow"><span class="tpr">name_</span><input class="tinp" id="ti-name" type="text" placeholder="Your full name" autocomplete="off"/></div>
+          <div class="tfrow"><span class="tpr">contact_</span><input class="tinp" id="ti-contact" type="text" placeholder="Email or phone number" autocomplete="off"/></div>
+          <div class="tfrow"><span class="tpr">capital_</span><input class="tinp" id="ti-cap" type="text" placeholder="Approximate deployment (₹ Crore)" autocomplete="off"/></div>
+          <button class="tsub" onclick="submitLead()">→ Request Strategic Review</button>
+        </div>`;
+        body.appendChild(d);body.scrollTop=body.scrollHeight;
+      },2400);
+    });
+  });
+}
+
+async function submitLead(){
+  const name=document.getElementById('ti-name')?.value?.trim();
+  const contact=document.getElementById('ti-contact')?.value?.trim();
+  const cap=document.getElementById('ti-cap')?.value?.trim();
+  if(!name||!contact){await addLine('!','Authentication requires name and contact. Please complete.','dim',0);return;}
+
+  // Remove form
+  document.querySelector('.tfrm')?.closest('.tline')?.remove();
+
+  // ================================================================
+  // BACKEND INTEGRATION POINT:
+  // Replace the console.log below with your actual form submission.
+  // Example: fetch('/api/leads',{method:'POST',body:JSON.stringify({name,contact,cap,q1:tState.q1,q2:tState.q2})})
+  // ================================================================
+  console.log('LEAD:',{name,contact,cap,q1:tState.q1,q2:tState.q2});
+
+  const body=document.getElementById('tbody');
+  await addLine('◆',`Identity registered: ${name}`,'gld',100);
+  await addLine('','',''  ,200);
+  await addLine('›','Strategic alignment review initiated.',''  ,700);
+  await addLine('›','Response within 48 hours from the Principal Strategist.',''  ,1100);
+  await addLine('','',''  ,400);
+  await addLine('◆','The Advait Collective. Systemic Force. Nation Scale.','gld',1600);
+  body.scrollTop=body.scrollHeight;
+}
+
+ScrollTrigger.create({trigger:'#terminal',start:'top 60%',once:true,onEnter:runTerminal});
+
+// ================================================================
+// SCROLL ANIMATIONS
+// ================================================================
+gsap.utils.toArray('.sl,.st,.sb,.cmani').forEach(el=>{
+  gsap.from(el,{opacity:0,y:36,duration:1,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+gsap.from('.msb',{opacity:0,x:-28,duration:.9,stagger:.15,ease:'power3.out',
+  scrollTrigger:{trigger:'.mstats',start:'top 75%'}});
+gsap.from('.acard',{opacity:0,y:28,duration:.7,stagger:.1,ease:'power3.out',
+  scrollTrigger:{trigger:'.acards',start:'top 78%'}});
+gsap.from('.lstep',{opacity:0,x:-24,duration:.7,stagger:.12,ease:'power3.out',
+  scrollTrigger:{trigger:'.lsteps',start:'top 72%'}});
+gsap.from('.pcell',{opacity:0,y:36,duration:.8,stagger:.14,ease:'power3.out',
+  scrollTrigger:{trigger:'.pgrid',start:'top 78%'}});
+gsap.from('.cbox',{opacity:0,y:24,duration:.9,ease:'power3.out',
+  scrollTrigger:{trigger:'.cbox',start:'top 80%'}});
+gsap.from('.iname',{opacity:0,y:10,duration:.5,stagger:.08,
+  scrollTrigger:{trigger:'.iblock',start:'top 88%'}});
+gsap.from('.tbox',{opacity:0,x:40,duration:1.1,ease:'power3.out',
+  scrollTrigger:{trigger:'.tlay',start:'top 70%'}});
+gsap.from('.tintro',{opacity:0,x:-30,duration:1,ease:'power3.out',
+  scrollTrigger:{trigger:'.tlay',start:'top 70%'}});
+</script>
+</body>
+</html>
