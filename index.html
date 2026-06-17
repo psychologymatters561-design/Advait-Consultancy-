@@ -16,12 +16,16 @@
 
 <style>
 :root{
-  --void:#05060A; --void-2:#0B0D12; --marble:#11141A;
-  --line:rgba(233,226,215,.10); --line-strong:rgba(233,226,215,.18);
-  --gold:#C9A86A; --gold-bright:#E8C987; --gold-deep:#9A7B3F;
-  --text:#E7E2D7; --muted:#8C8678; --muted-2:#5E5B53;
-  --paper:#F2EEE4; --ink:#16140F; --ink-soft:#54503F; --w2-gold:#977B3F; --w2-line:rgba(22,20,15,.14);
-  --maxw:1180px; --ease:cubic-bezier(.22,.61,.36,1);
+  /* ── World 1 — dark palette ──────────────────────────────── */
+  --void:#05060A;--void-2:#0B0D12;--marble:#11141A;
+  --line:rgba(233,226,215,.10);--line-strong:rgba(233,226,215,.18);
+  --gold:#C9A86A;--gold-bright:#E8C987;--gold-deep:#9A7B3F;
+  --text:#E7E2D7;--muted:#8C8678;--muted-2:#5E5B53;
+  /* ── World 2 — light palette ─────────────────────────────── */
+  --paper:#F2EEE4;--ink:#16140F;--ink-soft:#54503F;
+  --w2-gold:#977B3F;--w2-line:rgba(22,20,15,.14);
+  /* ── layout & motion ─────────────────────────────────────── */
+  --maxw:1180px;--ease:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -43,7 +47,10 @@ a{color:inherit;text-decoration:none}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,64px);position:relative;z-index:2}
 .eyebrow{font-family:"Spline Sans Mono",monospace;font-weight:400;font-size:11.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.85}
-.mark{display:inline-block;vertical-align:middle}.mark svg{display:block}
+.mark{display:inline-block;vertical-align:middle;color:var(--gold)}.mark svg{display:block}
+#world2 .mark{color:var(--w2-gold)}
+.fi{font-family:"Fraunces",serif;font-style:italic;font-weight:300}
+.lede-pull{font-family:"Marcellus",serif;font-size:clamp(22px,3.2vw,34px);line-height:1.25;color:#F1ECE1;max-width:24ch;margin-bottom:1.1em}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
   padding:20px clamp(22px,5vw,64px);transition:background .5s var(--ease),backdrop-filter .5s var(--ease)}
@@ -149,13 +156,15 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
+<svg aria-hidden="true" focusable="false" style="display:none"><defs><symbol id="mark-icon" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="6.4" stroke="currentColor" stroke-width="1"/><circle cx="15" cy="12" r="6.4" stroke="currentColor" stroke-width="1"/></symbol></defs></svg>
+
 <canvas id="webgl"></canvas>
 <div class="vignette"></div>
 <div class="grain"></div>
 
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Advait — home">
-    <span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="6.4" stroke="var(--gold)" stroke-width="1"/><circle cx="15" cy="12" r="6.4" stroke="var(--gold)" stroke-width="1"/></svg></span>
+    <span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mark-icon"/></svg></span>
     Advait
   </a>
   <div class="nav-meta">Independent Advisory<br/>Delhi&nbsp;NCR · India</div>
@@ -177,7 +186,7 @@ a{color:inherit;text-decoration:none}
     <div class="hero-lead" id="heroLead" aria-hidden="true">
       <div class="wrap">
         <div class="head"><span class="eyebrow">The premise</span></div>
-        <h2 class="lede">Real estate is not bought.<br/>It is <span style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;">built.</span></h2>
+        <h2 class="lede">Real estate is not bought.<br/>It is <span class="fi">built.</span></h2>
       </div>
     </div>
   </section>
@@ -185,8 +194,8 @@ a{color:inherit;text-decoration:none}
   <!-- ===== THESIS ===== -->
   <section class="band" id="thesis">
     <div class="wrap">
-      <div class="head"><span class="eyebrow">The premise</span><span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="6.4" stroke="var(--gold)" stroke-width="1"/><circle cx="15" cy="12" r="6.4" stroke="var(--gold)" stroke-width="1"/></svg></span></div>
-      <h2 class="lede">Real estate is not bought.<br/>It is <span style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;">built.</span></h2>
+      <div class="head"><span class="eyebrow">The premise</span><span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mark-icon"/></svg></span></div>
+      <h2 class="lede">Real estate is not bought.<br/>It is <span class="fi">built.</span></h2>
       <div class="body-col reveal">
         <p>Even when <em>built</em> means structured, repositioned, timed, or simply held until the market arrives at the same conclusion you did eighteen months earlier. The plot does not change. Its value does.</p>
         <p class="dim">That distance — between an asset as it is and the asset as it could be made to read — is the entire business. We do not list services. We close that distance, on one side of the table, for one client at a time.</p>
@@ -223,9 +232,9 @@ a{color:inherit;text-decoration:none}
   <!-- ===== HOW WE READ ===== -->
   <section class="band" id="read">
     <div class="wrap">
-      <div class="head"><span class="eyebrow">How we read a corridor</span><span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="6.4" stroke="var(--gold)" stroke-width="1"/><circle cx="15" cy="12" r="6.4" stroke="var(--gold)" stroke-width="1"/></svg></span></div>
+      <div class="head"><span class="eyebrow">How we read a corridor</span><span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mark-icon"/></svg></span></div>
       <div class="body-col reveal" style="max-width:64ch">
-        <p style="font-family:'Marcellus',serif;font-size:clamp(22px,3.2vw,34px);line-height:1.25;color:#F1ECE1;max-width:24ch;margin-bottom:1.1em">A new airport is not an airport. It is a re-pricing event that announces itself years before it lands.</p>
+        <p class="lede-pull">A new airport is not an airport. It is a re-pricing event that announces itself years before it lands.</p>
         <p>Eighteen months before a corridor trades on its new reality, the signal is already legible — in a land-use notification, a power allocation, a road alignment redrawn, a quiet acquisition three villages over. None of it is news yet. All of it is information.</p>
         <p class="dim">We read the announcement, not the headline. Geopolitics, infrastructure cadence, regulation, sentiment, the temperament of the people who actually sign — these are not a list of services we offer. They are how a single sentence in a gazette becomes a number on a map. By the time the market is certain, the entry was taken quarters ago.</p>
       </div>
@@ -276,7 +285,7 @@ a{color:inherit;text-decoration:none}
 <section id="world2" aria-hidden="true" aria-label="Advait Capital">
   <div class="w2-grain"></div>
   <div class="w2-top">
-    <div class="w2-brand"><span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="6.4" stroke="var(--w2-gold)" stroke-width="1"/><circle cx="15" cy="12" r="6.4" stroke="var(--w2-gold)" stroke-width="1"/></svg></span>Advait Capital</div>
+    <div class="w2-brand"><span class="mark" data-parallax="16" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mark-icon"/></svg></span>Advait Capital</div>
     <button class="w2-back" id="w2Back">← Return to the street</button>
   </div>
   <div class="w2-wrap">
@@ -323,7 +332,7 @@ a{color:inherit;text-decoration:none}
 <script>
 /* ============================================================
    ADVAIT — interaction layer
-   One IIFE, six independent modules wired by boot().
+   One IIFE, six independent modules wired at boot.
    Each degrades gracefully without GSAP / Three / when the
    user prefers reduced motion. All feel-tunables live in CONFIG.
    Hero is a scroll-driven <canvas> frame-scrub (not a video).
@@ -347,9 +356,9 @@ a{color:inherit;text-decoration:none}
       scrub:  SMALL ? 0.9 : 1.3,   // scroll-tracking inertia
       lerp:   0.085,                // render-loop smoothing
       dprCap: 1.6,
-      copyFadeEnd: 0.5,            // hero wordmark gone by half-walk
-      cueFadeEnd:  0.12,
-      veil: { start: 0.80, max: 0.40 } // settle into the dark site
+      copyFadeEnd: 0.4,            // hero wordmark gone by 40% progress
+      cueFadeEnd:  0.1,            // scroll cue gone by 10% progress
+      veil: { start: 0.5, max: 0.8 }  // veil fade-in starts at 50% progress
     },
     ambient: {
       dprCap: 1.5,
@@ -358,11 +367,16 @@ a{color:inherit;text-decoration:none}
     }
   };
 
+  /* ---------- shared event dispatchers (one listener per event type) ---------- */
+  var _resizeHandlers = [], _scrollHandlers = [];
+  window.addEventListener("resize", function () { for (var i = 0; i < _resizeHandlers.length; i++) _resizeHandlers[i](); }, { passive: true });
+  window.addEventListener("scroll", function () { for (var i = 0; i < _scrollHandlers.length; i++) _scrollHandlers[i](); }, { passive: true });
+
   /* ---------- nav ---------- */
   function setupNav() {
     var el = $("nav"); if (!el) return;
     var on = function () { el.classList.toggle("solid", window.scrollY > 40); };
-    on(); window.addEventListener("scroll", on, { passive: true });
+    on(); _scrollHandlers.push(on);
   }
 
   var yr = $("yr"); if (yr) yr.textContent = "© " + new Date().getFullYear();
@@ -377,10 +391,11 @@ a{color:inherit;text-decoration:none}
 
     var DPR = Math.min(window.devicePixelRatio || 1, C.dprCap);
     var imgs = new Array(N), prog = 0, target = 0, visible = true, dirty = true;
+    var rafId = null;
 
     function size() {
-      canvas.width  = Math.round(innerWidth  * DPR);
-      canvas.height = Math.round(innerHeight * DPR);
+      canvas.width  = Math.round(window.innerWidth  * DPR);
+      canvas.height = Math.round(window.innerHeight * DPR);
       dirty = true;
     }
     function cover(img, a) {
@@ -407,17 +422,19 @@ a{color:inherit;text-decoration:none}
       imgs[k] = im;
     })(k);
 
-    size(); addEventListener("resize", size, { passive: true });
+    size(); _resizeHandlers.push(size);
 
-    // single eased loop; only paints when something actually changed
-    (function loop() {
-      if (visible) {
+    function startLoop() {
+      if (rafId !== null) return;
+      (function loop() {
+        if (!visible) { rafId = null; return; }
         if (Math.abs(target - prog) > 0.0004) { prog += (target - prog) * C.lerp; dirty = true; }
         else if (prog !== target) { prog = target; dirty = true; }
         if (dirty) { draw(prog); dirty = false; }
-      }
-      requestAnimationFrame(loop);
-    })();
+        rafId = requestAnimationFrame(loop);
+      })();
+    }
+    startLoop();
 
     if (hasGSAP) {
       if (cue) { gsap.set(cue, { opacity: 0 }); gsap.to(cue, { opacity: 1, duration: 1.0, delay: 1.5 }); }
@@ -427,10 +444,10 @@ a{color:inherit;text-decoration:none}
         onUpdate: function (self) {
           var p = self.progress;
           target = p < 0.84 ? p / 0.84 : 1;                       // walk completes before the pin ends
-          var c = Math.min(1, p / 0.4);
+          var c = Math.min(1, p / C.copyFadeEnd);
           if (copy) gsap.set(copy, { opacity: 1 - c, y: -44 * c });
-          if (cue)  gsap.set(cue,  { opacity: 1 - Math.min(1, p / 0.1) });
-          if (veil) gsap.set(veil, { opacity: p < 0.5 ? 0 : (p - 0.5) / 0.5 * 0.8 });   // walk recedes into the dark
+          if (cue)  gsap.set(cue,  { opacity: 1 - Math.min(1, p / C.cueFadeEnd) });
+          if (veil) gsap.set(veil, { opacity: p < C.veil.start ? 0 : (p - C.veil.start) / (1 - C.veil.start) * C.veil.max });
           if (lead) { var lp = (p - 0.6) / 0.3; lp = lp < 0 ? 0 : lp > 1 ? 1 : lp;       // content rises BEFORE walk ends
             gsap.set(lead, { opacity: lp, y: (1 - lp) * 60, filter: "blur(" + ((1 - lp) * 12).toFixed(2) + "px)" }); }
         },
@@ -438,7 +455,10 @@ a{color:inherit;text-decoration:none}
       });
       ScrollTrigger.create({
         trigger: "#hero", start: "top bottom", end: "bottom top",
-        onToggle: function (s) { visible = s.isActive; if (visible) dirty = true; }
+        onToggle: function (s) {
+          visible = s.isActive;
+          if (visible) { dirty = true; startLoop(); }
+        }
       });
     } else {
       target = 1; dirty = true;
@@ -528,10 +548,10 @@ a{color:inherit;text-decoration:none}
     sc.add(stars); sc.add(motes);
 
     var w, h, mx = 0, my = 0, sy = 0;
-    function rs() { w = innerWidth; h = innerHeight; r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
-    rs(); addEventListener("resize", rs, { passive: true });
-    addEventListener("mousemove", function (e) { mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5; }, { passive: true });
-    addEventListener("scroll", function () { sy = scrollY; }, { passive: true });
+    function rs() { w = window.innerWidth; h = window.innerHeight; r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+    rs(); _resizeHandlers.push(rs);
+    window.addEventListener("mousemove", function (e) { mx = e.clientX / window.innerWidth - 0.5; my = e.clientY / window.innerHeight - 0.5; }, { passive: true });
+    _scrollHandlers.push(function () { sy = window.scrollY; });
 
     var tt = 0, running = false;
     function frame() {
@@ -599,7 +619,9 @@ a{color:inherit;text-decoration:none}
   /* ---------- boot ---------- */
   setupNav();
   buildHeroScrub();
-  heroIntro();
+  document.fonts && document.fonts.ready
+    ? document.fonts.ready.then(heroIntro)
+    : heroIntro();
   setupReveals();
   setupParallax();
   setupDelta();
