@@ -64,7 +64,7 @@
 
 <style>
 /* ══════════════════════════════════════════════════════════════════════════
-   ADVAIT — neomorphic + living design system. Zero CDN (libs are self-hosted).
+   ADVAIT — neomorphic + cinematic design system. Libraries self-hosted.
 ══════════════════════════════════════════════════════════════════════════ */
 @font-face{font-family:"Cormorant";src:url(fonts/cormorant-300.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Cormorant";src:url(fonts/cormorant-300-italic.woff2) format("woff2");font-weight:300;font-style:italic;font-display:swap}
@@ -78,16 +78,12 @@
   --hi:rgba(248,228,190,.06); --lo:rgba(0,0,0,.56);
   --text:#F3EDE0; --muted:#A39A88; --faint:#6E6757;
   --accent:#D7B06E; --accent-2:#F0D79B; --accent-soft:#9A7B43;
-  --glow:rgba(215,176,110,.5);
-  --rule:rgba(248,228,190,.12);
-
+  --glow:rgba(215,176,110,.5); --rule:rgba(248,228,190,.12);
   --f-display:"Cormorant",Georgia,"Times New Roman",serif;
   --f-body:"DMSans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --f-mono:"JBMono",ui-monospace,SFMono-Regular,Menlo,monospace;
-
   --maxw:1320px; --gutter:clamp(20px,5vw,72px);
   --ease:cubic-bezier(.22,.61,.36,1); --ease-out:cubic-bezier(.16,1,.3,1);
-
   --raise:-7px -7px 18px var(--hi), 9px 9px 24px var(--lo);
   --raise-sm:-4px -4px 10px var(--hi), 5px 5px 14px var(--lo);
   --raise-lg:-11px -11px 30px var(--hi), 15px 15px 40px var(--lo);
@@ -97,8 +93,6 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-html.js [data-reveal]{opacity:0;transform:translateY(28px)}
-html.js [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-body);font-weight:300;line-height:1.75;
   font-size:clamp(15px,1.05vw,17px);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
@@ -112,15 +106,18 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);position:relative}
 .eyebrow{font-family:var(--f-mono);font-size:clamp(10px,.8vw,12px);letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
 .gold{color:var(--accent)}
-.goldtext{background:linear-gradient(180deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-[data-reveal]{transition:opacity 1s var(--ease-out),transform 1s var(--ease-out)}
+
+/* cinematic entrance: subtle rise + scale ("expands into view") */
+html.js [data-reveal]{opacity:0;transform:translateY(30px) scale(.984)}
+html.js [data-reveal].in{opacity:1;transform:none}
+[data-reveal]{transition:opacity 1s var(--ease-out),transform 1.1s var(--ease-out)}
 [data-reveal][data-d="1"]{transition-delay:.08s}[data-reveal][data-d="2"]{transition-delay:.16s}
 [data-reveal][data-d="3"]{transition-delay:.24s}[data-reveal][data-d="4"]{transition-delay:.32s}
+.goldtext{background:linear-gradient(180deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* ambient living light + grain (site-wide) */
+/* ambient living light + grain */
 .ambient{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.7;
-  background:radial-gradient(40% 32% at 18% 12%,rgba(215,176,110,.10),transparent 60%),
-             radial-gradient(46% 40% at 86% 78%,rgba(154,123,67,.10),transparent 60%);
+  background:radial-gradient(40% 32% at 18% 12%,rgba(215,176,110,.10),transparent 60%),radial-gradient(46% 40% at 86% 78%,rgba(154,123,67,.10),transparent 60%);
   animation:drift 22s var(--ease) infinite alternate}
 @keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-2%,2%,0) scale(1.08)}}
 .grain{position:fixed;inset:-40%;z-index:60;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
@@ -129,14 +126,11 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .vignette{position:fixed;inset:0;z-index:55;pointer-events:none;box-shadow:inset 0 0 240px 40px rgba(0,0,0,.5)}
 main,.foot,#world2{position:relative;z-index:2}
 
-/* cursor */
-#cursor{position:fixed;top:0;left:0;width:30px;height:30px;border:1.5px solid var(--accent);border-radius:50%;z-index:9999;
-  pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:width .3s var(--ease),height .3s var(--ease),background .3s,opacity .3s;will-change:transform}
+#cursor{position:fixed;top:0;left:0;width:30px;height:30px;border:1.5px solid var(--accent);border-radius:50%;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:width .3s var(--ease),height .3s var(--ease),background .3s,opacity .3s;will-change:transform}
 body.has-cursor #cursor{opacity:.8}
 #cursor.grow{width:70px;height:70px;background:rgba(215,176,110,.10)}
 @media (hover:none),(pointer:coarse){#cursor{display:none!important}}
 
-/* preloader */
 #pre{position:fixed;inset:0;z-index:9000;background:var(--bg);display:grid;place-items:center;transition:opacity .7s var(--ease)}
 #pre.done{opacity:0;pointer-events:none}
 .pre-badge{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;background:var(--bg);box-shadow:var(--raise)}
@@ -147,10 +141,9 @@ body.has-cursor #cursor{opacity:.8}
 @keyframes draw{to{stroke-dashoffset:0}}
 .mark{display:inline-grid;place-items:center;color:var(--accent)}
 
-/* ── nav ─────────────────────────────────────────────────────────────────── */
-.nav{position:fixed;top:clamp(12px,2vw,22px);left:50%;transform:translateX(-50%);z-index:80;
-  width:min(var(--maxw),calc(100vw - 2*clamp(12px,3vw,28px)));display:flex;align-items:center;justify-content:space-between;gap:14px;
-  padding:10px 12px 10px 20px;border-radius:999px;background:var(--bg);box-shadow:var(--raise);transition:box-shadow .5s var(--ease)}
+/* nav */
+.nav{position:fixed;top:clamp(12px,2vw,22px);left:50%;transform:translateX(-50%);z-index:80;width:min(var(--maxw),calc(100vw - 2*clamp(12px,3vw,28px)));
+  display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 12px 10px 20px;border-radius:999px;background:var(--bg);box-shadow:var(--raise);transition:box-shadow .5s var(--ease)}
 .nav.tuck{box-shadow:var(--raise-sm)}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--f-display);font-weight:300;font-size:clamp(15px,1.5vw,18px);letter-spacing:.28em;text-transform:uppercase;color:var(--text)}
 .brand .mark svg{width:18px;height:18px;filter:drop-shadow(0 0 6px var(--glow))}
@@ -161,46 +154,40 @@ body.has-cursor #cursor{opacity:.8}
 @media (max-width:600px){.nav{padding:8px 8px 8px 16px}.brand{font-size:14px;letter-spacing:.2em}.nav-links a{padding:8px 10px;font-size:11px;letter-spacing:.06em}.nav-links a.hide-sm{display:none}}
 
 /* ══════════════════════════════════════════════════════════════════════════
-   HERO — living background + cinematic headline
+   HERO — living background that DISSOLVES into the content (no seam)
 ══════════════════════════════════════════════════════════════════════════ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  padding:max(104px,16svh) var(--gutter) clamp(64px,11svh,110px);overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-3}
-.hero-mesh{position:absolute;inset:0;z-index:-3;
-  background:radial-gradient(38% 40% at 50% 30%,rgba(215,176,110,.18),transparent 62%),
-             radial-gradient(50% 50% at 80% 85%,rgba(154,123,67,.16),transparent 60%),
-             radial-gradient(46% 46% at 12% 78%,rgba(215,176,110,.10),transparent 60%),
-             linear-gradient(180deg,#171510,#1d1a14);animation:meshmove 16s var(--ease) infinite alternate}
+  padding:max(104px,16svh) var(--gutter) clamp(70px,12svh,120px);overflow:hidden;isolation:isolate}
+.hero-mesh{position:absolute;inset:0;z-index:-3;background:radial-gradient(38% 40% at 50% 30%,rgba(215,176,110,.18),transparent 62%),radial-gradient(50% 50% at 80% 85%,rgba(154,123,67,.16),transparent 60%),radial-gradient(46% 46% at 12% 78%,rgba(215,176,110,.10),transparent 60%),linear-gradient(180deg,#171510,#1d1a14);
+  animation:meshmove 16s var(--ease) infinite alternate;
+  -webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 96%);mask-image:linear-gradient(to bottom,#000 50%,transparent 96%)}
 @keyframes meshmove{0%{transform:scale(1)}100%{transform:scale(1.12) translateY(-2%)}}
-#gl{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.4s var(--ease)}
+#gl{position:absolute;inset:0;z-index:-2;opacity:0;transition:opacity 1.4s var(--ease);
+  -webkit-mask-image:linear-gradient(to bottom,#000 46%,transparent 92%);mask-image:linear-gradient(to bottom,#000 46%,transparent 92%)}
 #gl.on{opacity:.9}
 #dust{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.hero-glowline{position:absolute;left:50%;bottom:0;width:60%;height:1px;transform:translateX(-50%);
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5;filter:blur(.4px)}
+/* the blend: fade hero bg into the page background, killing any visible "end of hero" */
+.hero-fade{position:absolute;left:0;right:0;bottom:0;height:46svh;z-index:-1;pointer-events:none;
+  background:linear-gradient(to bottom,transparent,var(--bg) 86%)}
 
-.hero-clock{display:inline-flex;align-items:center;gap:11px;margin-bottom:30px;padding:10px 20px;border-radius:999px;background:var(--bg);box-shadow:var(--inset);
-  font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.hero-inner{position:relative;display:flex;flex-direction:column;align-items:center;will-change:transform,opacity,filter}
+.hero-clock{display:inline-flex;align-items:center;gap:11px;margin-bottom:30px;padding:10px 20px;border-radius:999px;background:var(--bg);box-shadow:var(--inset);font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
 .hero-clock .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--glow);animation:pulse 2.4s var(--ease) infinite}
 .hero-clock b{color:var(--text);font-weight:400}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(215,176,110,.5)}70%{box-shadow:0 0 0 8px rgba(215,176,110,0)}100%{box-shadow:0 0 0 0 rgba(215,176,110,0)}}
-
-.hero-title{font-family:var(--f-display);font-weight:300;line-height:.98;letter-spacing:-.02em;margin:0;
-  font-size:clamp(46px,8.4vw,128px)}
+.hero-title{font-family:var(--f-display);font-weight:300;line-height:.98;letter-spacing:-.02em;margin:0;font-size:clamp(46px,8.4vw,128px)}
 .ht-line{display:block;overflow:hidden;padding-bottom:.04em}
-.ht-line>span{display:block;transform:translateY(110%);animation:none}
+.ht-line>span{display:block;transform:translateY(110%)}
 body.ready .ht-line>span{animation:lineup 1.05s var(--ease-out) forwards}
 body.ready .ht-line:nth-child(1)>span{animation-delay:.05s}
 body.ready .ht-line:nth-child(2)>span{animation-delay:.17s}
 body.ready .ht-line:nth-child(3)>span{animation-delay:.29s}
 @keyframes lineup{to{transform:none}}
-.hero-title em{font-style:normal;background:linear-gradient(180deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;
-  text-shadow:0 0 40px rgba(215,176,110,.25)}
-.hero-sub{font-family:var(--f-body);font-weight:300;font-size:clamp(14px,1.5vw,19px);color:var(--muted);margin-top:clamp(20px,3vh,32px);
-  opacity:0;animation:none}
+.hero-title em{font-style:normal;background:linear-gradient(180deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 40px rgba(215,176,110,.25)}
+.hero-sub{font-family:var(--f-body);font-weight:300;font-size:clamp(14px,1.5vw,19px);color:var(--muted);margin-top:clamp(20px,3vh,32px);opacity:0}
 body.ready .hero-sub{animation:fadeup 1s var(--ease-out) .5s forwards}
 @keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.scroll-cue{margin-top:clamp(26px,5svh,52px);font-family:var(--f-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
-  display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0}
+.scroll-cue{position:absolute;left:50%;bottom:clamp(22px,4svh,40px);transform:translateX(-50%);font-family:var(--f-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;z-index:1}
 body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .scroll-cue .stem{width:2px;height:40px;border-radius:2px;background:var(--bg);box-shadow:var(--inset-sm);position:relative;overflow:hidden}
 .scroll-cue .stem::after{content:"";position:absolute;left:0;top:-40px;width:2px;height:40px;background:var(--accent);animation:cue 2.4s var(--ease) infinite}
@@ -208,97 +195,88 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 
 .section{padding-block:clamp(96px,15svh,170px)}
 
-/* ══════════════════════════════════════════════════════════════════════════
-   PHILOSOPHY (dash-free)
-══════════════════════════════════════════════════════════════════════════ */
+/* philosophy (dash-free) */
 .philosophy{text-align:center}
 .philosophy .stmt{font-family:var(--f-display);font-weight:300;font-size:clamp(27px,3.9vw,54px);line-height:1.4;max-width:900px;margin-inline:auto}
 .philosophy .stmt .s{display:inline}
 .philosophy .stmt b{font-weight:300;background:linear-gradient(180deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
 .philosophy .meta{margin-top:42px;font-family:var(--f-mono);font-size:clamp(10px,1vw,12px);letter-spacing:.18em;color:var(--muted)}
-.philosophy .thread{margin:48px auto 0}
-.thread{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);width:min(190px,42vw);
-  transform:scaleX(0);transition:transform 1.3s var(--ease-out)}
+.thread{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);width:min(190px,42vw);transform:scaleX(0);transition:transform 1.3s var(--ease-out)}
 .thread.in{transform:scaleX(1)}
+.philosophy .thread{margin:48px auto 0}
 
 /* ══════════════════════════════════════════════════════════════════════════
-   FOUR PRINCIPLES — scroll-animated vertical sequence
+   ADVISORY — horizontal centre-snapping carousel (scroll-driven on desktop,
+   native swipe on touch). Default CSS is native scroll-snap, so it is robust
+   even with no JS; JS upgrades desktop to a pinned, scroll-driven experience.
 ══════════════════════════════════════════════════════════════════════════ */
-.principles .head{text-align:center;margin-bottom:clamp(40px,7vh,80px)}
-.principles .head h2{font-family:var(--f-display);font-weight:300;font-size:clamp(32px,4.4vw,60px);margin:.3em 0 0}
-.p-list{position:relative;max-width:1040px;margin-inline:auto}
-/* vertical thread that fills with scroll */
-.p-spine{position:absolute;left:clamp(26px,5vw,64px);top:8px;bottom:8px;width:2px;border-radius:2px;background:var(--rule);overflow:hidden}
-.p-spine::after{content:"";position:absolute;inset:0;height:var(--fill,0%);background:linear-gradient(180deg,var(--accent-2),var(--accent));box-shadow:0 0 14px var(--glow);transition:height .15s linear}
-.principle{position:relative;display:grid;grid-template-columns:clamp(80px,12vw,150px) 1fr;gap:clamp(18px,3vw,46px);align-items:start;
-  padding:clamp(36px,6vh,72px) 0;opacity:.4;transition:opacity .6s var(--ease)}
-.principle.active{opacity:1}
-.p-num{position:relative;font-family:var(--f-display);font-weight:300;font-size:clamp(54px,8vw,118px);line-height:.8;
-  color:transparent;-webkit-text-stroke:1px var(--accent-soft);transition:-webkit-text-stroke .5s,color .5s,transform .6s var(--ease);transform:translateZ(0)}
-.principle.active .p-num{color:transparent;-webkit-text-stroke:1px var(--accent);
-  background:linear-gradient(180deg,var(--accent-2),var(--accent-soft));-webkit-background-clip:text;background-clip:text}
-.p-dot{position:absolute;left:calc(clamp(26px,5vw,64px) - 5px);top:calc(clamp(36px,6vh,72px) + 14px);width:12px;height:12px;border-radius:50%;
-  background:var(--bg);box-shadow:var(--inset-sm);z-index:1;transition:box-shadow .5s}
-.principle.active .p-dot{box-shadow:0 0 0 2px var(--accent),0 0 14px var(--glow);background:var(--accent)}
-.p-body{max-width:46ch}
-.p-tag{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;
-  padding:6px 14px;border-radius:999px;box-shadow:var(--inset-sm)}
-.p-body h3{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,3.7vw,50px);line-height:1.04;margin:0 0 .4em}
-.p-body h3 .w{display:inline-block;opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
-.principle.seen .p-body h3 .w{opacity:1;transform:none}
-.p-body p{font-family:var(--f-body);font-weight:300;font-size:clamp(14px,1.2vw,16.5px);color:var(--muted);margin:0}
-.p-rule{height:1px;background:var(--rule);margin-top:26px;transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease-out) .15s}
-.principle.seen .p-rule{transform:scaleX(1)}
-@media (max-width:640px){
-  .principle{grid-template-columns:1fr;gap:6px;padding-left:34px}
-  .p-spine{left:6px}.p-dot{left:1px}
-  .p-num{font-size:clamp(46px,16vw,72px)}
-}
+.adv{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-block:clamp(70px,10svh,120px)}
+.adv-head{text-align:center;margin-bottom:clamp(28px,4vh,52px)}
+.adv-head h2{font-family:var(--f-display);font-weight:300;font-size:clamp(32px,4.4vw,60px);margin:.3em 0 0}
+.adv-stage{position:relative;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.adv-stage::-webkit-scrollbar{display:none}
+.adv-stage.pinned{overflow:hidden;scroll-snap-type:none}
+.adv-rail{display:flex;gap:clamp(20px,3vw,40px);width:max-content;
+  padding-inline:max(var(--gutter),calc((100% - var(--card-w))/2));--card-w:min(520px,80vw)}
+.acard{flex:0 0 var(--card-w);scroll-snap-align:center;scroll-snap-stop:always;min-height:clamp(380px,56svh,520px);
+  border-radius:30px;background:var(--bg);box-shadow:var(--raise-lg);padding:clamp(28px,3.4vw,52px);
+  display:flex;flex-direction:column;justify-content:space-between;gap:22px;position:relative;overflow:hidden;
+  transform:scale(.9);opacity:.5;transition:transform .55s var(--ease),opacity .55s var(--ease)}
+.acard.active{transform:scale(1);opacity:1}
+.acard::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:4px 4px}
+.acard .num{position:absolute;right:clamp(20px,3vw,40px);top:clamp(20px,3vw,36px);font-family:var(--f-display);font-weight:300;font-size:clamp(60px,7vw,104px);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--accent-soft);opacity:.5}
+.acard.active .num{-webkit-text-stroke:1px var(--accent);background:linear-gradient(180deg,var(--accent-2),var(--accent-soft));-webkit-background-clip:text;background-clip:text;opacity:.9}
+.acard .tag{align-self:flex-start;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);padding:8px 15px;border-radius:999px;box-shadow:var(--inset-sm)}
+.acard h3{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,3.4vw,46px);line-height:1.04;margin:0;max-width:14ch}
+.acard p{font-family:var(--f-body);font-weight:300;font-size:clamp(14px,1.15vw,16.5px);color:var(--muted);margin:0;max-width:42ch}
+.adv-ui{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:clamp(28px,4vh,46px)}
+.adv-dots{display:flex;gap:10px}
+.adv-dots button{width:34px;height:34px;border-radius:50%;background:var(--bg);box-shadow:var(--raise-sm);display:grid;place-items:center}
+.adv-dots button i{width:6px;height:6px;border-radius:50%;background:var(--muted);transition:background .3s}
+.adv-dots button[aria-selected="true"]{box-shadow:var(--inset-sm)}
+.adv-dots button[aria-selected="true"] i{background:var(--accent);box-shadow:0 0 9px var(--glow)}
+.adv-arrows{display:flex;gap:12px}
+.adv-arrows button{width:52px;height:52px;border-radius:50%;background:var(--bg);box-shadow:var(--raise-sm);display:grid;place-items:center;color:var(--text);transition:box-shadow .25s var(--ease),color .25s}
+.adv-arrows button:hover{color:var(--accent)}
+.adv-arrows button:active{box-shadow:var(--inset)}
+.adv-arrows svg{width:20px;height:20px}
+.adv-arrows button[disabled]{opacity:.35;box-shadow:var(--inset-sm)}
+.adv-hint{display:block;text-align:center;margin-top:14px;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
 
-/* ══════════════════════════════════════════════════════════════════════════
-   THESIS (dash-free)
-══════════════════════════════════════════════════════════════════════════ */
+/* thesis */
 .thesis .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:start}
 .thesis .left{position:sticky;top:120px;align-self:start}
 .thesis .left h2{font-family:var(--f-display);font-weight:300;font-size:clamp(30px,4.2vw,62px);line-height:1.12;margin:0;max-width:13ch}
 .thesis .chip{display:inline-block;margin-top:26px;padding:11px 20px;border-radius:999px;background:var(--bg);box-shadow:var(--inset);font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--muted)}
 .thesis .right{display:flex;flex-direction:column;gap:clamp(22px,3.4vw,34px)}
-.panel{border-radius:24px;background:var(--bg);box-shadow:var(--raise);padding:clamp(24px,2.8vw,38px);transition:box-shadow .4s,transform .5s var(--ease)}
+.panel{border-radius:24px;background:var(--bg);box-shadow:var(--raise);padding:clamp(24px,2.8vw,38px);transition:transform .5s var(--ease)}
 .panel:hover{transform:translateY(-3px)}
 .panel p{margin:0;font-family:var(--f-body);font-weight:300;font-size:clamp(15px,1.25vw,18px);line-height:1.8;color:var(--muted)}
 .panel p b{color:var(--text);font-weight:400}
 @media (max-width:840px){.thesis .grid{grid-template-columns:1fr;gap:34px}.thesis .left{position:relative;top:auto}}
 
-/* intelligence */
+/* intelligence / engage */
 .intel{text-align:center}
 .intel h2{font-family:var(--f-display);font-weight:300;font-size:clamp(34px,5vw,72px);margin:0}
 .intel p{font-family:var(--f-body);font-weight:300;color:var(--muted);max-width:48ch;margin:22px auto 0;font-size:clamp(14px,1.2vw,17px)}
 .lock-chip{display:inline-block;margin-top:34px;padding:13px 26px;border-radius:999px;background:var(--bg);box-shadow:var(--inset);font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
-
-/* engage */
 .engage{text-align:center}
 .engage h2{font-family:var(--f-display);font-weight:300;font-size:clamp(32px,4.6vw,64px);line-height:1.1;margin:0}
 .engage p{font-family:var(--f-body);font-weight:300;color:var(--muted);max-width:500px;margin:26px auto 0;font-size:clamp(14px,1.2vw,17px)}
-.btn-mail{display:inline-flex;align-items:center;gap:12px;margin-top:42px;padding:18px 34px;border-radius:999px;background:var(--bg);box-shadow:var(--raise);
-  font-family:var(--f-mono);font-size:clamp(13px,1.3vw,15px);letter-spacing:.04em;color:var(--accent);transition:box-shadow .3s var(--ease),transform .25s var(--ease)}
+.btn-mail{display:inline-flex;align-items:center;gap:12px;margin-top:42px;padding:18px 34px;border-radius:999px;background:var(--bg);box-shadow:var(--raise);font-family:var(--f-mono);font-size:clamp(13px,1.3vw,15px);letter-spacing:.04em;color:var(--accent);transition:box-shadow .3s var(--ease),transform .25s var(--ease)}
 .btn-mail:active{box-shadow:var(--inset)}
 .btn-mail .mark svg{width:16px;height:16px}
 .engage .by{margin-top:20px;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;color:var(--muted)}
 
-/* ══════════════════════════════════════════════════════════════════════════
-   THRESHOLD — the (findable, intriguing) door to Advait Capital
-══════════════════════════════════════════════════════════════════════════ */
+/* threshold — door to Advait Capital */
 .threshold{position:relative;text-align:center;padding-block:clamp(110px,18svh,200px);overflow:hidden}
-.threshold::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:radial-gradient(40% 60% at 50% 50%,rgba(215,176,110,.08),transparent 70%)}
+.threshold::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(40% 60% at 50% 50%,rgba(215,176,110,.08),transparent 70%)}
 .threshold .thread{margin:0 auto 40px}
 .threshold .eyebrow{display:block;margin-bottom:22px}
 .th-line{font-family:var(--f-display);font-weight:300;font-size:clamp(26px,3.6vw,50px);line-height:1.3;margin:0 auto;max-width:18ch;color:var(--text)}
 .th-line em{font-style:italic;background:linear-gradient(180deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.portal-btn{position:relative;display:inline-flex;align-items:center;gap:16px;margin-top:48px;padding:20px 30px 20px 26px;border-radius:999px;background:var(--bg);
-  box-shadow:var(--raise);color:var(--text);transition:box-shadow .35s var(--ease),transform .25s var(--ease);overflow:hidden}
-.portal-btn::after{content:"";position:absolute;inset:0;border-radius:999px;box-shadow:0 0 0 1px transparent;
-  background:radial-gradient(120% 140% at 50% 120%,rgba(215,176,110,.18),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.portal-btn{position:relative;display:inline-flex;align-items:center;gap:16px;margin-top:48px;padding:20px 30px 20px 26px;border-radius:999px;background:var(--bg);box-shadow:var(--raise);color:var(--text);transition:box-shadow .35s var(--ease),transform .25s var(--ease);overflow:hidden}
+.portal-btn::after{content:"";position:absolute;inset:0;border-radius:999px;background:radial-gradient(120% 140% at 50% 120%,rgba(215,176,110,.18),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
 .portal-btn:hover::after{opacity:1}
 .portal-btn:active{box-shadow:var(--inset)}
 .portal-btn .pmark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--bg);box-shadow:var(--inset-sm);color:var(--accent)}
@@ -306,8 +284,7 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .portal-btn .pb-text{font-family:var(--f-body);font-size:clamp(13px,1.3vw,15px);letter-spacing:.06em;color:var(--text)}
 .portal-btn .pb-arrow{font-family:var(--f-mono);color:var(--accent);transition:transform .35s var(--ease)}
 .portal-btn:hover .pb-arrow{transform:translateX(5px)}
-.portal-btn .halo{position:absolute;inset:-2px;border-radius:999px;pointer-events:none;
-  box-shadow:0 0 0 1px rgba(215,176,110,.18);animation:breathe 3.4s var(--ease) infinite}
+.portal-btn .halo{position:absolute;inset:-2px;border-radius:999px;pointer-events:none;animation:breathe 3.4s var(--ease) infinite}
 @keyframes breathe{0%,100%{box-shadow:0 0 18px 0 rgba(215,176,110,.10),inset 0 0 0 1px rgba(215,176,110,.10)}50%{box-shadow:0 0 34px 4px rgba(215,176,110,.22),inset 0 0 0 1px rgba(215,176,110,.28)}}
 .th-fine{display:block;margin-top:22px;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 
@@ -317,19 +294,14 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .foot .bar .b{font-family:var(--f-display);letter-spacing:.28em;text-transform:uppercase;font-size:13px;color:var(--text)}
 .entity{margin-top:26px;max-width:780px;font-size:11.5px;line-height:1.7;color:#5C564A}
 
-/* ══════════════════════════════════════════════════════════════════════════
-   WORLD 2
-══════════════════════════════════════════════════════════════════════════ */
+/* world 2 */
 #portal{position:fixed;inset:0;z-index:9500;background:var(--bg);display:grid;place-items:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .55s var(--ease),visibility .55s var(--ease)}
 #portal.show{opacity:1;visibility:visible;pointer-events:auto}
 #portal .line{font-family:var(--f-display);font-weight:300;font-size:clamp(24px,3.4vw,46px);line-height:1.4;text-align:center;color:var(--accent-2);max-width:18ch;opacity:0;transform:translateY(12px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 #portal.reveal .line{opacity:1;transform:none}
-
 #world2{position:fixed;inset:0;z-index:9400;overflow-y:auto;overflow-x:hidden;display:none;
-  --bg:#E8E2D5;--hi:rgba(255,253,247,.92);--lo:rgba(189,180,160,.62);
-  --text:#1B1812;--muted:#6C6454;--accent:#9C7C44;--accent-2:#7E6234;--rule:rgba(27,24,18,.1);--glow:rgba(156,124,68,.4);
-  --raise:-7px -7px 18px var(--hi), 9px 9px 24px var(--lo);--raise-sm:-4px -4px 10px var(--hi), 5px 5px 14px var(--lo);
-  --inset:inset 5px 5px 13px var(--lo), inset -5px -5px 13px var(--hi);--inset-sm:inset 3px 3px 7px var(--lo), inset -3px -3px 7px var(--hi);
+  --bg:#E8E2D5;--hi:rgba(255,253,247,.92);--lo:rgba(189,180,160,.62);--text:#1B1812;--muted:#6C6454;--accent:#9C7C44;--accent-2:#7E6234;--rule:rgba(27,24,18,.1);--glow:rgba(156,124,68,.4);
+  --raise:-7px -7px 18px var(--hi), 9px 9px 24px var(--lo);--raise-sm:-4px -4px 10px var(--hi), 5px 5px 14px var(--lo);--inset:inset 5px 5px 13px var(--lo), inset -5px -5px 13px var(--hi);--inset-sm:inset 3px 3px 7px var(--lo), inset -3px -3px 7px var(--hi);
   background:var(--bg);color:var(--text)}
 #world2.open{display:block}
 .w2-wrap{max-width:1040px;margin-inline:auto;padding-inline:var(--gutter)}
@@ -354,7 +326,7 @@ body.world2-active #cursor{border-color:var(--accent-2)}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   html.js [data-reveal]{opacity:1;transform:none}
   .ht-line>span{transform:none!important}.hero-sub,.scroll-cue{opacity:1!important}
-  .p-body h3 .w{opacity:1!important;transform:none!important}
+  .acard{transform:none!important;opacity:1!important}
 }
 </style>
 </head>
@@ -362,6 +334,7 @@ body.world2-active #cursor{border-color:var(--accent-2)}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="mk" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="13" stroke="currentColor" stroke-width="1.4"/><line x1="3" y1="24" x2="45" y2="24" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="arr" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </defs></svg>
 
 <div class="ambient" aria-hidden="true"></div>
@@ -390,15 +363,17 @@ body.world2-active #cursor{border-color:var(--accent-2)}
     <div class="hero-mesh" aria-hidden="true"></div>
     <canvas id="gl" aria-hidden="true"></canvas>
     <canvas id="dust" aria-hidden="true"></canvas>
-    <span class="hero-clock" id="clock" aria-hidden="true"><span class="pulse"></span>New Delhi&nbsp;&nbsp;<b id="clockTime">··:··:··</b>&nbsp;IST</span>
-    <h1 class="hero-title" aria-label="Great assets are built, not bought.">
-      <span class="ht-line"><span>Great assets</span></span>
-      <span class="ht-line"><span>are <em>built</em>,</span></span>
-      <span class="ht-line"><span>not bought.</span></span>
-    </h1>
-    <p class="hero-sub">Independent advisory for infrastructure-aligned real estate. New Delhi.</p>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="hero-inner" id="heroInner">
+      <span class="hero-clock" aria-hidden="true"><span class="pulse"></span>New Delhi&nbsp;&nbsp;<b id="clockTime">··:··:··</b>&nbsp;IST</span>
+      <h1 class="hero-title" aria-label="Great assets are built, not bought.">
+        <span class="ht-line"><span>Great assets</span></span>
+        <span class="ht-line"><span>are <em>built</em>,</span></span>
+        <span class="ht-line"><span>not bought.</span></span>
+      </h1>
+      <p class="hero-sub">Independent advisory for infrastructure-aligned real estate. New Delhi.</p>
+    </div>
     <div class="scroll-cue" aria-hidden="true"><span>Begin</span><span class="stem"></span></div>
-    <div class="hero-glowline" aria-hidden="true"></div>
   </section>
 
   <!-- ═══ PHILOSOPHY (dash-free) ═══ -->
@@ -416,62 +391,50 @@ body.world2-active #cursor{border-color:var(--accent-2)}
     </div>
   </section>
 
-  <!-- ═══ FOUR PRINCIPLES — scroll-animated ═══ -->
-  <section class="section principles" id="advisory" aria-label="The Advisory">
-    <div class="wrap head">
+  <!-- ═══ ADVISORY — horizontal centre-snapping carousel ═══ -->
+  <section class="adv" id="advisory" aria-label="The Advisory">
+    <div class="wrap adv-head">
       <div class="eyebrow" data-reveal>The Advisory</div>
       <h2 data-reveal data-d="1">Four principles.</h2>
     </div>
-    <div class="wrap">
-      <div class="p-list" id="pList">
-        <div class="p-spine" id="pSpine" aria-hidden="true"></div>
-
-        <article class="principle" data-i="0">
-          <span class="p-dot" aria-hidden="true"></span>
-          <div class="p-num">01</div>
-          <div class="p-body">
-            <span class="p-tag">The Practice</span>
-            <h3 data-split>We structure what others only transact.</h3>
-            <p>The value of an asset is not fixed at listing. It is determined by how the entry is structured, when it is timed, and what is built around it. Advisory changes the outcome before the deal is signed.</p>
-            <div class="p-rule"></div>
-          </div>
+    <div class="adv-stage" id="advStage">
+      <div class="adv-rail" id="advRail">
+        <article class="acard" data-i="0">
+          <span class="num" aria-hidden="true">01</span>
+          <span class="tag">The Practice</span>
+          <h3>We structure what others only transact.</h3>
+          <p>The value of an asset is not fixed at listing. It is determined by how the entry is structured, when it is timed, and what is built around it. Advisory changes the outcome before the deal is signed.</p>
         </article>
-
-        <article class="principle" data-i="1">
-          <span class="p-dot" aria-hidden="true"></span>
-          <div class="p-num">02</div>
-          <div class="p-body">
-            <span class="p-tag">The Principle</span>
-            <h3 data-split>One client. One deal. No conflict.</h3>
-            <p>We do not represent both sides of a transaction. We do not work for builders while advising buyers. When we take a mandate, it is singular. That singularity is worth more than any fee.</p>
-            <div class="p-rule"></div>
-          </div>
+        <article class="acard" data-i="1">
+          <span class="num" aria-hidden="true">02</span>
+          <span class="tag">The Principle</span>
+          <h3>One client. One deal. No conflict.</h3>
+          <p>We do not represent both sides of a transaction. We do not work for builders while advising buyers. When we take a mandate, it is singular. That singularity is worth more than any fee.</p>
         </article>
-
-        <article class="principle" data-i="2">
-          <span class="p-dot" aria-hidden="true"></span>
-          <div class="p-num">03</div>
-          <div class="p-body">
-            <span class="p-tag">The Method</span>
-            <h3 data-split>We think with everything.</h3>
-            <p>Infrastructure pipelines. Policy sequencing. Capital flow direction. Historical land-use patterns. Market sentiment. Regulatory trajectory. None of these exist in isolation. Neither does the asset.</p>
-            <div class="p-rule"></div>
-          </div>
+        <article class="acard" data-i="2">
+          <span class="num" aria-hidden="true">03</span>
+          <span class="tag">The Method</span>
+          <h3>We think with everything.</h3>
+          <p>Infrastructure pipelines. Policy sequencing. Capital flow direction. Historical land-use patterns. Market sentiment. Regulatory trajectory. None of these exist in isolation. Neither does the asset.</p>
         </article>
-
-        <article class="principle" data-i="3">
-          <span class="p-dot" aria-hidden="true"></span>
-          <div class="p-num">04</div>
-          <div class="p-body">
-            <span class="p-tag">The Network</span>
-            <h3 data-split>Some opportunities are never listed.</h3>
-            <p>They are placed. By the time an asset reaches a portal, its best entry point has already passed. We work at the layer before that.</p>
-            <div class="p-rule"></div>
-          </div>
+        <article class="acard" data-i="3">
+          <span class="num" aria-hidden="true">04</span>
+          <span class="tag">The Network</span>
+          <h3>Some opportunities are never listed.</h3>
+          <p>They are placed. By the time an asset reaches a portal, its best entry point has already passed. We work at the layer before that.</p>
         </article>
-
       </div>
     </div>
+    <div class="adv-ui">
+      <div class="adv-arrows"><button id="advPrev" aria-label="Previous principle"><svg style="transform:scaleX(-1)"><use href="#arr"/></svg></button><button id="advNext" aria-label="Next principle"><svg><use href="#arr"/></svg></button></div>
+      <div class="adv-dots" id="advDots" role="tablist" aria-label="Principle index">
+        <button role="tab" aria-selected="true" aria-label="Principle 1"><i></i></button>
+        <button role="tab" aria-selected="false" aria-label="Principle 2"><i></i></button>
+        <button role="tab" aria-selected="false" aria-label="Principle 3"><i></i></button>
+        <button role="tab" aria-selected="false" aria-label="Principle 4"><i></i></button>
+      </div>
+    </div>
+    <span class="adv-hint" id="advHint" aria-hidden="true">Scroll to explore</span>
   </section>
 
   <!-- ═══ THESIS (dash-free) ═══ -->
@@ -576,14 +539,13 @@ What is shared is not the money. It is the advantage of combined intelligence.</
   </div>
 </section>
 
-<!-- self-hosted animation libraries (same-origin, deferred, progressive) -->
 <script defer src="vendor/gsap.min.js"></script>
 <script defer src="vendor/ScrollTrigger.min.js"></script>
 <script defer src="vendor/lenis.min.js"></script>
 
 <script>
 /* ══════════════════════════════════════════════════════════════════════════
-   ADVAIT — vanilla core + GSAP/Lenis enhancement. Everything degrades safely.
+   ADVAIT — vanilla core + GSAP/Lenis cinematic layer. Degrades safely.
 ══════════════════════════════════════════════════════════════════════════ */
 (function(){
   "use strict";
@@ -594,44 +556,27 @@ What is shared is not the money. It is the advantage of combined intelligence.</
 
   var yr=$("#yr");if(yr)yr.textContent=new Date().getFullYear();
 
-  /* live New Delhi clock — replaces static coordinates with something alive */
-  (function(){
-    var el=$("#clockTime");if(!el)return;
-    function tick(){
-      try{
-        var s=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date());
-        el.textContent=s;
-      }catch(e){ el.textContent=""; }
-    }
-    tick();setInterval(tick,1000);
-  })();
+  /* guaranteed hero entrance even if anything below throws */
+  setTimeout(function(){d.body.classList.add("ready");},1700);
 
-  /* preloader -> body.ready triggers hero entrance */
+  /* live New Delhi clock */
+  (function(){var el=$("#clockTime");if(!el)return;function t(){try{el.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date());}catch(e){}}t();setInterval(t,1000);})();
+
+  /* preloader -> ready */
   var pre=$("#pre"),preDone=false;
   function dropPre(){if(preDone)return;preDone=true;d.body.classList.add("ready");if(pre){pre.classList.add("done");setTimeout(function(){pre&&pre.remove();},800);}}
-  if(d.fonts&&d.fonts.ready){d.fonts.ready.then(function(){setTimeout(dropPre,reduce?0:480);});}
+  if(d.fonts&&d.fonts.ready){d.fonts.ready.then(function(){setTimeout(dropPre,reduce?0:460);});}
   setTimeout(dropPre,1300);
 
-  /* reveals — IO baseline + safety net */
+  /* reveals: IO baseline + safety net */
   var revEls=$$("[data-reveal]");
   function showAll(){revEls.forEach(function(e){e.classList.add("in");});}
   if("IntersectionObserver" in w){
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.14,rootMargin:"0px 0px -6% 0px"});
-    revEls.forEach(function(e){io.observe(e);});
-    setTimeout(showAll,2800);
+    revEls.forEach(function(e){io.observe(e);});setTimeout(showAll,2800);
   }else{showAll();}
 
-  /* split principle titles into word spans for staggered reveal */
-  $$("[data-split]").forEach(function(h){
-    var words=h.textContent.split(" ");
-    h.textContent="";
-    words.forEach(function(wd,i){
-      var s=d.createElement("span");s.className="w";s.textContent=wd;s.style.transitionDelay=(i*0.045)+"s";
-      h.appendChild(s);h.appendChild(d.createTextNode(" "));
-    });
-  });
-
-  /* cursor + magnetic buttons */
+  /* cursor + magnetic */
   if(fine&&!reduce){
     d.body.classList.add("has-cursor");
     var cur=$("#cursor"),cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
@@ -640,7 +585,7 @@ What is shared is not the money. It is the advantage of combined intelligence.</
     d.addEventListener("mouseover",function(e){if(e.target.closest("a,button"))cur&&cur.classList.add("grow");});
     d.addEventListener("mouseout",function(e){if(e.target.closest("a,button"))cur&&cur.classList.remove("grow");});
     $$("[data-magnetic]").forEach(function(b){
-      b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect();var mx=e.clientX-(r.left+r.width/2),my=e.clientY-(r.top+r.height/2);b.style.transform="translate("+mx*0.18+"px,"+my*0.28+"px)";});
+      b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+(e.clientX-(r.left+r.width/2))*0.18+"px,"+(e.clientY-(r.top+r.height/2))*0.28+"px)";});
       b.addEventListener("mouseleave",function(){b.style.transform="";});
     });
   }
@@ -654,27 +599,10 @@ What is shared is not the money. It is the advantage of combined intelligence.</
     ["advisory","thesis","intelligence","engage"].forEach(function(id){var s=d.getElementById(id);if(s)io2.observe(s);});
   }
 
-  /* anchor smooth scroll (Lenis-aware, set up below) */
+  /* anchor smooth scroll (Lenis-aware) */
   var lenis=null;
-  function scrollToEl(el){if(!el)return;if(lenis){lenis.scrollTo(el,{offset:-30});}else{el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}}
+  function scrollToEl(el){if(!el)return;if(lenis){lenis.scrollTo(el,{offset:-10});}else{el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}}
   $$('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){var id=a.getAttribute("href");if(id.length<2)return;var el=d.getElementById(id.slice(1));if(el){e.preventDefault();scrollToEl(el);}});});
-
-  /* ── FOUR PRINCIPLES: active tracking + seen reveal + spine fill ───────── */
-  (function(){
-    var list=$("#pList"),spine=$("#pSpine"),items=$$(".principle");if(!list)return;
-    if("IntersectionObserver" in w){
-      var seen=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting)en.target.classList.add("seen");});},{threshold:.32});
-      var act=new IntersectionObserver(function(es){es.forEach(function(en){en.target.classList.toggle("active",en.isIntersecting);});},{rootMargin:"-40% 0px -40% 0px"});
-      items.forEach(function(it){seen.observe(it);act.observe(it);});
-    }else{items.forEach(function(it){it.classList.add("seen","active");});}
-    function fill(){
-      if(!spine)return;
-      var r=list.getBoundingClientRect(),vh=innerHeight;
-      var p=(vh*0.55 - r.top)/(r.height);p=Math.max(0,Math.min(1,p));
-      spine.style.setProperty("--fill",(p*100)+"%");
-    }
-    fill();w.addEventListener("scroll",fill,{passive:true});w.addEventListener("resize",fill);
-  })();
 
   /* ── WORLD 2 transition ──────────────────────────────────────────────── */
   (function(){
@@ -689,102 +617,130 @@ What is shared is not the money. It is the advantage of combined intelligence.</
       },reduce?150:2000);
     }
     function exit(){world2.classList.remove("open");world2.setAttribute("aria-hidden","true");d.body.classList.remove("world2-active");}
-    if(door)door.addEventListener("click",enter);
-    if(back)back.addEventListener("click",exit);
+    if(door)door.addEventListener("click",enter);if(back)back.addEventListener("click",exit);
   })();
 
-  /* ── DUST: lightweight 2D parallax particle field ────────────────────── */
+  /* ── DUST parallax field ─────────────────────────────────────────────── */
   (function(){
-    if(reduce)return;
-    var c=$("#dust");if(!c||!c.getContext)return;var ctx=c.getContext("2d");
+    if(reduce)return;var c=$("#dust");if(!c||!c.getContext)return;var ctx=c.getContext("2d");
     var hero=$("#hero"),W,H,DPR=Math.min(devicePixelRatio||1,2),parts=[],N;
     function size(){W=hero.clientWidth;H=hero.clientHeight;c.width=W*DPR;c.height=H*DPR;c.style.width=W+"px";c.style.height=H+"px";ctx.setTransform(DPR,0,0,DPR,0,0);N=Math.min(110,Math.round(W*H/14000));build();}
-    function build(){parts=[];for(var i=0;i<N;i++){parts.push({x:Math.random()*W,y:Math.random()*H,z:Math.random()*.8+.2,r:Math.random()*1.6+.3,vy:(Math.random()*.12+.03),a:Math.random()*.4+.15});}}
+    function build(){parts=[];for(var i=0;i<N;i++)parts.push({x:Math.random()*W,y:Math.random()*H,z:Math.random()*.8+.2,r:Math.random()*1.6+.3,vy:Math.random()*.12+.03,a:Math.random()*.4+.15});}
     var mx=0,my=0,tmx=0,tmy=0,sy=0;
     hero.addEventListener("mousemove",function(e){var r=hero.getBoundingClientRect();tmx=(e.clientX-r.left)/W-.5;tmy=(e.clientY-r.top)/H-.5;},{passive:true});
     w.addEventListener("scroll",function(){sy=w.scrollY||0;},{passive:true});
     var vis=true;if("IntersectionObserver" in w){new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:0}).observe(hero);}
-    function frame(){
-      requestAnimationFrame(frame);if(!vis)return;
-      mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
-      ctx.clearRect(0,0,W,H);
-      for(var i=0;i<parts.length;i++){var p=parts[i];
-        p.y-=p.vy*p.z*1.4;if(p.y<-4)p.y=H+4;
-        var px=p.x+mx*60*p.z, py=p.y+my*40*p.z - sy*0.06*p.z;
-        var g=ctx.createRadialGradient(px,py,0,px,py,p.r*4);
-        g.addColorStop(0,"rgba(224,196,140,"+(p.a*p.z)+")");g.addColorStop(1,"rgba(224,196,140,0)");
-        ctx.fillStyle=g;ctx.beginPath();ctx.arc(px,py,p.r*4,0,6.283);ctx.fill();
-      }
-    }
+    function frame(){requestAnimationFrame(frame);if(!vis)return;mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;ctx.clearRect(0,0,W,H);
+      for(var i=0;i<parts.length;i++){var p=parts[i];p.y-=p.vy*p.z*1.4;if(p.y<-4)p.y=H+4;var px=p.x+mx*60*p.z,py=p.y+my*40*p.z-sy*0.06*p.z;var g=ctx.createRadialGradient(px,py,0,px,py,p.r*4);g.addColorStop(0,"rgba(224,196,140,"+(p.a*p.z)+")");g.addColorStop(1,"rgba(224,196,140,0)");ctx.fillStyle=g;ctx.beginPath();ctx.arc(px,py,p.r*4,0,6.283);ctx.fill();}}
     size();w.addEventListener("resize",size);requestAnimationFrame(frame);
   })();
 
-  /* ── WebGL flowing gold light (raw, no library). CSS mesh is the fallback. */
+  /* ── WebGL flowing gold light ────────────────────────────────────────── */
   (function(){
-    if(reduce)return;
-    var cv=$("#gl");if(!cv)return;
-    var gl=cv.getContext("webgl")||cv.getContext("experimental-webgl");if(!gl)return;
-    var hero=$("#hero");
+    if(reduce)return;var cv=$("#gl");if(!cv)return;var gl=cv.getContext("webgl")||cv.getContext("experimental-webgl");if(!gl)return;var hero=$("#hero");
     var vs="attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}";
     var fs="precision highp float;uniform float t;uniform vec2 r;uniform vec2 m;"+
       "float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}"+
-      "float n(vec2 x){vec2 i=floor(x),f=fract(x);f=f*f*(3.0-2.0*f);"+
-      "float a=h(i),b=h(i+vec2(1.0,0.0)),c=h(i+vec2(0.0,1.0)),dd=h(i+vec2(1.0,1.0));"+
-      "return mix(mix(a,b,f.x),mix(c,dd,f.x),f.y);}"+
+      "float n(vec2 x){vec2 i=floor(x),f=fract(x);f=f*f*(3.0-2.0*f);float a=h(i),b=h(i+vec2(1.0,0.0)),c=h(i+vec2(0.0,1.0)),dd=h(i+vec2(1.0,1.0));return mix(mix(a,b,f.x),mix(c,dd,f.x),f.y);}"+
       "float fbm(vec2 x){float v=0.0,a=0.5;for(int i=0;i<5;i++){v+=a*n(x);x*=2.02;a*=0.5;}return v;}"+
-      "void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv;p.x*=r.x/r.y;float tt=t*0.035;"+
-      "vec2 q=vec2(fbm(p*2.2+tt),fbm(p*2.2-tt+5.0));"+
-      "float f=fbm(p*2.6+q*1.7+vec2(tt,-tt));f=smoothstep(0.28,1.05,f);"+
-      "vec3 dark=vec3(0.075,0.068,0.055);vec3 gold=vec3(0.86,0.66,0.36);"+
-      "vec3 col=mix(dark,gold,f*0.62);"+
-      "float rad=1.0-smoothstep(0.0,0.92,distance(uv,vec2(0.5,0.62)));col*=mix(0.42,1.18,rad);"+
-      "float ml=1.0-smoothstep(0.0,0.45,distance(uv,m));col+=gold*ml*0.10;"+
-      "gl_FragColor=vec4(col,1.0);}";
-    function sh(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))return null;return s;}
+      "void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv;p.x*=r.x/r.y;float tt=t*0.035;vec2 q=vec2(fbm(p*2.2+tt),fbm(p*2.2-tt+5.0));float f=fbm(p*2.6+q*1.7+vec2(tt,-tt));f=smoothstep(0.28,1.05,f);vec3 dark=vec3(0.075,0.068,0.055);vec3 gold=vec3(0.86,0.66,0.36);vec3 col=mix(dark,gold,f*0.62);float rad=1.0-smoothstep(0.0,0.92,distance(uv,vec2(0.5,0.62)));col*=mix(0.42,1.18,rad);float ml=1.0-smoothstep(0.0,0.45,distance(uv,m));col+=gold*ml*0.10;gl_FragColor=vec4(col,1.0);}";
+    function sh(ty,src){var s=gl.createShader(ty);gl.shaderSource(s,src);gl.compileShader(s);return gl.getShaderParameter(s,gl.COMPILE_STATUS)?s:null;}
     var v=sh(gl.VERTEX_SHADER,vs),f=sh(gl.FRAGMENT_SHADER,fs);if(!v||!f)return;
-    var prog=gl.createProgram();gl.attachShader(prog,v);gl.attachShader(prog,f);gl.linkProgram(prog);
-    if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;
-    gl.useProgram(prog);
-    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
-    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    var prog=gl.createProgram();gl.attachShader(prog,v);gl.attachShader(prog,f);gl.linkProgram(prog);if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;gl.useProgram(prog);
+    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
     var loc=gl.getAttribLocation(prog,"p");gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
     var uT=gl.getUniformLocation(prog,"t"),uR=gl.getUniformLocation(prog,"r"),uM=gl.getUniformLocation(prog,"m");
-    var DPR=Math.min(devicePixelRatio||1,1.5),mxv=0.5,myv=0.4,tmx=0.5,tmy=0.4;
+    var DPR=Math.min(devicePixelRatio||1,1.5),mxv=.5,myv=.4,tmx=.5,tmy=.4;
     function size(){var W=hero.clientWidth,Hh=hero.clientHeight;cv.width=W*DPR;cv.height=Hh*DPR;cv.style.width=W+"px";cv.style.height=Hh+"px";gl.viewport(0,0,cv.width,cv.height);}
     hero.addEventListener("mousemove",function(e){var r=hero.getBoundingClientRect();tmx=(e.clientX-r.left)/hero.clientWidth;tmy=1.0-(e.clientY-r.top)/hero.clientHeight;},{passive:true});
-    size();w.addEventListener("resize",size);
-    var vis=true;if("IntersectionObserver" in w){new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:0}).observe(hero);}
+    size();w.addEventListener("resize",size);var vis=true;if("IntersectionObserver" in w){new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:0}).observe(hero);}
     cv.classList.add("on");var t0=performance.now();
-    (function render(now){requestAnimationFrame(render);if(!vis)return;mxv+=(tmx-mxv)*.04;myv+=(tmy-myv)*.04;
-      gl.uniform1f(uT,(now-t0)*0.001);gl.uniform2f(uR,cv.width,cv.height);gl.uniform2f(uM,mxv,myv);
-      gl.drawArrays(gl.TRIANGLES,0,3);})(t0);
+    (function render(now){requestAnimationFrame(render);if(!vis)return;mxv+=(tmx-mxv)*.04;myv+=(tmy-myv)*.04;gl.uniform1f(uT,(now-t0)*0.001);gl.uniform2f(uR,cv.width,cv.height);gl.uniform2f(uM,mxv,myv);gl.drawArrays(gl.TRIANGLES,0,3);})(t0);
   })();
 
-  /* ── enhancement layer: Lenis smooth scroll + GSAP parallax (after libs) ── */
+  /* ══════════════════════════════════════════════════════════════════════
+     CAROUSEL — centre-snap on all devices. Desktop (fine pointer) gets a
+     GSAP pinned, scroll-driven experience; touch keeps native swipe-snap.
+     Active-card painting + dots + arrows work in both modes.
+  ══════════════════════════════════════════════════════════════════════ */
+  var carousel=(function(){
+    var stage=$("#advStage"),rail=$("#advRail"),cards=$$(".acard",rail),dots=$$("#advDots button"),prev=$("#advPrev"),next=$("#advNext"),hint=$("#advHint");
+    var mode="native",cur=0,pinST=null,points=[];
+    function paintActive(idx){cur=idx;cards.forEach(function(c,j){c.classList.toggle("active",j===idx);});dots.forEach(function(dt,j){dt.setAttribute("aria-selected",j===idx?"true":"false");});if(prev)prev.disabled=(idx===0);if(next)next.disabled=(idx===cards.length-1);}
+    function nearestToCenter(){var mid=innerWidth/2,best=0,bd=1e9;cards.forEach(function(c,j){var r=c.getBoundingClientRect();var dd=Math.abs((r.left+r.width/2)-mid);if(dd<bd){bd=dd;best=j;}});return best;}
+    /* native mode */
+    function nativeInit(){
+      var raf;stage.addEventListener("scroll",function(){if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){paintActive(nearestToCenter());});},{passive:true});
+      function toCard(j,instant){j=Math.max(0,Math.min(cards.length-1,j));var left=cards[j].offsetLeft+cards[j].offsetWidth/2-stage.clientWidth/2;stage.scrollTo({left:left,behavior:(instant||reduce)?"auto":"smooth"});}
+      this_to=toCard;
+      if(prev)prev.addEventListener("click",function(){toCard(cur-1);});
+      if(next)next.addEventListener("click",function(){toCard(cur+1);});
+      dots.forEach(function(dt,j){dt.addEventListener("click",function(){toCard(j);});});
+      requestAnimationFrame(function(){toCard(0,true);paintActive(0);});
+    }
+    var this_to=null;
+    /* pinned mode (GSAP) */
+    function pinnedInit(){
+      stage.classList.add("pinned");if(hint)hint.textContent="Scroll to move through";
+      var section=$("#advisory");
+      function dist(){return Math.max(1,rail.scrollWidth-stage.clientWidth);}
+      function calcPoints(){points=cards.map(function(c){var center=c.offsetLeft+c.offsetWidth/2;var x=stage.clientWidth/2-center;return Math.max(0,Math.min(1,(-x)/dist()));});}
+      calcPoints();
+      var tween=w.gsap.to(rail,{x:function(){return -dist();},ease:"none"});
+      pinST=w.ScrollTrigger.create({
+        trigger:section,start:"top top",end:function(){return "+="+dist();},pin:true,scrub:.6,animation:tween,invalidateOnRefresh:true,
+        snap:{snapTo:function(v){var best=points[0];points.forEach(function(p){if(Math.abs(p-v)<Math.abs(best-v))best=p;});return best;},duration:{min:.15,max:.5},ease:"power1.inOut"},
+        onRefresh:calcPoints,
+        onUpdate:function(self){
+          /* nearest snap point -> active card */
+          var v=self.progress,bi=0,bd=1e9;points.forEach(function(p,i){var dd=Math.abs(p-v);if(dd<bd){bd=dd;bi=i;}});
+          if(bi!==cur)paintActive(bi);
+        }
+      });
+      function goTo(j){j=Math.max(0,Math.min(cards.length-1,j));var target=pinST.start+(pinST.end-pinST.start)*points[j];if(lenis){lenis.scrollTo(target,{duration:1.0});}else{w.scrollTo({top:target,behavior:reduce?"auto":"smooth"});}}
+      this_to=goTo;
+      if(prev)prev.addEventListener("click",function(){goTo(cur-1);});
+      if(next)next.addEventListener("click",function(){goTo(cur+1);});
+      dots.forEach(function(dt,j){dt.addEventListener("click",function(){goTo(j);});});
+      paintActive(0);
+    }
+    return {nativeInit:nativeInit,pinnedInit:pinnedInit,paint:function(){paintActive(0);}};
+  })();
+
+  /* ── enhancement layer (after libs load) ─────────────────────────────── */
   w.addEventListener("load",function(){
     try{
       if(w.Lenis&&!reduce&&fine){
-        lenis=new w.Lenis({duration:1.25,lerp:.085,smoothWheel:true});
+        lenis=new w.Lenis({duration:1.2,lerp:.09,smoothWheel:true});
         (function raf(t){lenis.raf(t);requestAnimationFrame(raf);})();
-        if(w.gsap&&w.ScrollTrigger){lenis.on("scroll",w.ScrollTrigger.update);}
+        if(w.gsap&&w.ScrollTrigger)lenis.on("scroll",w.ScrollTrigger.update);
       }
     }catch(e){}
+    var usePinned=false;
     try{
       if(w.gsap&&w.ScrollTrigger&&!reduce){
         w.gsap.registerPlugin(w.ScrollTrigger);
-        /* hero depth parallax on scroll */
-        w.gsap.to("#dust",{yPercent:18,ease:"none",scrollTrigger:{trigger:"#hero",start:"top top",end:"bottom top",scrub:true}});
-        w.gsap.to(".hero-title",{yPercent:-14,opacity:.0,ease:"none",scrollTrigger:{trigger:"#hero",start:"top top",end:"bottom top",scrub:true}});
-        w.gsap.to(".hero-mesh",{scale:1.18,ease:"none",scrollTrigger:{trigger:"#hero",start:"top top",end:"bottom top",scrub:true}});
-        /* gentle parallax lift on thesis panels */
-        $$(".panel").forEach(function(p,i){w.gsap.from(p,{y:40,ease:"none",scrollTrigger:{trigger:p,start:"top 92%",end:"top 50%",scrub:true}});});
+        w.ScrollTrigger.config({ignoreMobileResize:true});
+        /* hero dissolves into the content (no seam) */
+        w.gsap.timeline({scrollTrigger:{trigger:"#hero",start:"top top",end:"bottom top",scrub:true}})
+          .to("#heroInner",{yPercent:-10,scale:1.08,filter:"blur(9px)",opacity:0,ease:"none"},0)
+          .to("#gl",{opacity:0,ease:"none"},0)
+          .to(".hero-mesh",{opacity:.15,ease:"none"},0);
+        /* cinematic: each section expands gently into view */
+        $$(".philosophy .stmt, .thesis .left h2, .intel h2, .engage h2, .threshold .th-line").forEach(function(el){
+          w.gsap.fromTo(el,{scale:.92,y:46},{scale:1,y:0,ease:"none",scrollTrigger:{trigger:el,start:"top 92%",end:"top 52%",scrub:true}});
+        });
+        /* thesis panels parallax */
+        $$(".panel").forEach(function(p){w.gsap.fromTo(p,{y:46},{y:0,ease:"none",scrollTrigger:{trigger:p,start:"top 95%",end:"top 60%",scrub:true}});});
+        usePinned = fine && w.matchMedia("(min-width:768px)").matches;
       }
     }catch(e){}
+    try{ usePinned ? carousel.pinnedInit() : carousel.nativeInit(); }catch(e){ try{carousel.nativeInit();}catch(_){} }
+    try{ if(w.ScrollTrigger)setTimeout(function(){w.ScrollTrigger.refresh();},300); }catch(e){}
   });
 
 })();
 </script>
-<!-- guaranteed fallback: hero entrance never stays hidden even if the main script errors -->
-<script>setTimeout(function(){document.body.classList.add('ready');},1700);</script>
+<script>setTimeout(function(){document.body.classList.add('ready');},1800);</script>
 </body>
 </html>
