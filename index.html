@@ -41,8 +41,8 @@
   "alternateName": "Advait",
   "url": "https://advaitconsultancy.in/",
   "description": "Advait Consultancy is an independent real estate advisory firm in New Delhi. We advise investors and developers on infrastructure-aligned real estate across Delhi NCR and India's emerging corridors, including the Jewar aerotropolis and YEIDA zone. We work on a single-client mandate and never represent both sides of a transaction.",
-  "areaServed": ["Delhi NCR", "New Delhi", "Gurugram", "Haryana", "YEIDA corridor", "India"],
-  "serviceType": ["Real Estate Advisory", "Investment Due Diligence", "Deal Structuring", "Infrastructure Investment Consulting"],
+  "areaServed": ["Delhi NCR", "Gurugram", "YEIDA corridor", "Noida", "India"],
+  "serviceType": ["Real Estate Advisory", "Due Diligence", "Deal Structuring", "Infrastructure Investment Advisory"],
   "knowsAbout": ["Infrastructure-aligned real estate", "Land-use policy", "Capital flows", "YEIDA corridor", "Noida International Airport", "Delhi NCR real estate"],
   "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" },
   "email": "advisory@advaitconsultancy.in",
@@ -54,10 +54,10 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What does Advait Consultancy do?","acceptedAnswer":{"@type":"Answer","text":"Advait Consultancy is an independent real estate advisory firm in New Delhi. We advise clients on infrastructure-aligned real estate investments across Delhi NCR and India's emerging corridors, including the YEIDA aerotropolis zone. We work on a single-mandate basis and never represent both sides of a transaction."}},
-    {"@type":"Question","name":"Is Advait Consultancy a property broker?","acceptedAnswer":{"@type":"Answer","text":"No. Advait Consultancy is an advisory firm that charges professional fees for counsel, due diligence, and deal structuring. We do not earn commissions from builders or developers."}},
-    {"@type":"Question","name":"What areas does Advait Consultancy cover?","acceptedAnswer":{"@type":"Answer","text":"Delhi NCR, Gurugram, Haryana, the YEIDA corridor, and infrastructure-adjacent corridors across India."}},
-    {"@type":"Question","name":"How do I engage Advait Consultancy?","acceptedAnswer":{"@type":"Answer","text":"We operate by appointment and mandate. Contact us at advisory@advaitconsultancy.in."}}
+    {"@type":"Question","name":"What does Advait Consultancy do?","acceptedAnswer":{"@type":"Answer","text":"Advait Consultancy is a New Delhi-based independent real estate advisory firm specialising in infrastructure-aligned investments in India. We provide fee-based advisory, due diligence, and deal-structuring services to investors and developers across Delhi NCR, Gurugram, and the YEIDA corridor adjacent to the upcoming Noida International Airport at Jewar. We work on single-client mandates and do not represent both parties in any transaction."}},
+    {"@type":"Question","name":"Is Advait a broker?","acceptedAnswer":{"@type":"Answer","text":"No. Advait Consultancy is a fee-based, conflict-free advisory firm. We are paid for counsel, due diligence, and deal structuring, and we do not earn commissions from builders or developers. We work on a single-client mandate and never represent both sides of a transaction."}},
+    {"@type":"Question","name":"What areas does Advait Consultancy cover?","acceptedAnswer":{"@type":"Answer","text":"Delhi NCR, Gurugram, and the YEIDA / Jewar corridor adjacent to the upcoming Noida International Airport, along with infrastructure-aligned corridors across India."}},
+    {"@type":"Question","name":"How do I engage Advait Consultancy?","acceptedAnswer":{"@type":"Answer","text":"We operate by mandate. Write to advisory@advaitconsultancy.in."}}
   ]
 }
 </script>
@@ -243,6 +243,14 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .adv-arrows button[disabled]{opacity:.35;box-shadow:var(--inset-sm)}
 .adv-hint{display:block;text-align:center;margin-top:14px;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
 
+/* proof — one restrained, anonymized mandate line */
+.proof{text-align:center}
+.proof .thread{margin:0 auto 32px}
+.proof .eyebrow{display:block;margin-bottom:22px}
+.proof p{font-family:var(--f-display);font-weight:300;font-style:italic;font-size:clamp(19px,2.3vw,30px);line-height:1.5;max-width:34ch;margin:0 auto;color:var(--text)}
+.proof p em{font-style:normal;color:var(--accent)}
+.proof .fine{display:block;margin-top:24px;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+
 /* thesis */
 .thesis .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:start}
 .thesis .left{position:sticky;top:120px;align-self:start}
@@ -260,6 +268,17 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .intel h2{font-family:var(--f-display);font-weight:300;font-size:clamp(28px,3.6vw,50px);margin:0}
 .intel p{font-family:var(--f-body);font-weight:300;color:var(--muted);max-width:46ch;margin:22px auto 0;font-size:clamp(14.5px,1.05vw,16px);line-height:1.78}
 .lock-chip{display:inline-block;margin-top:34px;padding:13px 26px;border-radius:999px;background:var(--bg);box-shadow:var(--inset);font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
+
+/* quiet private-intelligence capture */
+.capture{margin:34px auto 0;max-width:460px}
+.cap-label{display:block;font-family:var(--f-mono);font-size:clamp(10.5px,1vw,12px);letter-spacing:.1em;color:var(--muted);margin-bottom:18px;line-height:1.7}
+.cap-row{display:flex;gap:10px;align-items:center;padding:7px 7px 7px 22px;border-radius:999px;background:var(--bg);box-shadow:var(--inset)}
+.cap-input{flex:1 1 auto;min-width:0;background:none;border:0;color:var(--text);font-family:var(--f-body);font-weight:300;font-size:15px;padding:11px 0;outline:none}
+.cap-input::placeholder{color:var(--faint)}
+.cap-input:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+.cap-btn{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--bg);box-shadow:var(--raise-sm);color:var(--accent);font-family:var(--f-mono);font-size:18px;display:grid;place-items:center;transition:box-shadow .25s var(--ease),transform .25s var(--ease)}
+.cap-btn:active{box-shadow:var(--inset)}
+.cap-done{margin:0;font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;color:var(--accent)}
 .engage{text-align:center}
 .engage h2{font-family:var(--f-display);font-weight:300;font-size:clamp(27px,3.4vw,46px);line-height:1.14;margin:0}
 .engage p{font-family:var(--f-body);font-weight:300;color:var(--muted);max-width:480px;margin:26px auto 0;font-size:clamp(14.5px,1.05vw,16px);line-height:1.78}
@@ -437,6 +456,17 @@ body.world2-active #cursor{border-color:var(--accent-2)}
     <span class="adv-hint" id="advHint" aria-hidden="true">Scroll to explore</span>
   </section>
 
+  <!-- ═══ PROOF — one anonymized mandate, understated ═══ -->
+  <section class="section proof" id="proof" aria-label="Recent mandate">
+    <div class="wrap">
+      <div class="thread" data-reveal></div>
+      <span class="eyebrow" data-reveal data-d="1">Recent mandate</span>
+      <!-- Founder: replace [X] and the specifics with one real anonymized example. -->
+      <p data-reveal data-d="2">A stalled corridor parcel, repositioned and <em>exited within [X] months</em> at a structure the open market had not seen.</p>
+      <span class="fine" data-reveal data-d="3">Details on request, under mandate.</span>
+    </div>
+  </section>
+
   <!-- ═══ THESIS (dash-free) ═══ -->
   <section class="section thesis" id="thesis" aria-label="The Thesis">
     <div class="wrap grid">
@@ -457,7 +487,16 @@ body.world2-active #cursor{border-color:var(--accent-2)}
     <div class="wrap">
       <h2 data-reveal>Thinking, published.</h2>
       <p data-reveal data-d="1">Research on infrastructure cycles, capital flows, and corridor development, available to mandated clients.</p>
-      <div class="lock-chip" data-reveal data-d="2">[ Access opens with engagement ]</div>
+      <!-- Founder: set data-endpoint to your form/inbox handler (e.g. Formspree) to capture leads server-side.
+           With no endpoint, submit opens a pre-addressed mail draft to advisory@ as a fallback. -->
+      <form class="capture" id="captureNotes" data-reveal data-d="2" data-endpoint="" novalidate>
+        <label class="cap-label" for="capEmail">Corridor notes — occasional, for those who follow the same map.</label>
+        <div class="cap-row" id="capRow">
+          <input class="cap-input" id="capEmail" type="email" name="email" inputmode="email" autocomplete="email" spellcheck="false" required placeholder="you@example.com" aria-label="Email address to receive Advait corridor notes" />
+          <button class="cap-btn" type="submit" aria-label="Submit your email to receive corridor notes">→</button>
+        </div>
+        <p class="cap-done" id="capDone" role="status" aria-live="polite" hidden>Noted.</p>
+      </form>
     </div>
   </section>
 
@@ -524,9 +563,9 @@ India's infrastructure buildout is real. The question is only whose capital buil
     <section class="sec w2-3">
       <div class="w2-card" data-reveal>
         <h2>How it works.</h2>
-        <p class="w2-body">Each deployment is ring-fenced. Ownership is proportional, documented, and legally enforceable. This is not a fund, and it is not a pool of trust. It is a structure where your position is yours, independent of every other member's position.
+        <p class="w2-body">A structure where intent, not just capital, is what is shared.
 
-What is shared is not the money. It is the advantage of combined intelligence.</p>
+The mechanics are discussed only with those who reach out.</p>
       </div>
     </section>
     <section class="sec w2-4 w2-center">
@@ -559,8 +598,17 @@ What is shared is not the money. It is the advantage of combined intelligence.</
   /* guaranteed hero entrance even if anything below throws */
   setTimeout(function(){d.body.classList.add("ready");},1700);
 
-  /* live New Delhi clock */
-  (function(){var el=$("#clockTime");if(!el)return;function t(){try{el.textContent=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date());}catch(e){}}t();setInterval(t,1000);})();
+  /* live New Delhi (IST) clock — HH:MM:SS, real time on load, never dashes */
+  (function(){
+    var el=$("#clockTime");if(!el)return;
+    function t(){
+      var s;
+      try{s=new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});}
+      catch(e){s=new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});}
+      el.textContent=s;
+    }
+    t();setInterval(t,1000);
+  })();
 
   /* preloader -> ready */
   var pre=$("#pre"),preDone=false;
@@ -603,6 +651,30 @@ What is shared is not the money. It is the advantage of combined intelligence.</
   var lenis=null;
   function scrollToEl(el){if(!el)return;if(lenis){lenis.scrollTo(el,{offset:-10});}else{el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}}
   $$('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){var id=a.getAttribute("href");if(id.length<2)return;var el=d.getElementById(id.slice(1));if(el){e.preventDefault();scrollToEl(el);}});});
+
+  /* ── corridor-notes capture (private intelligence orbit) ─────────────── */
+  (function(){
+    var form=$("#captureNotes");if(!form)return;
+    var input=$("#capEmail"),row=$("#capRow"),done=$("#capDone"),label=$(".cap-label",form);
+    var re=/^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      var v=(input&&input.value||"").trim();
+      if(!re.test(v)){if(input){input.focus();}return;}
+      /* store a copy locally so we never re-prompt the same visitor */
+      try{var k="advait.corridor-notes",a=JSON.parse(localStorage.getItem(k)||"[]");a.push({e:v,t:Date.now()});localStorage.setItem(k,JSON.stringify(a));}catch(_){}
+      /* forward: configured endpoint first, mail-draft fallback otherwise */
+      var endpoint=form.getAttribute("data-endpoint");
+      if(endpoint){
+        try{fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({email:v})}).catch(function(){});}catch(_){}
+      }else{
+        try{w.location.href="mailto:advisory@advaitconsultancy.in?subject="+encodeURIComponent("Corridor notes")+"&body="+encodeURIComponent("Please add this address to corridor notes: "+v);}catch(_){}
+      }
+      if(label)label.style.display="none";
+      if(row)row.style.display="none";
+      if(done)done.hidden=false;
+    });
+  })();
 
   /* ── WORLD 2 transition ──────────────────────────────────────────────── */
   (function(){
