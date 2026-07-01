@@ -37,16 +37,31 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "additionalType": "Real Estate Advisory",
   "name": "Advait Consultancy",
   "alternateName": "Advait",
   "url": "https://advaitconsultancy.in/",
-  "description": "Advait Consultancy is an independent real estate advisory firm in New Delhi. We advise investors and developers on infrastructure-aligned real estate across Delhi NCR and India's emerging corridors, including the Jewar aerotropolis and YEIDA zone. We work on a single-client mandate and never represent both sides of a transaction.",
-  "areaServed": ["Delhi NCR", "New Delhi", "Gurugram", "Noida", "Greater Noida", "Faridabad", "Yamuna Expressway", "Dwarka Expressway", "YEIDA corridor", "India"],
+  "description": "Advait Consultancy is an independent Delhi NCR real estate advisory firm. We advise investors and developers on infrastructure-aligned real estate across Delhi NCR and India's emerging corridors, including the Jewar aerotropolis and YEIDA zone. We work on a single-client mandate and never represent both sides of a transaction.",
+  "areaServed": ["New Delhi", "Gurugram", "Noida", "Greater Noida", "Faridabad", "Sohna", "Dwarka Expressway corridor", "Yamuna Expressway corridor", "YEIDA corridor", "Delhi NCR", "India"],
   "serviceType": ["Real Estate Advisory", "Due Diligence", "Deal Structuring", "Infrastructure Investment Advisory", "Land Acquisition Advisory", "Portfolio Strategy"],
-  "knowsAbout": ["Infrastructure-aligned real estate", "Land-use policy", "Capital flows", "YEIDA corridor", "Noida International Airport", "Delhi NCR real estate"],
+  "knowsAbout": ["Infrastructure-aligned real estate", "Land-use policy", "Capital flows", "YEIDA corridor", "Noida International Airport", "Dwarka Expressway", "Delhi NCR real estate"],
   "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" },
   "email": "advisory@advaitconsultancy.in",
   "priceRange": "$$$$"
+}
+</script>
+<!-- TODO: Add LinkedIn Company Page and Google Business Profile URLs to Organization.sameAs once live. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Advait Consultancy",
+  "alternateName": "Advait",
+  "url": "https://advaitconsultancy.in/",
+  "description": "Independent, infrastructure-aligned Delhi NCR real estate advisory. Single-client mandate, fee-based counsel.",
+  "email": "advisory@advaitconsultancy.in",
+  "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN" },
+  "sameAs": []
 }
 </script>
 <script type="application/ld+json">
@@ -54,10 +69,11 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What does Advait Consultancy do?","acceptedAnswer":{"@type":"Answer","text":"Advait Consultancy is a New Delhi-based independent real estate advisory firm specialising in infrastructure-aligned investments in India. We provide fee-based advisory, due diligence, and deal-structuring services to investors and developers across Delhi NCR and India's emerging growth corridors. We work on single-client mandates and do not represent both parties in any transaction."}},
-    {"@type":"Question","name":"Is Advait a broker?","acceptedAnswer":{"@type":"Answer","text":"No. Advait Consultancy is a fee-based, conflict-free advisory firm. We are paid for counsel, due diligence, and deal structuring, and we do not earn commissions from builders or developers. We work on a single-client mandate and never represent both sides of a transaction."}},
-    {"@type":"Question","name":"What areas does Advait Consultancy cover?","acceptedAnswer":{"@type":"Answer","text":"Delhi NCR — including Gurugram, Noida, Greater Noida, Faridabad, and the Yamuna and Dwarka Expressway corridors — along with infrastructure-aligned growth corridors across India."}},
-    {"@type":"Question","name":"How do I engage Advait Consultancy?","acceptedAnswer":{"@type":"Answer","text":"We operate by mandate. Write to advisory@advaitconsultancy.in."}}
+    {"@type":"Question","name":"What is infrastructure-aligned real estate advisory?","acceptedAnswer":{"@type":"Answer","text":"It is the practice of reading real estate through the infrastructure moving toward it — expressways, transit, airports, and the policy that sequences them. In India's corridors, value is set by what is built around an asset and when. We advise on the entry before that value is visible to the market."}},
+    {"@type":"Question","name":"How is Advait Consultancy different from a broker?","acceptedAnswer":{"@type":"Answer","text":"A broker is paid to close a transaction and often represents both sides of it. Advait Consultancy is paid for counsel and takes a single-client mandate on one side only. We are not compensated by builders or developers, and we never represent both parties to a deal."}},
+    {"@type":"Question","name":"What does \"single-client mandate\" mean?","acceptedAnswer":{"@type":"Answer","text":"We work for one client, on one deal, with no competing interest on the other side. That singularity is the point. It is what keeps the counsel independent and the alignment complete."}},
+    {"@type":"Question","name":"Which markets across Delhi NCR does Advait Consultancy work in?","acceptedAnswer":{"@type":"Answer","text":"New Delhi, Gurugram, Noida, Greater Noida, Faridabad and Sohna, along the Dwarka Expressway and the Yamuna Expressway toward Jewar. We work wherever infrastructure is moving ahead of the market across Delhi NCR."}},
+    {"@type":"Question","name":"What is Advait Capital?","acceptedAnswer":{"@type":"Answer","text":"Advait Capital is a closed circle beyond the advisory practice, for a deliberately small number of aligned investors. It is entered by recognition, not application. Its workings are discussed only with those who reach out."}}
   ]
 }
 </script>
@@ -243,6 +259,18 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .adv-arrows button[disabled]{opacity:.35;box-shadow:var(--inset-sm)}
 .adv-hint{display:block;text-align:center;margin-top:14px;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
 
+/* understated FAQ at the foot of the advisory section */
+.faq{max-width:760px;margin:clamp(56px,9vh,110px) auto 0}
+.faq .eyebrow{display:block;text-align:center;margin-bottom:clamp(20px,3vh,34px)}
+.faq details{border-radius:18px;background:var(--bg);box-shadow:var(--inset-sm);padding:4px 6px;margin-bottom:14px;transition:box-shadow .4s var(--ease)}
+.faq details[open]{box-shadow:var(--raise-sm)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 22px;font-family:var(--f-display);font-weight:300;font-size:clamp(17px,1.6vw,22px);line-height:1.3;color:var(--text)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q-mark{flex:0 0 auto;font-family:var(--f-mono);font-size:18px;color:var(--accent);transition:transform .4s var(--ease)}
+.faq details[open] summary .q-mark{transform:rotate(45deg)}
+.faq .ans{padding:0 22px 20px;margin:0;font-family:var(--f-body);font-weight:300;font-size:clamp(14px,1.02vw,15.5px);line-height:1.78;color:var(--muted);max-width:60ch}
+
 /* proof — one restrained, anonymized mandate line */
 .proof{text-align:center}
 .proof .thread{margin:0 auto 32px}
@@ -268,6 +296,10 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .intel h2{font-family:var(--f-display);font-weight:300;font-size:clamp(28px,3.6vw,50px);margin:0}
 .intel p{font-family:var(--f-body);font-weight:300;color:var(--muted);max-width:46ch;margin:22px auto 0;font-size:clamp(14.5px,1.05vw,16px);line-height:1.78}
 .lock-chip{display:inline-block;margin-top:34px;padding:13px 26px;border-radius:999px;background:var(--bg);box-shadow:var(--inset);font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
+.notes-link{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:14px 28px;border-radius:999px;background:var(--bg);box-shadow:var(--raise-sm);font-family:var(--f-mono);font-size:clamp(12px,1.2vw,13.5px);letter-spacing:.08em;color:var(--accent);transition:box-shadow .3s var(--ease),transform .25s var(--ease)}
+.notes-link span{transition:transform .35s var(--ease)}
+.notes-link:hover span{transform:translateX(5px)}
+.notes-link:active{box-shadow:var(--inset)}
 
 /* quiet private-intelligence capture */
 .capture{margin:34px auto 0;max-width:460px}
@@ -390,7 +422,7 @@ body.world2-active #cursor{border-color:var(--accent-2)}
         <span class="ht-line"><span>are <em>built</em>,</span></span>
         <span class="ht-line"><span>not bought.</span></span>
       </h1>
-      <p class="hero-sub">Independent advisory for infrastructure-aligned real estate. New Delhi.</p>
+      <p class="hero-sub">Independent advisory for infrastructure-aligned real estate. Gurugram to Greater Noida, the Dwarka Expressway to the Yamuna corridor.</p>
     </div>
     <div class="scroll-cue" aria-hidden="true"><span>Begin</span><span class="stem"></span></div>
   </section>
@@ -434,7 +466,7 @@ body.world2-active #cursor{border-color:var(--accent-2)}
           <span class="num" aria-hidden="true">03</span>
           <span class="tag">The Method</span>
           <h3>We think with everything.</h3>
-          <p>Infrastructure pipelines. Policy sequencing. Capital flow direction. Historical land-use patterns. Market sentiment. Regulatory trajectory. None of these exist in isolation. Neither does the asset.</p>
+          <p>Infrastructure pipelines. Policy sequencing. Capital flow direction. Historical land-use patterns. Market sentiment. Regulatory trajectory. Across Gurugram, Noida, and the expressway corridors, none of these exist in isolation. Neither does the asset.</p>
         </article>
         <article class="acard" data-i="3">
           <span class="num" aria-hidden="true">04</span>
@@ -454,6 +486,33 @@ body.world2-active #cursor{border-color:var(--accent-2)}
       </div>
     </div>
     <span class="adv-hint" id="advHint" aria-hidden="true">Scroll to explore</span>
+
+    <!-- understated FAQ — mirrors the FAQPage schema in <head> -->
+    <div class="wrap">
+      <section class="faq" id="faq" aria-label="Questions">
+        <span class="eyebrow" data-reveal>Questions, plainly answered</span>
+        <details data-reveal>
+          <summary>What is infrastructure-aligned real estate advisory?<span class="q-mark" aria-hidden="true">+</span></summary>
+          <p class="ans">It is the practice of reading real estate through the infrastructure moving toward it — expressways, transit, airports, and the policy that sequences them. In India's corridors, value is set by what is built around an asset and when. We advise on the entry before that value is visible to the market.</p>
+        </details>
+        <details data-reveal>
+          <summary>How is Advait Consultancy different from a broker?<span class="q-mark" aria-hidden="true">+</span></summary>
+          <p class="ans">A broker is paid to close a transaction and often represents both sides of it. Advait Consultancy is paid for counsel and takes a single-client mandate on one side only. We are not compensated by builders or developers, and we never represent both parties to a deal.</p>
+        </details>
+        <details data-reveal>
+          <summary>What does “single-client mandate” mean?<span class="q-mark" aria-hidden="true">+</span></summary>
+          <p class="ans">We work for one client, on one deal, with no competing interest on the other side. That singularity is the point. It is what keeps the counsel independent and the alignment complete.</p>
+        </details>
+        <details data-reveal>
+          <summary>Which markets across Delhi NCR does Advait Consultancy work in?<span class="q-mark" aria-hidden="true">+</span></summary>
+          <p class="ans">New Delhi, Gurugram, Noida, Greater Noida, Faridabad and Sohna, along the Dwarka Expressway and the Yamuna Expressway toward Jewar. We work wherever infrastructure is moving ahead of the market across Delhi NCR.</p>
+        </details>
+        <details data-reveal>
+          <summary>What is Advait Capital?<span class="q-mark" aria-hidden="true">+</span></summary>
+          <p class="ans">Advait Capital is a closed circle beyond the advisory practice, for a deliberately small number of aligned investors. It is entered by recognition, not application. Its workings are discussed only with those who reach out.</p>
+        </details>
+      </section>
+    </div>
   </section>
 
   <!-- ═══ PROOF — one anonymized mandate, understated ═══ -->
@@ -486,7 +545,8 @@ body.world2-active #cursor{border-color:var(--accent-2)}
   <section class="section intel" id="intelligence" aria-label="Thinking">
     <div class="wrap">
       <h2 data-reveal>Thinking, published.</h2>
-      <p data-reveal data-d="1">Research on infrastructure cycles, capital flows, and corridor development, available to mandated clients.</p>
+      <p data-reveal data-d="1">Directional notes on infrastructure cycles, capital flows, and corridor development across Delhi NCR. The deeper work stays with mandated clients.</p>
+      <a class="notes-link" data-reveal data-d="1" href="/notes/">Read the corridor notes <span aria-hidden="true">→</span></a>
       <!-- Founder: set data-endpoint to your form/inbox handler (e.g. Formspree) to capture leads server-side.
            With no endpoint, submit opens a pre-addressed mail draft to advisory@ as a fallback. -->
       <form class="capture" id="captureNotes" data-reveal data-d="2" data-endpoint="" novalidate>
