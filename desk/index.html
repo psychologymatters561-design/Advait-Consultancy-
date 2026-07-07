@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corridor Desk — Jewar–YEIDA Research Tool · Advait Consultancy</title>
+<meta name="description" content="An interactive reference desk for the Jewar–YEIDA corridor: sector-by-sector case files, YEIDA policy matrix, the Master Plan 2041 map, an industry-to-sector finder, and live connectivity status. A working research tool from Advait Consultancy." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#0A0D0A" />
+<meta name="author" content="Advait Consultancy" />
+<link rel="canonical" href="https://advaitconsultancy.in/desk/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Advait Consultancy" />
+<meta property="og:title" content="Corridor Desk — Jewar–YEIDA Research Tool" />
+<meta property="og:description" content="Sector case files, policy matrix, Master Plan 2041 map and an industry-to-sector finder for the Jewar–YEIDA corridor. A working research tool from Advait Consultancy." />
+<meta property="og:url" content="https://advaitconsultancy.in/desk/" />
+<meta property="og:image" content="https://advaitconsultancy.in/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230B0F0D' stroke='%23E8A93A' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23E8A93A'/%3E%3Cpath d='M50 8 L50 20 M50 80 L50 92 M8 50 L20 50 M80 50 L92 50' stroke='%23E8A93A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ADVAIT CONSULTANCY — CORRIDOR DESK
+   Design system: "Survey Ledger / Control Room"
+   Ink + amber (control-tower glow) + seal-red / survey-green (status)
+   ============================================================ */
+
+:root{
+  --ink:#0A0D0A;
+  --ink-2:#0F1310;
+  --panel:#141912;
+  --panel-2:#1B221A;
+  --panel-3:#212A20;
+  --line:rgba(237,230,214,0.10);
+  --line-strong:rgba(237,230,214,0.20);
+  --paper:#ECE6D6;
+  --paper-dim:#C9C3B2;
+  --muted:#8E9A8C;
+  --amber:#E8A93A;
+  --amber-bright:#FFC968;
+  --amber-dim:rgba(232,169,58,0.14);
+  --seal:#C1462E;
+  --seal-dim:rgba(193,70,46,0.16);
+  --green:#5FA37B;
+  --green-dim:rgba(95,163,123,0.16);
+  --slate:#5C7A93;
+  --slate-dim:rgba(92,122,147,0.16);
+  --radius:3px;
+  --shadow:0 20px 60px -20px rgba(0,0,0,0.6);
+  --serif:'Newsreader', Georgia, serif;
+  --sans:'IBM Plex Sans', -apple-system, sans-serif;
+  --mono:'IBM Plex Mono', 'SF Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse 1200px 800px at 15% -10%, rgba(232,169,58,0.06), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 100% 10%, rgba(95,163,123,0.04), transparent 55%),
+    var(--ink);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--amber); color:#141912;}
+::-webkit-scrollbar{width:10px; height:10px;}
+::-webkit-scrollbar-track{background:var(--ink-2);}
+::-webkit-scrollbar-thumb{background:var(--panel-3); border-radius:6px;}
+::-webkit-scrollbar-thumb:hover{background:var(--amber-dim);}
+
+a{color:inherit;}
+button{font-family:inherit;}
+:focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; margin:0; letter-spacing:0.01em;}
+.mono{font-family:var(--mono);}
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--amber); font-weight:500;
+}
+
+/* ---------- Boot overlay ---------- */
+#boot{
+  position:fixed; inset:0; z-index:999; background:var(--ink);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  transition:opacity .7s ease, visibility .7s ease;
+}
+#boot.hide{opacity:0; visibility:hidden; pointer-events:none;}
+#boot .seal{width:64px; height:64px; margin-bottom:22px;}
+#boot .seal circle.ring{
+  fill:none; stroke:var(--amber); stroke-width:3.2;
+  stroke-dasharray:290; stroke-dashoffset:290;
+  animation:drawRing 1.1s ease forwards .1s;
+}
+#boot .seal circle.dot{fill:var(--amber); opacity:0; animation:popIn .3s ease forwards 1.05s;}
+#boot .seal path{
+  stroke:var(--amber); stroke-width:3.2; stroke-linecap:round;
+  stroke-dasharray:16; stroke-dashoffset:16;
+  animation:drawTick .3s ease forwards;
+}
+#boot .seal path:nth-child(3){animation-delay:1.15s;}
+#boot .seal path:nth-child(4){animation-delay:1.22s;}
+#boot .seal path:nth-child(5){animation-delay:1.29s;}
+#boot .seal path:nth-child(6){animation-delay:1.36s;}
+@keyframes drawRing{to{stroke-dashoffset:0;}}
+@keyframes drawTick{to{stroke-dashoffset:0;}}
+@keyframes popIn{to{opacity:1;}}
+#boot .wordmark{font-family:var(--serif); font-size:22px; letter-spacing:0.02em; color:var(--paper); opacity:0; animation:fadeUp .5s ease forwards 1.4s;}
+#boot .log{
+  margin-top:16px; font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  height:80px; text-align:left; width:280px;
+}
+#boot .log div{opacity:0; transform:translateY(4px); animation:fadeUp .35s ease forwards;}
+#boot .log div:nth-child(1){animation-delay:1.6s;}
+#boot .log div:nth-child(2){animation-delay:1.85s;}
+#boot .log div:nth-child(3){animation-delay:2.1s;}
+#boot .log div:nth-child(4){animation-delay:2.35s; color:var(--green);}
+@keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+
+/* ---------- App shell ---------- */
+#app{opacity:0; animation:appIn .6s ease forwards 2.55s;}
+@keyframes appIn{to{opacity:1;}}
+
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(10,13,10,0.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1360px; margin:0 auto; padding:14px 28px;
+  display:flex; align-items:center; gap:16px;
+}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0;}
+.brand svg{width:34px; height:34px; flex-shrink:0;}
+.brand-text{line-height:1.15;}
+.brand-name{font-family:var(--serif); font-size:16.5px; font-weight:600; letter-spacing:0.03em; color:var(--paper); white-space:nowrap;}
+.brand-sub{font-family:var(--mono); font-size:9.5px; letter-spacing:0.16em; color:var(--amber); text-transform:uppercase;}
+
+.status-ticker{
+  flex:1; overflow:hidden; white-space:nowrap; font-family:var(--mono); font-size:11px; color:var(--muted);
+  border-left:1px solid var(--line); border-right:1px solid var(--line);
+  padding:0 18px; display:flex; align-items:center; gap:8px; min-width:0;
+}
+.status-ticker .dot{width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green); flex-shrink:0; animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
+.status-ticker span{overflow:hidden; text-overflow:ellipsis;}
+
+.tabs{display:flex; gap:2px; flex-shrink:0;}
+.tab-btn{
+  background:none; border:1px solid transparent; color:var(--muted);
+  font-family:var(--sans); font-size:12.5px; font-weight:500; letter-spacing:0.02em;
+  padding:9px 14px; border-radius:var(--radius); cursor:pointer; transition:all .18s ease; white-space:nowrap;
+}
+.tab-btn:hover{color:var(--paper); background:var(--panel-2);}
+.tab-btn.active{color:var(--ink); background:var(--amber); font-weight:600;}
+
+.tabs-mobile-toggle{display:none;}
+
+main{max-width:1360px; margin:0 auto; padding:36px 28px 80px;}
+.panel{display:none; animation:panelIn .45s ease;}
+.panel.active{display:block;}
+@keyframes panelIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+.panel-head{margin-bottom:28px;}
+.panel-head h2{font-size:26px; color:var(--paper); margin-top:6px;}
+.panel-head p{color:var(--muted); font-size:13.5px; margin-top:8px; max-width:720px;}
+
+/* ---------- Reusable: KPI cards ---------- */
+.kpi-row{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:32px;}
+.kpi{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px;
+  position:relative; overflow:hidden;
+}
+.kpi::before{content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--amber);}
+.kpi .num{font-family:var(--serif); font-size:32px; color:var(--paper); font-weight:600; line-height:1;}
+.kpi .lbl{font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-top:8px;}
+
+/* ---------- Status pills ---------- */
+.pill{
+  display:inline-flex; align-items:center; gap:5px; font-family:var(--mono); font-size:10px; font-weight:600;
+  letter-spacing:0.06em; text-transform:uppercase; padding:3px 8px; border-radius:2px; white-space:nowrap;
+}
+.pill::before{content:''; width:5px; height:5px; border-radius:50%; flex-shrink:0;}
+.pill-live{background:var(--green-dim); color:var(--green);}
+.pill-live::before{background:var(--green);}
+.pill-construction{background:var(--amber-dim); color:var(--amber-bright);}
+.pill-construction::before{background:var(--amber-bright);}
+.pill-proposal{background:var(--slate-dim); color:var(--slate);}
+.pill-proposal::before{background:var(--slate);}
+.pill-risk{background:var(--seal-dim); color:var(--seal);}
+.pill-risk::before{background:var(--seal);}
+
+/* ---------- Legend ---------- */
+.legend{display:flex; flex-wrap:wrap; gap:16px; padding:14px 18px; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); margin-bottom:28px;}
+.legend-item{display:flex; align-items:center; gap:7px; font-size:12px; color:var(--paper-dim);}
+
+/* ---------- Corridor strip (overview) ---------- */
+.corridor-strip{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px 20px 18px;
+  margin-bottom:32px; overflow-x:auto;
+}
+.corridor-strip .rail{position:relative; min-width:1040px; height:100px;}
+.corridor-strip .spine{position:absolute; left:0; right:0; top:50px; height:2px; background:linear-gradient(90deg, var(--amber), var(--green), var(--slate), var(--amber));}
+.corridor-node{
+  position:absolute; top:38px; width:24px; height:24px; border-radius:50%;
+  background:var(--panel-2); border:2px solid var(--amber); cursor:pointer; transition:transform .18s ease;
+  display:flex; align-items:center; justify-content:center;
+}
+.corridor-node:hover{transform:scale(1.25); z-index:2;}
+.corridor-node.rk-live{border-color:var(--green);}
+.corridor-node.rk-proposal{border-color:var(--slate);}
+.corridor-node .tick{width:6px; height:6px; border-radius:50%; background:currentColor;}
+.corridor-node-label{
+  position:absolute; top:68px; font-family:var(--mono); font-size:9.5px; color:var(--muted);
+  width:70px; text-align:center; left:50%; transform:translateX(-50%);
+}
+
+/* ---------- Filter bar ---------- */
+.filterbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:24px;}
+.search-box{
+  flex:1; min-width:220px; display:flex; align-items:center; gap:8px;
+  background:var(--panel); border:1px solid var(--line-strong); border-radius:var(--radius); padding:9px 12px;
+}
+.search-box input{background:none; border:none; color:var(--paper); font-family:var(--sans); font-size:13px; width:100%; outline:none;}
+.search-box svg{width:15px; height:15px; color:var(--muted); flex-shrink:0;}
+.chip-group{display:flex; gap:6px; flex-wrap:wrap;}
+.chip{
+  background:var(--panel); border:1px solid var(--line-strong); color:var(--muted);
+  font-family:var(--mono); font-size:11px; letter-spacing:0.04em; text-transform:uppercase;
+  padding:7px 12px; border-radius:2px; cursor:pointer; transition:all .15s ease;
+}
+.chip:hover{border-color:var(--amber); color:var(--paper);}
+.chip.active{background:var(--amber); border-color:var(--amber); color:var(--ink); font-weight:600;}
+
+/* ---------- Sector cards ---------- */
+.sector-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(310px,1fr)); gap:16px;}
+.sector-card{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+  padding:20px; cursor:pointer; transition:border-color .18s ease, transform .18s ease; position:relative;
+}
+.sector-card:hover{border-color:var(--amber-dim); transform:translateY(-2px);}
+.sector-card::after{
+  content:'⟶'; position:absolute; right:18px; bottom:16px; color:var(--muted); font-size:14px;
+  transition:transform .18s ease, color .18s ease;
+}
+.sector-card:hover::after{transform:translateX(4px); color:var(--amber);}
+.sector-card .code{font-family:var(--mono); font-size:11px; color:var(--amber); letter-spacing:0.08em;}
+.sector-card h3{font-size:18px; margin-top:6px; color:var(--paper); line-height:1.25;}
+.sector-card .tag{font-size:11.5px; color:var(--muted); margin-top:4px;}
+.sector-card .pill{margin-top:12px;}
+.sector-card .snippet{font-size:12.5px; color:var(--paper-dim); margin-top:12px; line-height:1.5;}
+.sector-card .bestfor{display:flex; flex-wrap:wrap; gap:5px; margin-top:14px;}
+.sector-card .bf-tag{font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--slate); background:var(--slate-dim); padding:2px 6px; border-radius:2px;}
+
+/* ---------- Drawer / modal ---------- */
+#overlay{position:fixed; inset:0; background:rgba(6,8,6,0.72); backdrop-filter:blur(2px); z-index:200; opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s ease;}
+#overlay.show{opacity:1; visibility:visible;}
+#drawer{
+  position:fixed; top:0; right:0; bottom:0; width:min(640px,100%); background:var(--ink-2); z-index:201;
+  border-left:1px solid var(--line-strong); box-shadow:var(--shadow);
+  transform:translateX(100%); transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  overflow-y:auto;
+}
+#drawer.show{transform:translateX(0);}
+.drawer-head{
+  position:sticky; top:0; background:var(--ink-2); border-bottom:1px solid var(--line);
+  padding:22px 26px; z-index:2;
+}
+.drawer-close{
+  position:absolute; top:20px; right:22px; background:var(--panel-2); border:1px solid var(--line-strong);
+  color:var(--muted); width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:15px; line-height:1;
+}
+.drawer-close:hover{color:var(--paper); border-color:var(--amber);}
+.drawer-body{padding:8px 26px 40px;}
+.drawer-section{padding:20px 0; border-bottom:1px solid var(--line);}
+.drawer-section:last-child{border-bottom:none;}
+.drawer-section h4{
+  font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber);
+  margin-bottom:10px;
+}
+.drawer-section p{color:var(--paper-dim); font-size:13.5px; line-height:1.65;}
+.inv-row{
+  display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid var(--line);
+  font-size:12.5px;
+}
+.inv-row:first-of-type{border-top:none;}
+.inv-row .name{color:var(--paper); font-weight:500;}
+.inv-row .meta{color:var(--muted); font-size:11.5px; margin-top:2px;}
+.inv-row .amt{font-family:var(--mono); color:var(--amber-bright); white-space:nowrap; text-align:right;}
+.policy-tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+.policy-tag{
+  background:var(--panel-2); border:1px solid var(--line-strong); padding:8px 12px; border-radius:2px;
+  font-size:12px; cursor:pointer; transition:border-color .15s ease;
+}
+.policy-tag:hover{border-color:var(--amber);}
+.reliability-box{display:flex; gap:12px; align-items:flex-start; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px;}
+
+/* ---------- Policy accordion ---------- */
+.policy-list{display:flex; flex-direction:column; gap:12px;}
+.policy-item{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+.policy-summary{
+  padding:18px 20px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:16px;
+}
+.policy-summary:hover{background:var(--panel-2);}
+.policy-summary h3{font-size:16.5px; color:var(--paper);}
+.policy-summary .sub{font-size:11.5px; color:var(--muted); margin-top:4px; font-family:var(--mono);}
+.policy-chevron{color:var(--amber); transition:transform .25s ease; flex-shrink:0;}
+.policy-item.open .policy-chevron{transform:rotate(180deg);}
+.policy-detail{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+.policy-detail-inner{padding:0 20px 22px;}
+.spec-item{background:var(--panel-2); border:1px solid var(--line); border-radius:2px; padding:12px 14px;}
+.spec-item .k{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted);}
+.spec-item .v{font-size:13.5px; color:var(--paper); margin-top:5px; line-height:1.45;}
+
+/* ---------- Shared checklist ---------- */
+.check-list{list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:8px;}
+.check-list li{display:flex; gap:9px; font-size:13px; color:var(--paper-dim); align-items:flex-start;}
+.check-list li::before{content:'✓'; color:var(--green); font-weight:700; flex-shrink:0;}
+
+/* ---------- Advantage / Disadvantage lists ---------- */
+.adv-disadv-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+@media (max-width:560px){.adv-disadv-grid{grid-template-columns:1fr;}}
+.ad-col{background:var(--panel-2); border-radius:2px; padding:14px 16px;}
+.ad-col.adv{border-left:3px solid var(--green);}
+.ad-col.disadv{border-left:3px solid var(--seal);}
+.ad-col .ad-head{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;}
+.ad-col.adv .ad-head{color:var(--green);}
+.ad-col.disadv .ad-head{color:var(--seal);}
+.ad-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;}
+.ad-list li{display:flex; gap:8px; font-size:12.5px; color:var(--paper-dim); line-height:1.55; align-items:flex-start;}
+.ad-col.adv .ad-list li::before{content:'+'; color:var(--green); font-weight:700; flex-shrink:0;}
+.ad-col.disadv .ad-list li::before{content:'–'; color:var(--seal); font-weight:700; flex-shrink:0;}
+
+/* ---------- Ledger (policy "what you get") ---------- */
+.ledger{width:100%; border-collapse:collapse; margin-top:14px;}
+.ledger tr{border-bottom:1px solid var(--line);}
+.ledger tr:last-child{border-bottom:none;}
+.ledger td{padding:11px 4px; font-size:12.5px; vertical-align:top;}
+.ledger td.item{color:var(--amber-bright); font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.04em; width:34%; padding-right:14px;}
+.ledger td.val{color:var(--paper); line-height:1.55;}
+
+/* ---------- Map viewer ---------- */
+.map-layout{display:grid; grid-template-columns:1fr 280px; gap:18px;}
+.map-frame{
+  background:var(--ink-2); border:1px solid var(--line-strong); border-radius:var(--radius);
+  position:relative; height:640px; overflow:hidden;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:24px 24px;
+}
+#mapViewport{position:absolute; inset:0; overflow:hidden; cursor:grab;}
+#mapViewport.grabbing{cursor:grabbing;}
+#mapImage{position:absolute; top:0; left:0; transform-origin:0 0; max-width:none; will-change:transform; user-select:none; -webkit-user-drag:none;}
+.map-controls{position:absolute; bottom:16px; right:16px; display:flex; flex-direction:column; gap:6px; z-index:5;}
+.map-btn{
+  width:38px; height:38px; background:rgba(20,25,18,0.9); border:1px solid var(--line-strong); color:var(--paper);
+  border-radius:4px; cursor:pointer; font-size:17px; display:flex; align-items:center; justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.map-btn:hover{border-color:var(--amber); color:var(--amber);}
+.map-hint{
+  position:absolute; top:14px; left:14px; background:rgba(20,25,18,0.85); border:1px solid var(--line);
+  padding:8px 12px; border-radius:2px; font-family:var(--mono); font-size:10.5px; color:var(--muted); z-index:5;
+}
+.map-source{
+  position:absolute; bottom:14px; left:14px; background:rgba(20,25,18,0.85); border:1px solid var(--line);
+  padding:6px 10px; border-radius:2px; font-family:var(--mono); font-size:9.5px; color:var(--muted); z-index:5;
+}
+.map-sidebar{display:flex; flex-direction:column; gap:10px;}
+.doc-link{
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:13px 15px;
+  text-decoration:none; color:var(--paper); font-size:12.5px; transition:border-color .15s ease;
+}
+.doc-link:hover{border-color:var(--amber);}
+.doc-link .name{line-height:1.4;}
+.doc-link .tag{font-family:var(--mono); font-size:9.5px; color:var(--muted); text-transform:uppercase; margin-top:3px; display:block;}
+.doc-link svg{width:13px; height:13px; color:var(--amber); flex-shrink:0;}
+.thumb-row{display:flex; gap:8px;}
+.thumb{flex:1; border:1px solid var(--line); border-radius:2px; overflow:hidden; cursor:pointer; opacity:0.7; transition:opacity .15s, border-color .15s;}
+.thumb:hover, .thumb.active{opacity:1; border-color:var(--amber);}
+.thumb img{width:100%; height:52px; object-fit:cover; display:block;}
+
+/* ---------- Industry finder ---------- */
+.finder-box{
+  background:var(--panel); border:1px solid var(--line-strong); border-radius:var(--radius); padding:28px;
+  margin-bottom:28px;
+}
+.finder-select-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+.industry-btn{
+  background:var(--panel-2); border:1px solid var(--line-strong); color:var(--paper-dim);
+  font-size:12.5px; padding:9px 14px; border-radius:2px; cursor:pointer; transition:all .15s ease;
+}
+.industry-btn:hover{border-color:var(--amber);}
+.industry-btn.active{background:var(--amber); color:var(--ink); border-color:var(--amber); font-weight:600;}
+#finderResult{margin-top:22px; display:none;}
+#finderResult.show{display:block; animation:panelIn .35s ease;}
+.finder-reco{
+  background:var(--panel-2); border:1px solid var(--amber-dim); border-left:3px solid var(--amber);
+  border-radius:2px; padding:18px 20px; margin-bottom:12px;
+}
+.finder-reco .rank{font-family:var(--mono); font-size:10.5px; color:var(--amber); text-transform:uppercase; letter-spacing:0.1em;}
+.finder-reco h4{font-size:16px; color:var(--paper); margin:6px 0 8px;}
+.finder-reco p{font-size:13px; color:var(--paper-dim); line-height:1.6; margin:0;}
+.finder-reco .open-link{display:inline-block; margin-top:10px; font-family:var(--mono); font-size:11px; color:var(--amber); cursor:pointer; text-decoration:underline;}
+
+/* ---------- Connectivity ---------- */
+.conn-list{display:flex; flex-direction:column; gap:1px; background:var(--line); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);}
+.conn-item{background:var(--panel); padding:16px 20px; display:grid; grid-template-columns:180px 1fr 120px; gap:16px; align-items:center;}
+.conn-item .name{font-size:13.5px; color:var(--paper); font-weight:500;}
+.conn-item .desc{font-size:12.5px; color:var(--paper-dim); line-height:1.5;}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line); padding:26px 28px 40px; max-width:1360px; margin:0 auto;}
+footer p{font-size:11.5px; color:var(--muted); line-height:1.7; max-width:900px;}
+footer .fseal{font-family:var(--serif); font-size:13px; color:var(--paper-dim); margin-bottom:8px;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .map-layout{grid-template-columns:1fr;}
+  .map-frame{height:420px;}
+  .conn-item{grid-template-columns:1fr; gap:6px;}
+  .status-ticker{display:none;}
+  .tabs{position:fixed; left:0; right:0; bottom:0; top:auto; background:var(--ink-2); border-top:1px solid var(--line-strong); padding:8px; overflow-x:auto; z-index:60; justify-content:flex-start;}
+  main{padding-bottom:120px;}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ BOOT SEQUENCE ============ -->
+<div id="boot">
+  <svg class="seal" viewBox="0 0 100 100">
+    <circle class="ring" cx="50" cy="50" r="46"/>
+    <circle class="dot" cx="50" cy="50" r="7"/>
+    <path d="M50 8 L50 20"/><path d="M50 80 L50 92"/><path d="M8 50 L20 50"/><path d="M80 50 L92 50"/>
+  </svg>
+  <div class="wordmark">ADVAIT CONSULTANCY</div>
+  <div class="log">
+    <div>&gt; Initializing Corridor Desk v1.0…</div>
+    <div>&gt; Indexing YEIDA sector files… 12 loaded</div>
+    <div>&gt; Cross-referencing UP policy framework… 6 loaded</div>
+    <div>&gt; Ready.</div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/" title="Return to advaitconsultancy.in" aria-label="Advait Consultancy — return to main site">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#E8A93A" stroke-width="4"/>
+        <circle cx="50" cy="50" r="7" fill="#E8A93A"/>
+        <path d="M50 8 L50 20 M50 80 L50 92 M8 50 L20 50 M80 50 L92 50" stroke="#E8A93A" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <div class="brand-name">Advait Consultancy</div>
+        <div class="brand-sub">Corridor Desk · Jewar–YEIDA</div>
+      </div>
+    </a>
+    <div class="status-ticker">
+      <span class="dot"></span>
+      <span id="tickerText">JEWAR OPS: PHASE-1 LIVE · CARGO TERMINAL ACTIVE · 12 SECTOR FILES INDEXED · LAST VERIFIED JUL 2026</span>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab-btn active" data-panel="overview">Overview</button>
+      <button class="tab-btn" data-panel="directory">Sector Directory</button>
+      <button class="tab-btn" data-panel="policy">Policy Matrix</button>
+      <button class="tab-btn" data-panel="map">Master Plan Map</button>
+      <button class="tab-btn" data-panel="finder">Industry Finder</button>
+      <button class="tab-btn" data-panel="connectivity">Connectivity</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="panel active" id="panel-overview">
+    <div class="panel-head">
+      <div class="eyebrow">Command Overview</div>
+      <h2>Jewar–YEIDA Corridor, at a glance</h2>
+      <p>Twelve sector files, six state policy frameworks, one airport reshaping all of it. Everything below is cross-referenced — click through from any number.</p>
+    </div>
+
+    <div class="kpi-row" id="kpiRow"></div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="pill pill-live">Confirmed</span> land handed over / under construction</div>
+      <div class="legend-item"><span class="pill pill-construction">Announced</span> LOI / MoU / EOI signed, pre-construction</div>
+      <div class="legend-item"><span class="pill pill-proposal">Proposal</span> concept / vision stage, no binding commitment</div>
+      <div class="legend-item"><span class="pill pill-risk">Risk Flag</span> encroachment, acquisition or litigation risk</div>
+    </div>
+
+    <div class="corridor-strip">
+      <div class="eyebrow" style="margin-bottom:14px;">Corridor Spine — click a node to open its file</div>
+      <div class="rail" id="corridorRail"></div>
+    </div>
+
+    <div class="finder-box">
+      <div class="eyebrow">Quick Tool</div>
+      <h3 style="font-size:19px; margin-top:8px;">What are you placing — and where should it go?</h3>
+      <p style="color:var(--muted); font-size:13px; margin-top:6px;">Jump straight to the Industry Finder for a sector recommendation with reasoning.</p>
+      <button class="tab-btn active" style="margin-top:14px; padding:10px 18px;" onclick="switchPanel('finder')">Open Industry Finder →</button>
+    </div>
+  </section>
+
+  <!-- ============ SECTOR DIRECTORY ============ -->
+  <section class="panel" id="panel-directory">
+    <div class="panel-head">
+      <div class="eyebrow">Sector Directory</div>
+      <h2>Sector-by-sector case files</h2>
+      <p>Zoning, named investors/LOIs, applicable policies, connectivity and an honest reliability read — for every tracked sector.</p>
+    </div>
+
+    <div class="filterbar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="sectorSearch" placeholder="Search by sector, industry, or company name…">
+      </div>
+      <div class="chip-group" id="statusChips">
+        <button class="chip active" data-status="all">All</button>
+        <button class="chip" data-status="live">Confirmed</button>
+        <button class="chip" data-status="construction">Announced</button>
+        <button class="chip" data-status="proposal">Proposal</button>
+        <button class="chip" data-status="risk">Risk Flag</button>
+      </div>
+    </div>
+
+    <div class="sector-grid" id="sectorGrid"></div>
+  </section>
+
+  <!-- ============ POLICY MATRIX ============ -->
+  <section class="panel" id="panel-policy">
+    <div class="panel-head">
+      <div class="eyebrow">Policy Matrix — YEIDA / Gautam Buddh Nagar Edition</div>
+      <h2>Exactly what a unit inside YEIDA gets, policy by policy</h2>
+      <p>Every figure below is already adjusted for Gautam Buddh Nagar (GBN) — the district every YEIDA sector sits in. No statewide comparison needed: this is the ledger as it actually applies here, itemised incentive by incentive, with the cap and validity window for each.</p>
+    </div>
+
+    <div class="policy-list" id="policyList"></div>
+  </section>
+
+  <!-- ============ MASTER PLAN MAP ============ -->
+  <section class="panel" id="panel-map">
+    <div class="panel-head">
+      <div class="eyebrow">Master Plan Map</div>
+      <h2>YEIDA Master Plan 2041 — original source map</h2>
+      <p>Straight from yamunaexpresswayauthority.com. The PDF view uses your browser's own viewer, so zoom, scroll and search all work natively. The image view gives a single-frame zoning visual with custom pan/zoom.</p>
+    </div>
+
+    <div class="chip-group" style="margin-bottom:16px;" id="mapModeChips">
+      <button class="chip active" data-mode="pdf">Official Report (PDF)</button>
+      <button class="chip" data-mode="image">Zoning Map (Image)</button>
+    </div>
+
+    <div class="map-layout">
+      <div class="map-frame" id="mapFramePdf">
+        <iframe id="pdfFrame" src="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20240902_FULL-REPORT_Master-Plan_YEIDA-2041_pk_print-WO-highlight.pdf" style="width:100%; height:100%; border:none; background:#1a1d1a;" title="YEIDA Master Plan 2041 Full Report"></iframe>
+        <div class="map-source">SOURCE: yamunaexpresswayauthority.com — Master Plan 2041 Full Report, Phase-I. If the document doesn't render inline, <a href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20240902_FULL-REPORT_Master-Plan_YEIDA-2041_pk_print-WO-highlight.pdf" target="_blank" rel="noopener" style="color:var(--amber);">open it directly →</a></div>
+      </div>
+
+      <div class="map-frame" id="mapFrameImage" style="display:none;">
+        <div class="map-hint">Drag to pan · Scroll / pinch to zoom · Double-click to reset</div>
+        <div id="mapImageStatus" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:12px; color:var(--muted); z-index:1;">Loading map image…</div>
+        <div id="mapViewport">
+          <img id="mapImage" alt="YEIDA Master Plan 2041 official zoning map" src="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/20250425_YEIDA-1_MasterPlan%20Final%20Map.jpg%20(1).jpeg">
+        </div>
+        <div class="map-controls">
+          <button class="map-btn" id="zoomIn" title="Zoom in">+</button>
+          <button class="map-btn" id="zoomOut" title="Zoom out">−</button>
+          <button class="map-btn" id="zoomReset" title="Reset view" style="font-size:12px;">⟲</button>
+        </div>
+        <div class="map-source">SOURCE: yamunaexpresswayauthority.com — Master Plan 2041 zoning map. <a id="mapImageDirectLink" href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/20250425_YEIDA-1_MasterPlan%20Final%20Map.jpg%20(1).jpeg" target="_blank" rel="noopener" style="color:var(--amber);">Open full resolution →</a></div>
+      </div>
+
+      <div class="map-sidebar">
+        <div class="eyebrow" style="margin-bottom:2px;">Switch report</div>
+        <div class="thumb-row" id="mapThumbs"></div>
+
+        <div class="eyebrow" style="margin-top:14px; margin-bottom:2px;">Official documents</div>
+        <a class="doc-link" target="_blank" rel="noopener" href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20240902_FULL-REPORT_Master-Plan_YEIDA-2041_pk_print-WO-highlight.pdf">
+          <div><div class="name">Master Plan 2041 — Full Report (Phase-I)</div><span class="tag">PDF · YEIDA Official</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+        <a class="doc-link" target="_blank" rel="noopener" href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20241209_PHASE-2_REPORT.pdf">
+          <div><div class="name">Master Plan 2031 — Phase-II Report</div><span class="tag">PDF · YEIDA Official</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+        <a class="doc-link" target="_blank" rel="noopener" href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2023/04/Sector-28-final-Layout.pdf">
+          <div><div class="name">Sector 28 — Final Layout</div><span class="tag">PDF · YEIDA Official</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+        <a class="doc-link" target="_blank" rel="noopener" href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2023/04/Sector-32-Final-LAYOUT.pdf">
+          <div><div class="name">Sector 32 — Final Layout</div><span class="tag">PDF · YEIDA Official</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+        <a class="doc-link" target="_blank" rel="noopener" href="https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2023/04/SEC-33-Final-Layout.pdf">
+          <div><div class="name">Sector 33 — Final Layout</div><span class="tag">PDF · YEIDA Official</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+        <a class="doc-link" target="_blank" rel="noopener" href="http://umd.nic.in/yeida/">
+          <div><div class="name">Live GIS Portal</div><span class="tag">External · Authoritative</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRY FINDER ============ -->
+  <section class="panel" id="panel-finder">
+    <div class="panel-head">
+      <div class="eyebrow">Industry Finder</div>
+      <h2>Pick an industry. Get the sector and the reasoning.</h2>
+      <p>Built from zoning, live incentives, and connectivity — not just proximity to the airport.</p>
+    </div>
+
+    <div class="finder-box">
+      <div class="finder-select-row" id="industryButtons"></div>
+      <div id="finderResult"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONNECTIVITY ============ -->
+  <section class="panel" id="panel-connectivity">
+    <div class="panel-head">
+      <div class="eyebrow">Connectivity</div>
+      <h2>Infrastructure status across the corridor</h2>
+      <p>What's actually operational versus proposed — the difference matters for every pitch.</p>
+    </div>
+    <div class="conn-list" id="connList"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="fseal">Advait Consultancy — Independent Real Estate Advisory, Delhi NCR</div>
+  <p style="margin-bottom:14px;"><a href="/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid rgba(232,169,58,0.4); padding-bottom:1px;">← Return to advaitconsultancy.in</a></p>
+  <p>Corridor Desk is a working reference tool, not a transaction platform. Data compiled from YEIDA official notifications, Invest UP policy documents, and reported news through July 2026. "Confirmed" status reflects primary-source corroboration (YEIDA, PMO, established outlets); "Proposal" status reflects announcements, EOIs, or broker-sourced projections that have not been independently verified. Always re-verify figures against the governing scheme brochure or government order before advising on or executing any transaction.</p>
+</footer>
+
+</div>
+<div id="overlay" onclick="closeDrawer()"></div>
+<div id="drawer">
+  <div class="drawer-head">
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+    <div class="eyebrow" id="drawerCode">SECTOR</div>
+    <h2 id="drawerTitle" style="font-size:22px; margin-top:8px;"></h2>
+    <div id="drawerPill" style="margin-top:10px;"></div>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</div>
+
+<script>
+/* ============================================================
+   DATA LAYER
+   ============================================================ */
+
+const SECTORS = [
+  {
+    id:'s4a', code:'Sector 4A', name:'Korean City (Proposed)', tag:'Multi-Use Industrial — Electronics Supply Chain',
+    status:'proposal', posPct:6,
+    bestFor:['electronics','semiconductor'],
+    zoning:'"Multiple Land Use Industry" zone — approximately 900 acres (≈365 ha) combining industrial, residential, commercial and institutional provisions in a single authority-managed block, oriented toward an electronics/semiconductor supplier ecosystem.',
+    investments:[
+      {name:'South Korean Govt Delegation (MOTIE / KOTRA / Embassy)', amount:'—', meta:'Exploratory visit, 26 Jun 2026 · Briefed by ACEO S.K. Bhatia on the Sector 4A concept', tagStatus:'Exploratory only — not an LOI'}
+    ],
+    policies:['iiepp','semiconductor'],
+    connectivity:'Doorstep access to Noida International Airport; fronts the Yamuna Expressway with EPE and DFC access nearby.',
+    reliability:'low', reliabilityNote:'Single YEIDA presentation reported by one outlet, amplified by broker sites. Samsung/LG/Hyundai are cited only as illustrative target companies — no confirmed commitment to this sector.',
+    narrative:'The "Korean City" label is doing a lot of work here relative to what has actually happened: a government delegation was briefed on a concept. Treat any client conversation about this sector as pre-diligence — there is no land handover, no LOI, no binding timeline. Worth watching, not worth pitching as committed.',
+    advantages:['First-mover positioning if the concept converts to allotment','Direct airport frontage in the current plan','Multi-use flexibility — industrial, residential, commercial and institutional in one zone','Electronics-supply-chain framing could draw ancillary demand from Sector 28\'s semiconductor anchors'],
+    disadvantages:['Zero binding commitment — a briefing is not an LOI','No published timeline for land acquisition or allotment','Samsung/LG/Hyundai interest is illustrative only, not confirmed','Could remain a paper concept for years, as similar announced "cities" elsewhere in India have']
+  },
+  {
+    id:'s5', code:'Sectors 5 / 5A / 22D / 22E', name:'Japanese City & American City (Proposed)', tag:'Mixed Land Use — Education, Institutional, Commercial',
+    status:'proposal', posPct:14,
+    bestFor:['dataCentre'],
+    zoning:'Japanese City proposed over ~395 ha (Sector 5A). A separate "American City" concept — pitched by US consultancy Blue Sky Vantage — spans ~1,200 acres across Sectors 22D, 22E, 5 and 5A: a ~$4bn education-led campus (university campuses, hospitals, schools, commercial towers) over a ~6-year build-out. The only genuinely live schemes in this cluster are Sector 22E\'s Corporate Office Plot Scheme and Sector 22D\'s commercial/residential plot allotments.',
+    investments:[
+      {name:'Blue Sky Vantage (US) — "American City" concept', amount:'~$4bn (proposed)', meta:'Consultancy-pitched concept, ~1,200 acres, ~6-year build-out', tagStatus:'Concept / no allotment'},
+      {name:'Corporate Office Plot Scheme, Sector 22E', amount:'—', meta:'YEA/INST 2024-2025/01, launched 11 Jul 2024', tagStatus:'Live scheme'}
+    ],
+    policies:['iiepp','itites'],
+    connectivity:'Airport-adjacent; Yamuna Expressway frontage across all four sectors.',
+    reliability:'low', reliabilityNote:'"Japanese City" and "American City" are proposal/pitch-stage only. The Sector 22E office scheme and Sector 22D plot allotments are the only confirmed, live activity in this cluster.',
+    narrative:'Two flagship names, one real scheme. If a client asks about the American or Japanese City specifically, be direct: nothing is allotted. If they want in on this general belt today, the actual door is the Sector 22E corporate office scheme or Sector 22D plots — sell those, not the headline.',
+    advantages:['Two live, transactable schemes today (Sector 22E office plots, Sector 22D commercial/residential)','Airport-adjacent across the whole cluster','A credible international consultancy (Blue Sky Vantage) has publicly scoped the American City concept, lending some external validation','Education-led anchor concept could seed genuine long-term demand if it advances'],
+    disadvantages:['"Japanese City" and "American City" are unfunded concepts with no allotment','High risk of a client conflating the marketed vision with actual available inventory','No construction, no signed anchor tenant, no binding timeline for either flagship concept','$4bn figure is a consultancy pitch number, not a committed budget']
+  },
+  {
+    id:'s8', code:'Sectors 7 / 8 / 8A–8D / 8F / 31B', name:'Aviation-Adjacent Industrial & Logistics', tag:'Industrial + Multi-Use — Logistics & Aviation-Linked Industry',
+    status:'construction', posPct:22,
+    bestFor:['warehousing','storage'],
+    zoning:'Master Plan 2041 carves out new industrial sectors 8A/8B/8C plus multi-use Sectors 7, 8 and 31B specifically to formalise the airport perimeter and prevent illegal construction. Sector 8F is earmarked as a dedicated logistics/warehousing hub; aviation-linked industry (aircraft/engine component manufacturing) is explicitly planned for this belt.',
+    investments:[
+      {name:'Shri Katyayani Metal Pvt Ltd', amount:'~₹1,000 cr', meta:'26 acres, Sector 8 · LOI issued 25 Jul 2025 · multi-phase logistics park & warehouse · confirmed by YEIDA CEO R.K. Singh', tagStatus:'LOI signed / pre-construction'}
+    ],
+    policies:['warehousing','iiepp'],
+    connectivity:'Immediately adjacent to Noida International Airport cargo terminal; direct Yamuna Expressway access; inside the notified Designated Logistics Zone.',
+    reliability:'high', reliabilityNote:'Corroborated by Hindustan Times and India Shipping News, with an on-record YEIDA CEO statement.',
+    narrative:'This is the cleanest 3PL/warehousing pitch on the whole corridor: real LOI, real rupee figure, right next to the cargo terminal, and it sits inside the Designated Logistics Zone — meaning the Warehousing & Logistics Policy 2022 pays MORE here (₹10cr storage cap, ₹50cr logistics-park cap) rather than less. One of the only sectors where GBN location is a pure upside.',
+    advantages:['Signed ₹1,000cr LOI with on-record YEIDA CEO confirmation — among the strongest-evidenced deals on the corridor','Literally on the cargo apron — shortest possible haul from warehouse to aircraft','Designated Logistics Zone status doubles subsidy caps versus the rest of UP','New sub-sectors (8A/8B/8C) purpose-built to formalise this belt, reducing future zoning ambiguity'],
+    disadvantages:['Still LOI-stage, not operational — no unit has gone live yet','8A/8B/8C are newly created sectors with no allotment track record to point to','Entire investment case depends on the airport\'s cargo ramp-up actually hitting its passenger/cargo targets on schedule','Multi-phase development means early buyers are effectively pre-construction risk']
+  },
+  {
+    id:'s10', code:'Sector 10', name:'Electronics Manufacturing Cluster (EMC 2.0) & Semiconductors', tag:'Industrial — Electronics / Semiconductor',
+    status:'construction', posPct:30,
+    bestFor:['electronics','semiconductor'],
+    zoning:'Electronics & semiconductor industrial zoning. EMC 2.0 occupies ~206.4 acres, project cost ~₹417 cr under the central Electronics Manufacturing Cluster scheme.',
+    investments:[
+      {name:'Bharat Semi Systems Pvt Ltd (Indo-US JV, 3rdiTech-linked)', amount:'~₹2,350 cr (₹8bn phase-1)', meta:'50 acres (20.23 ha) · infrared/GaN/SiC chips', tagStatus:'Allotted'},
+      {name:'HCL-Foxconn / Vama Sundari Investments', amount:'₹3,706 cr', meta:'Originally allotted ~48–50 acres here (LOI May 2024) — YEIDA could not complete land acquisition and the OSAT was shifted to Sector 28 (fresh LOI, 2025)', tagStatus:'Relocated to Sector 28'},
+      {name:'Panasonic, Aditech Semiconductors', amount:'—', meta:'Reported in-principle interest / proposals', tagStatus:'Unconfirmed interest'}
+    ],
+    policies:['semiconductor','iiepp'],
+    connectivity:'~4 km from Noida International Airport; Yamuna Expressway; planned RRTS and DFC access.',
+    reliability:'medium', reliabilityNote:'EMC 2.0 and Bharat Semi are real, allotted projects — but the marquee HCL-Foxconn deal had to move out after acquisition problems. Flag this land-acquisition risk explicitly to any client considering Sector 10.',
+    narrative:'Sector 10 is a cautionary tale worth telling clients directly: even a signed, government-backed LOI (HCL-Foxconn) got relocated because YEIDA couldn\'t acquire the specific land in time. Good sector for electronics broadly, but do extra title/possession diligence here specifically before anyone commits capital.',
+    advantages:['EMC 2.0 and Bharat Semi are real, allotted, central-scheme-backed projects','Only ~4km from the airport','Semiconductor Policy 2024 incentives apply here as well as in Sector 28','Established electronics-cluster branding (EMC 2.0) gives some ecosystem credibility'],
+    disadvantages:['Demonstrated land-acquisition failure — YEIDA lost its own flagship HCL-Foxconn deal here','Credibility dented relative to Sector 28, which absorbed the relocated project','Extra title and possession diligence burden falls on any buyer here specifically','Smaller, less politically prioritised than Sector 28\'s anchor cluster']
+  },
+  {
+    id:'s11', code:'Sector 11', name:'Fintech & AI-IT Hub', tag:'Institutional — IT / ITeS / Fintech / Data Centre',
+    status:'proposal', posPct:38,
+    bestFor:['fintech','dataCentre'],
+    zoning:'Classified "Institutional" under Master Plan 2041. Plans describe a 250-acre "Fintech Park" within a larger ~500-acre framing that folds in AI, IT and data-centre uses.',
+    investments:[
+      {name:'EOI — 500-acre FinTech Hub', amount:'—', meta:'Submission deadline 18 Mar 2026', tagStatus:'EOI stage'},
+      {name:'Infosys, Wipro, Tata — "shown interest"', amount:'—', meta:'Per YEIDA CEO statement — interest, not signed occupancy', tagStatus:'Unconfirmed interest'}
+    ],
+    policies:['itites','iiepp'],
+    connectivity:'Near Noida International Airport; Yamuna Expressway frontage.',
+    reliability:'low', reliabilityNote:'Real EOI process, but zero signed occupiers as of this data. "Interest shown" by named IT majors is not a commitment.',
+    narrative:'Good sector to keep on a watchlist for IT/ITeS and data-centre clients, but nothing to transact on yet — track the EOI outcome (post 18 Mar 2026) before pitching this as live.',
+    advantages:['Institutional zoning suits large corporate campuses without industrial-pollution constraints','Named big-tech interest (Infosys, Wipro, Tata) signals genuine market appetite','Large scale (up to ~500 acres) if the EOI converts to allotment','Airport-adjacent, useful for IT/ITeS clients needing frequent international travel'],
+    disadvantages:['Zero signed occupiers as of this data — pure EOI stage','"Interest shown" by named companies is not a commitment and should never be pitched as one','No published allotment timeline post-EOI','Risk of sitting fallow for years, as comparable announced IT parks elsewhere in India have']
+  },
+  {
+    id:'s1520', code:'Sectors 15C / 17 / 18 / 20 / 22A', name:'Residential, Commercial & Mixed-Use Belt', tag:'Residential + Commercial — Workforce Housing & Retail',
+    status:'construction', posPct:46,
+    bestFor:[],
+    zoning:'Predominantly residential (Sectors 18 & 20 sit opposite the Sports City under the 2031 plan; Sector 17 residential/group housing) with commercial pockets in Sectors 20 and 22A for retail, malls, offices and food courts. This belt is the workforce-housing and retail catchment for the Sector 28 clusters.',
+    investments:[
+      {name:'Kiosk Scheme CK-04, Sector 20', amount:'—', meta:'33 kiosks, allotment window Jan–Feb 2026', tagStatus:'Live scheme'},
+      {name:'RPS-08 / 09 / 10 Residential Plot Schemes', amount:'—', meta:'Multiple e-auction cycles, ongoing', tagStatus:'Live scheme'}
+    ],
+    policies:['iiepp'],
+    connectivity:'Core YEIDA "city" sectors, Yamuna Expressway frontage; ~14 km from Pari Chowk.',
+    reliability:'high', reliabilityNote:'These are standard, well-documented YEIDA residential/commercial schemes with clear allotment records.',
+    narrative:'Not an industry-fit sector on its own — its value to a client is as the housing/retail catchment feeding workers into Sectors 28/29/32/33. Useful for retail or F&B clients wanting footfall from the industrial workforce next door.',
+    advantages:['Proven, well-documented allotment track record via repeated e-auction cycles','Lower risk, more liquid asset class than an industrial anchor bet','Steady, structural demand from the workforce populating Sectors 28/29/32/33','Commercial pockets (Sectors 20, 22A) offer retail/F&B entry points with real footfall potential'],
+    disadvantages:['Not an industry-specific play — no specialised subsidy angle applies here','Slower capital appreciation than the industrial anchor sectors nearby','Subject to the ordinary residential real-estate cycle rather than a policy-driven growth story','Value is entirely derivative of the industrial clusters succeeding next door']
+  },
+  {
+    id:'s21', code:'Sector 21', name:'International Film City', tag:'Institutional / Media — Film, Television, OTT Production',
+    status:'construction', posPct:54,
+    bestFor:['film'],
+    zoning:'Film City / media & entertainment zoning, ~1,000 acres total; Phase-1 covers ~230–240 acres.',
+    investments:[
+      {name:'Bayview Projects LLP (Boney Kapoor) + Bhutani Infra', amount:'~₹1,500 cr (Phase-1)', meta:'Concession agreement signed with YEIDA · sound stages, studios, post-production, 21-acre film institute, theme park, OTT/TV sets · four dedicated expressway ramps under construction at the 24km point', tagStatus:'Under development'}
+    ],
+    policies:['iiepp'],
+    connectivity:'Near the airport and Eastern Peripheral Expressway; direct Yamuna Expressway ramps under construction.',
+    reliability:'medium', reliabilityNote:'The concession and investment figure are corroborated. Detailed milestone dates (specific studio/soundstage completion quarters) originate from a broker-aggregator site and should be treated as developer projections, not verified fact.',
+    narrative:'Real, signed, under development — the strongest "media/entertainment" pitch on the corridor. Just don\'t repeat specific construction-completion dates as fact; verify against YEIDA or the consortium directly before quoting a client a timeline.',
+    advantages:['Signed concession agreement with a credible, named consortium (Bayview/Boney Kapoor + Bhutani)','Real committed capital (~₹1,500cr Phase-1)','Unique zoning — no competing film-city sector anywhere else on the corridor','Dedicated expressway ramps under construction, showing genuine physical progress'],
+    disadvantages:['Entertainment real estate is a niche, comparatively illiquid asset class','Indian studio/media-infrastructure projects have a well-documented history of schedule slippage','Specific completion-quarter dates circulating online are developer projections, not verified facts','Revenue model depends on production volume materialising, which is itself uncertain in a new market']
+  },
+  {
+    id:'s28', code:'Sector 28', name:'Medical Device Park + Semiconductors + Hotels (Anchor Sector)', tag:'Industrial (Non-Polluting) — Medical Devices, Semiconductors, Data Centre, Hospitality',
+    status:'construction', posPct:64,
+    bestFor:['medicaldevices','electronics','semiconductor','hotel','dataCentre'],
+    zoning:'Explicitly non-polluting industrial zoning hosting: the 350-acre Medical Device Park (188.15 acres / 203 plots reserved for units), semiconductor plots, a data-centre park pocket, and the CHP-07 premium hotel plot zone shared with Sector 29.',
+    investments:[
+      {name:'Medical Device Park — overall', amount:'~₹15,000 cr target', meta:'GoI in-principle approval 24 Sep 2021 · DPR approval 4 Jan 2022 · ₹30cr central grant · 101 units allotted, 85 lease plans submitted, 62 lease deeds executed, 49 possessions, 12 units under construction (as of 4 Feb 2026 YEIDA statement)', tagStatus:'Under construction'},
+      {name:'Premier Medical Systems & Devices', amount:'₹60 cr', meta:'3 acres · ventilators, anaesthesia workstations, pumps · 450 jobs', tagStatus:'Allotted'},
+      {name:'TI Medical', amount:'—', meta:'11 acres · under construction', tagStatus:'Under construction'},
+      {name:'Auzein Medical', amount:'₹18.15 cr', meta:'Orthopaedic implants', tagStatus:'Allotted'},
+      {name:'Heidelco Medicore', amount:'₹24 cr', meta:'AED / oxygen concentrators', tagStatus:'Allotted'},
+      {name:'Ramsons Group', amount:'₹15 cr', meta:'Anaesthesia needle/kit', tagStatus:'Allotted'},
+      {name:'Genuince Medica', amount:'₹18.5 cr', meta:'Anaesthesia workstation', tagStatus:'Allotted'},
+      {name:'Q Line Biotech, Krish Medicos', amount:'—', meta:'Allotted units, Medical Device Park', tagStatus:'Allotted'},
+      {name:'Tarq Semiconductors (Hiranandani Group)', amount:'~₹28,000 cr (scoped)', meta:'125 acres · fab/ATP for smartphone, auto, TV ICs · ~11,000 jobs · UP Semiconductor Policy-2024 award: ₹7,037cr capital subsidy + 75% land rebate (₹321cr) + 100% stamp-duty exemption (₹30cr)', tagStatus:'In-principle approved'},
+      {name:'HCL-Foxconn / Vama Sundari ("India Chip Pvt Ltd")', amount:'₹3,706 cr', meta:'48 acres · OSAT, 240,000 display-driver ICs/yr · ~3,780 jobs · foundation stone laid 20 Feb 2026 by CM Yogi Adityanath & Union Minister Ashwini Vaishnaw, PM Modi addressed virtually · award: ₹919.31cr capital subsidy + ₹124.37cr land rebate + ₹1.16cr stamp-duty exemption', tagStatus:'Foundation laid'},
+      {name:'CHP-07 Premium Hotel Plots (Sectors 28 & 29)', amount:'~₹472 cr opportunity', meta:'28 plots, 5,000–50,000 sqm, from ~₹62,200/sqm · launched 11 Dec 2024, deadline extended to 20 May 2026', tagStatus:'Scheme live'}
+    ],
+    policies:['semiconductor','iiepp','tourism'],
+    connectivity:'~3–4 km from Noida International Airport; Yamuna Expressway; proposed pod-taxi/metro links; adjacent to Film City.',
+    reliability:'high', reliabilityNote:'The strongest primary-source corroboration on the corridor — YEIDA statements, PMO/CM foundation-stone coverage, and named company allotments. Note: GE Healthcare, Olympus, Elekta, Siemens Healthineers appear only as general "target company" commentary — not confirmed Sector 28 allottees.',
+    narrative:'This is YEIDA\'s anchor sector and the one to lead with for any manufacturing, semiconductor, medical device, or hospitality client. It is also the sector most likely to actually be built out on schedule, given the volume of construction already underway and the political weight (PM/CM-level foundation stones) behind it.',
+    advantages:['Deepest primary-source corroboration of any sector on the corridor','PM/CM-level political backing — foundation stones laid in person, not just announced','Genuine, visible construction activity: 101 units allotted, 12 already under construction','Diversified across medical devices, semiconductors, data centre and hospitality — reduces single-industry risk','Largest incentive pool on the corridor (₹8,500cr+ semiconductor pool alone)'],
+    disadvantages:['Highest-demand sector on the corridor means the highest entry price — smaller MSME buyers risk being priced out','Explicitly non-polluting zoning excludes some manufacturing categories outright','Some frequently-cited "target" companies (GE Healthcare, Olympus, Elekta, Siemens Healthineers) are aspirational commentary, not confirmed allottees — don\'t let a client conflate the two','Scale and prominence mean less room to negotiate favourable terms than in a smaller, less sought-after sector']
+  },
+  {
+    id:'s29', code:'Sector 29', name:'Apparel Park + Airport Hotel Zone', tag:'Industrial — Apparel/Textile, MSME, Hospitality',
+    status:'construction', posPct:70,
+    bestFor:['garment','hotel','msme'],
+    zoning:'Industrial (Apparel/Textile Park + General/MSME) plus the CHP-07 hospitality zone shared with Sector 28. Sub-8,000 sqm MSME-scale plots alongside larger apparel-cluster allotments.',
+    investments:[
+      {name:'Noida Apparel Export Cluster (NAEC)', amount:'~₹2,500 cr (per YEIDA CEO)', meta:'150 acres allotted · ~3 lakh direct + 2 lakh indirect jobs projected, ~70% to women · 91 garment houses have taken up land (NAEC president) · YEIDA acquiring a further 94 acres to expand, plus testing labs, design studios, dyeing/printing units', tagStatus:'Allotted / possession phase'},
+      {name:'CHP-07 Hotel Plots, Sector 29 portion', amount:'Part of ~₹472cr scheme', meta:'10 plots, 3,100–6,400 sqm each · brands "exploring" (OYO, ibis, Lemon Tree, Ginger, Sarovar, Treebo, FabHotel) — broker-sourced interest, not signed', tagStatus:'Scheme live'}
+    ],
+    policies:['textile','iiepp','tourism'],
+    connectivity:'Directly along the Yamuna Expressway inside the airport catchment.',
+    reliability:'high', reliabilityNote:'Apparel cluster figures corroborated by TOI and Fibre2Fashion with on-record YEIDA/NAEC statements. Hotel-brand "interest" is broker-sourced and unconfirmed.',
+    narrative:'The apparel cluster here is real and moving — but this is also the sector where the GBN policy penalty bites hardest (see Policy Matrix → Textile & Garmenting 2022). Sell it on export logistics and NCR market access, not on subsidy generosity.',
+    advantages:['Real, large, allotted apparel cluster — 91 garment houses already in on 150 acres','Strong job-creation numbers (3 lakh direct + 2 lakh indirect, ~70% women) lend political durability to the scheme','CHP-07 hotel scheme adds a second, unrelated asset class in the same sector','Direct export-logistics advantage via proximity to the airport cargo terminal'],
+    disadvantages:['Heaviest Textile Policy 2022 penalty of anywhere on the corridor — no employment subsidy, lower land-cost subsidy, lower stamp-duty exemption versus the rest of UP','Hotel-brand "interest" (OYO, ibis, Lemon Tree, etc.) is broker-sourced speculation, not signed','Land expansion (a further 94 acres) is still being acquired, not yet in hand','Client expectations need active management — the subsidy story here is weaker than the export-logistics story']
+  },
+  {
+    id:'s3233', code:'Sectors 32 & 33', name:'Toy City, MSME, Apparel & Handicraft-ODOP Parks', tag:'Industrial — MSME, Toy Manufacturing, Apparel, Handicraft, Furniture',
+    status:'construction', posPct:78,
+    bestFor:['toy','msme','garment','foodprocessing'],
+    zoning:'Structured multi-category industrial under Scheme YEA/IND8000(2025-26)-13/14: Apparel Park (requires DC-Textile approval), Toy Park (per GoI toy-manufacturing guidelines), Handicraft-ODOP with Furniture Manufacturing Park (EPCH certification), and General Industry/MSMEs (MSME Act 2006). GST registration mandatory; no consortiums or unformed entities permitted.',
+    investments:[
+      {name:'E-Auction Scheme YEA/IND8000(2025-26)-13', amount:'~₹700 cr (expected)', meta:'527 applications, 448 eligible · auction 26 Sep 2025 · 37 plots allotted (22 General/MSME, 2 Toy Park, 8 Apparel, 5 Handicraft) · ~3,000 jobs expected', tagStatus:'Allotted'},
+      {name:'Kewpie Corporation (Japan)', amount:'~₹200 cr (proposed)', meta:'8–10 acres, food processing · delegation met YEIDA CEO R.K. Singh & ACEO S.K. Bhatia, Feb 2026 · would be the third food-processing plant after Patanjali Ayurved and Innova Food Park', tagStatus:'Proposal / DPR pending'}
+    ],
+    policies:['textile','iiepp'],
+    connectivity:'Directly along the Yamuna Expressway, inside the airport catchment.',
+    reliability:'high', reliabilityNote:'Auction results and plot allocations are directly YEIDA-sourced. Kewpie is a real, named, reported proposal but not yet allotted to a specific sector.',
+    narrative:'This is the true MSME workhorse of the corridor — smaller tickets, faster allotment cycles, and the widest industry spread (toys, apparel, handicraft, general MSME, and now food processing knocking on the door via Kewpie). Best sector to start a smaller client here rather than in Sector 28\'s bigger-ticket anchor plays.',
+    advantages:['Fastest, most proven allotment cycle on the corridor — real e-auction, real plots, real allottees','Lowest entry ticket size of any industrial sector, ideal for first-time or smaller clients','Widest industry diversification anywhere on the corridor — toys, apparel, handicraft, general MSME, and now food processing','GST/EPCH/DC-Textile certification requirements keep out shell/unformed entities, improving the quality of the neighbouring tenant base'],
+    disadvantages:['Smaller plot sizes cap growth headroom without a separate later expansion','MSME-scale allottees have less individual negotiating leverage with YEIDA than an anchor tenant','Same GBN Textile Policy penalty applies to the apparel sub-track here as in Sector 29','Kewpie and other bigger names remain proposals, not yet fixed to this specific sector']
+  },
+  {
+    id:'tappal', code:'Tappal–Bajna MMLP', name:'Multimodal Logistics Park (Master Plan 2031, Phase-II)', tag:'Logistics / Warehousing — Rail-Road Multimodal',
+    status:'risk', posPct:86,
+    bestFor:['warehousing','storage'],
+    zoning:'Dedicated logistics/warehousing urban centre — ~950 ha (~2,350 acres) earmarked, Phase-1 ~200 ha, with plans to acquire up to ~1,900 ha. Land mix includes ~24 ha workforce residential, ~10 ha commercial, ~12 ha institutional, with the balance for truck terminals, rail sidings, gate complex and parking.',
+    investments:[
+      {name:'MMLP infrastructure', amount:'~₹990–1,040 cr (project cost)', meta:'No named anchor tenant yet · positioned at the Yamuna Expressway × proposed DMIC intersection, ~10 km from Jewar airport', tagStatus:'Planning / land acquisition'}
+    ],
+    policies:['warehousing'],
+    connectivity:'Yamuna Expressway; proposed rail/DFC integration; airport cargo linkage ~10 km away.',
+    reliability:'medium', reliabilityNote:'The plan itself is real and YEIDA-notified, but an estimated ~2,000 acres of the intended footprint has seen unauthorized housing/plotting. YEIDA has run anti-encroachment drives and residential-registration bans here.',
+    narrative:'Long-term the right answer for large-format warehousing and rail-linked logistics — and it sits inside the Designated Logistics Zone for enhanced subsidy caps. Short-term: this is the one sector on the corridor where you should tell a client to wait for a clean, YEIDA-notified, RERA-registered layout before any purchase. Encroachment risk here is not theoretical.',
+    advantages:['Only genuinely rail-linked multimodal logistics zoning on the entire corridor','Sits inside the Designated Logistics Zone — enhanced subsidy caps apply','Large land bank (~2,350 acres planned) supports scale plays no other sector can match','Positioned at a genuine strategic intersection — Yamuna Expressway × proposed DMIC corridor'],
+    disadvantages:['Serious, YEIDA-acknowledged encroachment risk — an estimated ~2,000 acres affected by unauthorized housing/plotting','No named anchor tenant yet, unlike Sector 8\'s signed LOI','YEIDA is still running active anti-encroachment drives here, meaning the situation is unresolved, not historical','Should be treated as a "wait and verify" sector rather than "buy now" until a clean notified layout is confirmed']
+  },
+  {
+    id:'other', code:'Other Planned Nodes', name:'Raya/Heritage City, Agra SEZs, Aviation Hub, Olympic Park', tag:'Various — Tourism, Electronics/EV, Aviation MRO, Sports',
+    status:'proposal', posPct:94,
+    bestFor:[],
+    zoning:'Raya Urban Centre/Heritage City near Mathura: Phase-1 ~753 acres, ~₹7,200cr, PPP, Yamuna riverfront, tourism-linked. Four proposed SEZs/industrial townships near Agra (non-polluting electronics/EV/data-centre + tourism/hospitality, Taj-proximity angle). Aviation Hub (~1,050 ha near airport): board-approved in-principle for aircraft/engine/spares manufacturing plus MRO. Olympic Park (Sectors 22F/23B): sports/recreation.',
+    investments:[
+      {name:'Raya/Heritage City', amount:'~₹7,200 cr', meta:'Phase-1 ~753 acres, PPP model, land acquisition in progress', tagStatus:'Land acquisition'},
+      {name:'Agra SEZs (x4)', amount:'—', meta:'DPR/master-plan stage, 1.5km either side of expressway', tagStatus:'Proposal'},
+      {name:'Aviation Hub', amount:'—', meta:'~1,050 ha, board-approved in-principle, consultant/DPR stage', tagStatus:'Proposal'}
+    ],
+    policies:['tourism','iiepp'],
+    connectivity:'Spread across the wider corridor toward Mathura/Agra; varies by node.',
+    reliability:'low', reliabilityNote:'All four nodes are pre-construction — DPR, board-approval-in-principle, or land-acquisition stage. None have a signed anchor tenant or visible construction as of this data.',
+    narrative:'Good long-horizon watchlist for clients thinking 5–10 years out, especially tourism/hospitality plays near Agra/Mathura or aviation-MRO specialists. Not pitchable as near-term inventory today.',
+    advantages:['Genuine long-horizon upside for tourism and aviation-MRO specialists','Taj Mahal/Agra/Mathura proximity is a durable, non-speculative demand driver','Early positioning could be acquired cheaply relative to where prices sit once any node breaks ground','Aviation Hub concept aligns naturally with the airport\'s own long-term cargo/MRO ambitions'],
+    disadvantages:['All four nodes are pre-construction — DPR, in-principle board approval, or land-acquisition stage only','No signed anchor tenant anywhere in this group','Minimum 5–10 year horizon before any of these could plausibly generate returns','Not fundable or pitchable as near-term inventory under any circumstance today']
+  }
+];
+
+const POLICIES = [
+  {
+    id:'iiepp', name:'UP Industrial Investment & Employment Promotion Policy (IIEPP) 2022', sub:'General industrial policy · applies to any manufacturing unit in YEIDA not covered by a specialised policy below',
+    eligibility:'Large (₹50–200cr), Mega (₹200–500cr), Super-Mega (₹500–5,000cr), Ultra-Mega (≥₹5,000cr) — each tier carries its own investment window (how long you have to deploy the capital) of 4 / 5 / 7 / 9 years respectively.',
+    ledger:[
+      {item:'Incentive Route', value:'Pick exactly ONE — the whole incentive is structured as a menu, not a stack: (a) Capital Subsidy with a Gross Capacity Utilisation Multiple plus employment/export/ecosystem boosters, or (b) Net SGST reimbursement, or (c) PLI top-up. Once chosen, you cannot switch routes mid-way.'},
+      {item:'Stamp Duty Exemption — in YEIDA', value:'50%. This is the lowest tier anywhere in UP — Bundelkhand and Poorvanchal get 100%, Madhyanchal/Paschimanchal (outside GBN) get 75%. Gautam Buddh Nagar and Ghaziabad are the only two districts capped at 50%.'},
+      {item:'Private Industrial Park (developer route)', value:'If your client is developing a park rather than just occupying a plot: 25% capital subsidy on park infrastructure (excluding land), capped at ₹40cr, rising to ₹80cr for parks over 100 acres — plus a further 25% subsidy on worker hostel/housing cost (capped ₹25–50cr) and a full 100% stamp-duty exemption, but only for the park developer, not for individual occupants.'},
+      {item:'Till When', value:'Ongoing policy (2022 onward). The investment window — 4 to 9 years depending on tier — runs from the date the unit is registered under the policy, not from land purchase.'}
+    ],
+    nodal:'Invest UP (Policy Implementation Unit)',
+    sourceNote:'Invest UP official highlights PDF; capital subsidy computed on Eligible Capital Investment excluding land cost.'
+  },
+  {
+    id:'warehousing', name:'UP Warehousing & Logistics Policy 2022', sub:'Applies to Sector 8 / 8F and Tappal–Bajna MMLP · the one policy where sitting in YEIDA pays MORE, not less',
+    eligibility:'Warehouse ≥1 lakh sq ft & ≥₹20cr · Silo ≥4 acres & ≥₹30cr · Cold Chain ≥20,000 sq ft & ≥₹15cr.',
+    ledger:[
+      {item:'Storage Capital Subsidy', value:'15% of eligible capital investment, capped at ₹10cr — YEIDA sits inside a notified Designated Logistics Zone (DLZ), so this cap is already DOUBLED from the statewide ₹5cr baseline.'},
+      {item:'Logistics Park / MMLP / Dry Port Subsidy', value:'25%, capped at ₹50cr — again the DLZ-doubled rate (statewide baseline is ₹25cr). Applies to logistics parks, ICD, CFS, AFS and the Tappal–Bajna MMLP structure.'},
+      {item:'Cargo Terminal Subsidy', value:'20%, capped at ₹15cr, on a minimum 10-acre plot — directly relevant given the Jewar airport cargo terminal next door.'},
+      {item:'Berthing Terminal Subsidy', value:'25%, capped at ₹15cr each, up to a maximum of 6 terminals.'},
+      {item:'Electricity Duty Exemption', value:'100% exemption for 10 years from the date of commissioning.'},
+      {item:'Quality Certification Reimbursement', value:'50% of certification cost, capped at ₹5 lakh.'},
+      {item:'Skill Development Subsidy', value:'₹1,000 per trainee per month, for 6 months, capped at 50 trainees per year.'},
+      {item:'Land-Use Conversion & Development Charge', value:'75% concession/exemption on the conversion charge — applies statewide, no YEIDA-specific reduction.'},
+      {item:'Till When', value:'Ongoing policy (2022 onward), no stated sunset date found in the sources reviewed.'}
+    ],
+    nodal:'UPSIDA via OIMS; a Letter of Comfort is required at the back-end claim stage (not mandatory for initial front-end registration).',
+    sourceNote:'Invest UP investment-opportunities PDF; Zeus Law Associates policy summary.'
+  },
+  {
+    id:'textile', name:'UP Textile and Garmenting Policy 2022', sub:'Applies to Sectors 29 / 32 / 33 apparel plots · heaviest YEIDA penalty of any policy on the corridor',
+    eligibility:'Mega and Super-Mega garmenting units defined by investment/employment thresholds; minimum 50 jobs required to unlock the base capital subsidy.',
+    ledger:[
+      {item:'Capital Subsidy on Plant & Machinery', value:'25% flat — the +10% top-up available in Poorvanchal/Bundelkhand does NOT apply inside YEIDA/GBN. Capped at ₹100cr per unit, with a further ceiling of 80% of total Fixed Capital Investment for GBN units specifically.'},
+      {item:'Land Cost Subsidy', value:'15% of land cost bought directly from a government agency — versus 25% anywhere else in UP. Limited to 10% of project cost or 10% of effective land cost, whichever is lower.'},
+      {item:'Stamp Duty Exemption', value:'75% — versus 100% in every other UP district.'},
+      {item:'Employment Generation Subsidy', value:'The statewide scheme (₹3,200 per worker per month for mega/super-mega units, paid for 5 years) is explicitly EXCLUDED in Gautam Buddh Nagar and Ghaziabad. YEIDA units instead get a capped alternative of roughly ₹75 lakh per unit per year — a fraction of what the same headcount would earn elsewhere in UP.'},
+      {item:'Freight Reimbursement (Exports)', value:'75% in years 1–2, 50% in years 3–4, 25% in year 5 — this one is NOT reduced for GBN, and is arguably the strongest lever for a YEIDA-based exporter given proximity to the Jewar cargo terminal.'},
+      {item:'Private Textile Park (developer route)', value:'50% of project cost excluding land, capped at ₹50cr per park.'},
+      {item:'Till When', value:'Ongoing policy (2022 onward); freight reimbursement specifically tapers on a 5-year schedule per unit from commissioning.'}
+    ],
+    nodal:'Invest UP / Handloom & Textile Department.',
+    sourceNote:'Invest UP official policy page.'
+  },
+  {
+    id:'semiconductor', name:'UP Semiconductor Policy 2024', sub:'Applies to Sectors 10 & 28 · the richest incentive stack on the corridor, evidenced by two live awards',
+    eligibility:'Semiconductor fab, ATP/OSAT and ancillary units within notified zones — currently Sectors 10 and 28 only.',
+    ledger:[
+      {item:'Capital Subsidy — Tarq Semiconductors precedent', value:'₹7,037cr awarded on a ~125-acre, ~₹28,000cr-scoped fab/ATP project — the single largest incentive figure documented anywhere on the corridor.'},
+      {item:'Capital Subsidy — HCL-Foxconn/Vama Sundari precedent', value:'₹919.31cr awarded on a 48-acre, ₹3,706cr OSAT project.'},
+      {item:'Land Rebate', value:'75% typical for ATMP/OSAT projects — Tarq\'s land rebate was ₹321cr; Vama Sundari\'s was ₹124.37cr.'},
+      {item:'Stamp Duty / Registration Exemption', value:'Up to 100% — Tarq received ₹30cr, Vama Sundari received ₹1.16cr, scaled to project size.'},
+      {item:'Electricity Duty Exemption', value:'100% for 10 years.'},
+      {item:'State Incentive Pool', value:'UP cabinet approved a pool exceeding ₹8,500cr in November 2024 specifically earmarked for YEIDA semiconductor projects.'},
+      {item:'Infrastructure Support (in-kind)', value:'YEIDA is separately providing 8 MLD water, 60 MLD sewage capacity and 400/200/132kV substation infrastructure to Sector 28 — a real cost the state is absorbing outside the headline subsidy figures.'},
+      {item:'Till When', value:'Ongoing policy (2024 onward); stacks with central India Semiconductor Mission incentives rather than replacing them.'}
+    ],
+    nodal:'Invest UP / UP Electronics & IT Department.',
+    sourceNote:'Manufacturing Today India; UP cabinet approval reporting.'
+  },
+  {
+    id:'tourism', name:'UP Tourism Policy 2022', sub:'Applies to CHP-07 hotel plots, Sectors 28 & 29 · demand-driven more than subsidy-driven',
+    eligibility:'Hotel/hospitality projects, graded by star category and destination classification.',
+    ledger:[
+      {item:'Capital Subsidy', value:'Graded by star category and destination classification — exact clause-level percentages for YEIDA/GBN specifically could not be fully verified in this research pass. Treat any figure quoted elsewhere as provisional.'},
+      {item:'Stamp Duty', value:'To be confirmed against the notified policy text — flagged as an open item rather than guessed.'},
+      {item:'Real Demand Driver', value:'This is the one policy on the list where the pitch should lead with demand, not subsidy: Jewar Phase-1 capacity is 12M passengers, scaling toward 30M by ~2030, plus steady Agra/Mathura transit tourism through the same corridor.'},
+      {item:'Till When', value:'Ongoing policy (2022 onward) — verify clause-level figures against the notified text before quoting a number to a hotel client.'}
+    ],
+    nodal:'UP Tourism Department / Invest UP.',
+    sourceNote:'Provisional — verify clause-level figures against the notified UP Tourism Policy 2022 text before quoting a client.'
+  },
+  {
+    id:'itites', name:'UP IT & ITeS Policy 2022 + Data Centre Policy', sub:'Applies to Sector 11 Fintech Hub · framework exists, untested by any live YEIDA claim',
+    eligibility:'IT/ITeS units and data-centre operators within notified zones.',
+    ledger:[
+      {item:'Capital / Interest Subsidy', value:'Available in principle per the policy schedule — no unit in Sector 11 has drawn on this yet, since the sector remains at EOI stage.'},
+      {item:'Stamp Duty / Electricity Concessions', value:'Concessional rates apply per the policy schedule once a unit is registered.'},
+      {item:'Real-World Status in YEIDA', value:'Zero live claims to date. This is a framework worth pre-briefing a client on, but not one you can point to a precedent for — unlike the semiconductor or medical device incentives, there is no YEIDA-specific award to cite yet.'},
+      {item:'Till When', value:'Ongoing policy (2022 onward).'}
+    ],
+    nodal:'Invest UP / UP Electronics & IT Department.',
+    sourceNote:'Policy exists; Sector 11 occupancy not yet realised, so real-world application here is unverified.'
+  }
+];
+
+const INDUSTRIES = [
+  {id:'hotel', label:'Hotels / Hospitality', sectors:['s28','s29'], reason:'Sectors 28 & 29 host the only zoned airport-hospitality district (CHP-07) — road widths, FAR and plot sizing are built for hotels, and Jewar\'s passenger ramp from 12M to ~30M by 2030 is the demand engine.'},
+  {id:'warehousing', label:'Warehousing / 3PL / Cold Storage', sectors:['s8','tappal'], reason:'Sector 8 has a signed ₹1,000cr logistics-park LOI right at the cargo terminal; Tappal-Bajna is the long-term rail-linked answer. Both sit inside the Designated Logistics Zone, which doubles the Warehousing & Logistics Policy 2022 subsidy caps.'},
+  {id:'storage', label:'General Storage / Godowns', sectors:['tappal','s8'], reason:'Tappal-Bajna\'s logistics zoning and Sector 8F\'s dedicated warehousing designation offer the cheapest land with DFC/expressway access for pure storage plays — verify the notified layout at Tappal given encroachment risk.'},
+  {id:'anchor', label:'Heavy / Anchor Manufacturing', sectors:['s28','s10'], reason:'Sector 28 carries the anchor ecosystem (Tarq, HCL-Foxconn) and the ₹8,500cr+ semiconductor incentive pool; Sector 10 adds EMC 2.0 capacity, with the caveat that land-acquisition risk is real there.'},
+  {id:'msme', label:'MSME / Small-Scale Manufacturing', sectors:['s29','s3233'], reason:'Sub-8,000 sqm plots, a dedicated MSME scheme track, and lower entry cost make Sectors 29, 32 and 33 the natural home for smaller-ticket clients.'},
+  {id:'garment', label:'Garment / Textile Manufacturing', sectors:['s29','s3233'], reason:'The Noida Apparel Export Cluster (150 acres, 91 garment houses already in) makes Sector 29 the obvious pick — but weigh this against the GBN penalty under the Textile Policy 2022 (see Policy Matrix) versus other UP districts.'},
+  {id:'toy', label:'Toy Manufacturing', sectors:['s3233'], reason:'Sectors 32/33 carry a dedicated Toy Park track under Scheme YEA/IND8000, aligned with the central government\'s toy-manufacturing push.'},
+  {id:'medicaldevices', label:'Medical Devices', sectors:['s28'], reason:'Sector 28\'s Medical Device Park is the only dedicated park of its kind in North India, with 101 units already allotted and central-scheme incentives layered on top.'},
+  {id:'electronics', label:'Electronics / Semiconductor', sectors:['s28','s10'], reason:'Sector 28 carries the two flagship semiconductor projects (Tarq, HCL-Foxconn) under the UP Semiconductor Policy 2024; Sector 10 adds EMC 2.0 capacity but carries acquisition risk.'},
+  {id:'foodprocessing', label:'Food Processing', sectors:['s3233'], reason:'An existing Patanjali Ayurved / Innova Food Park cluster plus the proposed Kewpie Corporation plant (₹200cr) puts food processing squarely in the Sector 32/33 belt.'},
+  {id:'dataCentre', label:'Data Centres', sectors:['s11','s28'], reason:'Sector 11\'s institutional zoning explicitly folds in data-centre use within its Fintech Hub framing; Sector 28 has an existing data-centre park pocket alongside its anchor tenants.'},
+  {id:'fintech', label:'Fintech / IT-ITeS Office', sectors:['s11'], reason:'Sector 11\'s institutional zoning and the 500-acre Fintech Hub EOI (with reported Infosys/Wipro/Tata interest) make it the only real candidate — though nothing is signed yet.'},
+  {id:'film', label:'Film / Media Production', sectors:['s21'], reason:'Sector 21\'s International Film City is the only film-zoned sector on the corridor, with a signed concession and ~₹1,500cr Phase-1 investment already committed.'}
+];
+
+const CONNECTIVITY = [
+  {name:'Yamuna Expressway', status:'live', desc:'165 km, 6-lane spine connecting Delhi–Agra. Every profiled sector fronts or sits minutes from it.'},
+  {name:'Noida International Airport (Jewar)', status:'live', desc:'Phase-1 inaugurated 28 Mar 2026 (~₹11,200cr). First commercial flight 15 Jun 2026. 12M passenger capacity at Phase-1, scaling toward 30M by ~2030. Cargo terminal operating from day one.'},
+  {name:'Eastern Peripheral Expressway (EPE)', status:'construction', desc:'Proposed link connecting EPE to the Yamuna Expressway near Film City/airport — under construction, expressway ramps visible near Sector 21.'},
+  {name:'Ganga Expressway / DMIC / Dedicated Freight Corridor', status:'construction', desc:'Tappal-Bajna sits at the Yamuna Expressway × DMIC intersection. EDFC/WDFC intersect at Dadri (GBN) — the basis for Designated Logistics Zone status across nearby sectors.'},
+  {name:'Delhi–Jewar RRTS Corridor', status:'proposed', desc:'Proposed rapid-rail link targeting a ~21-minute connection; still at planning stage, no construction confirmed in sources reviewed.'},
+  {name:'Noida Metro Aqua Line Extension', status:'proposed', desc:'Extension plans discussed to link the corridor to the existing Aqua Line network — proposal stage.'},
+  {name:'Multi-Modal Transport Hub, Greater Noida', status:'construction', desc:'478 hectares across 7 villages; ~80% land acquisition reported complete.'},
+  {name:'Personal Rapid Transit (Pod Taxi)', status:'proposed', desc:'YEIDA-listed project for last-mile connectivity around the airport/Film City belt — planning stage.'}
+];
+
+/* ============================================================
+   RENDER — OVERVIEW
+   ============================================================ */
+const liveCount = SECTORS.filter(s=>s.status==='construction').length;
+const proposalCount = SECTORS.filter(s=>s.status==='proposal').length;
+const riskCount = SECTORS.filter(s=>s.status==='risk').length;
+const companyCount = SECTORS.reduce((n,s)=>n+s.investments.length,0);
+
+document.getElementById('kpiRow').innerHTML = `
+  <div class="kpi"><div class="num">${SECTORS.length}</div><div class="lbl">Sectors Tracked</div></div>
+  <div class="kpi"><div class="num">${liveCount}</div><div class="lbl">Confirmed / Under Construction</div></div>
+  <div class="kpi"><div class="num">${companyCount}</div><div class="lbl">Named Investors / Schemes</div></div>
+  <div class="kpi"><div class="num">6</div><div class="lbl">State Policy Frameworks</div></div>
+`;
+
+const rail = document.getElementById('corridorRail');
+rail.innerHTML = `<div class="spine"></div>` + SECTORS.map(s=>{
+  const rk = s.status==='construction' ? 'rk-live' : (s.status==='proposal'||s.status==='risk' ? 'rk-proposal' : '');
+  const color = s.status==='construction' ? 'var(--green)' : (s.status==='risk' ? 'var(--seal)' : (s.status==='proposal' ? 'var(--slate)' : 'var(--amber)'));
+  return `<div class="corridor-node ${rk}" style="left:${s.posPct}%; color:${color};" onclick="openDrawer('${s.id}')" title="${s.code}"><div class="tick"></div></div>
+  <div class="corridor-node-label" style="left:${s.posPct}%;">${s.code.replace('Sector ','').replace('Sectors ','')}</div>`;
+}).join('');
+
+/* ============================================================
+   RENDER — SECTOR DIRECTORY
+   ============================================================ */
+function pillFor(status){
+  const map = {construction:['pill-construction','Announced'], live:['pill-live','Confirmed'], proposal:['pill-proposal','Proposal'], risk:['pill-risk','Risk Flag']};
+  const [cls,label] = map[status] || map.proposal;
+  return `<span class="pill ${cls}">${label}</span>`;
+}
+
+function renderSectorGrid(filterStatus='all', query=''){
+  const grid = document.getElementById('sectorGrid');
+  const q = query.trim().toLowerCase();
+  const filtered = SECTORS.filter(s=>{
+    if(filterStatus!=='all' && s.status!==filterStatus) return false;
+    if(!q) return true;
+    const hay = (s.code+' '+s.name+' '+s.tag+' '+s.narrative+' '+s.investments.map(i=>i.name).join(' ')).toLowerCase();
+    return hay.includes(q);
+  });
+  if(filtered.length===0){
+    grid.innerHTML = `<div style="grid-column:1/-1; padding:40px; text-align:center; color:var(--muted); font-family:var(--mono); font-size:12.5px;">No sector matches that search. Try a broader term.</div>`;
+    return;
+  }
+  grid.innerHTML = filtered.map(s=>`
+    <div class="sector-card" onclick="openDrawer('${s.id}')">
+      <div class="code">${s.code}</div>
+      <h3>${s.name}</h3>
+      <div class="tag">${s.tag}</div>
+      ${pillFor(s.status)}
+      <div class="snippet">${s.narrative.slice(0,140)}${s.narrative.length>140?'…':''}</div>
+      ${s.bestFor.length? `<div class="bestfor">${s.bestFor.map(bf=>{
+        const ind = INDUSTRIES.find(i=>i.id===bf);
+        return ind ? `<span class="bf-tag">${ind.label}</span>` : '';
+      }).join('')}</div>` : ''}
+    </div>
+  `).join('');
+}
+renderSectorGrid();
+
+document.getElementById('sectorSearch').addEventListener('input', (e)=>{
+  const active = document.querySelector('#statusChips .chip.active').dataset.status;
+  renderSectorGrid(active, e.target.value);
+});
+document.querySelectorAll('#statusChips .chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('#statusChips .chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    renderSectorGrid(chip.dataset.status, document.getElementById('sectorSearch').value);
+  });
+});
+
+/* ============================================================
+   DRAWER
+   ============================================================ */
+function openDrawer(sectorId){
+  const s = SECTORS.find(x=>x.id===sectorId);
+  if(!s) return;
+  document.getElementById('drawerCode').textContent = s.code.toUpperCase();
+  document.getElementById('drawerTitle').textContent = s.name;
+  document.getElementById('drawerPill').innerHTML = pillFor(s.status);
+
+  const invHtml = s.investments.map(i=>`
+    <div class="inv-row">
+      <div style="flex:1;">
+        <div class="name">${i.name}</div>
+        <div class="meta">${i.meta}</div>
+      </div>
+      <div class="amt">${i.amount}<br><span style="font-size:10px; color:var(--muted); font-weight:400;">${i.tagStatus}</span></div>
+    </div>
+  `).join('');
+
+  const policyHtml = s.policies.map(pid=>{
+    const p = POLICIES.find(x=>x.id===pid);
+    return p ? `<div class="policy-tag" onclick="switchPanel('policy'); setTimeout(()=>openPolicy('${pid}'),150);">${p.name}</div>` : '';
+  }).join('');
+
+  const relColor = s.reliability==='high' ? 'var(--green)' : (s.reliability==='medium' ? 'var(--amber-bright)' : 'var(--seal)');
+  const relLabel = s.reliability==='high' ? 'HIGH — primary-source corroborated' : (s.reliability==='medium' ? 'MEDIUM — mixed sourcing, verify before quoting' : 'LOW — largely announcement/broker-sourced');
+
+  const advHtml = (s.advantages && s.advantages.length) ? `
+    <div class="drawer-section">
+      <h4>Advantages &amp; Disadvantages</h4>
+      <div class="adv-disadv-grid">
+        <div class="ad-col adv">
+          <div class="ad-head">Advantages</div>
+          <ul class="ad-list">${s.advantages.map(a=>`<li>${a}</li>`).join('')}</ul>
+        </div>
+        <div class="ad-col disadv">
+          <div class="ad-head">Disadvantages</div>
+          <ul class="ad-list">${s.disadvantages.map(d=>`<li>${d}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>
+  ` : '';
+
+  document.getElementById('drawerBody').innerHTML = `
+    <div class="drawer-section">
+      <h4>Zoning &amp; Land Use</h4>
+      <p>${s.zoning}</p>
+    </div>
+    ${advHtml}
+    <div class="drawer-section">
+      <h4>Investments, LOIs &amp; Named Companies</h4>
+      ${invHtml}
+    </div>
+    <div class="drawer-section">
+      <h4>Applicable Policies</h4>
+      <div class="policy-tag-row">${policyHtml}</div>
+    </div>
+    <div class="drawer-section">
+      <h4>Connectivity</h4>
+      <p>${s.connectivity}</p>
+    </div>
+    <div class="drawer-section">
+      <h4>Advisory Read</h4>
+      <p>${s.narrative}</p>
+    </div>
+    <div class="drawer-section">
+      <h4>Source Reliability</h4>
+      <div class="reliability-box">
+        <div style="width:10px; height:10px; border-radius:50%; background:${relColor}; margin-top:4px; flex-shrink:0;"></div>
+        <div>
+          <div style="font-family:var(--mono); font-size:11.5px; color:${relColor}; font-weight:600;">${relLabel}</div>
+          <p style="margin-top:6px;">${s.reliabilityNote}</p>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('drawer').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('drawer').classList.remove('show');
+  document.body.style.overflow='';
+}
+
+/* ============================================================
+   RENDER — POLICY MATRIX
+   ============================================================ */
+function renderPolicies(){
+  document.getElementById('policyList').innerHTML = POLICIES.map(p=>`
+    <div class="policy-item" id="policy-${p.id}">
+      <div class="policy-summary" onclick="togglePolicy('${p.id}')">
+        <div>
+          <h3>${p.name}</h3>
+          <div class="sub">${p.sub}</div>
+        </div>
+        <svg class="policy-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="policy-detail">
+        <div class="policy-detail-inner">
+          <div class="spec-item"><div class="k">Eligibility</div><div class="v">${p.eligibility}</div></div>
+          <div style="margin-top:16px;">
+            <div class="k" style="font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); margin-bottom:2px;">What you get, itemised</div>
+            <table class="ledger">
+              ${p.ledger.map(row=>`<tr><td class="item">${row.item}</td><td class="val">${row.value}</td></tr>`).join('')}
+            </table>
+          </div>
+          <div class="spec-item" style="margin-top:16px;"><div class="k">Nodal Agency</div><div class="v">${p.nodal}</div></div>
+          <p style="margin-top:14px; font-size:11.5px; color:var(--muted); font-style:italic;">Source basis: ${p.sourceNote}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+renderPolicies();
+
+function togglePolicy(id){
+  const item = document.getElementById('policy-'+id);
+  const detail = item.querySelector('.policy-detail');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.policy-item').forEach(p=>{
+    p.classList.remove('open');
+    p.querySelector('.policy-detail').style.maxHeight = null;
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    detail.style.maxHeight = detail.scrollHeight + 'px';
+  }
+}
+function openPolicy(id){
+  const item = document.getElementById('policy-'+id);
+  if(!item) return;
+  item.scrollIntoView({behavior:'smooth', block:'center'});
+  if(!item.classList.contains('open')) togglePolicy(id);
+}
+
+/* ============================================================
+   MAP VIEWER — pan & zoom + PDF/Image mode switch
+   ============================================================ */
+(function(){
+  const viewport = document.getElementById('mapViewport');
+  const img = document.getElementById('mapImage');
+  const statusEl = document.getElementById('mapImageStatus');
+  let scale = 1, minScale = 0.4, maxScale = 8;
+  let originX = 0, originY = 0;
+  let isPanning = false, startX = 0, startY = 0;
+  let imgLoaded = false;
+
+  function centerImage(){
+    const vw = viewport.clientWidth, vh = viewport.clientHeight;
+    if(!vw || !vh) return; // container still hidden — wait for next trigger
+    const iw = img.naturalWidth || 1600, ih = img.naturalHeight || 1000;
+    const fitScale = Math.min(vw/iw, vh/ih) * 0.94;
+    scale = fitScale; minScale = fitScale * 0.5; maxScale = fitScale * 8;
+    originX = (vw - iw*scale)/2;
+    originY = (vh - ih*scale)/2;
+    applyTransform();
+  }
+  img.addEventListener('load', ()=>{
+    imgLoaded = true;
+    if(statusEl) statusEl.style.display = 'none';
+    centerImage();
+  });
+  img.addEventListener('error', ()=>{
+    if(statusEl){
+      statusEl.innerHTML = 'This image did not load from its source just now. <a href="'+img.src+'" target="_blank" rel="noopener" style="color:var(--amber);">Open it directly &rarr;</a>';
+      statusEl.style.display = 'flex';
+    }
+  });
+  if(img.complete && img.naturalWidth) { imgLoaded=true; if(statusEl) statusEl.style.display='none'; centerImage(); }
+  window.addEventListener('resize', ()=>{ if(imgLoaded) centerImage(); });
+  window.__recenterMasterMap = ()=>{ if(imgLoaded) centerImage(); };
+
+  function applyTransform(){
+    img.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+  }
+
+  viewport.addEventListener('wheel', (e)=>{
+    e.preventDefault();
+    const rect = viewport.getBoundingClientRect();
+    const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+    const delta = e.deltaY < 0 ? 1.15 : 1/1.15;
+    const newScale = Math.min(maxScale, Math.max(minScale, scale*delta));
+    originX = mx - (mx - originX) * (newScale/scale);
+    originY = my - (my - originY) * (newScale/scale);
+    scale = newScale;
+    applyTransform();
+  }, {passive:false});
+
+  viewport.addEventListener('mousedown', (e)=>{
+    isPanning = true; startX = e.clientX - originX; startY = e.clientY - originY;
+    viewport.classList.add('grabbing');
+  });
+  window.addEventListener('mousemove', (e)=>{
+    if(!isPanning) return;
+    originX = e.clientX - startX; originY = e.clientY - startY;
+    applyTransform();
+  });
+  window.addEventListener('mouseup', ()=>{ isPanning=false; viewport.classList.remove('grabbing'); });
+
+  let lastDist = null;
+  function dist(t){ const dx=t[0].clientX-t[1].clientX, dy=t[0].clientY-t[1].clientY; return Math.sqrt(dx*dx+dy*dy); }
+  viewport.addEventListener('touchstart', (e)=>{
+    if(e.touches.length===1){ isPanning=true; startX=e.touches[0].clientX-originX; startY=e.touches[0].clientY-originY; }
+    else if(e.touches.length===2){ lastDist = dist(e.touches); }
+  }, {passive:true});
+  viewport.addEventListener('touchmove', (e)=>{
+    if(e.touches.length===1 && isPanning){
+      originX = e.touches[0].clientX - startX; originY = e.touches[0].clientY - startY;
+      applyTransform();
+    } else if(e.touches.length===2 && lastDist){
+      const d = dist(e.touches);
+      const factor = d/lastDist;
+      scale = Math.min(maxScale, Math.max(minScale, scale*factor));
+      lastDist = d;
+      applyTransform();
+    }
+  }, {passive:true});
+  viewport.addEventListener('touchend', ()=>{ isPanning=false; lastDist=null; });
+
+  function zoomStep(factor){
+    const rect = viewport.getBoundingClientRect();
+    const cx = rect.width/2, cy = rect.height/2;
+    const newScale = Math.min(maxScale, Math.max(minScale, scale*factor));
+    originX = cx - (cx-originX)*(newScale/scale);
+    originY = cy - (cy-originY)*(newScale/scale);
+    scale = newScale;
+    applyTransform();
+  }
+  document.getElementById('zoomIn').addEventListener('click', ()=>zoomStep(1.3));
+  document.getElementById('zoomOut').addEventListener('click', ()=>zoomStep(1/1.3));
+  document.getElementById('zoomReset').addEventListener('click', ()=>{ if(imgLoaded) centerImage(); });
+})();
+
+const PDF_REPORTS = [
+  {label:'Master Plan 2041 — Full Report (Phase-I)', src:"https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20240902_FULL-REPORT_Master-Plan_YEIDA-2041_pk_print-WO-highlight.pdf"},
+  {label:'Master Plan 2031 — Phase-II Report', src:"https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20241209_PHASE-2_REPORT.pdf"}
+];
+document.getElementById('mapThumbs').innerHTML = PDF_REPORTS.map((r,idx)=>`
+  <button class="industry-btn ${idx===0?'active':''}" style="flex:1; font-size:11px; padding:8px 10px;" onclick="switchPdfReport(${idx}, this)">${r.label}</button>
+`).join('');
+function switchPdfReport(idx, el){
+  document.querySelectorAll('#mapThumbs .industry-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('pdfFrame').src = PDF_REPORTS[idx].src;
+}
+
+document.querySelectorAll('#mapModeChips .chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('#mapModeChips .chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const mode = chip.dataset.mode;
+    document.getElementById('mapFramePdf').style.display = mode==='pdf' ? 'block' : 'none';
+    document.getElementById('mapFrameImage').style.display = mode==='image' ? 'block' : 'none';
+    if(mode==='image'){
+      setTimeout(()=>{ if(window.__recenterMasterMap) window.__recenterMasterMap(); }, 60);
+    }
+  });
+});
+
+/* ============================================================
+   INDUSTRY FINDER
+   ============================================================ */
+document.getElementById('industryButtons').innerHTML = INDUSTRIES.map(i=>`
+  <button class="industry-btn" data-id="${i.id}" onclick="showFinderResult('${i.id}', this)">${i.label}</button>
+`).join('');
+
+function showFinderResult(id, btn){
+  document.querySelectorAll('.industry-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const ind = INDUSTRIES.find(i=>i.id===id);
+  const box = document.getElementById('finderResult');
+  box.innerHTML = ind.sectors.map((sid, rank)=>{
+    const s = SECTORS.find(x=>x.id===sid);
+    if(!s) return '';
+    return `
+      <div class="finder-reco">
+        <div class="rank">${rank===0?'Primary Recommendation':'Also Consider'}</div>
+        <h4>${s.code} — ${s.name}</h4>
+        <p>${ind.reason}</p>
+        <span class="open-link" onclick="switchPanel('directory'); setTimeout(()=>openDrawer('${s.id}'),150);">Open full sector file →</span>
+      </div>
+    `;
+  }).join('');
+  box.classList.add('show');
+}
+
+/* ============================================================
+   CONNECTIVITY
+   ============================================================ */
+document.getElementById('connList').innerHTML = CONNECTIVITY.map(c=>`
+  <div class="conn-item">
+    <div class="name">${c.name}</div>
+    <div class="desc">${c.desc}</div>
+    <span class="pill">placeholder</span>
+  </div>
+`).join('');
+
+(function(){
+  const items = document.querySelectorAll('#connList .conn-item');
+  CONNECTIVITY.forEach((c, idx)=>{
+    const pillHost = items[idx].querySelector('.pill');
+    if(!pillHost) return;
+    if(c.status==='live'){ pillHost.className='pill pill-live'; pillHost.textContent='Operational'; }
+    else if(c.status==='construction'){ pillHost.className='pill pill-construction'; pillHost.textContent='Under Construction'; }
+    else { pillHost.className='pill pill-proposal'; pillHost.textContent='Proposed'; }
+  });
+})();
+
+/* ============================================================
+   TAB SWITCHING
+   ============================================================ */
+function switchPanel(name){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(t=>{ if(t.dataset.panel===name) t.classList.add('active'); });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>switchPanel(btn.dataset.panel));
+});
+
+/* ============================================================
+   BOOT SEQUENCE
+   ============================================================ */
+setTimeout(()=>{ document.getElementById('boot').classList.add('hide'); }, 2650);
+</script>
+
+</body>
+</html>

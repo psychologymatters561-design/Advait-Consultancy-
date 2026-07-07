@@ -300,6 +300,11 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .notes-link span{transition:transform .35s var(--ease)}
 .notes-link:hover span{transform:translateX(5px)}
 .notes-link:active{box-shadow:var(--inset)}
+.intel-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-top:30px}
+.intel-links .notes-link{margin-top:0}
+.notes-link.is-tool{background:transparent;box-shadow:none;border:1px solid var(--rule);color:var(--muted)}
+.notes-link.is-tool:hover{color:var(--accent);border-color:var(--accent-soft);box-shadow:var(--raise-sm)}
+.intel-tool-note{margin-top:16px!important;color:var(--faint);font-size:clamp(12px,1vw,13px);max-width:54ch}
 
 /* quiet private-intelligence capture */
 .capture{margin:34px auto 0;max-width:460px}
@@ -546,7 +551,11 @@ body.world2-active #cursor{border-color:var(--accent-2)}
     <div class="wrap">
       <h2 data-reveal>Thinking, published.</h2>
       <p data-reveal data-d="1">Directional notes on infrastructure cycles, capital flows, and corridor development across Delhi NCR. The deeper work stays with mandated clients.</p>
-      <a class="notes-link" data-reveal data-d="1" href="/notes/">Read the corridor notes <span aria-hidden="true">→</span></a>
+      <div class="intel-links" data-reveal data-d="1">
+        <a class="notes-link" href="/notes/">Read the corridor notes <span aria-hidden="true">→</span></a>
+        <a class="notes-link is-tool" href="/desk/">Open the Corridor Desk <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="intel-tool-note" data-reveal data-d="1">The Desk is a working reference on the Jewar–YEIDA corridor — sector files, policy, and the Master Plan map. For those who prefer to read the ground themselves.</p>
       <!-- Founder: set data-endpoint to your form/inbox handler (e.g. Formspree) to capture leads server-side.
            With no endpoint, submit opens a pre-addressed mail draft to advisory@ as a fallback. -->
       <form class="capture" id="captureNotes" data-reveal data-d="2" data-endpoint="" novalidate>
