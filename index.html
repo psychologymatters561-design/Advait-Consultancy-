@@ -221,6 +221,18 @@ body.ready .scroll-cue{animation:fadeup 1s var(--ease-out) .8s forwards}
 .thread.in{transform:scaleX(1)}
 .philosophy .thread{margin:48px auto 0}
 
+/* what we do — concrete services, in the site's own neomorphic language */
+.services-head{text-align:center;margin-bottom:clamp(38px,5vh,64px)}
+.services-head h2{font-family:var(--f-display);font-weight:300;font-size:clamp(26px,3.2vw,44px);line-height:1.12;margin:.3em 0 0}
+.services-lead{font-family:var(--f-body);font-weight:300;color:var(--muted);max-width:62ch;margin:24px auto 0;font-size:clamp(14.5px,1.05vw,16px);line-height:1.78}
+.services-lead b{color:var(--text);font-weight:400}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,28px)}
+.svc{display:flex;flex-direction:column;gap:12px}
+.svc .svc-k{font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;color:var(--accent)}
+.svc h3{font-family:var(--f-display);font-weight:600;font-size:clamp(21px,2.2vw,28px);line-height:1.1;margin:0}
+.svc p{margin:0;font-family:var(--f-body);font-weight:300;font-size:clamp(14px,1.02vw,15.5px);line-height:1.74;color:var(--muted)}
+@media (max-width:720px){.services-grid{grid-template-columns:1fr}}
+
 /* ══════════════════════════════════════════════════════════════════════════
    ADVISORY — horizontal centre-snapping carousel (scroll-driven on desktop,
    native swipe on touch). Default CSS is native scroll-snap, so it is robust
@@ -405,9 +417,9 @@ body.world2-active #cursor{border-color:var(--accent-2)}
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Advait — home"><span class="mark"><svg width="18" height="18"><use href="#mk"/></svg></span>Advait</a>
   <nav class="nav-links" aria-label="Primary">
-    <a href="#advisory">Advisory</a>
-    <a href="#thesis" class="hide-sm">Thesis</a>
-    <a href="#intelligence" class="hide-sm">Thinking</a>
+    <a href="#services">Practice</a>
+    <a href="#advisory" class="hide-sm">Advisory</a>
+    <a href="#intelligence">Research</a>
     <a href="#engage">Engage</a>
   </nav>
 </header>
@@ -444,6 +456,39 @@ body.world2-active #cursor{border-color:var(--accent-2)}
       </p>
       <p class="meta" data-reveal data-d="4">Independent Advisory&nbsp;&nbsp;·&nbsp;&nbsp;Single-Client Mandate&nbsp;&nbsp;·&nbsp;&nbsp;Delhi NCR</p>
       <div class="thread" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT WE DO — concrete services, plainly stated ═══ -->
+  <section class="section services" id="services" aria-label="What we do">
+    <div class="wrap">
+      <div class="services-head">
+        <div class="eyebrow" data-reveal>What we do</div>
+        <h2 data-reveal data-d="1">Counsel on the entry, not the transaction.</h2>
+        <p class="services-lead" data-reveal data-d="1">Advait Consultancy is an <b>independent, fee-based real estate advisory firm in Delhi NCR</b>. We work for investors taking a position and developers shaping one — on one side of a deal, never both. Four ways we are engaged:</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc panel" data-reveal>
+          <span class="svc-k" aria-hidden="true">01</span>
+          <h3>Due Diligence</h3>
+          <p>Title, land-use, encumbrance and infrastructure-timing checks before capital is committed — reading whether the pipeline behind a parcel is real, or merely announced.</p>
+        </div>
+        <div class="svc panel" data-reveal data-d="1">
+          <span class="svc-k" aria-hidden="true">02</span>
+          <h3>Deal Structuring</h3>
+          <p>How the entry is built: price, timing, terms and staging. In India's corridors the structure of a deal often decides the return more than the asset itself.</p>
+        </div>
+        <div class="svc panel" data-reveal data-d="2">
+          <span class="svc-k" aria-hidden="true">03</span>
+          <h3>Acquisition Advisory</h3>
+          <p>Sourcing and entry on a single side — including assets placed quietly, before they ever reach a portal, while the best entry point still stands.</p>
+        </div>
+        <div class="svc panel" data-reveal data-d="3">
+          <span class="svc-k" aria-hidden="true">04</span>
+          <h3>Portfolio &amp; Corridor Strategy</h3>
+          <p>Where to be positioned across Delhi NCR — the Dwarka Expressway, Noida, the Yamuna corridor toward Jewar — and when. Sequencing exposure to infrastructure rather than chasing it.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -713,7 +758,7 @@ The mechanics are discussed only with those who reach out.</p>
   var linkFor={};$$(".nav-links a").forEach(function(a){linkFor[a.getAttribute("href").slice(1)]=a;});
   if("IntersectionObserver" in w){
     var io2=new IntersectionObserver(function(es){es.forEach(function(en){var a=linkFor[en.target.id];if(a&&en.isIntersecting){$$(".nav-links a").forEach(function(x){x.classList.remove("active");});a.classList.add("active");}});},{threshold:.4});
-    ["advisory","thesis","intelligence","engage"].forEach(function(id){var s=d.getElementById(id);if(s)io2.observe(s);});
+    ["services","advisory","intelligence","engage"].forEach(function(id){var s=d.getElementById(id);if(s)io2.observe(s);});
   }
 
   /* anchor smooth scroll (Lenis-aware) */
