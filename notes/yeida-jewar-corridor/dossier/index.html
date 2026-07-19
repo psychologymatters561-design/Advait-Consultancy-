@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YEIDA / Jewar Corridor — Investment Dossier · Advait Consultancy</title>
+<meta name="description" content="Institutional buy / no-buy decision framework on the Noida International Airport (Jewar) & YEIDA corridor. Prepared by Advait Consultancy.">
+<link rel="canonical" href="https://advaitconsultancy.in/notes/yeida-jewar-corridor/dossier/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Advait Consultancy">
+<meta property="og:title" content="YEIDA / Jewar Corridor — Investment Dossier · Advait Consultancy">
+<meta property="og:description" content="Institutional buy / no-buy decision framework on the Noida International Airport (Jewar) & YEIDA corridor. Prepared by Advait Consultancy.">
+<meta property="og:url" content="https://advaitconsultancy.in/notes/yeida-jewar-corridor/dossier/">
+<meta property="og:image" content="https://advaitconsultancy.in/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%230A1119'/%3E%3Ccircle cx='24' cy='24' r='13' fill='none' stroke='%23E7A73C' stroke-width='2'/%3E%3Cline x1='3' y1='24' x2='45' y2='24' stroke='%23E7A73C' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ADVAIT CONSULTANCY — JEWAR/YEIDA DOSSIER
+   Concept: confidential flight dossier / instrument approach
+   ============================================================ */
+:root{
+  --ink:#0A1119;          /* cockpit night */
+  --ink-2:#0E1A26;        /* petrol layer */
+  --ink-3:#122534;        /* raised panel */
+  --paper:#F1EBDD;        /* declassified document */
+  --paper-2:#E7DECB;      /* document shade */
+  --amber:#E7A73C;        /* runway edge light */
+  --amber-soft:#F0C173;
+  --gold:#C9A24B;         /* institutional accent */
+  --teal:#5C9EA6;         /* data */
+  --teal-deep:#3C7078;
+  --buy:#5FA377;          /* muted emerald */
+  --sel:#E7A73C;          /* amber */
+  --avoid:#C36A54;        /* muted rust */
+  --line:rgba(233,225,205,.14);
+  --line-paper:rgba(20,32,44,.14);
+  --txt-dim:#9FB0BE;
+  --txt-paper-dim:#5A5140;
+  --serif:'Instrument Serif',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'Inter',system-ui,sans-serif;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:#DCE6EE;font-family:var(--sans);
+  font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--amber);color:var(--ink)}
+
+/* ---------- glide-path progress bar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);
+  background:linear-gradient(180deg,rgba(10,17,25,.92),rgba(10,17,25,.4) 70%,transparent);
+  backdrop-filter:blur(6px);
+}
+.brandmark{font-family:var(--mono);font-size:12px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--paper);font-weight:500;white-space:nowrap}
+.brandmark b{color:var(--amber);font-weight:600}
+.alt-readout{font-family:var(--mono);font-size:11px;letter-spacing:.15em;
+  color:var(--txt-dim);text-align:right;white-space:nowrap}
+.alt-readout .ft{color:var(--amber);font-weight:500}
+.glide{position:fixed;top:0;left:0;height:2px;z-index:101;
+  background:linear-gradient(90deg,var(--amber),var(--gold));width:0%;
+  box-shadow:0 0 12px rgba(231,167,60,.7)}
+
+@media(max-width:640px){.alt-readout{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:flex-end;overflow:hidden;padding:0 clamp(16px,4vw,40px) clamp(40px,7vh,80px)}
+.hero-sky{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(120% 80% at 50% 120%, rgba(231,167,60,.16), transparent 55%),
+    radial-gradient(90% 60% at 50% 105%, rgba(92,158,166,.12), transparent 60%),
+    linear-gradient(180deg,#070C12 0%,#0A1119 45%,#0C1926 100%)}
+/* stars */
+.stars{position:absolute;inset:0;z-index:0;opacity:.5}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;
+  background:#cfe0ec;animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+
+/* runway perspective */
+.runway{position:absolute;left:50%;bottom:0;z-index:1;
+  width:min(680px,92vw);height:60vh;transform:translateX(-50%);
+  perspective:520px;pointer-events:none}
+.runway-plane{position:absolute;inset:0;
+  transform:rotateX(66deg);transform-origin:bottom center}
+.centerline{position:absolute;left:50%;bottom:0;width:6px;height:100%;
+  transform:translateX(-50%);
+  background:repeating-linear-gradient(180deg,var(--amber) 0 26px,transparent 26px 60px);
+  opacity:0;animation:lineUp 1.4s ease .3s forwards;
+  filter:drop-shadow(0 0 6px rgba(231,167,60,.8))}
+@keyframes lineUp{to{opacity:.85}}
+.edge{position:absolute;bottom:0;width:3px;height:100%;
+  background:repeating-linear-gradient(180deg,rgba(231,167,60,.9) 0 4px,transparent 4px 46px)}
+.edge.l{left:12%}.edge.r{right:12%}
+.edge span{display:none}
+/* sequenced approach lights climbing toward viewer */
+.approach{position:absolute;left:50%;bottom:-4vh;transform:translateX(-50%);
+  width:2px;height:34vh;z-index:2}
+.app-l{position:absolute;left:50%;transform:translateX(-50%);
+  width:34px;height:3px;border-radius:2px;background:var(--amber-soft);
+  opacity:0;box-shadow:0 0 10px var(--amber)}
+@keyframes flash{0%,92%,100%{opacity:0}20%,60%{opacity:.95}}
+
+.hero-grad{position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg,rgba(7,12,18,.2) 0%,transparent 30%,rgba(7,12,18,.55) 78%,rgba(10,17,25,.9) 100%)}
+
+.hero-inner{position:relative;z-index:5;max-width:var(--maxw);margin:0 auto;width:100%}
+.eyebrow{font-family:var(--mono);font-size:clamp(10px,1.4vw,12.5px);
+  letter-spacing:.34em;text-transform:uppercase;color:var(--amber);
+  display:flex;align-items:center;gap:14px;margin-bottom:26px;
+  opacity:0;animation:rise .9s ease .2s forwards}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--amber);flex:none}
+.hero h1{font-family:var(--serif);font-weight:400;
+  font-size:clamp(44px,8.4vw,104px);line-height:.98;letter-spacing:-.01em;
+  color:var(--paper);margin-bottom:8px;
+  opacity:0;animation:rise 1s ease .4s forwards}
+.hero h1 .verdict{font-style:italic;color:var(--amber);
+  display:inline-block;position:relative}
+.hero .sub{max-width:640px;font-size:clamp(15px,2vw,19px);color:#B7C6D2;
+  font-weight:300;margin-top:22px;
+  opacity:0;animation:rise 1s ease .7s forwards}
+.hero .sub b{color:#E5EEF4;font-weight:500}
+.hero-meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;
+  opacity:0;animation:rise 1s ease .95s forwards}
+.hmi{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--txt-dim)}
+.hmi b{display:block;color:var(--paper);font-weight:500;font-size:13px;
+  letter-spacing:.08em;margin-top:3px}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.scrollcue{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:5;
+  font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--txt-dim);
+  text-transform:uppercase;opacity:0;animation:rise 1s ease 1.3s forwards, bob 2.2s ease 1.3s infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ---------- instrument strip ---------- */
+.strip{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  position:relative;z-index:6}
+.strip-grid{max-width:var(--maxw);margin:0 auto;display:grid;
+  grid-template-columns:repeat(4,1fr)}
+.gauge{padding:26px clamp(14px,2.5vw,28px);border-right:1px solid var(--line)}
+.gauge:last-child{border-right:none}
+.gauge .lab{font-family:var(--mono);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--txt-dim);margin-bottom:10px;line-height:1.4}
+.gauge .val{font-family:var(--serif);font-size:clamp(30px,4.4vw,46px);
+  line-height:1;color:var(--amber)}
+.gauge .val.small{font-size:clamp(22px,3vw,30px);color:var(--paper)}
+.gauge .note{font-size:11.5px;color:var(--txt-dim);margin-top:8px}
+@media(max-width:720px){.strip-grid{grid-template-columns:repeat(2,1fr)}
+  .gauge:nth-child(2){border-right:none}.gauge:nth-child(1),.gauge:nth-child(2){border-bottom:1px solid var(--line)}}
+
+/* ---------- generic section frame ---------- */
+.section{max-width:var(--maxw);margin:0 auto;
+  padding:clamp(64px,11vh,120px) clamp(16px,4vw,40px)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+.sec-no{font-family:var(--mono);font-size:13px;letter-spacing:.2em;color:var(--amber);
+  border:1px solid var(--line);padding:5px 10px;border-radius:3px;flex:none}
+.sec-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--txt-dim)}
+.sec-title{font-family:var(--serif);font-weight:400;
+  font-size:clamp(30px,5.2vw,58px);line-height:1.02;color:var(--paper);
+  letter-spacing:-.01em;margin-bottom:22px;max-width:15ch}
+.lead{font-size:clamp(16px,2vw,20px);color:#C4D2DC;font-weight:300;max-width:70ch;margin-bottom:8px}
+.lead b{color:#EAF1F5;font-weight:500}
+.body-txt{font-size:15.5px;color:#AEBEC9;max-width:72ch;margin-top:18px}
+.body-txt b{color:#DDE7EE;font-weight:600}
+.body-txt+.body-txt{margin-top:14px}
+
+/* divider */
+.rwstrip{display:flex;gap:10px;justify-content:center;padding:30px 0;opacity:.6}
+.rwstrip i{width:38px;height:3px;background:var(--amber);border-radius:2px;
+  box-shadow:0 0 8px rgba(231,167,60,.5)}
+
+/* ---------- PAPER (declassified document) sections ---------- */
+.paper{background:var(--paper);color:#26211A;position:relative}
+.paper::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(180deg,transparent 0 33px,rgba(20,32,44,.045) 33px 34px);opacity:.5}
+.paper .sec-title{color:#1A2530}
+.paper .sec-kicker{color:var(--txt-paper-dim)}
+.paper .sec-no{color:#9a6a12;border-color:var(--line-paper)}
+.paper .lead{color:#3C3728}.paper .lead b{color:#1A2530}
+.paper .body-txt{color:#4A4536}.paper .body-txt b{color:#1A2530}
+.paper-stamp{position:absolute;top:34px;right:clamp(16px,4vw,40px);
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:#B94E3A;
+  border:1.5px solid #B94E3A;padding:6px 12px;border-radius:3px;
+  transform:rotate(6deg);opacity:.7;text-transform:uppercase}
+
+/* ---------- verdict legend row ---------- */
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:8px}
+.lg{background:var(--ink-2);padding:26px 22px}
+.lg .tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;font-weight:500}
+.lg .tag::before{content:"";width:9px;height:9px;border-radius:50%}
+.lg.buy .tag{color:var(--buy)}.lg.buy .tag::before{background:var(--buy);box-shadow:0 0 8px var(--buy)}
+.lg.sel .tag{color:var(--sel)}.lg.sel .tag::before{background:var(--sel);box-shadow:0 0 8px var(--sel)}
+.lg.avo .tag{color:var(--avoid)}.lg.avo .tag::before{background:var(--avoid);box-shadow:0 0 8px var(--avoid)}
+.lg p{font-size:13.5px;color:#B2C1CC}
+.lg .lg-h{font-family:var(--serif);font-size:19px;color:var(--paper);margin-bottom:6px}
+@media(max-width:720px){.legend{grid-template-columns:1fr}}
+
+/* ---------- data cards / tables ---------- */
+.cards{display:grid;gap:16px;margin-top:34px}
+.cards.c2{grid-template-columns:repeat(2,1fr)}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.cards.c2,.cards.c3{grid-template-columns:1fr}}
+.card{background:var(--ink-3);border:1px solid var(--line);border-radius:8px;padding:24px;
+  transition:transform .4s ease,border-color .4s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(231,167,60,.4)}
+.card .ch{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:12px}
+.card .cbig{font-family:var(--serif);font-size:34px;line-height:1;color:var(--paper);margin-bottom:8px}
+.card p{font-size:13.5px;color:#A9B9C4}
+.paper .card{background:#FBF7EE;border-color:var(--line-paper)}
+.paper .card .cbig{color:#1A2530}.paper .card p{color:#4A4536}
+.paper .card:hover{border-color:rgba(185,107,42,.5)}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin-top:30px;font-size:14px}
+.tbl th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  text-align:left;padding:14px 14px;color:var(--amber);border-bottom:1px solid var(--line);vertical-align:bottom}
+.tbl td{padding:15px 14px;border-bottom:1px solid var(--line);color:#B8C6D0;vertical-align:top}
+.tbl tr:hover td{background:rgba(231,167,60,.04)}
+.tbl td b{color:#E7EEF3;font-weight:600}
+.paper .tbl th{color:#9a6a12;border-color:var(--line-paper)}
+.paper .tbl td{color:#4A4536;border-color:var(--line-paper)}
+.paper .tbl td b{color:#1A2530}
+.paper .tbl tr:hover td{background:rgba(185,107,42,.06)}
+.tbl .num{font-family:var(--mono);white-space:nowrap}
+@media(max-width:760px){.tbl{font-size:12.5px}.tbl th,.tbl td{padding:11px 8px}}
+
+/* timeline (political cadence) */
+.timeline{margin-top:36px;position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;
+  background:repeating-linear-gradient(180deg,var(--amber) 0 6px,transparent 6px 14px);opacity:.6}
+.tevent{position:relative;padding:0 0 26px 6px}
+.tevent::before{content:"";position:absolute;left:-25px;top:5px;width:11px;height:11px;
+  border-radius:50%;background:var(--ink);border:2px solid var(--amber)}
+.tevent.key::before{background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.tdate{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--amber);margin-bottom:3px}
+.tevent p{font-size:14px;color:#B8C6D0}.tevent p b{color:#E7EEF3}
+.paper .tevent::before{background:var(--paper)}
+.paper .tdate{color:#9a6a12}.paper .tevent p{color:#4A4536}.paper .tevent p b{color:#1A2530}
+
+/* bull/bear split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+@media(max-width:720px){.split{grid-template-columns:1fr}}
+.pole{border:1px solid var(--line);border-radius:8px;padding:26px;background:var(--ink-3)}
+.pole h4{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+.pole.up h4{color:var(--buy)}.pole.down h4{color:var(--avoid)}
+.pole ul{list-style:none}.pole li{font-size:13.5px;color:#AEBEC9;padding:9px 0 9px 20px;position:relative;border-bottom:1px solid var(--line)}
+.pole li:last-child{border-bottom:none}
+.pole.up li::before{content:"▲";position:absolute;left:0;color:var(--buy);font-size:9px;top:12px}
+.pole.down li::before{content:"▼";position:absolute;left:0;color:var(--avoid);font-size:9px;top:12px}
+
+/* scenario cards */
+.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+@media(max-width:860px){.scenarios{grid-template-columns:1fr}}
+.scn{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--ink-3);
+  display:flex;flex-direction:column;transition:transform .4s ease,box-shadow .4s ease}
+.scn:hover{transform:translateY(-5px);box-shadow:0 20px 50px -20px rgba(0,0,0,.7)}
+.scn-top{padding:24px;border-bottom:1px solid var(--line)}
+.scn .prob{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--txt-dim);margin-bottom:12px}
+.scn .name{font-family:var(--serif);font-size:26px;color:var(--paper);line-height:1.05;margin-bottom:6px}
+.scn .code{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.scn.bull .code{color:var(--buy)}.scn.base .code{color:var(--sel)}.scn.bear .code{color:var(--avoid)}
+.scn-body{padding:24px;flex:1}
+.scn-body p{font-size:13.5px;color:#A9B9C4;margin-bottom:16px}
+.scn .cagr{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.scn .cagr b{font-family:var(--serif);font-size:38px;line-height:1}
+.scn.bull .cagr b{color:var(--buy)}.scn.base .cagr b{color:var(--sel)}.scn.bear .cagr b{color:var(--avoid)}
+.scn .cagr span{font-family:var(--mono);font-size:11px;color:var(--txt-dim);letter-spacing:.1em}
+.scn .drv{list-style:none;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+.scn .drv li{font-size:12.5px;color:#9FB0BE;padding:5px 0 5px 16px;position:relative}
+.scn .drv li::before{content:"—";position:absolute;left:0;color:var(--amber)}
+
+/* projection chart */
+.chartwrap{margin-top:40px;border:1px solid var(--line);border-radius:10px;
+  padding:30px clamp(14px,3vw,34px);background:var(--ink-2)}
+.chart-h{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--txt-dim);margin-bottom:6px}
+.chart-t{font-family:var(--serif);font-size:24px;color:var(--paper);margin-bottom:24px}
+svg.proj{width:100%;height:auto;display:block;overflow:visible}
+.proj .grid-l{stroke:var(--line);stroke-width:1}
+.proj .axis-t{fill:var(--txt-dim);font-family:'IBM Plex Mono',monospace;font-size:11px}
+.proj .path-line{fill:none;stroke-width:2.5;stroke-linecap:round;
+  stroke-dasharray:1600;stroke-dashoffset:1600;transition:stroke-dashoffset 2s ease}
+.proj.drawn .path-line{stroke-dashoffset:0}
+.proj .p-bull{stroke:var(--buy)}.proj .p-base{stroke:var(--sel)}.proj .p-bear{stroke:var(--avoid)}
+.proj .dot{opacity:0;transition:opacity .5s ease .8s}.proj.drawn .dot{opacity:1}
+.chart-legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+.chart-legend span{display:inline-flex;align-items:center;gap:8px;color:var(--txt-dim)}
+.chart-legend i{width:16px;height:3px;border-radius:2px}
+
+/* recommendation matrix */
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:36px}
+@media(max-width:820px){.matrix{grid-template-columns:1fr}}
+.mx{background:var(--ink-3);padding:30px 26px}
+.mx-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.mx-dot{width:12px;height:12px;border-radius:50%}
+.mx.buy .mx-dot{background:var(--buy);box-shadow:0 0 10px var(--buy)}
+.mx.sel .mx-dot{background:var(--sel);box-shadow:0 0 10px var(--sel)}
+.mx.avo .mx-dot{background:var(--avoid);box-shadow:0 0 10px var(--avoid)}
+.mx-head .v{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.mx.buy .v{color:var(--buy)}.mx.sel .v{color:var(--sel)}.mx.avo .v{color:var(--avoid)}
+.mx h5{font-family:var(--serif);font-size:20px;color:var(--paper);margin-bottom:12px;line-height:1.15}
+.mx ul{list-style:none}.mx li{font-size:13px;color:#A9B9C4;padding:7px 0 7px 18px;position:relative;border-bottom:1px solid var(--line)}
+.mx li:last-child{border-bottom:none}.mx li::before{content:"›";position:absolute;left:0;color:var(--amber);font-weight:700}
+
+/* checklist */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+@media(max-width:720px){.checks{grid-template-columns:1fr}}
+.chk{display:flex;gap:14px;padding:18px 20px;border:1px solid var(--line);border-radius:8px;background:var(--ink-3)}
+.chk .box{flex:none;width:20px;height:20px;border:1.5px solid var(--amber);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;color:var(--amber);font-size:12px;margin-top:2px}
+.chk p{font-size:13.5px;color:#B8C6D0}.chk p b{color:#EAF1F5}
+
+/* triggers */
+.trig{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+@media(max-width:720px){.trig{grid-template-columns:1fr}}
+.trig-col{border:1px solid var(--line);border-radius:8px;padding:24px;background:var(--ink-2)}
+.trig-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.trig-col.up h4{color:var(--buy)}.trig-col.dn h4{color:var(--avoid)}
+.trig-col ul{list-style:none}.trig-col li{font-size:13px;color:#A9B9C4;padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--line)}
+.trig-col li:last-child{border-bottom:none}
+.trig-col.up li::before{content:"↑";position:absolute;left:0;color:var(--buy);font-weight:700}
+.trig-col.dn li::before{content:"↓";position:absolute;left:0;color:var(--avoid);font-weight:700}
+
+/* disclaimer */
+.notice{background:var(--ink-2);border-top:1px solid var(--line)}
+.notice .section{padding-top:clamp(56px,8vh,90px)}
+.notice-box{border:1px solid rgba(231,167,60,.28);border-radius:10px;padding:clamp(24px,4vw,40px);
+  background:linear-gradient(180deg,rgba(231,167,60,.05),transparent)}
+.notice-box h3{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.notice-box h3::before{content:"⚠";font-size:16px}
+.notice-box p{font-size:12.5px;color:#98A8B4;margin-bottom:13px;line-height:1.7;max-width:none}
+.notice-box p b{color:#C4D2DC;font-weight:600}
+.notice-box .clause{font-family:var(--mono);font-size:10px;color:var(--amber);letter-spacing:.1em;margin-right:6px}
+
+/* footer */
+footer{background:#070C12;border-top:1px solid var(--line);
+  padding:50px clamp(16px,4vw,40px) 40px}
+.foot-in{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;
+  justify-content:space-between;gap:30px;align-items:flex-start}
+.foot-brand{font-family:var(--serif);font-size:26px;color:var(--paper)}
+.foot-brand span{color:var(--amber)}
+.foot-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--txt-dim);
+  text-transform:uppercase;margin-top:8px}
+.foot-meta{font-family:var(--mono);font-size:11px;color:var(--txt-dim);text-align:right;line-height:2}
+.foot-rule{max-width:var(--maxw);margin:36px auto 0;border-top:1px solid var(--line);
+  padding-top:22px;font-family:var(--mono);font-size:10.5px;color:#5C6C78;letter-spacing:.06em;line-height:1.8}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .centerline{opacity:.85}.proj .path-line{stroke-dashoffset:0}.proj .dot{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<div class="glide" id="glide"></div>
+<div class="topbar">
+  <div style="display:flex;align-items:center;gap:clamp(12px,2vw,22px);min-width:0">
+    <a class="brandmark" href="/" style="text-decoration:none" title="Advait Consultancy — home">ADVAIT <b>CONSULTANCY</b></a>
+    <a href="/notes/yeida-jewar-corridor/" style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;white-space:nowrap;transition:color .3s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--txt-dim)'">← Corridor Note</a>
+  </div>
+  <div class="alt-readout">ALT <span class="ft" id="alt">36,000</span> FT · DESCENDING</div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-sky"></div>
+  <div class="stars" id="stars"></div>
+  <div class="runway">
+    <div class="runway-plane">
+      <div class="edge l"></div><div class="edge r"></div>
+      <div class="centerline"></div>
+    </div>
+  </div>
+  <div class="approach" id="approach"></div>
+  <div class="hero-grad"></div>
+
+  <div class="hero-inner">
+    <div class="eyebrow">Confidential Investment Dossier · Location Assessment</div>
+    <h1>The Jewar Corridor.<br>Verdict: <span class="verdict">Selective&nbsp;Buy.</span></h1>
+    <p class="sub">A top-to-bottom institutional decision framework on the <b>Noida International Airport (Jewar)</b> and the <b>YEIDA</b> growth corridor — financial, real-estate, policy, geopolitical and sentiment analysis, stress-tested from the allocator's chair.</p>
+    <div class="hero-meta">
+      <div class="hmi">Prepared for<b>Advait Consultancy</b></div>
+      <div class="hmi">Position as of<b>19 July 2026</b></div>
+      <div class="hmi">Coverage<b>2017 – 2041 outlook</b></div>
+      <div class="hmi">Horizon<b>5-yr + long-term</b></div>
+    </div>
+  </div>
+  <div class="scrollcue">Begin descent ↓</div>
+</header>
+
+<!-- ================= INSTRUMENT STRIP ================= -->
+<section class="strip">
+  <div class="strip-grid">
+    <div class="gauge"><div class="lab">Airport status</div><div class="val small">LIVE</div><div class="note">Commercial ops from 15 Jun 2026, after ~21 months of slippage</div></div>
+    <div class="gauge"><div class="lab">Plot values, 2020→2025</div><div class="val" data-count="536" data-suffix="%">0%</div><div class="note">Broker-reported; apartments +158% over same window</div></div>
+    <div class="gauge"><div class="lab">YEIDA industrial plots idle</div><div class="val" data-count="94" data-suffix="%">0%</div><div class="note">Work not begun on 3,264 of 3,476 allotted plots</div></div>
+    <div class="gauge"><div class="lab">UP per-capita income</div><div class="val small">₹1.09L</div><div class="note">~Half the national average · 2nd-lowest state · FY25</div></div>
+  </div>
+</section>
+
+<!-- ================= THESIS / LEGEND ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-kicker">The one-line thesis</span></div>
+  <h2 class="sec-title">The catalyst has landed. The premium has not fully priced the wait.</h2>
+  <p class="lead">The single largest de-risking event — the airport opening — is now behind us, converting a decade-long <b>promise premium</b> into an <b>operational premium</b>. But this remains a 15–20 year build in a state with structurally low spending power, where most industrial land sits idle and prices have already re-rated hard. That combination doesn't say "avoid." It says <b>be selective</b>.</p>
+  <div class="legend">
+    <div class="lg buy"><div class="tag">Buy</div><div class="lg-h">Clean-title, near-airport, authority-allotted</div><p>Registered YEIDA plots and RERA-listed developer stock within the operational catchment, held 7–10 years.</p></div>
+    <div class="lg sel"><div class="tag">Selective</div><div class="lg-h">Industrial & logistics with real infra</div><p>Export-oriented, cargo-proximate plots — but only where roads, power and water physically exist, not on zoning alone.</p></div>
+    <div class="lg avo"><div class="tag">Avoid</div><div class="lg-h">Speculative & unregistered</div><p>Late-cycle "airport-yield" studio inventory and unregistered resale plots sold on unverifiable allotment claims.</p></div>
+  </div>
+</section>
+
+<div class="rwstrip"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ================= 01 THE CATALYST ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Catalyst · Verified</div>
+  <div class="sec-head"><span class="sec-no">01</span><span class="sec-kicker">The catalyst · aviation</span></div>
+  <h2 class="sec-title">One runway, live at last — after four missed dates.</h2>
+  <p class="lead">Noida International Airport (code <b>DXN</b>) was inaugurated by the Prime Minister on <b>28 March 2026</b>, with the first commercial flight on <b>15 June 2026</b>. Operated by <b>Yamuna International Airport Pvt Ltd</b>, a wholly-owned unit of <b>Zurich Airport International</b>, under a 40-year concession to 2061.</p>
+  <p class="body-txt">Phase 1 delivers a single 3,900 m CAT III-B runway and ~12 million-passengers-a-year capacity for roughly ₹11,282 crore. The build slipped repeatedly — from September 2024 through 2025 into early 2026 — attracting a ₹10 lakh-per-day state penalty from January 2025. The phased path runs to ~30 MPPA (early 2030s), ~50 MPPA (mid-2030s) and an ultimate design of up to six runways and ~70–100 MPPA, at a total programme cost near ₹29,561 crore.</p>
+  <div class="cards c3">
+    <div class="card"><div class="ch">Phase 1 capacity</div><div class="cbig">12<span style="font-size:16px"> MPPA</span></div><p>Single CAT III-B runway; wide-body capable; ~101,590 sq m terminal.</p></div>
+    <div class="card"><div class="ch">Cargo — AISATS</div><div class="cbig">1.5<span style="font-size:16px">M MT</span></div><p>Scalable from ~200k MT. First cargo flight 17 Jun 2026. MRO + Samsung SDS electronics-export MoU.</p></div>
+    <div class="card"><div class="ch">Rail at launch</div><div class="cbig">None</div><p>Road-only today. Metro ~2028, Ghaziabad–Jewar RRTS ~2030-31, pod-taxi delayed.</p></div>
+  </div>
+  <p class="body-txt" style="margin-top:34px"><b>The IGI stress-test.</b> The bull story is "Delhi is full." It isn't — yet. IGI handled ~78.7m passengers in FY26 against ~105 MPPA of design capacity, roughly 75%. So Jewar cannot simply harvest overflow; for the next 7–8 years it must build its <b>own</b> catchment — western UP and Tier-2 budget traffic. Its early user-development fee (₹490 domestic departure) sits near four times IGI's, a genuine cost disadvantage while volumes are thin.</p>
+</section>
+
+<!-- ================= 02 INDUSTRIAL SUBSTANCE ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-no">02</span><span class="sec-kicker">Beyond the terminal</span></div>
+  <h2 class="sec-title">Real industrial substance — heavily under-occupied.</h2>
+  <p class="lead">This corridor is not only an airport bet. A semiconductor unit, an electronics cluster, a 1,000-acre film city and a cargo hub give it manufacturing depth Gurugram never had. The catch: <b>the anchors are committed on paper faster than they are rising from the ground.</b></p>
+  <table class="tbl">
+    <thead><tr><th>Anchor</th><th>Scale / commitment</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><b>HCL–Foxconn "Vama Sundari"</b><br>Semiconductor (display-driver)</td><td class="num">₹3,706 cr · 20k wafers/mo</td><td>India's 6th approved fab; Cabinet nod May 2025; target ops 2027</td></tr>
+      <tr><td><b>Electronics Mfg Cluster (EMC 2.0)</b></td><td class="num">206 acres · ₹485 cr infra</td><td>Anchors Havells (₹800 cr), Dixon, Ascent; infra by 2028</td></tr>
+      <tr><td><b>International Film City</b></td><td class="num">1,000 acres · ₹1,510 cr P1</td><td>Bayview/Boney Kapoor; 18% revenue share; layout submitted</td></tr>
+      <tr><td><b>AISATS multimodal cargo</b></td><td class="num">~80 acres · to 1.5–1.8M MT</td><td>Operational at launch; electronics-export focus</td></tr>
+      <tr><td><b>YEIDA — UP GIS-2023 MoUs</b></td><td class="num">₹1.03 lakh cr · 92 MoUs</td><td>Signed; conversion-to-ground remains the open question</td></tr>
+    </tbody>
+  </table>
+  <p class="body-txt" style="margin-top:30px"><b>The number that disciplines the optimism:</b> a state survey found work had not started on <b>3,264 of 3,476</b> allotted YEIDA industrial plots — roughly 94% idle — with only ~15 units operational, and not a single unit running in the proposed Apparel or Toy parks. MoUs are not factories. Buy the ground where the factory is already rising, not where the press release is.</p>
+</section>
+
+<!-- ================= 03 POLICY ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Policy · State</div>
+  <div class="sec-head"><span class="sec-no">03</span><span class="sec-kicker">Policy & master plan</span></div>
+  <h2 class="sec-title">An aerotropolis planned around industry, not housing.</h2>
+  <p class="lead">YEIDA's Master Plan 2041 notifies ~759 sq km across 226 villages, structured as an airport-city of industry and logistics with residential as a supporting layer — a deliberate contrast to Gurugram's office-led sprawl.</p>
+  <p class="body-txt">The authority is acquiring ~6,065 hectares (a ~₹14,000 cr budget) for ten new sectors, including a Fintech City, a Korean City (365 ha), a Japanese City (395 ha) and a logistics park toward Aligarh. Clearances route through single-window (Nivesh Mitra / Invest UP). Central hooks matter: the India Semiconductor Mission funds up to ~50% of fab capex, alongside EMC 2.0 and electronics PLI. Connectivity is the real variable — Yamuna Expressway (live), the Faridabad–Jewar Expressway (CCEA-approved, ~end-2026/27), plus planned metro, RRTS and the delayed pod taxi.</p>
+  <div class="cards c3">
+    <div class="card"><div class="ch">Notified area</div><div class="cbig">759<span style="font-size:16px"> km²</span></div><p>226 villages · Gautam Buddh Nagar + Bulandshahr</p></div>
+    <div class="card"><div class="ch">New-sector acquisition</div><div class="cbig">6,065<span style="font-size:16px"> ha</span></div><p>~₹14,000 cr · Fintech / Korean / Japanese cities</p></div>
+    <div class="card"><div class="ch">Fab capex support</div><div class="cbig">~50%</div><p>India Semiconductor Mission incentive on approved units</p></div>
+  </div>
+</section>
+
+<!-- ================= 04 POLITICAL CADENCE ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-no">04</span><span class="sec-kicker">Political economy</span></div>
+  <h2 class="sec-title">One of India's most-promoted projects — read the cadence carefully.</h2>
+  <p class="lead">The frequency of announcement is itself a signal. Heavy, repeated promotion is <b>both</b> a genuine positive — this project is now too politically valuable to be allowed to fail — <b>and</b> a caution: deadline-setting ran ~21 months ahead of delivery.</p>
+  <div class="timeline">
+    <div class="tevent key"><div class="tdate">JUN 2017</div><p><b>Union government approval</b> — corridor greenlit.</p></div>
+    <div class="tevent"><div class="tdate">DEC 2020</div><p>CM Adityanath approves airport name and design.</p></div>
+    <div class="tevent key"><div class="tdate">NOV 2021</div><p><b>PM Modi lays the foundation stone.</b></p></div>
+    <div class="tevent"><div class="tdate">2023 – 2025</div><p>Repeated CM site inspections and review meetings — documented in Sep 2023, early 2025, Oct 2025, and <b>twice within ~three weeks in Nov 2025</b>. Recurring Assembly-floor deadline claims.</p></div>
+    <div class="tevent"><div class="tdate">JAN 2025</div><p>State imposes ₹10 lakh/day delay penalty on the operator.</p></div>
+    <div class="tevent key"><div class="tdate">MAR 2026</div><p><b>PM Modi inaugurates Phase 1.</b> CCEA cost approvals cleared in parallel.</p></div>
+    <div class="tevent key"><div class="tdate">JUN 2026</div><p><b>First commercial flight.</b> Promise becomes operation.</p></div>
+  </div>
+  <p class="body-txt" style="margin-top:30px"><b>Investor read:</b> treat the political capital as a structural floor under the airport itself — but discount every <i>downstream</i> announced timeline (metro, RRTS, pod taxi, Film City vertical, international flights) heavily. The delivery record says the concrete arrives; it simply arrives late.</p>
+</section>
+
+<!-- ================= 05 REAL ESTATE ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Market · Pricing</div>
+  <div class="sec-head"><span class="sec-no">05</span><span class="sec-kicker">Real estate & pricing</span></div>
+  <h2 class="sec-title">Much of the catalyst is already in the price.</h2>
+  <p class="lead">Land near the Jewar exit roughly doubled in two years — from ~₹4,564/sq ft (2023) to ~₹8,923/sq ft (2025). Broker indices report apartments +158% and plots +536% across 2020–2025. Entry today is <b>post-re-rating, not pre-.</b></p>
+  <table class="tbl">
+    <thead><tr><th>Metric</th><th class="num">Figure</th><th>Source character</th></tr></thead>
+    <tbody>
+      <tr><td>Expressway rate near Jewar, 2023 → 2025</td><td class="num">₹4,564 → ₹8,923/sq ft</td><td>Listings index</td></tr>
+      <tr><td>Apartment appreciation, 2020–2025</td><td class="num">+158%</td><td>Broker RealX-type stat</td></tr>
+      <tr><td>Plot appreciation, 2020–2025</td><td class="num">+536%</td><td>Promotional — treat as directional</td></tr>
+      <tr><td>YEIDA residential allotment rate, 2025-26</td><td class="num">~₹36,260/sq m</td><td>Authority scheme (RPS-10)</td></tr>
+      <tr><td>Resale plots (by registration status)</td><td class="num">₹65,000–1,00,000/sq m</td><td>Secondary market</td></tr>
+      <tr><td>Noida / Gr. Noida residential YoY, 2024</td><td class="num">+34% / +33%</td><td>Consultancy (Anarock)</td></tr>
+    </tbody>
+  </table>
+  <p class="body-txt" style="margin-top:28px"><b>Tenure caveat.</b> YEIDA plots are <b>90-year leasehold with a 48-month build requirement</b>, not freehold — structurally lower liquidity than Gurugram's freehold norm. A reported >80% of allottees lack registered lease deeds, so title diligence is not optional; it is the trade.</p>
+</section>
+
+<!-- ================= 06 GURUGRAM ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-no">06</span><span class="sec-kicker">The core question</span></div>
+  <h2 class="sec-title">Will Gurugram's money come here? Mostly no — and that's fine.</h2>
+  <p class="lead">Gurugram hosts 250+ Fortune 500 firms and 23,500+ companies, anchored by 25 years of white-collar network effects and talent geography. That capital pool is <b>not</b> migrating. But Jewar competes for a <b>different</b> pool — manufacturing, logistics, aviation-linked industry. This is additive demand, not a zero-sum raid.</p>
+  <table class="tbl">
+    <thead><tr><th>Dimension</th><th>Gurugram</th><th>YEIDA / Jewar</th></tr></thead>
+    <tbody>
+      <tr><td>Demand engine</td><td>BFSI, consulting, GCC white-collar</td><td><b>Electronics, semis, cargo, film, MRO</b></td></tr>
+      <tr><td>Maturity</td><td>Mature, ~25-yr network effects</td><td>Early-stage, back-loaded</td></tr>
+      <tr><td>Grade-A office rent</td><td class="num">₹110–185/sq ft</td><td class="num">₹56–90/sq ft (Noida band)</td></tr>
+      <tr><td>Entry pricing</td><td>Premium, largely priced</td><td>Lower base, higher variance</td></tr>
+      <tr><td>Tenure norm</td><td>Freehold common</td><td>90-yr leasehold</td></tr>
+      <tr><td>Structural edge</td><td>Talent + agglomeration</td><td><b>Airport-proximate export manufacturing</b></td></tr>
+    </tbody>
+  </table>
+  <p class="body-txt" style="margin-top:28px"><b>Verdict on the question you must answer for clients:</b> do not sell Jewar as "the next Gurugram." Sell it as the first true <b>aerotropolis manufacturing corridor</b> in the NCR — a category Gurugram cannot occupy because it has no airport of its own and no industrial land bank at this scale.</p>
+</section>
+
+<!-- ================= 07 DURATION ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Duration · Risk</div>
+  <div class="sec-head"><span class="sec-no">07</span><span class="sec-kicker">Spending power & time-to-return</span></div>
+  <h2 class="sec-title">Low state spending power lengthens the wait for returns.</h2>
+  <p class="lead">UP's per-capita income (~₹1.09 lakh, FY25) is close to half the national average and second-lowest of any state — against Haryana's ~₹3.53 lakh. Thin local purchasing power caps end-user absorption and consumer-facing yields.</p>
+  <p class="body-txt">This is the honest answer to "how long until strong returns?" — it is a <b>duration question, not a direction question.</b> Realistic maturity for durable capital appreciation is <b>7–10 years</b>; rental-yield maturity is longer still, gated by residential occupancy that barely exists today. The corridor's demand will be led by industry, exports and aviation employment — not by a wealthy local consumer, who arrives last. Investors underwriting a 3-year flip are mispricing the clock.</p>
+  <div class="cards c3">
+    <div class="card"><div class="ch">Capital-appreciation maturity</div><div class="cbig">7–10<span style="font-size:16px"> yrs</span></div><p>To compound durably beyond the initial re-rating</p></div>
+    <div class="card"><div class="ch">Yield maturity</div><div class="cbig">10+<span style="font-size:16px"> yrs</span></div><p>Contingent on residential occupancy build-up</p></div>
+    <div class="card"><div class="ch">Demand sequence</div><div class="cbig">Industry-led</div><p>Jobs → migration → consumption → yield — in that order</p></div>
+  </div>
+</section>
+
+<!-- ================= 08 GEOPOLITICAL ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-no">08</span><span class="sec-kicker">National & global frame</span></div>
+  <h2 class="sec-title">A node in the China+1 supply-chain shift.</h2>
+  <p class="lead">UP already produces roughly 80% of India's smartphones (Samsung, Vivo, Oppo, Dixon, Lava). Layer on the HCL–Foxconn fab and early Foxconn talks for a ~300-acre EMS unit, and the corridor becomes a genuine beneficiary of <b>Atmanirbhar Bharat</b> and manufacturers de-risking away from China.</p>
+  <p class="body-txt">The tailwind is real: Apple/Foxconn diversification could push India toward ~15–20% of global iPhone output. The corridor's airport-plus-cargo-plus-fab stack is precisely the infrastructure that export electronics needs. <b>The caveat is equally real:</b> India's electronics base remains assembly-heavy and dependent on Chinese components — so the corridor captures the <i>final-assembly and logistics</i> layer of the shift more than deep value-add, at least in this decade. That still supports industrial land and cargo demand; it simply tempers the "global manufacturing superpower" framing into something more precise and defensible.</p>
+</section>
+
+<!-- ================= 09 SENTIMENT ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Sentiment</div>
+  <div class="sec-head"><span class="sec-no">09</span><span class="sec-kicker">Market sentiment</span></div>
+  <h2 class="sec-title">Bullish developers, skeptical operators.</h2>
+  <p class="lead">Sentiment splits cleanly by who is talking. Read both poles before you underwrite.</p>
+  <div class="split">
+    <div class="pole up"><h4>The bull pole</h4><ul>
+      <li>Developers (Gaurs, Saya, Ashtech) and consultancies frame Jewar as NCR's next growth pole</li>
+      <li>Colliers forecasts Jewar land +40% by 2030; some market voices project +50–60% over 3–4 years</li>
+      <li>Noida / Greater Noida posted +34% / +33% residential YoY in 2024</li>
+      <li>Semiconductor + electronics + film anchors give a diversified demand story</li>
+    </ul></div>
+    <div class="pole down"><h4>The bear pole</h4><ul>
+      <li>Analysts warn it is "a 20-year story"; a budget/Tier-2 airport for the next 7–8 years</li>
+      <li>94% of industrial plots idle; thousands of authority plots vacant for want of social infrastructure</li>
+      <li>Warnings on "airport township" scams and broken title chains</li>
+      <li>Farmer land-acquisition disputes, PILs and pending compensation persist</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ================= 10 RISK REGISTER ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-no">10</span><span class="sec-kicker">Risk register</span></div>
+  <h2 class="sec-title">What can break the thesis.</h2>
+  <table class="tbl">
+    <thead><tr><th>Risk</th><th>Nature</th><th>Severity</th></tr></thead>
+    <tbody>
+      <tr><td><b>Title & tenure</b></td><td>&gt;80% allottees without registered lease deeds; 90-yr leasehold; resale restrictions</td><td class="num">High</td></tr>
+      <tr><td><b>Execution / infra lag</b></td><td>Metro, RRTS, pod-taxi, Film City, int'l flights all forward-looking; airport itself slipped ~21 mo</td><td class="num">High</td></tr>
+      <tr><td><b>Absorption</b></td><td>94% industrial plots idle; low UP spending power caps end-user demand</td><td class="num">High</td></tr>
+      <tr><td><b>Speculative unwind</b></td><td>Prices already re-rated hard; late-cycle inventory risk</td><td class="num">Medium</td></tr>
+      <tr><td><b>Land / social risk</b></td><td>Farmer disputes, PILs, pending compensation, halved LARR payouts</td><td class="num">Medium</td></tr>
+      <tr><td><b>Political-cycle dependency</b></td><td>Thesis leans on continued centre+state alignment; 2027 UP election</td><td class="num">Medium</td></tr>
+      <tr><td><b>Environmental</b></td><td>Dhanauri wetland proximity; groundwater depletion; NCR air quality</td><td class="num">Low–Med</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="rwstrip"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ================= SCENARIOS ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-no">▲</span><span class="sec-kicker">Five-year scenarios · 2026 → 2031</span></div>
+  <h2 class="sec-title">Three flight paths.</h2>
+  <p class="lead">Illustrative scenarios for a representative near-airport YEIDA residential/plot index, indexed to 100 at end-2025. Probabilities and growth rates are Advait Consultancy's reasoned estimates, <b>not forecasts or guarantees</b> — see the notice below.</p>
+  <div class="scenarios">
+    <div class="scn bull"><div class="scn-top"><div class="prob">PROBABILITY ~25%</div><div class="name">Full Ascent</div><div class="code">Bull case</div></div>
+      <div class="scn-body"><p>Phase II financed and underway; international flights and cargo ramp on schedule; the fab goes operational in 2027; Film City rises vertically; metro/RRTS construction becomes visible; industrial utilisation climbs above ~25%.</p>
+        <div class="cagr"><b>14–18%</b><span>CAGR</span></div><p style="font-size:12px;margin:0">≈ prices roughly double over five years</p>
+        <ul class="drv"><li>Infra delivered close to plan</li><li>Utilisation inflection visible</li><li>Genuine end-user migration begins</li></ul></div></div>
+    <div class="scn base"><div class="scn-top"><div class="prob">PROBABILITY ~50%</div><div class="name">Steady Climb</div><div class="code">Base case</div></div>
+      <div class="scn-body"><p>The airport ramps as a budget/Tier-2 hub; downstream infra slips 1–3 years but arrives; industrial utilisation improves slowly toward ~20–30%; absorption stays gated by UP spending power.</p>
+        <div class="cagr"><b>8–11%</b><span>CAGR</span></div><p style="font-size:12px;margin:0">≈ +50–65% over five years</p>
+        <ul class="drv"><li>Delivery late but real</li><li>Industry leads, consumer lags</li><li>Volatility around a rising trend</li></ul></div></div>
+    <div class="scn bear"><div class="scn-top"><div class="prob">PROBABILITY ~25%</div><div class="name">Holding Pattern</div><div class="code">Bear case</div></div>
+      <div class="scn-body"><p>Downstream infra badly delayed; a speculative unwind meets oversupply; farmer litigation flares; a macro or political shock (incl. 2027 election) chills sentiment; thin end-user demand persists.</p>
+        <div class="cagr"><b>2–4%</b><span>CAGR</span></div><p style="font-size:12px;margin:0">≈ +10–15% nominal · negative in real terms</p>
+        <ul class="drv"><li>Timelines stall</li><li>Liquidity thins on leasehold stock</li><li>Sentiment reprices downward</li></ul></div></div>
+  </div>
+
+  <div class="chartwrap">
+    <div class="chart-h">Projected index path · illustrative</div>
+    <div class="chart-t">Representative near-airport value index (2025 = 100)</div>
+    <svg class="proj" id="proj" viewBox="0 0 720 340" role="img" aria-label="Projected price index paths 2025 to 2031 under three scenarios">
+      <!-- gridlines -->
+      <g id="grid"></g>
+      <!-- paths added by JS -->
+      <path class="path-line p-bear" id="lbear"></path>
+      <path class="path-line p-base" id="lbase"></path>
+      <path class="path-line p-bull" id="lbull"></path>
+      <g id="dots"></g>
+      <g id="xlabels"></g>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="background:var(--buy)"></i>Full Ascent · ~205</span>
+      <span><i style="background:var(--sel)"></i>Steady Climb · ~158</span>
+      <span><i style="background:var(--avoid)"></i>Holding Pattern · ~112</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LONG TERM ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Long-horizon</div>
+  <div class="sec-head"><span class="sec-kicker">Long-term outlook · 2031 → 2041</span></div>
+  <h2 class="sec-title">The terminal view is constructive — and back-loaded.</h2>
+  <p class="lead">As Phases III–IV and rail connectivity land, the corridor can mature into a genuine aerotropolis. A base long-run path of <b>~9–12% CAGR</b> is plausible but volatile, with most of the compounding arriving in the back half as jobs convert into migration, and migration into consumption.</p>
+  <div class="cards c3">
+    <div class="card"><div class="ch">Base long-run CAGR</div><div class="cbig">9–12%</div><p>2031–2041, high variance, back-loaded</p></div>
+    <div class="card"><div class="ch">Value driver, decade 2</div><div class="cbig">Occupancy</div><p>Residential fill + rail turns land value into rental yield</p></div>
+    <div class="card"><div class="ch">Terminal identity</div><div class="cbig">Aerotropolis</div><p>Manufacturing + cargo + aviation employment base</p></div>
+  </div>
+  <p class="body-txt" style="margin-top:30px">The long-term case does not rest on Jewar "beating" Gurugram. It rests on the corridor becoming India's leading airport-anchored industrial city — a distinct category. If the infrastructure sequence holds, patient, title-clean capital entered near the airport should be rewarded. The operative word remains <b>patient.</b></p>
+</section>
+
+<!-- ================= RECOMMENDATION MATRIX ================= -->
+<section class="section reveal">
+  <div class="sec-head"><span class="sec-kicker">Decision matrix</span></div>
+  <h2 class="sec-title">What to do with capital.</h2>
+  <div class="matrix">
+    <div class="mx buy"><div class="mx-head"><span class="mx-dot"></span><span class="v">Buy · core</span></div>
+      <h5>Near-airport, registered, clean-title</h5>
+      <ul><li>YEIDA-allotted plots in Sectors 18/20 with executed sub-lease</li><li>RERA-registered stock from listed developers within ~15 km of terminal</li><li>Hold 7–10 years; underwrite the operational-premium floor</li><li>Trim if resale premiums outrun occupancy gains</li></ul></div>
+    <div class="mx sel"><div class="mx-head"><span class="mx-dot"></span><span class="v">Selective</span></div>
+      <h5>Industrial / logistics with real infra</h5>
+      <ul><li>Grade-A logistics, cold-chain, precision-mfg near the cargo hub / DFC</li><li>The clearest genuine edge vs Gurugram</li><li>Require visible roads, power, water in the specific sector</li><li>Never buy on master-plan zoning alone</li></ul></div>
+    <div class="mx avo"><div class="mx-head"><span class="mx-dot"></span><span class="v">Avoid</span></div>
+      <h5>Speculative & unverifiable</h5>
+      <ul><li>Late-cycle studio inventory sold on 8–10% "airport-yield" claims</li><li>Unregistered resale plots</li><li>Any "airport township" pitch without verifiable YEIDA allotment</li><li>3-year flip theses that misprice the duration</li></ul></div>
+  </div>
+</section>
+
+<!-- ================= CHECKLIST + TRIGGERS ================= -->
+<section class="section paper reveal">
+  <div class="paper-stamp">Diligence</div>
+  <div class="sec-head"><span class="sec-kicker">Before any deployment</span></div>
+  <h2 class="sec-title">The non-negotiable diligence gate.</h2>
+  <div class="checks">
+    <div class="chk"><div class="box">✓</div><p><b>UPRERA registration</b> verified for any developer stock.</p></div>
+    <div class="chk"><div class="box">✓</div><p><b>Registered lease / sub-lease deed</b> — not merely an allotment letter.</p></div>
+    <div class="chk"><div class="box">✓</div><p><b>Dues, mutation and NOC</b> cleared and confirmed.</p></div>
+    <div class="chk"><div class="box">✓</div><p><b>Independent legal title review</b> commissioned.</p></div>
+    <div class="chk"><div class="box">✓</div><p><b>Actual — not planned — infrastructure</b> confirmed in the sector.</p></div>
+    <div class="chk"><div class="box">✓</div><p><b>Distance mapped</b> to operational terminal and Faridabad–Jewar connector.</p></div>
+  </div>
+  <div class="trig" style="margin-top:36px">
+    <div class="trig-col up"><h4>Upgrade to full Buy if…</h4><ul>
+      <li>Industrial-plot utilisation moves clearly above ~20–25% operational</li>
+      <li>Metro / RRTS construction visibly underway with funded timelines</li>
+      <li>International flights and cargo throughput ramp on schedule</li>
+      <li>Film City Phase 1 vertical construction begins</li>
+    </ul></div>
+    <div class="trig-col dn"><h4>Downgrade to No-Buy if…</h4><ul>
+      <li>Phase II airport financing stalls</li>
+      <li>Renewed large-scale farmer litigation halts acquisition</li>
+      <li>Resale transaction volumes collapse — a speculative unwind signal</li>
+      <li>Downstream infra timelines slip another multi-year cycle</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ================= LEGAL NOTICE ================= -->
+<section class="notice">
+  <div class="section reveal" style="padding-bottom:clamp(50px,7vh,80px)">
+    <div class="notice-box">
+      <h3>Important Notice, Assumptions & Disclaimer</h3>
+      <p><span class="clause">01</span><b>Informational purpose only; not advice.</b> This document is prepared by Advait Consultancy for general information and discussion. It does not constitute investment, financial, legal, tax, accounting or real-estate advice, nor an offer, solicitation, recommendation or inducement to buy, sell, or transact in any property, security, land parcel or instrument. Nothing herein should be relied upon as the basis for any decision.</p>
+      <p><span class="clause">02</span><b>No advisory or fiduciary relationship</b> is created by your access to this document. Any engagement with Advait Consultancy is governed solely by a separate signed mandate.</p>
+      <p><span class="clause">03</span><b>Third-party data; no warranty.</b> Figures, dates, prices, appreciation rates and project statuses are compiled from publicly available third-party sources (government releases, news media, brokerage and consultancy reports) believed to be reliable but <b>not independently verified, audited, or guaranteed</b> by Advait Consultancy. Some pricing statistics are promotional in origin and are presented as directional only. Data may be incomplete, dated, or inaccurate, and is stated as of 19 July 2026; conditions change.</p>
+      <p><span class="clause">04</span><b>Forward-looking projections are illustrative.</b> All scenarios, probabilities, CAGR ranges, price paths and long-term estimates are hypothetical illustrations based on stated assumptions and Advait Consultancy's reasoned judgment. They are <b>not forecasts, promises, or guarantees of future performance or value</b>. Actual outcomes may differ materially. Past appreciation is not indicative of future results. Real estate is illiquid and values can fall as well as rise.</p>
+      <p><span class="clause">05</span><b>Tenure & title risk.</b> Assets discussed may be leasehold (typically 90-year) rather than freehold, and may carry registration, dues, resale and construction-timeline conditions. Independent legal title verification is essential before any transaction.</p>
+      <p><span class="clause">06</span><b>Independent diligence required.</b> Readers must conduct their own due diligence and consult qualified independent legal, financial, tax and real-estate professionals before acting. To the fullest extent permitted by law, Advait Consultancy and its principals accept <b>no liability</b> for any loss or damage, direct or consequential, arising from use of or reliance on this document.</p>
+      <p><span class="clause">07</span><b>No political or third-party endorsement.</b> References to government bodies, officials, companies, projects or brands are factual and analytical only, and imply no endorsement, affiliation, or representation as to any party's conduct or future action.</p>
+      <p style="margin-top:20px;color:#7C8C98"><b>© 2026 Advait Consultancy.</b> Confidential. For the intended recipient only. Not for redistribution or publication without written consent.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="foot-brand">Advait<span>.</span></div>
+      <div class="foot-tag">Independent Real-Estate Advisory · Delhi NCR</div>
+    </div>
+    <div class="foot-meta">
+      DOSSIER · YEIDA / JEWAR CORRIDOR<br>
+      POSITION AS OF 19 JUL 2026<br>
+      CLASSIFICATION · CLIENT CONFIDENTIAL
+    </div>
+  </div>
+  <div class="foot-rule">
+    Prepared as an independent location-assessment framework. All content is subject to the Important Notice, Assumptions &amp; Disclaimer above. Third-party data uncertified. Illustrative projections are not guarantees.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* stars */
+  var starBox = document.getElementById('stars');
+  if(starBox && !reduce){
+    var s='';
+    for(var i=0;i<70;i++){
+      var x=Math.random()*100, y=Math.random()*70, d=(Math.random()*4).toFixed(1);
+      s+='<div class="star" style="left:'+x+'%;top:'+y+'%;animation-delay:'+d+'s"></div>';
+    }
+    starBox.innerHTML=s;
+  }
+
+  /* sequenced approach lights */
+  var app=document.getElementById('approach');
+  if(app && !reduce){
+    var html='';
+    for(var j=0;j<9;j++){
+      var top=(j/9*100).toFixed(1);
+      var scale=(0.5+ j*0.09).toFixed(2);
+      var delay=( (8-j)*0.11 ).toFixed(2);
+      html+='<div class="app-l" style="top:'+top+'%;transform:translateX(-50%) scaleX('+scale+');animation:flash 2.2s ease '+delay+'s infinite"></div>';
+    }
+    app.innerHTML=html;
+  }
+
+  /* glide-path progress + altitude readout */
+  var glide=document.getElementById('glide'), alt=document.getElementById('alt');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var p=h>0?window.scrollY/h:0;
+    glide.style.width=(p*100)+'%';
+    if(alt){ var ft=Math.round(36000*(1-p)/100)*100; alt.textContent=ft.toLocaleString('en-IN'); }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* reveal on scroll */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* count-up gauges */
+  function countUp(el){
+    var target=+el.getAttribute('data-count'), suf=el.getAttribute('data-suffix')||'';
+    var t0=null, dur=1400;
+    function step(ts){ if(!t0)t0=ts; var pr=Math.min((ts-t0)/dur,1);
+      var ease=1-Math.pow(1-pr,3);
+      el.textContent=Math.round(target*ease)+suf;
+      if(pr<1)requestAnimationFrame(step);
+    }
+    if(reduce){el.textContent=target+suf;} else requestAnimationFrame(step);
+  }
+  var gio=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); gio.unobserve(e.target);} });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){gio.observe(el);});
+
+  /* projection chart */
+  var svg=document.getElementById('proj');
+  if(svg){
+    var W=720,H=340, padL=48,padR=16,padT=20,padB=40;
+    var years=[2025,2026,2027,2028,2029,2030,2031];
+    var bull=[100,116,135,157,180,207,238];
+    var base=[100,109,119,129,140,150,158];
+    var bear=[100,104,107,109,110,111,112];
+    var minV=100,maxV=245;
+    function X(i){ return padL + i/(years.length-1)*(W-padL-padR); }
+    function Y(v){ return padT + (1-(v-minV)/(maxV-minV))*(H-padT-padB); }
+    // gridlines
+    var g=document.getElementById('grid'), xl=document.getElementById('xlabels'), gg='';
+    [100,150,200,240].forEach(function(v){
+      var y=Y(v);
+      gg+='<line class="grid-l" x1="'+padL+'" y1="'+y+'" x2="'+(W-padR)+'" y2="'+y+'"/>';
+      gg+='<text class="axis-t" x="'+(padL-8)+'" y="'+(y+4)+'" text-anchor="end">'+v+'</text>';
+    });
+    g.innerHTML=gg;
+    var xls='';
+    years.forEach(function(yr,i){ if(i%1===0){ xls+='<text class="axis-t" x="'+X(i)+'" y="'+(H-padB+22)+'" text-anchor="middle">'+yr+'</text>'; }});
+    xl.innerHTML=xls;
+    function path(arr){ return arr.map(function(v,i){ return (i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);}).join(' '); }
+    document.getElementById('lbull').setAttribute('d',path(bull));
+    document.getElementById('lbase').setAttribute('d',path(base));
+    document.getElementById('lbear').setAttribute('d',path(bear));
+    // end dots
+    var dots=document.getElementById('dots'),cols={0:'var(--avoid)'};
+    function dot(arr,color){ var i=arr.length-1; return '<circle class="dot" cx="'+X(i)+'" cy="'+Y(arr[i])+'" r="4.5" fill="'+color+'"/>'; }
+    dots.innerHTML=dot(bull,'var(--buy)')+dot(base,'var(--sel)')+dot(bear,'var(--avoid)');
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ svg.classList.add('drawn'); cio.unobserve(e.target);} });
+    },{threshold:.3});
+    cio.observe(svg);
+  }
+})();
+</script>
+</body>
+</html>

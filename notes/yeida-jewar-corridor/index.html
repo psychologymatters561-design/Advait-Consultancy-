@@ -98,6 +98,12 @@ svg{display:block}
 .prose p{margin:0 0 1.5em;color:var(--text)}
 .prose p.lead{font-size:1.08em}
 .prose em{font-style:italic;color:var(--accent-2)}
+.dossier-cta{display:block;margin-top:clamp(44px,7vh,72px);border-radius:22px;background:var(--bg);box-shadow:var(--raise);padding:clamp(26px,3.4vw,40px);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.dossier-cta:hover{transform:translateY(-3px)}.dossier-cta:active{box-shadow:var(--inset)}
+.dossier-cta .dc-k{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.dossier-cta .dc-h{display:block;font-family:var(--f-display);font-weight:600;font-size:clamp(21px,2.5vw,29px);line-height:1.18;margin:.5em 0 .4em;color:var(--text)}
+.dossier-cta .dc-p{display:block;color:var(--muted);font-size:clamp(14px,1vw,15.5px);max-width:58ch;margin:0}
+.dossier-cta .dc-go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .footlinks{margin-top:clamp(50px,8vh,90px);padding-top:34px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:14px}
 .footlinks a{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:999px;background:var(--bg);box-shadow:var(--raise-sm);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--text);transition:box-shadow .3s var(--ease),color .3s}
 .footlinks a:hover{color:var(--accent)}.footlinks a:active{box-shadow:var(--inset)}
@@ -138,7 +144,15 @@ svg{display:block}
         <p>The corridor will keep re-rating for years as each phase resolves. The advantage does not lie in believing the airport will matter — everyone believes that now. It lies in reading which part of the corridor the value reaches next, and being there before the belief becomes a price.</p>
       </div>
 
+      <a class="dossier-cta" href="/notes/yeida-jewar-corridor/dossier/" aria-label="Read the full YEIDA / Jewar Corridor investment dossier">
+        <span class="dc-k">Deep research · Investment dossier</span>
+        <span class="dc-h">The Jewar Corridor — a buy / no-buy decision framework</span>
+        <span class="dc-p">The full institutional dossier behind this note: the catalyst, industrial substance, pricing, five-year scenarios, the risk register and the diligence gate.</span>
+        <span class="dc-go">Open the dossier →</span>
+      </a>
+
       <nav class="footlinks" aria-label="Related">
+        <a href="/notes/yeida-jewar-corridor/dossier/">→ The Jewar investment dossier</a>
         <a href="/desk/">→ Open the Corridor Desk</a>
         <a href="/">→ The Advisory</a>
         <a href="/#threshold">→ Advait Capital</a>
