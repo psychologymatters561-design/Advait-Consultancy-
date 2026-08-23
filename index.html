@@ -108,6 +108,7 @@
     {"@type":"Question","name":"How is Advait Consultancy different from a broker?","acceptedAnswer":{"@type":"Answer","text":"A broker is paid to close a transaction and often represents both sides of it. Advait Consultancy is paid for counsel and takes a single-client mandate on one side only. We are not compensated by builders or developers, and we never represent both parties to a deal."}},
     {"@type":"Question","name":"What does \"single-client mandate\" mean?","acceptedAnswer":{"@type":"Answer","text":"We work for one client, on one deal, with no competing interest on the other side. That singularity is the point. It is what keeps the counsel independent and the alignment complete."}},
     {"@type":"Question","name":"Which markets across Delhi NCR does Advait Consultancy work in?","acceptedAnswer":{"@type":"Answer","text":"New Delhi, Gurugram, Noida, Greater Noida, Faridabad and Sohna, along the Dwarka Expressway and the Yamuna Expressway toward Jewar. We work wherever infrastructure is moving ahead of the market across Delhi NCR."}},
+    {"@type":"Question","name":"What does an engagement cost?","acceptedAnswer":{"@type":"Answer","text":"Fees are fixed and agreed in writing before any work begins, and are scoped to the mandate rather than to the value of the transaction. They are not published, because no two mandates are alike. The figure is discussed at the first exchange, before either side is committed to anything."}},
     {"@type":"Question","name":"What is Advait Capital?","acceptedAnswer":{"@type":"Answer","text":"Advait Capital is a closed circle beyond the advisory practice, for a deliberately small number of aligned investors. It is entered by recognition, not application. Its workings are discussed only with those who reach out."}}
   ]
 }
@@ -133,7 +134,7 @@
   /* ground + sky travel with distance; JS writes these live */
   --ground:#0A0908; --ground-2:#12100C; --sky:#05060A; --horizon:#2A2038;
   --hi:rgba(248,228,190,.06); --lo:rgba(0,0,0,.56);
-  --text:#F4EFE4; --muted:#B6AE9C; --faint:#7A7464;
+  --text:#F4EFE4; --muted:#B6AE9C; --faint:#8B8575;
   --accent:#D7B06E; --accent-2:#F0D79B; --accent-soft:#9A7B43;
   --glow:rgba(215,176,110,.5); --rule:rgba(248,228,190,.12);
   --f-display:"Cormorant",Georgia,"Times New Roman",serif;
@@ -151,8 +152,8 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ground);color:var(--text);font-family:var(--f-body);font-weight:300;
-  line-height:1.78;font-size:clamp(15px,.92vw,16px);-webkit-font-smoothing:antialiased;
+body{margin:0;background:var(--ground);color:var(--text);font-family:var(--f-body);font-weight:400;
+  line-height:1.76;font-size:clamp(16px,1vw,17.5px);-webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;overflow-x:hidden}
 body.locked{overflow:hidden;height:100svh}
 canvas,svg,img{display:block;max-width:100%}
@@ -175,7 +176,10 @@ p{margin:0}
 #drive{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--sky)}
 #corridor{width:100%;height:100%;display:block}
 .drive-haze{position:fixed;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(120% 60% at 50% 62%,transparent 30%,var(--ground) 88%)}
+  background:
+    linear-gradient(180deg,color-mix(in srgb,var(--ground) 62%,transparent) 0%,
+      color-mix(in srgb,var(--ground) 26%,transparent) 42%,transparent 60%),
+    radial-gradient(120% 60% at 50% 62%,transparent 30%,var(--ground) 88%)}
 .drive-vig{position:fixed;inset:0;z-index:2;pointer-events:none;
   box-shadow:inset 0 0 260px 50px rgba(0,0,0,.62)}
 .grain{position:fixed;inset:-40%;z-index:58;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
@@ -216,12 +220,13 @@ main{position:relative;z-index:4}
 .nav-links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
   transition:color .3s var(--ease)}
 .nav-links a:hover{color:var(--accent)}
-.nav-cta{padding:9px 18px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+.nav-cta{padding:9px 18px;border-radius:999px;border:1px solid rgba(215,176,110,.32);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--accent);box-shadow:var(--raise-sm);transition:box-shadow .35s var(--ease),color .3s}
 .nav-cta:hover{box-shadow:var(--inset);color:var(--accent-2)}
 @media (max-width:880px){.nav-links a:not(.nav-cta){display:none}}
 
 /* ── CHAPTER SHELL ────────────────────────────────────────────────────────*/
+.ch p,.ch li,.arrival-sub,.stmt{text-shadow:0 1px 14px rgba(0,0,0,.55)}
 .ch{position:relative;min-height:100svh;display:flex;align-items:center;
   padding-block:var(--s2);padding-top:max(var(--s2),110px);z-index:4}
 .ch-tight{min-height:auto;padding-block:var(--s2)}
@@ -261,12 +266,39 @@ html.js [data-reveal].in{opacity:1;transform:none}
 .clock .pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);
   box-shadow:0 0 10px var(--glow);animation:pulse 2.6s var(--ease) infinite}
 @keyframes pulse{0%,100%{opacity:.35;transform:scale(.82)}50%{opacity:1;transform:scale(1)}}
-.arrival h1{font-family:var(--f-display);font-weight:300;font-size:clamp(46px,9.4vw,142px);
+.arrival h1{font-family:var(--f-display);font-weight:300;font-size:clamp(42px,7.6vw,104px);
   line-height:.98;letter-spacing:-.018em;margin:0;
   transform:translate3d(calc(var(--px)*-10px),calc(var(--py)*-7px),0)}
 .arrival h1 em{font-style:italic;color:var(--accent)}
 .arrival-sub{margin-top:var(--s1);max-width:56ch;color:var(--muted);font-size:clamp(15px,1.25vw,19px);
   line-height:1.7;transform:translate3d(calc(var(--px)*-5px),calc(var(--py)*-4px),0)}
+.routes{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:var(--s1)}
+.route{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 30px;
+  border-radius:999px;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.11em;
+  transition:box-shadow .45s var(--ease),color .35s var(--ease),border-color .35s}
+.route-p{color:var(--accent);box-shadow:var(--raise);border:1px solid rgba(215,176,110,.30)}
+.route-p:hover{box-shadow:var(--inset);color:var(--accent-2);border-color:rgba(215,176,110,.5)}
+.route-s{color:var(--muted);border:1px solid var(--rule)}
+.route-s:hover{color:var(--accent);border-color:rgba(215,176,110,.35)}
+.route-s span{transition:transform .4s var(--ease)}
+.route-s:hover span{transform:translateX(5px)}
+.routes-fine{margin-top:20px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--faint)}
+
+/* whose side we are on — the position stated, the price never */
+.side .stmt{max-width:none}
+.side-body{margin-top:var(--s2);max-width:62ch;display:flex;flex-direction:column;gap:20px}
+.side-body p{color:var(--muted);font-size:16px;line-height:1.78}
+.side-close{font-family:var(--f-display);font-size:clamp(20px,2.3vw,30px);line-height:1.34;
+  color:var(--text)!important}
+.side-close em{font-style:italic;color:var(--accent)}
+.refusals{list-style:none;margin:var(--s2) 0 0;padding:0;display:flex;flex-direction:column;gap:0;
+  max-width:56ch;border-top:1px solid var(--rule)}
+.refusals li{padding:17px 4px 17px 30px;border-bottom:1px solid var(--rule);position:relative;
+  font-size:15px;color:var(--muted)}
+.refusals li::before{content:"";position:absolute;left:2px;top:26px;width:13px;height:1px;
+  background:var(--accent)}
+
 .cue{position:absolute;bottom:clamp(26px,5vh,54px);left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--f-mono);
   font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
@@ -455,7 +487,7 @@ html.js [data-reveal].in{opacity:1;transform:none}
 .foot .bar{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
   font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 .foot .b{color:var(--muted)}
-.entity{margin-top:var(--s1);max-width:92ch;color:#5F5A4E;font-size:12px;line-height:1.8}
+.entity{margin-top:var(--s1);max-width:88ch;color:#8A8579;font-size:13px;line-height:1.78}
 
 /* ── CURSOR ───────────────────────────────────────────────────────────────*/
 #cursor{position:fixed;top:0;left:0;width:30px;height:30px;border:1.5px solid var(--accent);
@@ -553,15 +585,22 @@ html:not(.js) .rail-stage{height:auto}
         <span class="ln"><span>are <em>built</em>,</span></span>
         <span class="ln"><span>not bought.</span></span>
       </h1>
-      <p class="arrival-sub" data-reveal data-d="3">Independent advisory for infrastructure-aligned real estate. Gurugram to Greater Noida, the Dwarka Expressway to the Yamuna corridor.</p>
+      <p class="arrival-sub" data-reveal data-d="3">Independent, fee-based counsel for capital
+        committing to Delhi NCR land and commercial property — the Dwarka Expressway, Noida,
+        and the Yamuna corridor toward Jewar. <b>We are paid by our client. Never by the seller.</b></p>
+      <div class="routes" data-reveal data-d="4">
+        <a class="route route-p" data-magnetic href="mailto:advisory@advaitconsultancy.in?subject=Mandate%20enquiry&body=What%20I%20am%20considering%3A%0D%0A%0D%0ACorridor%20or%20location%3A%0D%0A%0D%0AApproximate%20timeline%3A%0D%0A%0D%0A">A written approach</a>
+        <a class="route route-s" href="/notes/yeida-jewar-corridor/dossier/">Read the Jewar dossier <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="routes-fine" data-reveal data-d="4">Mandates, not enquiries · advisory@advaitconsultancy.in</p>
     </div>
     <div class="cue" aria-hidden="true"><span>Begin</span><span class="stem"></span></div>
   </section>
 
-  <!-- ══ KM 012 · THE GROUND SHIFTS ════════════════════════════════════ -->
-  <section class="ch" id="philosophy" data-chapter="The ground shifts" data-km="12" aria-label="Philosophy">
+  <!-- ══ KM 014 · Philosophy════════════════════════════════════ -->
+  <section class="ch" id="philosophy" data-chapter="The ground shifts" data-km="14" aria-label="Philosophy">
     <div class="wrap">
-      <span class="marker">KM 012 · Philosophy</span>
+      <span class="marker">KM 014 · Philosophy</span>
       <p class="stmt asm" data-assemble>
         <span class="ln"><span>India does not move in a straight line.</span></span>
         <span class="ln"><span>It moves in cycles.</span></span>
@@ -574,11 +613,78 @@ html:not(.js) .rail-stage{height:auto}
     </div>
   </section>
 
-  <!-- ══ KM 034 · THE PARCELS ══════════════════════════════════════════ -->
-  <section class="ch" id="practice" data-chapter="What we do" data-km="34" aria-label="What we do">
+  <!-- ══ KM 032 · The thesis═══════════════════════════════════════════════ -->
+  <section class="ch" id="thesis" data-chapter="The thesis" data-km="32" aria-label="The Thesis">
+    <div class="wrap">
+      <span class="marker">KM 032 · The thesis</span>
+      <div class="thesis-grid">
+        <div>
+          <h2 class="asm" data-assemble>
+            <span class="ln"><span>India is building at a scale</span></span>
+            <span class="ln"><span>history will measure in</span></span>
+            <span class="ln"><span>decades, not quarters.</span></span>
+          </h2>
+          <div class="chip" data-reveal data-d="2">Infrastructure supercycle&nbsp;·&nbsp;2024–2040</div>
+        </div>
+        <div>
+          <div class="tpanel" data-reveal><p>93% of India's next consumer-class expansion will occur outside the five largest cities. Infrastructure is moving ahead of population. <b>The opportunity is in the gap between the two.</b></p></div>
+          <div class="tpanel" data-reveal data-d="1"><p>Policy, not sentiment, drives land value in India's corridors. An expressway announcement is not news. It is a pricing event, months before the market reflects it. <b>Understanding the pipeline is understanding the map.</b></p></div>
+          <div class="tpanel" data-reveal data-d="2"><p>We operate in that window, between the policy signal and the market's response to it. <b>That is where advisory becomes advantage.</b></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ KM 048 · WHOSE SIDE ═══════════════════════════════════════════ -->
+  <section class="ch side" id="independence" data-chapter="Whose side we are on" data-km="48" aria-label="Independence">
+    <div class="wrap">
+      <span class="marker">KM 048 · Independence</span>
+      <p class="stmt asm" data-assemble>
+        <span class="ln"><span>The advice that costs you nothing</span></span>
+        <span class="ln"><span>is paid for by the person</span></span>
+        <span class="ln key"><span><em>selling to you.</em></span></span>
+      </p>
+      <div class="side-body">
+        <p data-reveal data-d="1">A broker is paid when a transaction closes, and is very often
+          paid by both sides of it. That is not dishonesty. It is the structure. But it means the
+          counsel reaching you was produced by someone whose income depends on your saying yes.</p>
+        <p data-reveal data-d="2">Advait is paid by the client, and only by the client. A fee is
+          agreed in writing before any work begins, scoped to the mandate rather than to the size
+          of the transaction — so there is no meter running, and no share of the upside to argue
+          about afterwards.</p>
+        <p class="side-close" data-reveal data-d="3">It is a more expensive way to buy advice.
+          It is the only way to buy advice that is <em>actually yours.</em></p>
+      </div>
+      <ul class="refusals" data-reveal data-d="3">
+        <li>No fee from builders, developers or sellers</li>
+        <li>No commission, on either side of a deal</li>
+        <li>One client, one deal, one side — never both</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ KM 066 · Recent mandate════════════════════════════════════════════════ -->
+  <section class="ch proof" id="proof" data-chapter="Recent mandate" data-km="66" aria-label="Recent mandate">
+    <div class="wrap">
+      <div class="thread" data-reveal></div>
+      <span class="marker">KM 066 · Recent mandate</span>
+      <p class="big asm" data-assemble>
+        <span class="ln"><span>A parcel few would touch — stalled,</span></span>
+        <span class="ln"><span>overlooked, and priced for its past.</span></span>
+        <span class="ln"><span>We read the infrastructure moving toward it,</span></span>
+        <span class="ln"><span>restructured the entry, and watched it</span></span>
+        <span class="ln"><span><em>change hands at a value the open</em></span></span>
+        <span class="ln"><span><em>market had not yet seen.</em></span></span>
+      </p>
+      <span class="fine" data-reveal data-d="2">Particulars on request, under mandate.</span>
+    </div>
+  </section>
+
+  <!-- ══ KM 084 · The practice══════════════════════════════════════════ -->
+  <section class="ch" id="practice" data-chapter="What we do" data-km="84" aria-label="What we do">
     <div class="wrap">
       <div class="parcels-head">
-        <span class="marker">KM 034 · The practice</span>
+        <span class="marker">KM 084 · The practice</span>
         <h2 class="asm" data-assemble>
           <span class="ln"><span>Counsel on the entry,</span></span>
           <span class="ln"><span>not the transaction.</span></span>
@@ -610,11 +716,11 @@ html:not(.js) .rail-stage{height:auto}
     </div>
   </section>
 
-  <!-- ══ KM 058 · THE RAIL — four principles pan sideways ═══════════════ -->
-  <section class="railsec" id="advisory" data-chapter="Four principles" data-km="58" aria-label="The Advisory">
+  <!-- ══ KM 104 · The advisory— four principles pan sideways ═══════════════ -->
+  <section class="railsec" id="advisory" data-chapter="Four principles" data-km="104" aria-label="The Advisory">
     <div class="rail-stage" id="railStage">
       <div class="rail-head">
-        <span class="marker">KM 058 · The advisory</span>
+        <span class="marker">KM 104 · The advisory</span>
         <h2 class="asm" data-assemble><span class="ln"><span>Four principles.</span></span></h2>
       </div>
       <div class="rail" id="rail">
@@ -643,49 +749,10 @@ html:not(.js) .rail-stage{height:auto}
     </div>
   </section>
 
-  <!-- ══ KM 079 · PROOF ════════════════════════════════════════════════ -->
-  <section class="ch proof" id="proof" data-chapter="Recent mandate" data-km="79" aria-label="Recent mandate">
+  <!-- ══ KM 126 · Thinking═════════════════════════════════════════════ -->
+  <section class="ch intel" id="thinking" data-chapter="Thinking, published" data-km="126" aria-label="Thinking">
     <div class="wrap">
-      <div class="thread" data-reveal></div>
-      <span class="marker">KM 079 · Recent mandate</span>
-      <p class="big asm" data-assemble>
-        <span class="ln"><span>A parcel few would touch — stalled,</span></span>
-        <span class="ln"><span>overlooked, and priced for its past.</span></span>
-        <span class="ln"><span>We read the infrastructure moving toward it,</span></span>
-        <span class="ln"><span>restructured the entry, and watched it</span></span>
-        <span class="ln"><span><em>change hands at a value the open</em></span></span>
-        <span class="ln"><span><em>market had not yet seen.</em></span></span>
-      </p>
-      <span class="fine" data-reveal data-d="2">Particulars on request, under mandate.</span>
-    </div>
-  </section>
-
-  <!-- ══ KM 096 · THESIS ═══════════════════════════════════════════════ -->
-  <section class="ch" id="thesis" data-chapter="The thesis" data-km="96" aria-label="The Thesis">
-    <div class="wrap">
-      <span class="marker">KM 096 · The thesis</span>
-      <div class="thesis-grid">
-        <div>
-          <h2 class="asm" data-assemble>
-            <span class="ln"><span>India is building at a scale</span></span>
-            <span class="ln"><span>history will measure in</span></span>
-            <span class="ln"><span>decades, not quarters.</span></span>
-          </h2>
-          <div class="chip" data-reveal data-d="2">Infrastructure supercycle&nbsp;·&nbsp;2024–2040</div>
-        </div>
-        <div>
-          <div class="tpanel" data-reveal><p>93% of India's next consumer-class expansion will occur outside the five largest cities. Infrastructure is moving ahead of population. <b>The opportunity is in the gap between the two.</b></p></div>
-          <div class="tpanel" data-reveal data-d="1"><p>Policy, not sentiment, drives land value in India's corridors. An expressway announcement is not news. It is a pricing event, months before the market reflects it. <b>Understanding the pipeline is understanding the map.</b></p></div>
-          <div class="tpanel" data-reveal data-d="2"><p>We operate in that window, between the policy signal and the market's response to it. <b>That is where advisory becomes advantage.</b></p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ KM 118 · THINKING ═════════════════════════════════════════════ -->
-  <section class="ch intel" id="thinking" data-chapter="Thinking, published" data-km="118" aria-label="Thinking">
-    <div class="wrap">
-      <span class="marker">KM 118 · Thinking</span>
+      <span class="marker">KM 126 · Thinking</span>
       <h2 class="asm" data-assemble><span class="ln"><span>Thinking, published.</span></span></h2>
       <p class="intel-lead" data-reveal data-d="1">How we read a market before it is priced — the collective signal across sentiment, policy, narrative and structure, held to the same standard whether it confirms a deal or kills it. The deeper work stays with mandated clients.</p>
       <div class="intel-links" data-reveal data-d="2">
@@ -726,6 +793,10 @@ html:not(.js) .rail-stage{height:auto}
           <p class="ans">New Delhi, Gurugram, Noida, Greater Noida, Faridabad and Sohna, along the Dwarka Expressway and the Yamuna Expressway toward Jewar. We work wherever infrastructure is moving ahead of the market across Delhi NCR.</p>
         </details>
         <details data-reveal>
+          <summary>What does an engagement cost?<span class="q-mark" aria-hidden="true">+</span></summary>
+          <p class="ans">Fees are fixed and agreed in writing before any work begins, and are scoped to the mandate rather than to the value of the transaction. They are not published, because no two mandates are alike — a title and infrastructure review on a single parcel and a multi-corridor portfolio strategy are different pieces of work. The figure is discussed at the first exchange, before either side is committed to anything.</p>
+        </details>
+        <details data-reveal>
           <summary>What is Advait Capital?<span class="q-mark" aria-hidden="true">+</span></summary>
           <p class="ans">Advait Capital is a closed circle beyond the advisory practice, for a deliberately small number of aligned investors. It is entered by recognition, not application. Its workings are discussed only with those who reach out.</p>
         </details>
@@ -733,25 +804,27 @@ html:not(.js) .rail-stage{height:auto}
     </div>
   </section>
 
-  <!-- ══ KM 140 · ENGAGE ═══════════════════════════════════════════════ -->
-  <section class="ch engage" id="engage" data-chapter="Engage" data-km="140" aria-label="Engage">
+  <!-- ══ KM 146 · ENGAGE ═══════════════════════════════════════════════ -->
+  <section class="ch engage" id="engage" data-chapter="Engage" data-km="146" aria-label="Engage">
     <div class="wrap">
       <h2 class="asm" data-assemble>
         <span class="ln"><span>If you have a real problem,</span></span>
         <span class="ln"><span>we should speak.</span></span>
       </h2>
-      <p data-reveal data-d="2">We do not take enquiries. We take mandates. If you understand the difference, the conversation is worth having.</p>
-      <a class="btn-mail" data-reveal data-d="3" data-magnetic href="mailto:advisory@advaitconsultancy.in">
+      <p data-reveal data-d="2">We do not take enquiries. We take mandates. Write in confidence —
+        what you are considering, and where. If there is a mandate in it, we will say so.
+        If there is not, we will tell you that too.</p>
+      <a class="btn-mail" data-reveal data-d="3" data-magnetic href="mailto:advisory@advaitconsultancy.in?subject=Mandate%20enquiry&body=What%20I%20am%20considering%3A%0D%0A%0D%0ACorridor%20or%20location%3A%0D%0A%0D%0AApproximate%20timeline%3A%0D%0A%0D%0A">
         <span class="mark"><svg width="16" height="16" viewBox="0 0 48 48" fill="none"><use href="#mk"/></svg></span>advisory@advaitconsultancy.in
       </a>
       <div class="by" data-reveal data-d="3">New Delhi · By appointment</div>
     </div>
   </section>
 
-  <!-- ══ KM 155 · THE THRESHOLD — the corridor ends here ════════════════ -->
-  <section class="ch threshold" id="threshold" data-chapter="The threshold" data-km="155" aria-label="Advait Capital">
+  <!-- ══ KM 160 · Beyond advisory— the corridor ends here ════════════════ -->
+  <section class="ch threshold" id="threshold" data-chapter="The threshold" data-km="160" aria-label="Advait Capital">
     <div class="wrap">
-      <span class="marker">KM 155 · Beyond advisory</span>
+      <span class="marker">KM 160 · Beyond advisory</span>
       <p class="th-line asm" data-assemble>
         <span class="ln"><span>Most capital follows the market.</span></span>
         <span class="ln"><span>A little of it <em>moves first.</em></span></span>
@@ -1257,7 +1330,21 @@ The mechanics are discussed only with those who reach out.</p>
           io.unobserve(en.target);
         });
       }, { rootMargin: "0px 0px -14% 0px", threshold: 0.12 });
-      asm.concat(rev).forEach(function (el) { io.observe(el); });
+      var all = asm.concat(rev);
+      all.forEach(function (el) { io.observe(el); });
+      // The observer ignores the bottom of the first screen, so anything sitting
+      // low in the hero would never appear until the visitor scrolled. Reveal
+      // whatever is already on screen once the entrance has had its beat.
+      setTimeout(function () {
+        var vh = w.innerHeight;
+        all.forEach(function (el) {
+          if (el.classList.contains("in") || el.classList.contains("done")) return;
+          if (el.getBoundingClientRect().top < vh) {
+            el.classList.add(el.hasAttribute("data-assemble") ? "done" : "in");
+            io.unobserve(el);
+          }
+        });
+      }, 620);
     } else {
       asm.forEach(function (el) { el.classList.add("done"); });
       rev.forEach(function (el) { el.classList.add("in"); });
