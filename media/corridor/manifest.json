@@ -1,0 +1,8 @@
+{
+  "_comment": "Corridor frame sequence. While count is 0 the page renders the corridor procedurally. Extract frames per ASSET-BRIEF.md, drop them in this folder, set count to the number of frames, and the page scrubs them against scroll automatically. No code change needed.",
+  "count": 0,
+  "pad": 4,
+  "path": "media/corridor/frame-{n}.webp",
+  "fps_source": 30,
+  "notes": "pad = digits in the frame number, so 4 means frame-0001.webp"
+}
