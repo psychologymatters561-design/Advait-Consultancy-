@@ -4,6 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <script>document.documentElement.classList.add('js');</script>
+<script>
+/* BACKGROUND SWITCH — "video" plays the footage loop; "corridor" restores the
+   procedural scroll-driven drive. Change the default here, or preview either
+   without editing anything: /?bg=video  ·  /?bg=corridor */
+(function (r) {
+  var BG = "video";
+  var q = /[?&]bg=(video|corridor)\b/.exec(location.search);
+  r.setAttribute("data-bg", q ? q[1] : BG);
+})(document.documentElement);
+</script>
 
 <title>Advait Consultancy — Independent Real Estate Advisory, Delhi NCR</title>
 <meta name="description" content="Infrastructure-aligned real estate advisory for investors and developers across Delhi NCR. Single-mandate, fee-based counsel. Where insight precedes the market." />
@@ -182,6 +192,13 @@ p{margin:0}
     radial-gradient(120% 60% at 50% 62%,transparent 30%,var(--ground) 88%)}
 .drive-vig{position:fixed;inset:0;z-index:2;pointer-events:none;
   box-shadow:inset 0 0 260px 50px rgba(0,0,0,.62)}
+/* video background: raw footage, no haze, no vignette, no dimming */
+#bgVideo{display:none}
+html[data-bg="video"] #drive{background:#000}
+html[data-bg="video"] #corridor,
+html[data-bg="video"] .drive-haze,
+html[data-bg="video"] .drive-vig{display:none}
+html[data-bg="video"] #bgVideo{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .grain{position:fixed;inset:-40%;z-index:58;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 7s steps(6) infinite}
@@ -551,6 +568,8 @@ html:not(.js) .rail-stage{height:auto}
 <!-- ═══ THE DRIVE — the corridor rendered live beneath the document ═══ -->
 <div id="drive" aria-hidden="true">
   <canvas id="corridor"></canvas>
+  <video id="bgVideo" muted loop playsinline preload="auto"
+    data-src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"></video>
 </div>
 <div class="drive-haze" aria-hidden="true"></div>
 <div class="drive-vig" aria-hidden="true"></div>
@@ -990,6 +1009,22 @@ The mechanics are discussed only with those who reach out.</p>
 
   var CAM_H = 2.6, ROAD = 8, NEAR = 5, FAR = 620;
 
+  /* ── video background (BACKGROUND SWITCH in <head>) ────────────────────
+     While a video is set, start/stop play and pause it and the corridor is
+     never drawn. If the footage fails to load, the corridor takes over. */
+  var vid = root.getAttribute("data-bg") === "video" ? d.getElementById("bgVideo") : null;
+  var booted = false;
+  if (vid) {
+    vid.muted = true;
+    vid.autoplay = !reduce;
+    vid.addEventListener("error", function () {
+      vid = null;
+      root.setAttribute("data-bg", "corridor");
+      if (booted) { loadPlates(); if (reduce) draw(0); else start(); }
+    });
+    vid.src = vid.getAttribute("data-src");
+  }
+
   function build() {
     var r = rand(20260823);
     stars = [];
@@ -1014,7 +1049,7 @@ The mechanics are discussed only with those who reach out.</p>
   }
 
   function draw(time) {
-    if (!ctx) return;
+    if (!ctx || vid) return;
     var p = state.p, dist = state.dist, pal = palette(p);
     var horizon = H * 0.545 + state.pitch;
     var cx = W * 0.5 + state.yaw;
@@ -1176,7 +1211,7 @@ The mechanics are discussed only with those who reach out.</p>
 
   /* ── optional frame sequence ───────────────────────────────────────── */
   function loadPlates() {
-    if (!w.fetch) return;
+    if (!w.fetch || vid) return;
     fetch("media/corridor/manifest.json", { cache: "force-cache" })
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (m) {
@@ -1255,13 +1290,20 @@ The mechanics are discussed only with those who reach out.</p>
     draw(t || 0);
     raf = w.requestAnimationFrame(loop);
   }
-  function start() { if (!raf) raf = w.requestAnimationFrame(loop); }
-  function stop() { if (raf) { w.cancelAnimationFrame(raf); raf = 0; } }
+  function start() {
+    if (vid) { var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {}); return; }
+    if (!raf) raf = w.requestAnimationFrame(loop);
+  }
+  function stop() {
+    if (vid) { vid.pause(); return; }
+    if (raf) { w.cancelAnimationFrame(raf); raf = 0; }
+  }
 
   /* ══ BOOT ════════════════════════════════════════════════════════════ */
   function boot() {
     var gsap = w.gsap, ST = w.ScrollTrigger;
 
+    booted = true;
     build(); size(); loadPlates(); paint();
 
     if (reduce) { draw(0); }
