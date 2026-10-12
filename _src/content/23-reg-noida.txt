@@ -1,0 +1,94 @@
+path: /regions/noida-greater-noida/
+kind: region
+title: Land in Noida & Greater Noida: Access & Rules | Advait
+desc: Land investment in Noida and Greater Noida, read independently: authority leasehold, metro and expressway access, permission and where to be cautious.
+primary: land investment Noida
+crumbs: Regions|/regions/
+crumb: Noida / Greater Noida
+marker: Region · Noida / Greater Noida
+h1: Noida / Greater Noida: land, access and what is worth holding
+lede: Land investment in Noida and Greater Noida works by different rules from Haryana. Most land here was acquired by development authorities and is allotted on lease. Families who read it as freehold farmland make expensive mistakes.
+---
+## Access today. {Access}
+
+Noida and Greater Noida have some of the most complete access in the region. Roads, metro and expressways are largely built.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Noida–Greater Noida Expressway | Operational | Long established | Noida Authority {tv:Noida–Greater Noida Expressway operational} |
+| Aqua Line metro, Noida to Greater Noida | Operational | 2019 | NMRC {tv:Aqua Line opened January 2019} |
+| Delhi Metro Blue and Magenta lines into Noida | Operational | Long established | DMRC {tv:DMRC Noida lines operational} |
+| Eastern Peripheral Expressway | Operational | 2018 | NHAI {tv:EPE opened May 2018} |
+| Noida International Airport | Commercial flights from 15 June 2026 | June 2026 | [News on AIR](https://newsonair.gov.in/indigo-airline-to-begin-commercial-flight-services-from-noida-international-airport-at-jewar-from-june-15/) {tv:NIA commercial operations began 15 June 2026} |
+| Faridabad–Noida–Ghaziabad road | Partly built | 2026 | Public reports {tv:FNG expressway status} |
+
+The airport sits further south, in the Yamuna Expressway authority's area, which we read on [its own page](/regions/yamuna-expressway/). For Noida and Greater Noida, it is one more connection, not the whole story.
+
+The more important access question here is internal. Sectors with metro stations, finished roads and working services behave very differently from sectors that exist on the master plan and little else.
+
+## Permission in the authority areas. {Permission}
+
+Most of Noida and Greater Noida lies within notified areas of the Noida Authority and the Greater Noida Industrial Development Authority. Land there was largely acquired by the authorities and is allotted on long lease, typically ninety years. {tv:Noida and GNIDA allotments on 90-year lease} The allotment terms, not a revenue declaration, decide what may be built.
+
+That changes how families should think. Buying here usually means buying an authority allotment, at auction or by scheme, or buying a lease from someone who holds one. Developers do the same: M3M won a Noida Authority auction for a 12.5-acre mixed-use plot in Sector 108 in September 2026. {tv:M3M Sector 108 Noida auction, Sept 2026} [Business Today](https://www.businesstoday.in/real-estate/story/m3m-beats-real-estate-giant-dlf-in-rs1850-crore-noida-land-auction-554206-2026-09-09) reported it.
+
+Outside the notified areas, agricultural land follows the UP Revenue Code, 2006. A declaration under Section 80 is the route to non-agricultural use, and the Code limits how much agricultural land one person may hold. {tv:UP Revenue Code ss.80 and 89} Private sales inside notified villages, sold as freehold farmland, deserve particular care.
+
+## Purpose fit. {Purpose}
+
+- **Gathering grounds:** possible on suitable allotments or on land outside the notified areas, close to a large population.
+- **Skill and sport grounds:** a good fit for a city with young families and few open grounds, where the allotment permits it.
+- **Working landscapes:** suited to the agricultural edges, though floodplain land carries its own limits.
+- **Light stays:** a weak fit in the city itself. Travellers here want hotels near offices, not quiet.
+
+## The three levers, here. {Reading}
+
+Access in Noida's built sectors is largely complete. Value now follows completion: finished roads, working services, occupied buildings. In Greater Noida's newer sectors, access is often ahead of everything else.
+
+Permission is set by the authorities. The lever is not changing land use but reading allotment terms, lease conditions and auction rules well, and knowing what each permits.
+
+Purpose, in a leasehold city, means using what the allotment allows to its full extent. Institutional, sporting and community uses are often under-supplied, and authorities sometimes allot land for them.
+
+## Who holds land here. {The holders}
+
+Three groups hold most land in these cities. Former farming families, some of whom received residential plots as part of their compensation. Allottees who bought through the authorities' schemes and auctions. And developers holding allotments of their own. {tv:Farmer residential plots allotted as compensation by Noida and GNIDA (abadi and percentage plots); transfer rules}
+
+Each holds a different kind of right, with different rules for sale and use. Reading which kind you are being offered is the first step of any diligence here.
+
+## Where we'd be cautious. {Caution}
+
+We are cautious of farmland sold inside notified villages as if the authority did not exist. Such land may be subject to acquisition, or may never receive the permission the buyer imagines.
+
+We are cautious of leasehold dues and transfer charges that are not visible in the asking price, and of allotments with unpaid instalments or disputes. Long-running disputes over farmers' compensation have shaped this market for years, and some remain open. {tv:Noida/GNIDA farmer compensation disputes; status}
+
+We are also cautious near the Yamuna and Hindon, where floodplain rules limit what can be built, whatever the seller says.
+
+## What would change our view. {Signals}
+
+We would read Noida and Greater Noida differently if any of these moved.
+
+- Sectors around a parcel completed and occupied, not merely launched.
+- Authority decisions on lease dues, transfer charges and stalled projects.
+- The Faridabad–Noida–Ghaziabad road completed through its missing stretches.
+- The pace of the authorities' auctions, and who bids in them.
+
+Each of these moves value more than another announcement does.
+
+## Questions before you buy. {Before you buy}
+
+1. Is this land inside a notified authority area, or outside it?
+2. Is it freehold, or a lease from the authority, and on what terms?
+3. Are all lease premiums, dues and transfer charges paid and documented?
+4. What does the allotment or the master plan permit on this plot?
+5. Is any part in the floodplain of the Yamuna or the Hindon?
+6. Is anything about this land under dispute with the authority or with farmers?
+
+!close
+
+!links
+- Land acquisition :: /services/land-acquisition/ :: Diligence on leasehold and freehold land
+- Landowner advisory :: /services/landowner-advisory/ :: For owners approached by developers
+- Godrej Properties and land in North India :: /developers/godrej-properties/ :: Developer Atlas
+- M3M and land in North India :: /developers/m3m/ :: Developer Atlas
+- Noida–Greater Noida: the industrial-to-office shift :: /notes/noida-greater-noida-shift/ :: Corridor Note
+!end

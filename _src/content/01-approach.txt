@@ -1,0 +1,95 @@
+path: /approach/
+title: Land Value Design: Access, Permission, Purpose | Advait
+desc: The Advait method of land value design: Access, Permission, Purpose. With state examples from Haryana, UP and Himachal, and the arithmetic behind it.
+primary: land value design
+crumb: Approach
+marker: The approach
+h1: Land value design: Access, Permission, Purpose
+lede: Land value design is the work of adding value to land on purpose, rather than waiting for it. Three levers do the work. Most of the market watches only the first.
+---
+## The thesis. {Thesis}
+
+India is building faster than at any time in its history. Expressways, airports, rapid rail and metro lines are reaching land that was farmland a decade ago.
+
+The market has learnt to read that. When a road is announced, prices move. When it opens, they move again. Everyone holding land near it waits for the next move.
+
+Waiting is a strategy, but it is a passive one. The family carries the land, pays the cost of holding it, and earns nothing until someone else's project gives it a value.
+
+> Great assets are built, not bought.
+
+Our work begins where waiting ends. We read what reaches the land, secure what it is allowed to become, and design what it should become. The aim is simple: land that earns while the corridor matures.
+
+## Access: the value everyone can see. {Access}
+
+Access is what reaches the land. An expressway interchange, a rail station, an airport, a rapid-rail stop, a metro line. It is public, it is reported, and the market prices it quickly.
+
+That is why Access alone rarely makes a family's fortune today. By the time a road is certain, the price usually reflects it. What remains is timing and judgement: which announcements are funded, which are drawn on paper, and which will open in a decade.
+
+We read Access with dated sources: what is operational, what is under construction, and what is only announced. The region pages set this out for each place we work.
+
+## Permission: the value that is negotiated. {Permission}
+
+Permission is what the land may become. It is often the single largest step in value, and it is negotiated, not given. Each state handles it differently.
+
+### Haryana: change of land use
+
+In Haryana's controlled areas and urbanisable zones, a change of land use permission from the Department of Town and Country Planning lets agricultural land be used for a permitted purpose. {tv:Haryana CLU is granted by DTCP under the Punjab Scheduled Roads and Controlled Areas Restriction of Unregulated Development Act, 1963} The purpose must fit the zone in the development plan. Fees, road access and site norms decide whether it makes sense.
+
+### Uttar Pradesh: Section 80
+
+In Uttar Pradesh, Section 80 of the UP Revenue Code, 2006 provides for a declaration that agricultural land is being used for non-agricultural purposes. {tv:UP Revenue Code 2006 s.80 declaration; confirm current procedure and fee} Inside notified development authority areas, such as YEIDA's, the authority's master plan and allotment terms govern instead.
+
+### Himachal Pradesh: Section 118
+
+In Himachal Pradesh, Section 118 of the HP Tenancy and Land Reforms Act, 1972 restricts the transfer of land to people who are not agriculturists of the state, unless the government permits it. {tv:HP Tenancy and Land Reforms Act 1972 s.118; amendment bill sent to a Select Committee in Dec 2025, status to check} Where outright purchase is restricted, a lease or a joint venture with a landowning family is often the honest structure.
+
+!note Permission strategy is coordinated with your lawyers. We do not give legal advice, and no permission is ever certain until it is granted.
+
+## Purpose: the value that is designed. {Purpose}
+
+Purpose is what the land actually becomes. It is the lever most families never pull, because it asks for design, not patience.
+
+The purposes that suit land near North India's corridors are light, local and reversible. Gathering grounds for occasions a city cannot host. Light stays of a few rooms. Grounds for disciplines people return to. Working landscapes that produce while they wait.
+
+Each of these earns while the corridor matures. None of them needs the land to be sold. When access finally arrives, the family holds both a working asset and appreciated land, and decides at leisure what to do with each.
+
+> Most investors wait for value. Our clients get paid to wait.
+
+## The arithmetic, with figures. {Illustrative arithmetic}
+
+Most resort ideas fail the arithmetic. We say so first. The figures below are illustrative, rounded and simplified. They show the logic, not a forecast for any parcel.
+
+| | The resort trap | Paid to wait |
+|---|---|---|
+| Land | 5 acres at ₹1.5 crore an acre: ₹7.5 crore | 10 acres at ₹60 lakh an acre: ₹6 crore |
+| Build | ₹8 crore, heavy and permanent | ₹2 crore, light and largely reversible |
+| Total cost | ≈ ₹15.5 crore | ≈ ₹8 crore |
+| Operating profit | ≈ ₹1.2 crore a year | ≈ ₹1 crore a year |
+| Yield on cost | ≈ 8% | ≈ 12–13% |
+| What you hold | A hotel that must find a hotel buyer | Twice the land, earning, on a maturing corridor |
+
+!note Illustrative only. Figures are invented for the comparison and are not a forecast, an offer or a promise of any return.
+
+The lesson is not that resorts are wrong. It is that a heavy build on expensive land leaves very little room for error. A light purpose on a larger, earlier parcel leaves the family more land, more time, and a healthier return on what it actually spent.
+
+## Why we kill most ideas on paper. {On paper}
+
+Most of the ideas we are brought do not survive our first read. The land is the wrong shape. The road on the plan is unfunded. The permission is possible but not probable. The purpose is lovely, and the numbers are not.
+
+Killing an idea on paper costs a few weeks. Killing it after a build costs years and crores. We would rather say no early.
+
+When an idea does survive, it is usually simpler than the one we started with: fewer rooms, a lighter build, a clearer operator, and a plan the family can explain to the next generation in a sentence.
+
+## How a mandate runs. {The work}
+
+!steps
+- Read :: A Ground Session or a Land Value Brief reads the parcel, the corridor and the paperwork.
+- Permit :: We map the permission route with your lawyers and set out what is likely, possible and unlikely.
+- Design :: We test purposes against the arithmetic and keep only what survives.
+- Activate :: We select and contract the operator, and set governance the family can live with.
+- Compound or exit :: We review the holding with you, and help you decide whether to hold or release.
+!end
+
+If you are holding a problem with land, bring it to us. We work it until we find the best answer, including when the best answer is to do nothing.
+
+!cta

@@ -1,0 +1,31 @@
+path: /privacy/
+title: Privacy | Advait
+desc: How Advait handles what you share through this site: what we collect, why, where it goes, and how to ask for it to be deleted.
+crumb: Privacy
+marker: Privacy
+h1: Privacy
+lede: Discretion is the service, so it begins here. This page says plainly what this site collects and what we do with it.
+---
+## What we collect. {Collection}
+
+This site collects only what you choose to send us. If you send a brief, we receive your name, WhatsApp number, email, one line about your land, and your answers to the six questions. If you ask for the monthly study, we receive your email.
+
+We do not run advertising trackers. We do not sell, rent or share your details with developers, brokers or anyone else.
+
+## Where it goes. {Processing}
+
+Briefs and study requests are delivered to our inbox by Web3Forms, a form-delivery service. If you write on WhatsApp instead, your message is handled by WhatsApp under its own terms.
+
+Fonts are served by Google Fonts, which receives your browser's address in order to deliver them. The site is hosted on GitHub Pages, which keeps standard server logs.
+
+## What stays in your browser. {Your browser}
+
+Your answers to the six questions are scored in your browser. The outcome, and your choice of light or dark paper, are saved in your browser's local storage. You can clear them at any time by clearing this site's data.
+
+## How long we keep it, and your rights. {Retention}
+
+We keep a brief for as long as a conversation or mandate continues, and for any period the law requires after it. You may ask us to see, correct or delete what we hold about you, under the Digital Personal Data Protection Act, 2023.
+
+Write to [advisory@advaitconsultancy.in](mailto:advisory@advaitconsultancy.in). We reply within thirty days.
+
+!note Last updated 12 October 2026.

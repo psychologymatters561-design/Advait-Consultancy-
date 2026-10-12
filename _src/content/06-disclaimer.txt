@@ -1,0 +1,33 @@
+path: /disclaimer/
+title: Disclaimer | Advait
+desc: The terms on which Advait publishes information: general information only, not advice, no offer to invest, and independence from every developer named.
+crumb: Disclaimer
+marker: Disclaimer
+h1: Disclaimer
+lede: What we publish is meant to help you think. It is not advice for your situation until we have read your situation.
+---
+## General information only. {Information}
+
+Everything on this site is general information. It is not investment, legal or tax advice. No advisory relationship exists between you and Advait Consultancy until a mandate is signed by both sides.
+
+## Illustrations and figures. {Figures}
+
+Illustrations show logic, not forecasts. Where we give figures, they are either sourced and dated, or labelled illustrative. Past movements in land value say nothing certain about future ones.
+
+Real estate is illiquid, and its value can fall. Permissions can be refused, delayed or changed. Infrastructure can be delayed, re-routed or cancelled.
+
+## No offer, no solicitation. {Offers}
+
+Nothing on this site is an offer or solicitation to invest, to buy or to sell any property or security. Advait does not pool money and does not hold investor money.
+
+## Independence and trademarks. {Independence}
+
+Advait is independent. We have no affiliation, partnership or commercial arrangement with any developer named on this site, including in the Developer Atlas. Company names are used only to identify the company discussed, and all trademarks belong to their owners.
+
+We are paid only by our clients. We never accept a fee from a seller, builder or developer.
+
+## Accuracy. {Accuracy}
+
+We take care with every fact, and we date our sources. Facts change. If you find an error, write to [advisory@advaitconsultancy.in](mailto:advisory@advaitconsultancy.in) and we will correct it.
+
+!note Last updated 12 October 2026.

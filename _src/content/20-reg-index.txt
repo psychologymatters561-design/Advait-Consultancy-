@@ -1,0 +1,34 @@
+path: /regions/
+title: Land Across North India: The Regions We Read | Advait
+desc: Land investment across North India, read place by place: Gurugram, Delhi, Noida, Faridabad, Sohna, Sonipat, Panipat, Karnal, Tricity and Himachal.
+primary: land investment North India
+crumb: Regions
+marker: Regions
+h1: Land investment across North India, read place by place
+lede: We read North India as one map. No corridor leads it. Each place is judged on its own paper: what reaches the land, what the land may become, and what it should become.
+---
+## Why no corridor leads. {Method}
+
+Markets fall in love with one corridor at a time. Prices follow the story, and families are told that one road is the only road.
+
+We do not work that way. A parcel in Panipat can be worth more to the right family than a plot on the most talked-about expressway. What matters is the parcel's own access, permission and purpose, and what the family wants from it.
+
+So every region below gets the same treatment. Access today, with dates and sources. The permission rules of its state. The purposes it suits. Where we would be cautious. And the questions to ask before buying.
+
+## The eleven regions. {Regions}
+
+!regionlist
+
+The Dwarka Expressway and the Southern Peripheral Road are read on the [Gurugram page](/regions/gurugram/#dwarka-expressway), where they belong.
+
+## Reading further. {Further}
+
+!links
+- Corridor Notes :: /notes/ :: Longer, sourced notes on infrastructure and land
+- The Corridor Desk :: /desk/ :: A working tool for master plans and sectors
+- Developer Atlas :: /developers/ :: Independent notes on how developers buy land
+!end
+
+Found something here that touches your land? Bring us the problem; we'll work out the best answer.
+
+!cta

@@ -1,0 +1,90 @@
+path: /services/permission/
+kind: service
+title: Change of Land Use in Haryana, CLU & Section 80 | Advait
+desc: Permission strategy for land: change of land use in Haryana, non-agricultural declaration under Section 80 in UP, and Section 118 in Himachal.
+primary: change of land use Haryana
+crumbs: Services|/services/
+crumb: Permission
+marker: Permission
+h1: Change of land use in Haryana, and permission across North India
+lede: Change of land use in Haryana, a non-agricultural declaration in Uttar Pradesh, a Section 118 permission in Himachal: permission is often the single largest step in what land is worth. We set the strategy, coordinate the applications with your lawyers and consultants, and tell you honestly what is likely.
+---
+## When families call us about this. {The problem first}
+
+Permission problems arrive in two forms. Either nothing has been applied for, or something was applied for years ago and has not moved.
+
+- The family wants to use agricultural land for something else, and does not know if it is allowed.
+- A change of land use application has been pending for years, with no clear reason.
+- A purpose has been designed, but nobody has checked whether the zone permits it.
+- Land sits in a green belt or a conservation zone, and the family has been promised otherwise.
+- The family has been told an outright sale is impossible in that state.
+
+Each of these needs a clear reading before any application. A rejected application costs time, fees and credibility with the office that decides the next one.
+
+## How permission works, state by state. {By state}
+
+Every state has its own law, its own office and its own culture of decision. What follows is general. It is not legal advice.
+
+### Haryana: change of land use
+
+In Haryana, land in a controlled area or an urbanisable zone needs a change of land use permission, known as CLU, before it is used for a non-agricultural purpose. The Department of Town and Country Planning grants it. {tv:Haryana CLU process: DTCP under the 1963 Controlled Areas Act} The purpose must be permissible in that zone of the development plan.
+
+The process is a sequence. Check the zone. Check the approach road and site norms. Prepare the application and drawings. Pay the scrutiny and conversion charges. Answer the objections. Each step can be done well or badly, and the difference shows up in months.
+
+Many families ask about farmhouses near Gurugram. Haryana's development plans permit farmhouses in the agricultural zone under specific conditions on area, coverage and access. {tv:Haryana farmhouse norms in agricultural zone of development plans; minimum area and coverage} Those conditions change, and we read the current ones before anyone builds.
+
+### Uttar Pradesh: Section 80
+
+In Uttar Pradesh, Section 80 of the UP Revenue Code, 2006 allows a declaration that agricultural land is used for a non-agricultural purpose. {tv:UP Revenue Code 2006 s.80 declaration process and fee} It is made through the revenue administration and changes how the land is recorded and taxed.
+
+Inside a notified development authority's area, such as the Yamuna Expressway Industrial Development Authority, the authority's master plan and allotment terms decide instead. Land there is often held on lease from the authority, which changes the arithmetic entirely.
+
+### Himachal Pradesh: Section 118
+
+In Himachal Pradesh, Section 118 of the HP Tenancy and Land Reforms Act, 1972 restricts the transfer of land to people who are not agriculturists of the state, without government permission. An amendment bill was sent to a Select Committee of the Assembly in December 2025. {tv:HP s.118 amendment bill referred to Select Committee, Dec 2025; check current status} Where purchase is restricted, a long lease or a joint venture with a landowning family is often the honest structure.
+
+### Delhi: caution first
+
+Agricultural land in Delhi's villages is governed by the Delhi Land Reforms Act, 1954, which restricts both its division and its use for other purposes. {tv:Delhi Land Reforms Act 1954 ss.33 and 81} Families holding such land should take legal advice before any change of use.
+
+## Why applications stall. {Stalled files}
+
+Most stalled applications share a cause that was visible on the first day. The purpose did not fit the zone. The approach road was narrower than the norm. A title question was left for later.
+
+Some stall for reasons outside the family's control: a revised development plan, a new policy, a change of officer. Those need patience and a clean file, not pressure.
+
+When a family brings us a stalled file, we read it from the beginning. Sometimes the right move is to answer the objections properly. Sometimes it is to withdraw and apply again, for a purpose the land can actually carry.
+
+## What we do. {Our work}
+
+- Read the land against the governing development plan or master plan.
+- Set out which purposes are permitted, which are possible, and which are unlikely.
+- Design the purpose so it fits the permission, not the other way round.
+- Prepare the strategy and timeline, and coordinate the architects, consultants and lawyers who file.
+- Track pending applications and help answer objections properly.
+- Tell you honestly when a permission is not worth pursuing.
+
+## What we don't do. {Limits}
+
+- We do not promise any permission. No one honestly can.
+- We do not offer shortcuts, and we do not deal in influence.
+- We do not give legal advice or file as your lawyer.
+- We do not take fees from developers who may later want the permitted land.
+
+## How it's paid. {Fees}
+
+A Land Value Brief, from ₹75,000, reads one parcel's permission route in writing and is credited against any mandate. Larger permission work runs under a mandate, agreed in writing before it begins, or as part of value design.
+
+## Questions to ask before you apply. {Before you apply}
+
+1. Which development plan governs this land, and which zone is it in?
+2. Is the purpose I want permitted in that zone, as written today?
+3. Does the land meet the road-width and site norms for that purpose?
+4. What will the permission cost in charges, before any building?
+5. What happens to the value if the permission is refused?
+6. Is there a conservation, forest or green-belt rule over any part of it?
+7. Who is preparing the application, and who is accountable for it?
+
+Read how permission fits our wider method on the [approach page](/approach/), and how it is used in [value design](/services/value-design/).
+
+!cta Bring us the land and the file. We will tell you what the land may become.

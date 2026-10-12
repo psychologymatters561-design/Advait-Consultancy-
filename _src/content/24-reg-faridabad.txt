@@ -1,0 +1,93 @@
+path: /regions/faridabad/
+kind: region
+title: Land Investment in Faridabad: Access & Caution | Advait
+desc: Land investment in Faridabad, read independently: the expressway spur, the new airport link, Aravalli rules, and the parcels worth a closer look.
+primary: land investment Faridabad
+crumbs: Regions|/regions/
+crumb: Faridabad
+marker: Region · Faridabad
+h1: Faridabad: land, access and what is worth holding
+lede: Land investment in Faridabad has long been overshadowed by Gurugram next door. That is changing as new roads reach it from three directions. The opportunity is real, and so are the Aravalli rules that sit across much of its western land.
+---
+## Access today. {Access}
+
+Faridabad is gaining access on its east, its south and its west. Some of it is open. Much of it is still under construction.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Delhi Metro Violet Line to Ballabhgarh | Operational | 2018 | DMRC {tv:Violet Line extension to Raja Nahar Singh, Ballabhgarh, Nov 2018} |
+| Delhi–Mumbai Expressway spur into Faridabad | Opening in stages | 2026 | NHAI {tv:DND–Faridabad–Sohna spur of DME status} |
+| Faridabad–Jewar link to Noida International Airport | Under construction; 11-km raised section approved | March 2026 | [The Tribune](https://www.tribuneindia.com/news/haryana/nod-to-elevated-corridor-on-greenfield-expressway-budget-likely-to-rise-by-48) {tv:Faridabad–Jewar link: raised section approved March 2026, completion reported for 2027} |
+| Faridabad–Noida–Ghaziabad road | Partly built | 2026 | Public reports {tv:FNG expressway status} |
+| Kundli–Manesar–Palwal Expressway, to the south | Operational | 2018 | NHAI {tv:KMP fully opened Nov 2018} |
+
+The Faridabad–Jewar link is the change most worth watching. Once open, it puts the city's eastern edge within a short drive of a working international airport. Its original completion target was missed, and we count it as access only when it opens.
+
+The spur of the Delhi–Mumbai Expressway matters too. It gives Faridabad a fast line both to Delhi and to the expressway's southern run, without passing through Gurugram.
+
+## Permission in Haryana. {Permission}
+
+Faridabad's land use is governed by its development plan, administered by the Department of Town and Country Planning. {tv:Faridabad Development Plan 2031} Inside urbanisable sectors, colonies are licensed. Outside them, any non-agricultural use needs a change of land use permission.
+
+The Aravalli hills along Faridabad's west carry heavy restrictions. Land notified under the Punjab Land Preservation Act, 1900 has been treated as forest by the courts, and construction on it has been ordered removed. {tv:Supreme Court rulings on PLPA-notified Aravalli land in Faridabad, including Kant Enclave (2018)} Families should assume any Aravalli parcel is restricted until a lawyer proves otherwise.
+
+On the east, the Yamuna floodplain sets its own limits on building. Between the two lies most of the land that can actually be developed.
+
+## Purpose fit. {Purpose}
+
+- **Gathering grounds:** a good fit on the city's southern and eastern edges, where land is larger and the city is close.
+- **Skill and sport grounds:** a good fit, for a large city with few open grounds and growing access from Delhi.
+- **Working landscapes:** suited to the agricultural land towards the Yamuna, where building is limited anyway.
+- **Light stays:** a modest fit, strongest near the Aravalli edge on land that is clear of restrictions.
+
+Faridabad's advantage is its own population. It is one of Haryana's largest cities, and few of its residents have open land within easy reach. A ground or a gathering place here serves the city first, which makes its income steadier than one built for weekend visitors.
+
+## The three levers, in Faridabad. {Reading}
+
+Access is arriving in Faridabad now, from three sides at once. That is exactly when careful reading matters most, because sellers price every road the same way, open or not.
+
+Permission is defined by two lines. The Aravalli on the west and the Yamuna floodplain on the east. Permission strategy here means knowing precisely where each line runs across a parcel, before anything else.
+
+Purpose suits Faridabad well. A large population with little open land makes grounds and gatherings practical. Those purposes keep agricultural land in light use while the new access matures.
+
+## Who holds land here. {The holders}
+
+Faridabad's land is held by old village families, by owners from the city's long industrial history, and by colonisers. East of the Agra Canal, in Greater Faridabad, developers built many sectors over two decades, some of them slowly. {tv:Greater Faridabad (Neharpar) sectors east of the Agra Canal}
+
+Families east of the canal often hold land beside half-finished sectors. Sometimes the right answer is to wait for the sector to finish, rather than sell to the next buyer at today's price.
+
+## Where we'd be cautious. {Caution}
+
+The Aravalli is our first caution, always. Farmhouses, venues and colonies built there have been demolished before, and the risk passes to whoever holds the land.
+
+We are also cautious of land priced as if the airport link were already open, and of parcels whose only approach is a revenue path. In the older city, unauthorised colonies and unclear records are common.
+
+Faridabad's moment is real. That is exactly when sellers stretch the story furthest.
+
+## What would change our view. {Signals}
+
+We would read Faridabad differently if any of these moved.
+
+- The Faridabad–Jewar link opening to traffic, end to end.
+- The expressway spur fully open into the city.
+- Any new court or government ruling on Aravalli land.
+- The slower sectors of Greater Faridabad completed and occupied.
+
+The first two would bring the airport and the expressway network into daily reach. Until they open, we price land as if they had not. That discipline protects families from paying today for access that may arrive a year or two later than promised.
+
+## Questions before you buy. {Before you buy}
+
+1. Is any part of the parcel notified under the Land Preservation Act, or treated as forest?
+2. Is it inside an urbanisable sector, or in the agricultural zone?
+3. Is any part in the Yamuna floodplain?
+4. How far is it, by actual road, from the expressway spur or the Jewar link?
+5. Is the price assuming access that has not yet opened?
+
+!close
+
+!links
+- Permission :: /services/permission/ :: Change of land use and the Aravalli question
+- Land acquisition :: /services/land-acquisition/ :: Diligence before you commit
+- Godrej Properties and land in North India :: /developers/godrej-properties/ :: Developer Atlas
+- DLF and land in North India :: /developers/dlf/ :: Developer Atlas
+!end

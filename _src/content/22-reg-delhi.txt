@@ -1,0 +1,92 @@
+path: /regions/delhi/
+kind: region
+title: Land in Delhi: Access, Land Pooling & Caution | Advait
+desc: Land investment in Delhi, read independently: village agricultural land, land pooling, new access in the west, and the rules that catch buyers out.
+primary: land investment Delhi
+crumbs: Regions|/regions/
+crumb: Delhi
+marker: Region · Delhi
+h1: Delhi: land, access and what is worth holding
+lede: Land investment in Delhi is unlike anywhere else in North India. The city has little open land, a land law written for farmers, and a planning regime that moves slowly. The families who do well here are the ones who read the rules before they read the price.
+---
+## Access today. {Access}
+
+Delhi's access is already dense. The recent changes have come on its western and northern edges, which matter most for the villages that still hold agricultural land.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Dwarka Expressway, Delhi section | Operational | August 2025 | [PMO release](https://www.pmindia.gov.in/en/news_updates/pm-to-inaugurate-rs-11000-crore-highway-projects-in-delhi-on-17th-august/) {tv:Delhi section of Dwarka Expressway opened 17 Aug 2025} |
+| Urban Extension Road II, Alipur to Dichaon Kalan | Operational, with links to Bahadurgarh and Sonipat | August 2025 | [PMO release](https://www.pmindia.gov.in/en/news_updates/pm-to-inaugurate-rs-11000-crore-highway-projects-in-delhi-on-17th-august/) {tv:UER-II stretch opened 17 Aug 2025} |
+| Namo Bharat, Delhi to Meerut | Operational in stages from Sarai Kale Khan | 2025 | NCRTC {tv:Delhi–Meerut Namo Bharat full corridor status} |
+| Namo Bharat, Delhi to Panipat and Karnal | Detailed project report under central review | July 2026 | [Swarajya](https://swarajyamag.com/news-brief/ncrtc-moves-ahead-with-detailed-project-reports-for-key-namo-bharat-rrts-corridors) {tv:RRTS DPR status, July 2026} |
+| Delhi Metro Phase 4 | Opening in stages | 2026 | DMRC {tv:Delhi Metro Phase 4 corridors open as of Oct 2026} |
+
+The Urban Extension Road changes the geography of north-west Delhi. Villages that were a long drive from the airport are now close to it, and to Gurugram, Bahadurgarh and Sonipat.
+
+That access is real and operational. What it does to land value depends almost entirely on permission, because Delhi's agricultural land cannot simply be used for something else.
+
+## Permission in Delhi. {Permission}
+
+Agricultural land in Delhi's villages is governed by the Delhi Land Reforms Act, 1954. The Act restricts how holdings may be divided and how land may be used. {tv:Delhi Land Reforms Act 1954 ss.33 and 81: transfer limits and non-agricultural use} Using agricultural land for a non-agricultural purpose without permission can lead to proceedings that put the holding itself at risk.
+
+The Delhi Development Authority's land pooling policy was meant to let owners pool land in the urbanisable villages and receive developed land back. {tv:DDA Land Pooling Policy notified 2018; current participation status} Progress has been slow, and families should treat pooling as possible rather than imminent.
+
+Some villages have been declared urbanised, which changes the rules that apply. Whether a particular khasra sits in an urbanised village, a pooling zone or neither is the first question for any Delhi parcel. Your lawyer should confirm it.
+
+## Purpose fit. {Purpose}
+
+- **Working landscapes:** the safest purpose for agricultural land in Delhi, because it keeps the land in agricultural use while it waits.
+- **Gathering grounds:** in demand, and widely practised on farmhouse land. Many existing venues sit on the wrong side of the rules. We design only what the permission allows.
+- **Skill and sport grounds:** possible where the use is permitted, and close to a very large city population.
+- **Light stays:** rarely the right fit inside Delhi itself.
+
+## The three levers, in Delhi. {Reading}
+
+Access in Delhi's outer villages has improved more in two years than in the previous twenty. The Urban Extension Road and the Delhi section of the Dwarka Expressway have redrawn travel times in the west and north-west.
+
+Permission is the binding constraint. Delhi's land law and its slow pooling policy mean that access does not turn into value on its own. A parcel's legal position matters more than its distance from a new road.
+
+Purpose, for now, is mostly about holding well. Keep the land in lawful use, let it earn modestly, and keep it ready for pooling or change if either comes.
+
+## Who holds land here. {The holders}
+
+Agricultural land in Delhi is held mostly by families in the city's remaining villages, many in the north-west and south-west. Holdings are often small, shared among heirs, and recorded under names from two generations ago.
+
+Developers cannot easily assemble such land, which is one reason the pooling policy was written. For families, the first task is usually not a sale. It is a clean record and an agreed plan within the family.
+
+## Where we'd be cautious. {Caution}
+
+We are cautious of any agricultural parcel in Delhi being sold for a purpose the land law does not allow. The buyer inherits the risk, and the seller rarely mentions it.
+
+We are cautious of land pooling being priced as if it were certain, and of farmhouse land whose current use has never been permitted. We are cautious, too, of land in the Ridge, in forest areas or in the Yamuna floodplain, where building is restricted.
+
+Delhi land often passes through families for generations, and its records reflect that. Pending mutations, unclear shares and old disputes are common. Our [family land counsel](/services/family-land/) often begins here.
+
+## What would change our view. {Signals}
+
+We would read Delhi differently if any of these moved.
+
+- Land pooling sectors that actually reach the participation the policy requires. {tv:DDA land pooling minimum contiguous participation threshold}
+- The Master Plan for Delhi 2041 notified in final form. {tv:MPD-2041 notification status}
+- Any change in how the land law treats urbanised villages.
+- Metro Phase 4 stations opening close to rural villages.
+
+Until then, the sound position in Delhi is a clean title, lawful use and patience.
+
+## Questions before you buy. {Before you buy}
+
+1. Is this land agricultural under the Delhi Land Reforms Act, or in an urbanised village?
+2. Is it inside a land pooling zone, and has anyone actually pooled nearby?
+3. Has the land been used for any purpose that could trigger proceedings?
+4. Is any part of it in the Ridge, a forest area or the floodplain?
+5. Do the records match the people selling, after every death in the family?
+6. What can you lawfully do with it in the next ten years?
+
+!close
+
+!links
+- Family land :: /services/family-land/ :: Inherited land held by many heirs
+- Permission :: /services/permission/ :: What land may become, state by state
+- DLF and land in North India :: /developers/dlf/ :: Developer Atlas
+- Max Estates and land in North India :: /developers/max-estates/ :: Developer Atlas
+!end

@@ -1,0 +1,89 @@
+path: /regions/gurugram/
+kind: region
+title: Land Investment in Gurugram: Access & Permission | Advait
+desc: Land investment in Gurugram, read independently: Dwarka Expressway, Southern Peripheral Road, the metro, permission rules, and where to be cautious.
+primary: land investment Gurugram
+crumbs: Regions|/regions/
+crumb: Gurugram
+marker: Region · Gurugram
+h1: Gurugram: land, access and what is worth holding
+lede: Land investment in Gurugram is the most crowded conversation in North India. Most of what is visible is already priced. The work here is to read what is truly operational, what is only drawn, and which parcels still have a lever left to pull.
+---
+## Access today. {Access}
+
+Gurugram's access story is mature. Roads that were plans ten years ago are open, and the market has priced most of them.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Dwarka Expressway, Haryana section | Operational | March 2024 | NHAI {tv:Dwarka Expressway Haryana section opened March 2024} |
+| Dwarka Expressway, Delhi section | Operational | August 2025 | [PMO release](https://www.pmindia.gov.in/en/news_updates/pm-to-inaugurate-rs-11000-crore-highway-projects-in-delhi-on-17th-august/) {tv:Delhi section of Dwarka Expressway opened 17 Aug 2025} |
+| Metro, Millennium City Centre to Cyber City | Under construction | 2026 | [Indian Infrastructure](https://indianinfrastructure.com/2026/02/12/gurugram-metro-rail-limited-casts-first-pile-under-millennium-city-centre-cyber-city-metro-rail-project/), [Business Standard](https://www.business-standard.com/india-news/gurugram-metro-phase-2-haryana-clears-rs-1662-crore-tender-126100100358_1.html) {tv:GMRL first pile Feb 2026; phase 2 civil tender cleared Oct 2026} |
+| Delhi–Gurugram–SNB–Alwar Namo Bharat | Detailed project report under central review | July 2026 | [Swarajya](https://swarajyamag.com/news-brief/ncrtc-moves-ahead-with-detailed-project-reports-for-key-namo-bharat-rrts-corridors) {tv:RRTS DPR status, July 2026} |
+| Delhi–Mumbai Expressway, via Sohna | Operational on its Sohna–Dausa stretch | February 2023 | NHAI {tv:DME Sohna–Dausa stretch opened Feb 2023} |
+
+### Dwarka Expressway
+
+The Dwarka Expressway now runs from Delhi's Dwarka to Kherki Daula on NH-48. With both sections open, the sectors along it are no longer a bet on a road. They are a bet on what gets built, and how fast the sector roads and services follow.
+
+For land, that means the easy gain from access has largely been taken. What remains is permission, purpose and patience, parcel by parcel. Our longer note, [Dwarka Expressway: what the market priced late](/notes/dwarka-expressway/), sets out the history.
+
+### Southern Peripheral Road
+
+The Southern Peripheral Road crosses southern Gurugram, linking Golf Course Extension Road with NH-48. {tv:SPR alignment: Golf Course Extension Road to NH-48} Developers have bought and collaborated heavily along it. Land near it is read through licences and sector plans, not through farmland prices.
+
+### What is still ahead
+
+The metro line from Millennium City Centre towards Cyber City, with a planned spur towards the Dwarka Expressway, is the next real change in access. The rapid-rail corridor to Alwar is still a report under review. We count it as announced, not as access.
+
+## Permission in Haryana. {Permission}
+
+Gurugram's land use is governed by its development plan, administered by the Department of Town and Country Planning. {tv:Gurugram–Manesar Urban Complex Development Plan 2031} Inside urbanisable sectors, developers build under colony licences. Outside them, a change of land use is needed for any non-agricultural purpose.
+
+Much of the value in Gurugram has come from licences rather than from roads. A parcel inside a licensed sector, with sector roads planned, is a different asset from a parcel next to it in the agricultural zone. Families should know exactly which side of that line they are on.
+
+Farmhouses are permitted in the agricultural zone under specific conditions on area and coverage. Those conditions change, and many existing farmhouses do not meet them.
+
+## Purpose fit. {Purpose}
+
+- **Gathering grounds:** a strong fit near the city's edges, where families look for space the city cannot give. Access, parking and neighbours decide it.
+- **Skill and sport grounds:** a strong fit. Gurugram has a large, settled population that returns weekly to horse, court and studio.
+- **Light stays:** a limited fit. Land near the city is usually too expensive for light stays to earn properly.
+- **Working landscapes:** rarely the right use for land priced as Gurugram land, except as a holding purpose.
+
+## The three levers, in Gurugram. {Reading}
+
+Access in Gurugram is largely spent. The expressways are open, the metro is building, and prices reflect both. A family buying here today pays for access that has already arrived.
+
+Permission is where Gurugram's value has always been made. The gap between agricultural land and a licensed sector can be many times the price. That gap is why developers, not families, capture most of the gain, unless the family negotiates well.
+
+Purpose is the lever least used here. Land at the city's edge, waiting years for a licence, can still earn as a ground or a gathering place in the meantime.
+
+## Who holds land here. {The holders}
+
+Much of Gurugram's remaining agricultural land belongs to village families who have watched neighbours sell to developers for three decades. Many have been approached more than once. For them, the question is rarely whether to deal, but on what terms and with whom. That is the work of our [landowner advisory](/services/landowner-advisory/).
+
+## Where we'd be cautious. {Caution}
+
+The Aravalli hills to the south and east carry forest, conservation and land preservation rules that many buyers discover late. {tv:Aravalli land under the Punjab Land Preservation Act 1900 and NCR Natural Conservation Zone} Land that looks cheap there is often cheap for a reason.
+
+We are also cautious of parcels sold on the strength of a sector road that exists only on paper, and of land already tied up under an old collaboration agreement. Both can take years to untangle.
+
+Finally, much of Gurugram's land is priced for development, not for holding. A family buying here should know what it intends to do with the land, and when.
+
+## Questions before you buy. {Before you buy}
+
+1. Is the parcel inside a licensed or urbanisable sector, or in the agricultural zone?
+2. Is any part of it within an Aravalli, forest or conservation restriction?
+3. Are the sector roads that serve it built, or only planned?
+4. Is the land free of any earlier collaboration or development agreement?
+5. What does the access you are paying for actually connect to, today?
+
+!close
+
+!links
+- Landowner advisory :: /services/landowner-advisory/ :: For families approached by Gurugram developers
+- Permission :: /services/permission/ :: Change of land use and licences in Haryana
+- DLF and land in North India :: /developers/dlf/ :: Developer Atlas
+- Signature Global and land in North India :: /developers/signature-global/ :: Developer Atlas
+- M3M and land in North India :: /developers/m3m/ :: Developer Atlas
+!end

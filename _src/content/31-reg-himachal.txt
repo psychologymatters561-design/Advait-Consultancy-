@@ -1,0 +1,94 @@
+path: /regions/himachal/
+kind: region
+title: Himachal Land Lease and Section 118, Explained | Advait
+desc: Himachal land, read independently: Section 118, leases and joint ventures with Himachali families, homestay rules, new roads and the risks of the hills.
+primary: Himachal land lease Section 118
+crumbs: Regions|/regions/
+crumb: Himachal Pradesh
+marker: Region · Himachal Pradesh
+h1: Himachal Pradesh: land, access and what is worth holding
+lede: For most families from the plains, Himachal land means a land lease and Section 118, not a simple purchase. The state protects its land for its own agriculturists. The honest way in is a lease or a joint venture with a Himachali family, structured properly and built lightly.
+---
+## Access today. {Access}
+
+Himachal's access is improving fast, mostly through road widening along the valleys and one long rail project.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Kiratpur–Manali highway, four-laned | Largely operational | 2023 | NHAI {tv:Kiratpur–Manali four-lane largely opened 2023; monsoon damage repairs} |
+| Parwanoo–Shimla highway, four-laned | Operational to Solan; further stretches under construction | 2026 | NHAI {tv:Parwanoo–Solan open; Solan–Kaithlighat status} |
+| Bhanupali–Bilaspur–Leh railway | Under construction | 2026 | Indian Railways {tv:Bhanupali–Bilaspur rail line status} |
+| Airports at Shimla, Kullu and Kangra | Operational, with Kangra expansion proposed | 2026 | Airports Authority of India {tv:Kangra airport expansion status} |
+
+The Chandigarh Tricity remains the gateway for most visitors, which is why we read [Panchkula](/regions/panchkula-tricity/) and Himachal together.
+
+Better roads have shortened journeys to the middle hills considerably. They have also shown how exposed hill roads are to monsoon damage, which shapes every purpose that depends on guests arriving.
+
+## Permission and Section 118. {Permission}
+
+Section 118 of the Himachal Pradesh Tenancy and Land Reforms Act, 1972 restricts the transfer of land to people who are not agriculturists of the state, unless the government permits it. That includes most families from outside Himachal, and many Himachalis who do not farm.
+
+An amendment bill to ease some of these rules was introduced in December 2025 and sent to a Select Committee of the Assembly. {tv:HP s.118 amendment bill referred to Select Committee, Dec 2025; status to check} [The Tribune](https://www.tribuneindia.com/news/himachal/house-sends-section-118-changes-to-select-panel-for-detailed-review) reported the referral. Until any change is law, we work under the rules as they stand.
+
+Within those rules, a long lease or a joint venture with a Himachali landowning family is often the honest structure. The family keeps the land; the partner brings design, capital and operation; both share what it earns. Planning areas and building rules under the state's town planning law add their own limits on slope, height and setbacks. {tv:HP Town and Country Planning Act 1977 planning areas and hill building rules}
+
+We do not help anyone work around Section 118 through nominees or informal arrangements. Those structures fail, and the risk falls on the buyer.
+
+## Purpose fit. {Purpose}
+
+- **Light stays:** the natural fit, under the state's homestay framework, where the owner family typically lives on the property. {tv:HP homestay scheme requirements; rules for land bought under s.118 relaxation}
+- **Working landscapes:** a strong fit. Orchards and farms are how much of Himachal's land already earns.
+- **Skill and sport grounds:** a fit for outdoor disciplines, where terrain and access allow.
+- **Gathering grounds:** a limited fit. Terrain, roads and neighbours rarely suit large occasions.
+
+Every purpose in the hills must be modest in footprint. Fewer rooms, smaller structures, and existing buildings restored rather than replaced will usually pass the rules, survive the weather and earn a fair return on a light build.
+
+## The three levers, in the hills. {Reading}
+
+Access is improving along the valleys, and is still fragile in the monsoon. A purpose that depends on guests must allow for roads that close.
+
+Permission is the defining lever. Section 118 decides who may hold land, and the hill building rules decide what may stand on it. Every plan begins there.
+
+Purpose in Himachal should be light, local and reversible. The state's own frameworks reward owners who live on their land and work it.
+
+## Who holds land here. {The holders}
+
+Most land is held by Himachali families, many of them orchardists, whose children now live in cities and do not plan to return. These families are the natural partners for a lease or a joint venture. They keep the land; the partner brings a plan, capital and care.
+
+### Orchards
+
+Apple orchards in the upper hills of Shimla and Kullu, and stone fruit lower down, are among the region's most established working landscapes. An orchard that hosts a few guests in season is a purpose the hills already understand.
+
+## Where we'd be cautious. {Caution}
+
+We are cautious of slope, drainage and river banks above all. Recent monsoons have shown how quickly hill land, roads and buildings can be lost. {tv:HP monsoon disasters 2023 and 2025} We will not design a purpose on land that a geologist would not sign off.
+
+We are cautious of any structure that hides the true owner, of tree-felling and building rules that are easy to break, and of roads that close for weeks each year.
+
+## What would change our view. {Signals}
+
+We would read Himachal differently if any of these moved.
+
+- The Select Committee's report on the Section 118 amendment, and any law that follows.
+- New homestay rules, and how they treat owners from outside the state.
+- Monsoon damage and repair on the main highways.
+- Progress on the Bhanupali–Bilaspur railway.
+
+The first of these could change how families from the plains take part in Himachal's land. Until it is law, we work under the rules as they stand.
+
+## Questions before you commit. {Before you commit}
+
+1. Who may hold this land under Section 118, and on what terms?
+2. Is a lease or a joint venture the right structure, and who drafts it?
+3. What do the planning area and hill building rules allow on this slope?
+4. What does a geologist say about the site and its approach?
+5. Is the road open through the monsoon?
+
+!close
+
+!links
+- Value design :: /services/value-design/ :: Light stays and working landscapes
+- NRI land counsel :: /services/nri-land/ :: For families holding land from a distance
+- DLF and land in North India :: /developers/dlf/ :: Developer Atlas
+- Max Estates and land in North India :: /developers/max-estates/ :: Developer Atlas
+!end

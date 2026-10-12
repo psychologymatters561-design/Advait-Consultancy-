@@ -1,0 +1,97 @@
+path: /services/family-land/
+kind: service
+title: Ancestral Land Development & Family Land Counsel | Advait
+desc: Counsel for ancestral land held by many heirs: a shared plan, partition or development, coordinated with the family's lawyers. No legal advice given.
+primary: ancestral land development
+crumbs: Services|/services/
+crumb: Family land
+marker: Family land
+h1: Ancestral land development: counsel for land held by many hands
+lede: Ancestral land development rarely fails for lack of value. It fails because the people who own the land cannot agree on what to do with it. We help a family see its options in the same numbers, reach a plan, and carry it out. We coordinate with the family's lawyers and give no legal advice.
+---
+## When families call us about this. {The problem first}
+
+Family land calls are rarely about land alone. They are about cousins, siblings, an elder's wishes, and years of things left unsaid.
+
+- Heirs own land together, and agree on nothing.
+- One branch of the family wants to sell, and another will never sell.
+- A grandparent has died, and the revenue records still carry their name.
+- Some heirs live abroad, and decisions wait for their next visit.
+- Inherited agricultural land sits idle while the family argues about it.
+
+In most of these families, nobody is wrong. Each branch is looking at a different number, or a different horizon. Our first job is to put everyone in front of the same picture.
+
+## Why family land stalls. {The pattern}
+
+Land held jointly needs agreement for almost every decision. One co-owner who will not sign can stop a sale, a lease, a permission or a development.
+
+Paperwork deepens the stall. Mutations after a death are often pending for years. Shares may never have been defined. The law on inheritance has also changed: since 2005, daughters share coparcenary rights in Hindu joint family property, and many family arrangements predate that. {tv:Hindu Succession (Amendment) Act 2005; Vineeta Sharma v Rakesh Sharma (2020)} These are questions for the family's lawyers, and they must be answered before anything else.
+
+Time is the hidden cost. Each year of disagreement is a year in which the land earns nothing, the next generation drifts further from it, and the eventual decision gets harder.
+
+## The options, set side by side. {Options}
+
+Most families see only two options: sell everything, or do nothing. There are usually more.
+
+### Hold together, with a plan
+
+The family keeps the land jointly under a written family arrangement, drafted by its lawyers, and gives the land a purpose that earns. Income is shared by agreed proportions.
+
+### Partition
+
+The land is divided so each branch holds its own share. Partition settles ownership but can reduce value, because smaller parcels with poorer access are often worth less than the whole.
+
+### Develop together
+
+The family places the land in a vehicle of its own, or enters a development agreement as one party, with one voice. Our [landowner advisory](/services/landowner-advisory/) covers how to negotiate with a developer.
+
+### Release part, hold part
+
+Some heirs need money now, and others want to hold. A partial sale or a buy-out between branches can let both happen without losing the whole.
+
+## Signs it is time to act. {Timing}
+
+Families often wait for a better moment to raise the subject. The moment rarely improves. A few signs suggest the wait is already costing more than the conversation would.
+
+A developer has approached one branch of the family but not the others. An elder holds the family together, and everyone knows the arrangement depends on them. The land is being used by someone outside the family, without a written agreement.
+
+Any one of these is a reason to put the options on paper now, calmly, while everyone is still at the same table.
+
+## How we work with your lawyers. {With counsel}
+
+We are not lawyers, and we give no legal advice. The family's lawyers advise on title, succession, partition and documents. We work alongside them.
+
+Our part is the land and the numbers. We value the options, model what each branch receives under each, read the permission and the corridor, and help the family reach a decision it can sign. Then we help carry it out.
+
+## What we do. {Our work}
+
+- Meet each branch of the family, together or separately, in confidence.
+- Read the land, its records, its access and its permission.
+- Value each option and show what each branch receives, in the same numbers.
+- Facilitate the family's decision, with patience and without taking sides.
+- Coordinate lawyers, surveyors and revenue work to complete the plan.
+- Design a purpose for land the family decides to hold.
+
+## What we don't do. {Limits}
+
+- We do not give legal advice, draft family settlements or represent one heir against another.
+- We do not buy family land, or introduce buyers for a commission.
+- We do not push a sale because one branch wants money.
+- We do not discuss one branch's position with another without consent.
+
+## How it's paid. {Fees}
+
+Family work usually begins with a Ground Session (₹15,000) or a Land Value Brief, from ₹75,000. Both are credited against any mandate. A mandate, agreed in writing, follows if the family asks us to carry the plan through.
+
+The fee is agreed with the family as one client. It is never paid by a buyer or a developer.
+
+## Questions to ask before you decide. {Before you decide}
+
+1. Who exactly owns this land today, and in what shares?
+2. Are the revenue records up to date after every death in the family?
+3. What does each branch receive under each option, in today's money?
+4. Who will speak for the family in any negotiation?
+5. What does the land earn while the family decides?
+6. What will the next generation inherit if nothing changes?
+
+!cta If your family is holding land and a disagreement, bring us both. We work it until we find the best answer.

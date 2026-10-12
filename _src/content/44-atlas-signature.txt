@@ -1,0 +1,96 @@
+path: /developers/signature-global/
+kind: atlas
+title: Signature Global Land Strategy — Independent Read | Advait
+desc: How Signature Global acquires and develops land across Gurugram and Sohna, and what landowners should weigh before any JDA or sale. Not affiliated.
+primary: Signature Global land acquisition
+crumbs: Developer Atlas|/developers/
+crumb: Signature Global
+marker: Developer Atlas · Signature Global
+h1: Signature Global and land in North India: an independent landowner's read
+lede: Signature Global land acquisition has been steady and public, through outright purchases and collaboration agreements around Gurugram and Sohna. Its history in Haryana's affordable housing policies also shows how policy can make smaller parcels worth a developer's attention. This note reads what that means for a landowner.
+---
+## At a glance. {At a glance}
+
+| Item | What is publicly reported | Source and date |
+|---|---|---|
+| Status | Listed on the National Stock Exchange and BSE since 2023 | Exchange listings {tv:Signatureglobal (India) Ltd listed Sept 2023} |
+| Headquarters | Registered office in New Delhi; operations centred on Gurugram | Company disclosures {tv:Signature Global registered office New Delhi; corporate office Gurugram} |
+| Core North India markets | Gurugram and Sohna | Company disclosures {tv:Signature Global markets: Gurugram, Sohna} |
+| Policy history | Grew through Haryana's affordable housing policies, before moving into mid-income housing | Offer documents and annual reports {tv:Signature Global history in Affordable Housing Policy 2013 and DDJAY} |
+| Land model | Outright purchases and collaboration agreements with landowners | Exchange filings, 2025–2026 {tv:Signature Global land model} |
+
+!note Primary sources: Signature Global's stock-exchange filings and annual reports, at [signatureglobal.in](https://www.signatureglobal.in/) and the exchanges.
+
+## Where Signature Global has been active. {Where}
+
+Signature Global's activity has concentrated on Gurugram's growth corridors, including Sohna Road, the Southern Peripheral Road and the Dwarka Expressway, and on Sohna itself. {tv:Signature Global corridors in Gurugram}
+
+In June and July 2025 it reported buying about ten acres in Sohna through two sale deeds, as reported by [Outlook Business](https://www.outlookbusiness.com/corporate/signature-global-buys-2-land-parcels-in-gurugram-totalling-10-acres-for-housing-projects). {tv:Signature Global ~9.96 acres in Sohna, Jun–Jul 2025} In August 2026 it reported collaboration agreements for about 11.9 acres in Sohna, with a subsidiary acquiring a further 13.7 acres there. {tv:Signature Global Sohna collaboration ~11.887 acres and subsidiary ~13.73 acres, 7 Aug 2026} Reports in 2026 also described a much larger Gurugram parcel combining purchase and collaboration. {tv:Signature Global 194.22-acre Gurugram parcel; verify against exchange filing before relying on it}
+
+## What Signature Global's moves signal. {Signal}
+
+**Access.** Sohna's new roads drew developers after them. A listed developer buying and collaborating repeatedly in one place is a strong sign that it expects access there to be used, not merely built.
+
+**Permission.** Haryana's affordable housing policies allowed licences on parcels that larger townships would have ignored. Signature Global's growth shows how a policy can turn a modest parcel into a licensable one. Landowners with smaller holdings should know which policies apply to them, and how they change.
+
+**Purpose.** The company's shift from affordable to mid-income housing follows the corridors' own maturing. As an area matures, the purpose its land can carry changes too.
+
+## If you own land where Signature Global is active. {Landowners}
+
+A developer that both buys and collaborates gives a landowner a real choice of structure. The family should be clear which it prefers before the conversation starts, and why.
+
+### Smaller parcels and policy
+
+Some Haryana policies allow development on smaller parcels than a general colony licence would need, subject to their own conditions. {tv:Haryana DDJAY and Affordable Housing Policy parcel conditions} If your parcel is modest, ask which policy a developer intends to use. The answer shapes what your land is worth to them, and how long approvals may take.
+
+### Purchase or collaboration
+
+A purchase gives the family certainty, and ends its exposure at registration. A collaboration shares the developed value, with the developer's timetable and the definitions of your share deciding the outcome. Some families do both: sell part, collaborate on the rest.
+
+### Approvals and timelines
+
+Policy-based licences carry their own conditions and timelines. Your agreement should say what happens if the policy changes before the licence is granted, and when your land is returned if it is not.
+
+### Questions to ask any developer
+
+1. Under which policy or licence route would my land be developed?
+2. What happens to our agreement if that policy changes?
+3. Would you buy outright, collaborate, or combine the two, and why?
+4. What is my share a share of, and when do I receive it?
+5. When is my land returned to me if approvals fail?
+
+These are general questions that apply to any developer. They are not a comment on Signature Global's agreements, which we have not reviewed.
+
+## Selling part, collaborating on the rest. {Mixed structures}
+
+Signature Global's reported moves in Sohna combine purchases and collaborations, sometimes in the same area. Families can use the same idea for themselves.
+
+A family with a larger holding may sell a portion outright, to meet its immediate needs, and collaborate on another portion to share in the developed value. A third portion can be held back entirely, with a purpose that earns, for a later decision or the next generation.
+
+Splitting a holding this way needs care. Access, frontage and permission must be divided sensibly, or one portion can lose value for the sake of another. The order matters too: what is sold first often sets the price of what follows.
+
+### Policy as a moving target
+
+Housing policies in Haryana have been revised many times. Conditions on parcel size, density and timelines change, and a developer's plan can change with them. A family entering a policy-based agreement should ask how it survives a change in the policy itself, and should have a clean exit if the policy route closes.
+
+### What a listed developer discloses
+
+A listed developer reports significant land deals to the stock exchanges. Those filings are a public record of where it is buying, in what structure, and roughly how much it expects to build. For neighbouring landowners, they are often the most reliable signal available.
+
+## If you are placing capital nearby. {Capital}
+
+We don't advise on buying apartments, including theirs. What a developer's repeated land moves in one area do tell you about nearby land is that the corridor has passed its tests for access, permission and demand. In Sohna, it also tells you that land close to the main roads is no longer early.
+
+The opportunity for patient families is often a little further out, on land with a purpose that does not depend on a developer's licence.
+
+## How Advait helps. {Advait}
+
+Landowner-side only. Never paid by any developer.
+
+We read purchase and collaboration offers, identify the policy route a developer intends, compare the offer with holding the land, and negotiate the terms. Read our [landowner advisory](/services/landowner-advisory/) page, and our region notes on [Sohna](/regions/sohna/), [Gurugram](/regions/gurugram/), [Sonipat](/regions/sonipat/), [Panipat](/regions/panipat/) and [Karnal](/regions/karnal/).
+
+!close
+
+!box Disclaimer
+Advait is independent and has no affiliation, partnership or commercial arrangement with Signature Global. All trademarks belong to their owners and are used only to identify the company discussed. This page is not an offer to buy or sell any property. Information is from public sources as of 12 October 2026 and may change.
+!end
