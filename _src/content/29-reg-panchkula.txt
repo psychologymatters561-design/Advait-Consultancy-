@@ -1,0 +1,95 @@
+path: /regions/panchkula-tricity/
+kind: region
+title: Panchkula Land Investment: Tricity Access & Rules | Advait
+desc: Panchkula land investment, read independently: Tricity access, the road to the hills, Shivalik forest and periphery rules, and the purposes it suits.
+primary: Panchkula land investment
+crumbs: Regions|/regions/
+crumb: Panchkula / Tricity
+marker: Region · Panchkula / Tricity
+h1: Panchkula / Chandigarh Tricity: land, access and what is worth holding
+lede: Panchkula land investment begins with geography. Panchkula is the Haryana third of the Chandigarh Tricity, at the foot of the Shivaliks, on the road to Himachal. It has a planned city's order, a hill gateway's appeal, and some of the strictest land rules in the region.
+---
+## Access today. {Access}
+
+The Tricity is well connected by air, rail and road. Its next changes are about moving around the region more quickly, and up into the hills.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Chandigarh International Airport, Mohali | Operational | Long established | Airports Authority of India {tv:Chandigarh International Airport, Mohali, operational} |
+| Kalka–Shimla road, four-laned to Solan | Operational on the Parwanoo–Solan stretch | 2021 | NHAI {tv:Parwanoo–Solan four-lane opened; Solan–Kaithlighat status} |
+| Zirakpur bypass | Under construction | 2026 | NHAI {tv:Zirakpur bypass status} |
+| Tricity metro or rapid transit | Proposed | 2026 | Public reports {tv:Tricity metro proposal status} |
+| Panchkula–Yamunanagar highway | Operational | Long established | NHAI {tv:Panchkula–Yamunanagar four-lane operational} |
+
+For land, the most important access is the one that already exists: Panchkula is the last flat city before the hills. Families from the plains pass through it every season.
+
+The Tricity's metro has been planned and re-planned for years. We count it only when it is funded and building.
+
+## Permission in Haryana and around Chandigarh. {Permission}
+
+Panchkula's urban land is largely developed and allotted by the Haryana Shahari Vikas Pradhikaran. Outside its sectors, land use is governed by development plans for the Panchkula and Kalka–Pinjore areas, and a change of land use is needed for other purposes. {tv:Panchkula and Kalka–Pinjore development plans; HSVP role}
+
+Around Chandigarh, a periphery law has long limited building in a belt around the city. {tv:Punjab New Capital (Periphery) Control Act, 1952 applicability around Panchkula} Its effect varies by location, and it should be checked parcel by parcel.
+
+In the Shivalik and Morni hills, forest and land preservation rules are strict, and an eco-sensitive zone surrounds the Sukhna wildlife sanctuary. {tv:Sukhna Wildlife Sanctuary eco-sensitive zone; PLPA notifications in Panchkula district} Much of the land that looks most beautiful is the land on which least can be built.
+
+## Purpose fit. {Purpose}
+
+- **Light stays:** a strong fit. Panchkula and Pinjore sit on the road to the hills, with gardens, forts and foothills nearby.
+- **Gathering grounds:** a strong fit for the Tricity, which has a large, settled population and limited open land within city limits.
+- **Skill and sport grounds:** a good fit, especially equestrian and outdoor disciplines suited to the foothills.
+- **Working landscapes:** suited to orchard and nursery land around Pinjore and Raipur Rani.
+
+DLF has long been active here, with a large township in Panchkula. {tv:DLF Valley, Panchkula} Its presence is a sign that the Tricity draws families as well as institutions.
+
+The order of the Tricity is part of its appeal. Visitors come for clean streets, quiet sectors and the hills beyond. A purpose that matches that order, rather than fighting it, sits more easily with neighbours and with the authorities who regulate it.
+
+## The three levers, in the Tricity. {Reading}
+
+Access to the Tricity is long established. What is changing is access through it, into the hills, which brings more travellers past Panchkula every year.
+
+Permission is the strictest lever here. Forest, land preservation, eco-sensitive and periphery rules overlap, and they decide more than any road does.
+
+Purpose suits Panchkula well, on the right land. Its position as a gateway gives stays and grounds a natural audience.
+
+## Who holds land here. {The holders}
+
+Land around Panchkula is held by long-settled families in Pinjore and Kalka, by village families in the Morni hills and Raipur Rani, and by professionals and retired officers who chose the Tricity for its order. Many of the latter bought land for a future home, and now hold it without a plan.
+
+### The Morni hills
+
+Morni is Haryana's own hill country, a short drive from Panchkula. {tv:Morni Hills as Haryana's hill station; Haryana Tourism presence} It has quiet, forest and views, and strict rules on what can be built. Light, careful purposes on clearly permitted land are the only kind we would design there.
+
+## Where we'd be cautious. {Caution}
+
+We are cautious of any land in the Shivaliks without a clear legal reading on forest, land preservation and eco-sensitive zone rules. We are cautious of periphery restrictions near Chandigarh.
+
+We are cautious, too, of the seasonal streams, called choes, that cross the foothills. They can be dry for years and dangerous in one night. Parcels on their banks need careful siting.
+
+## What would change our view. {Signals}
+
+We would read the Tricity differently if any of these moved.
+
+- A funded and approved plan for Tricity metro or rapid transit.
+- The Zirakpur bypass and the four-laning towards Shimla completed.
+- Any change to periphery or eco-sensitive zone boundaries.
+- New homestay and farm tourism rules in Haryana.
+
+The last of these matters most for purpose. Haryana's long-promised farm tourism and homestay policy could make light stays near Panchkula far simpler to register and run. Until it is approved, we design under the schemes that exist today.
+
+## Questions before you buy. {Before you buy}
+
+1. Is any part of the parcel forest, land preservation or eco-sensitive zone land?
+2. Does the periphery law apply to this location?
+3. Which development plan governs it, and which zone is it in?
+4. Does a seasonal stream cross it, or run along its edge?
+5. Is the approach road usable in the monsoon?
+
+!close
+
+!links
+- Value design :: /services/value-design/ :: Light stays and gathering grounds
+- Permission :: /services/permission/ :: Change of land use in Haryana
+- DLF and land in North India :: /developers/dlf/ :: Developer Atlas
+- Godrej Properties and land in North India :: /developers/godrej-properties/ :: Developer Atlas
+!end

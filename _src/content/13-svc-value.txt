@@ -1,0 +1,94 @@
+path: /services/value-design/
+kind: service
+title: Resort Land Near Delhi, Designed to Earn | Advait
+desc: Value design for resort land near Delhi: agri-tourism, farm stays, gathering and sport grounds, tested against the arithmetic before anything is built.
+primary: resort land investment near Delhi
+crumbs: Services|/services/
+crumb: Value design
+marker: Value design
+h1: Value design: what resort land near Delhi should actually become
+lede: Most resort land investment near Delhi fails the arithmetic, and we say so first. Value design starts from the land instead of the brochure. We design a purpose it can carry, select the people who will run it, and set the governance, so the land earns while the corridor matures.
+---
+## When families call us about this. {The problem first}
+
+Value design calls usually start with an idea, or with land that has waited too long.
+
+- The family holds land near a growing corridor, and it earns nothing.
+- Someone has proposed a resort, and the numbers were never shown.
+- A farm stay or event ground is running, but badly, and the family is tired of it.
+- The family wants a place that people travel to, held for the next generation.
+- A purpose has been chosen, and nobody has checked whether the land may carry it.
+
+Most of these ideas begin in the wrong order. They choose the building first, then look for the permission, then hope for the guests. We work in the opposite order.
+
+## Four families of purpose. {Purpose}
+
+The purposes that suit land near North India's corridors are light, local and largely reversible. We show them here only in outline. The specific designs stay with mandated clients.
+
+### Gathering grounds
+
+Land for the occasions a city cannot host. Weddings, retreats, harvest days, family gatherings. Open land, a few good structures, and careful arrangements for parking, sound and neighbours.
+
+### Light stays
+
+Few rooms, low build, registered under the state's homestay and farm-tourism frameworks. Guests come for the land and the quiet, not for the room count.
+
+### Skill and sport grounds
+
+Disciplines people return to: horse, bow, wheel, court. An equestrian centre, an archery range, a pottery studio or courts bring the same people back every week, which is a steadier income than a weekend crowd.
+
+### Working landscapes
+
+Land that produces while it waits. Orchards, farming that visitors can join, and native planting that improves the land's own value.
+
+## The frameworks that govern it. {Frameworks}
+
+Each state is building a framework for this kind of land use. They change often, and we read the current text before designing anything.
+
+- **Haryana** amended its Home Stay scheme and its farm tourism scheme in 2024, with registration through Haryana Tourism. {tv:Haryana Home Stay (Amendment) Scheme 2024 and farm tourism scheme amendment, Gazette 35 of 2024} In April 2026 the state said a combined farm tourism and homestay policy would go to its Cabinet. {tv:Haryana farm tourism and homestay policy, announced April 2026 for Cabinet; check whether approved} [Read the gazette notifications](https://haryanatourism.gov.in/wp-content/uploads/2025/04/Gazette_35-2024_20220-Home-Stay.pdf).
+- **Uttar Pradesh** approved its Homestay and Bed and Breakfast Policy, 2025 in June 2025, with registration, local no-objection certificates and room limits. {tv:UP Homestay and B&B Policy 2025, approved June 2025; room limit later reported raised from six to eight} Check the current room limit against the official notification.
+- **Himachal Pradesh** has long run a homestay scheme, and its terms for owners who bought land under a Section 118 permission have been under review. {tv:HP homestay rules for land bought under s.118 relaxation; status to check}
+
+The permission behind the purpose matters as much as the registration. Our [permission work](/services/permission/) runs alongside every design.
+
+## Operators and governance. {Who runs it}
+
+Families should own the land and the purpose. They should rarely run the business day to day. We select operators who run gatherings, stays or grounds for a living, and we structure their agreement so the family keeps control.
+
+Good governance is simple to state. The family owns the land and the assets. The operator runs the purpose under a written agreement, with clear reporting, a fair share, and a clean exit if it fails. The land is never pledged for the operator's business.
+
+## What we do. {Our work}
+
+- Read the land, its access, its permission and its neighbourhood before proposing any purpose.
+- Test purposes against the arithmetic, and keep only those that survive.
+- Design the purpose at the right weight: light build, reversible where possible.
+- Select and contract the operator, and set reporting and governance.
+- Coordinate architects, permission consultants and lawyers through to opening.
+- Review the purpose each year, and help the family decide whether to grow, hold or change it.
+
+## What we don't do. {Limits}
+
+- We do not design heavy resorts on expensive land, because the arithmetic rarely holds.
+- We do not run hotels, venues or farms ourselves.
+- We do not promise occupancy, income or any return.
+- We do not publish clients' designs or business plans.
+
+## How it's paid. {Fees}
+
+Value design begins with a Ground Session or a Land Value Brief, both credited against what follows. Larger design work is paid as a shared upside above the return the family agrees with us, set per project and agreed in writing before work begins.
+
+That structure means we earn more only when the family does, and only above a line the family has chosen.
+
+## Questions to ask before you build. {Before you build}
+
+1. Does the zone permit this purpose, and is the permission in hand?
+2. What does the arithmetic look like at half the expected occupancy?
+3. How much of the build could be removed or changed if the purpose changes?
+4. Who will run it, and what happens if they leave?
+5. Does the family keep control of the land, whatever the operator does?
+6. What will neighbours, the panchayat and the road make of the guests?
+7. What does this purpose leave the next generation?
+
+The full logic, with illustrative figures, is on the [approach page](/approach/#the-arithmetic-with-figures).
+
+!cta Bring us the land, or the idea. We will tell you whether it survives the arithmetic.

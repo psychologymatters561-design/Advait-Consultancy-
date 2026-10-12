@@ -1,0 +1,94 @@
+path: /regions/yamuna-expressway/
+kind: region
+title: Yamuna Expressway Land: Access, YEIDA & Caution | Advait
+desc: Yamuna Expressway land, read independently: the airport at Jewar, YEIDA's master plan and leasehold rules, the Faridabad link, and where to be cautious.
+primary: Yamuna Expressway land
+crumbs: Regions|/regions/
+crumb: Yamuna Expressway
+marker: Region · Yamuna Expressway
+h1: Yamuna Expressway: land, access and what is worth holding
+lede: Yamuna Expressway land has been sold on one story for a decade: the airport at Jewar. The airport is now open. That makes this the right moment to read the corridor coolly, as one region among many, on the paper rather than the promise.
+---
+## Access today. {Access}
+
+The Yamuna Expressway runs from Greater Noida towards Agra. Its access changed decisively in 2026.
+
+| Link | Status | As of | Source |
+|---|---|---|---|
+| Yamuna Expressway, Greater Noida to Agra | Operational | 2012 | YEIDA {tv:Yamuna Expressway opened August 2012} |
+| Noida International Airport, Jewar | Commercial flights from 15 June 2026 | June 2026 | [News on AIR](https://newsonair.gov.in/indigo-airline-to-begin-commercial-flight-services-from-noida-international-airport-at-jewar-from-june-15/) {tv:NIA commercial flights began 15 June 2026; IndiGo first, Akasa Air and Air India Express in phase one} |
+| Faridabad–Jewar link | Under construction; 11-km raised section approved | March 2026 | [The Tribune](https://www.tribuneindia.com/news/haryana/nod-to-elevated-corridor-on-greenfield-expressway-budget-likely-to-rise-by-48) {tv:Faridabad–Jewar link completion reported for 2027} |
+| Industrial and institutional clusters in YEIDA sectors | Allotted, building in stages | 2026 | YEIDA {tv:YEIDA clusters: film city, medical device park, semiconductor unit approved May 2025} |
+
+The airport is the largest single change in access anywhere in our regions. It is also the most heavily priced. Land along the expressway has been traded on the airport's story for years, and much of that story is now in the price.
+
+What remains uncertain is everything that follows an airport: the pace of industry, housing and services in the authority's sectors, and how quickly the second ring of roads opens.
+
+## Permission in the YEIDA area. {Permission}
+
+Most land along the expressway lies within the notified area of the Yamuna Expressway Industrial Development Authority. Its master plan, now drawn to 2041, sets land use for the whole area. {tv:YEIDA Master Plan 2041} [The master plan report](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/20240902_FULL-REPORT_Master-Plan_YEIDA-2041_pk_print-WO-highlight.pdf) is public.
+
+Inside the notified area, land is generally acquired by the authority and allotted on long lease. Private farmland inside it, sold as if it could be freely developed, carries real risk. Outside the notified area, the UP Revenue Code governs, with a Section 80 declaration for non-agricultural use and a ceiling on how much agricultural land one person may hold. {tv:UP Revenue Code ss.80 and 89}
+
+Our longer [Jewar corridor dossier](/notes/yeida-jewar-corridor/dossier/) sets out a buy or no-buy framework for this corridor. It is one resource among our notes, not the whole of our view. The [Corridor Desk](/desk/) maps the authority's sectors.
+
+## Purpose fit. {Purpose}
+
+- **Working landscapes:** the safest holding purpose for agricultural land outside the notified area.
+- **Gathering grounds:** a good fit for a corridor where large open land is still available, if the zone permits it.
+- **Light stays:** a growing fit as the airport brings travellers who want something other than a terminal hotel.
+- **Skill and sport grounds:** a fit for larger parcels, as the authority's sectors fill with residents.
+
+The corridor's purposes will change as its sectors fill. What suits land outside the notified area today, while the area is still largely open, may give way to more urban uses in a decade. Light, reversible purposes keep that option open.
+
+## The three levers, on this corridor. {Reading}
+
+Access has been delivered, and priced. The airport is open, the expressway is long established, and the market knows it.
+
+Permission is held by the authority. Inside the notified area, families do not change land use; they buy, hold or sell allotments under the authority's terms. Outside it, the UP Revenue Code applies.
+
+Purpose is modest here for now. Outside the notified area, light uses can let agricultural land earn while the corridor's sectors fill.
+
+## Who holds land here. {The holders}
+
+Land along the corridor is held by farming families, many of whom gave land for the expressway, the airport and the sectors. It is held by allottees who bought through the authority's schemes, and by buyers who hold only an agreement to sell. Each holds a different right, with very different value.
+
+### After the opening
+
+Airports change land slowly once they open. Logistics, hotels and services usually come first, close to the terminal. Housing and leisure follow over years. Families holding land further out should expect a long horizon.
+
+## Where we'd be cautious. {Caution}
+
+We are cautious of plots sold as "airport land" without the authority's allotment behind them. We are cautious of unauthorised colonies inside notified villages, and of agreements to sell that never become registered sales.
+
+We are cautious of prices that already include every future road and industry, and of lease terms and dues that are not visible in the asking price. Long-running compensation questions between the authority and farmers also shape what can be bought and when.
+
+The airport is open. The market will now learn which of the corridor's other promises are kept.
+
+## What would change our view. {Signals}
+
+We would read this corridor differently if any of these moved.
+
+- Passenger numbers at the airport, and new airlines and routes.
+- The Faridabad link and other connecting roads opening.
+- Occupation, not allotment, of the authority's industrial sectors.
+- Resolution of compensation questions in the notified villages.
+
+Occupation is the honest measure. Allotments and announcements are not.
+
+## Questions before you buy. {Before you buy}
+
+1. Is this land inside the authority's notified area, or outside it?
+2. Is it an authority allotment, freehold farmland, or an agreement to sell?
+3. What does the 2041 master plan show on this exact parcel?
+4. Are lease premiums, dues and transfer charges paid and documented?
+5. What does the price assume that has not yet happened?
+
+!close
+
+!links
+- Land acquisition :: /services/land-acquisition/ :: Diligence on leasehold and freehold land
+- Permission :: /services/permission/ :: Section 80 and authority areas
+- M3M and land in North India :: /developers/m3m/ :: Developer Atlas
+- Godrej Properties and land in North India :: /developers/godrej-properties/ :: Developer Atlas
+!end

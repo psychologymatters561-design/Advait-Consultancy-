@@ -1,0 +1,154 @@
+path: /
+kind: home
+title: Advait | Land Advisory & Land Value Design, North India
+desc: Advait is a private land value-design practice in New Delhi. Independent land advisory across North India, paid only by the client. By appointment.
+primary: land advisory services North India
+marker: Land value design
+h1: Great assets are *built*, not bought.
+lede: Advait reads where India is building, secures what land is allowed to become, and designs what it should become — for the families who hold it. Bring us the problem; we work until we find the best answer. Paid by our client. Never by the seller.
+ctas: Before we speak →|/engage/|solid ; Read the approach|/approach/|line
+meta: North India · One side of the table · Our office is the land
+---
+## Most conversations begin with a problem, not a purchase. {KM 009 · The problem first}
+
+Families rarely call us about investment. They call about something that has sat unresolved for too long.
+
+!cells 3
+- Land that has waited a decade and earned nothing.
+- A developer has offered a joint development and the terms feel one-sided.
+- Heirs who own land together and agree on nothing.
+- A change of land use that has stalled.
+- Capital ready, but every option looks like someone else's sales pitch.
+- Land in a state where it cannot simply be sold.
+!end
+
+> Whatever the problem, the work is the same: read it honestly, find the best answer, and tell you plainly — even when the answer is to wait.
+
+If you are holding a problem — land without a plan, a developer at the door, heirs who don't agree, a permission that won't move — bring it to us. We work it until we find the best answer, including when the best answer is to do nothing.
+
+## Three levers move the value of land. {The three levers}
+
+Most of the market watches one of them. We work all three, in order.
+
+!cards 3
+- Access :: What reaches the land: expressways, rail, airports, RRTS, metro. The market prices it, and everyone waits for it. :: :: Priced value
+- Permission :: What the land may become. Change of land use, non-agricultural declaration, zoning, lease or joint structures. Often the single largest step. :: :: Negotiated value
+- Purpose :: What the land actually becomes. A place that earns while the corridor matures, so the family is not simply waiting. :: hl :: Designed value
+!end
+
+> Most investors wait for value. Our clients get paid to wait.
+
+## The arithmetic decides, not the brochure. {The arithmetic}
+
+Most resort ideas fail the arithmetic. We say so first. The comparison below is the logic we test every parcel against.
+
+| | The resort trap | Paid to wait |
+|---|---|---|
+| Entry | Expensive land, priced as if the resort already stands. | A larger parcel, earlier on the corridor, priced as land. |
+| Build | Heavy. Many rooms, deep foundations, often debt. | Light. Few rooms, low build, much of it reversible. |
+| Income | Arrives late, once occupancy finally builds. | Begins in the first seasons, from gatherings and stays. |
+| Yield on cost | Thin, because the cost base is heavy. | Healthier, because the cost base stays light. |
+| Exit | Depends on finding a buyer for a hotel. | The land matures with access. The purpose can stay or go. |
+
+!note The logic, not a forecast. [See the illustrative figures on the approach page](/approach/#the-arithmetic-with-figures).
+
+## Five steps, in this order. {Method}
+
+!steps
+- Read :: We read the parcel, the corridor and the paper. What reaches it, what is announced, what is only rumoured.
+- Permit :: We map what the land is allowed to become, and the cleanest route to that permission, with your lawyers.
+- Design :: We design a purpose the land can carry and the arithmetic can survive. Most ideas die here, on paper.
+- Activate :: We select the operator, structure the agreement and set the governance. You own it; specialists run it.
+- Compound or exit :: The family decides, with numbers, whether to hold for the next generation or to release.
+!end
+
+## What land can become. {Purpose}
+
+Four families of purpose suit the land around North India's growing corridors.
+
+!cards 4
+- Gathering grounds :: Land for the occasions a city cannot host.
+- Light stays :: Few rooms, low build, registered under state homestay and farm-tourism frameworks.
+- Skill & sport grounds :: Disciplines people return to: horse, bow, wheel, court.
+- Working landscapes :: Land that produces while it waits.
+!end
+
+The specific designs stay with mandated clients.
+
+## A note from the Principal. {Principal's note}
+
+!principal
+
+## Who we counsel, and who we are not for. {Fit}
+
+!div two
+!div col
+### We counsel
+- Families holding land near expanding corridors.
+- Landowners approached by developers.
+- Patient capital of ₹2 crore and above.
+- NRIs from North Indian families.
+- People who would rather hear "don't buy this".
+!/div
+!div col
+### We are not for
+- Flats, rentals and builder inventory.
+- Three-year flips.
+- Returns that must be promised in advance.
+- Money that must come back within two years.
+- Sellers looking for a buyer.
+!/div
+!/div
+
+Land can return capital early, and sometimes it does. We simply don't design for it. If the money must come back within two years, we are not the right counsel — and we'll say so.
+
+## How we are paid. {Fees}
+
+One payer: you. We are never paid by a seller, a builder or a developer.
+
+!fees
+
+## Where we work. {Regions}
+
+North India, read as one map. No corridor leads; each is judged on its own paper.
+
+!regions
+
+## Thinking, in the open. {Thinking}
+
+We publish the reading we do for clients, so you can judge the quality of the counsel before you ever pay for it.
+
+!links
+- Corridor Notes :: /notes/ :: Data-led notes on infrastructure and land across the region
+- The Corridor Desk :: /desk/ :: A working tool for reading master plans and sectors
+- DLF and land in North India :: /developers/dlf/ :: Developer Atlas, an independent landowner's read
+- Signature Global and land in North India :: /developers/signature-global/ :: Developer Atlas
+- Max Estates and land in North India :: /developers/max-estates/ :: Developer Atlas
+!end
+
+!study
+
+## The Advait Circle [circle] {The Circle}
+
+A small circle forms around the work: land walks, private briefings, and first sight of what we are designing. Entry follows a first engagement, never a cold application.
+
+!cta [Read how the Circle works](/circle/), and how it may one day become Advait Capital.
+
+## Questions we are asked. {FAQ}
+
+!faq
+? What is land value design?
+It is the work of adding value to land through all three levers: what reaches it, what it is permitted to become, and what it actually becomes. Most of the market waits for the first. We negotiate the second and design the third, so the land earns while the corridor matures.
+? How is this different from a broker?
+A broker is paid when a deal closes, often by the other side. We are paid only by our client, under a written mandate agreed before work begins. That lets us advise against a deal, which we often do.
+? Why is the first conversation paid?
+Because it is real work. A Ground Session reads your land, your paper and your options in 60 to 75 minutes. The ₹15,000 fee is credited in full against any mandate that follows, and it keeps the conversation honest on both sides.
+? Who runs the destinations?
+Specialist operators run them. We select the operator, structure the agreement and set the governance, so the family owns the land and the purpose without running a hospitality business.
+? Where do you work?
+Across North India: Delhi, Gurugram, Noida and Greater Noida, Faridabad, Sohna, Sonipat, Panipat, Karnal, the Chandigarh Tricity, the Yamuna Expressway and Himachal Pradesh. Our office is the land: we meet there, at your premises, or by video.
+? Do you act for landowners in negotiations with developers?
+Yes, and only for the landowner. We read joint development and collaboration offers, compare them with an outright sale or with holding and designing, and negotiate the terms. We are never paid by the developer.
+? Can we speak to people you have worked with?
+On request, and only with their consent. Names are never published. The families we have acted for, including under power of attorney, chose us partly because we keep their names to ourselves.
+!end

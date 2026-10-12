@@ -1,0 +1,107 @@
+path: /services/landowner-advisory/
+kind: service
+title: Joint Development Agreement Advice for Landowners | Advait
+desc: Landowner-side counsel on joint development and collaboration agreements, or a sale to a developer, in Haryana and UP. Never paid by the developer.
+primary: joint development agreement landowner
+crumbs: Services|/services/
+crumb: Landowner advisory
+marker: Landowner advisory
+h1: Joint development agreements: counsel for the landowner
+lede: When a developer offers a joint development agreement, the landowner usually negotiates alone, against a team that does this every week. We sit on the landowner's side of the table. We compare the offer with an outright sale and with holding the land, then negotiate the terms. We act for the landowner. We are never paid by the developer.
+---
+## When families call us about this. {The problem first}
+
+The call usually follows a letter, a visit, or a neighbour's news. A developer wants the land, and the family has to answer.
+
+- A developer's representative has made an offer, and attached a deadline to it.
+- The offer is a share, and nobody can say clearly what it is a share of.
+- Neighbours have signed. The family feels it is being left behind.
+- An agreement was signed years ago. The project has stalled, and the land is tied up.
+- The family cannot agree whether to sell, to share, or to wait.
+
+Each of these is a negotiation the developer has run many times before. The landowner usually runs it once, for land that has been in the family for generations. Our work is to make that a fair negotiation.
+
+## Three paths, compared honestly. {The three paths}
+
+Every offer should be compared with the two paths not on the table. Most families are shown only one.
+
+### Joint development or collaboration
+
+The landowner contributes the land. The developer obtains the permissions, builds, sells, and carries the construction cost. The landowner receives an agreed share of the result, in money or in built area.
+
+This path can produce the largest total value. It also ties the land to one developer's skill, finances and timetable, often for many years. The quality of the agreement decides whether the share is real.
+
+### Outright sale
+
+The landowner sells the land for an agreed price. The money is certain, and the family's exposure to the project ends at registration.
+
+The cost is the value the land would have gained from permission and development. A sale also ends the family's relationship with the land for good. For some families that is the right answer.
+
+### Hold and design
+
+The family keeps the land, secures what it is allowed to become, and gives it a purpose that earns while the corridor matures. Development can still come later, on better terms, once access has arrived.
+
+This path asks for patience and for design. It is the one most families are never shown, because no developer has a reason to show it.
+
+## Revenue share or area share. {The share}
+
+A joint development offer is usually framed in one of two ways. They behave very differently.
+
+| | Revenue share | Area share |
+|---|---|---|
+| What you receive | A percentage of sale proceeds | A percentage of the built area, as units or plots |
+| When you receive it | As buyers pay, over the sales period | At completion and handover of your allocation |
+| What you are exposed to | Sales pace and pricing decisions you do not control | Construction quality, delay, and your own resale |
+| What protects you | Escrow, audit rights, a floor price, clear definitions | Unit identification before launch, specifications, penalties for delay |
+| Tax timing | Ask your tax counsel before you sign | Ask your tax counsel before you sign |
+
+Neither is better in general. The right choice depends on the developer, the market, and whether the family wants money or property. The definitions in the agreement matter more than the headline percentage.
+
+!note A specific capital-gains provision applies to joint development agreements for individuals and families. When the tax falls due is a question for your tax counsel, and it should be answered before signing.
+
+## Approvals and timelines. {Approvals risk}
+
+In Haryana, a developer usually needs a licence from the Department of Town and Country Planning before developing a colony on your land. {tv:Haryana colony licence under the Haryana Development and Regulation of Urban Areas Act, 1975, issued by DTCP} In Uttar Pradesh, the route depends on whether the land sits inside a development authority's area. Each step can take longer than the brochure suggests.
+
+While approvals are pending, your land is usually tied up. The agreement must say what happens if the licence is refused, delayed, or never applied for. It must say when the land comes back to you, and in what condition.
+
+Under the Real Estate (Regulation and Development) Act, 2016, where the person who builds and the person who sells are different, both can be treated as promoters. {tv:RERA 2016 s.2(zk) explanation: both deemed promoters, jointly liable} A landowner taking a share of units should understand that exposure before signing, with their lawyer.
+
+A sound agreement sets dated milestones, a refundable security deposit, limits on any power of attorney, and a clean exit if the developer fails. These terms are negotiable. They are rarely offered.
+
+## What we do. {Our work}
+
+- Read the offer, the developer's track record in public records, and the land's own paperwork.
+- Compare the offer, in numbers, with an outright sale and with holding and designing.
+- Define what the share is a share of, and what the family will actually receive, and when.
+- Negotiate milestones, deposits, exits, power of attorney limits and allocation terms.
+- Coordinate with your lawyers and tax counsel, who draft and advise on the documents.
+- Stay with the family through approvals, so the agreement is enforced as written.
+
+For how individual developers have bought land, read the [Developer Atlas](/developers/), our independent notes written from the landowner's side.
+
+## What we don't do. {Limits}
+
+- We do not act for developers, and we never take a fee from one.
+- We do not introduce your land to developers for a commission.
+- We do not give legal or tax advice. Your lawyers and accountants do.
+- We do not push a family towards a deal. Sometimes the answer is to wait.
+
+## How it's paid. {Fees}
+
+A Ground Session (₹15,000) reads the situation in 60 to 75 minutes, and is credited against any mandate. A Land Value Brief, from ₹75,000, compares the three paths for one parcel in writing.
+
+A negotiation mandate is 1–2% of transaction value, with a minimum of ₹2 lakh, agreed in writing before work begins. It is paid by you alone.
+
+## Questions to ask before you sign. {Before you sign}
+
+1. What exactly is the share a share of: sale price, saleable area, or something narrower?
+2. Which units or plots are mine, and when are they identified?
+3. What happens to my land if the licence is refused or delayed?
+4. What security deposit is paid, and when is it refundable?
+5. What can the developer do under the power of attorney, and what can it not do?
+6. Who pays for approvals, external charges and any penalties?
+7. What are the dated milestones, and what follows if one is missed?
+8. Who represents me in this negotiation, and who pays them?
+
+!cta Bring us the offer before you answer it. We will tell you what it is worth.

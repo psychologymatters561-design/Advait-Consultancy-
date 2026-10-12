@@ -1,0 +1,91 @@
+path: /services/land-acquisition/
+kind: service
+title: Land Due Diligence & Acquisition, North India | Advait
+desc: Land due diligence in India, from the buyer's side: title, revenue records, access, permission and value, read before you commit. Paid by you alone.
+primary: land due diligence India
+crumbs: Services|/services/
+crumb: Land acquisition
+marker: Land acquisition
+h1: Land acquisition and land due diligence, from the buyer's side
+lede: Land due diligence in India is slow, local and paper-heavy, and most of the risk hides in it. We source land for the client, read every layer of it before you commit, and structure the purchase with your lawyers. We are paid by you, never by the seller.
+---
+## When families call us about this. {The problem first}
+
+Most acquisition calls begin with capital that is ready and a market that feels crowded with sellers.
+
+- Every option the family has seen came from someone paid by the seller.
+- A parcel looks right, but the paperwork has three names on it and one of them is not answering.
+- The road on the brochure turns out to be a revenue path across someone else's field.
+- A family wants land near a corridor, but cannot tell which corridor is real.
+- An earlier purchase went wrong, and the family will not repeat it.
+
+The common thread is trust. A buyer needs someone whose only interest is the buyer's. That is the whole of our position.
+
+## What diligence actually covers. {The read}
+
+Land due diligence is not a single document. It is a set of layers, each held in a different office, each able to stop a purchase on its own.
+
+### Title and chain
+
+Who owns the land today, and how did they come to own it? We trace the chain of sale deeds, inheritance and partition back far enough to see any break. Your lawyer then gives the formal title opinion.
+
+### Revenue records
+
+The revenue record, called the jamabandi in Haryana and the khatauni in Uttar Pradesh, should match the title, the khasra numbers and the people signing. {tv:Haryana jamabandi and UP khatauni as the record-of-rights terms} Mutations that are pending after a death are common, and must be completed before a clean sale.
+
+### Access on the ground
+
+A parcel may show a path on the revenue map that does not exist on the ground. We walk it. We check the actual approach, its width, and who controls it, because access decides what the land can become.
+
+### Land use and permission
+
+We read the land against the development plan or master plan that governs it. That tells us what is permitted today, what may be permitted later, and what will never be. A parcel in a conservation or green zone carries a very different future from one in an urbanisable zone.
+
+### Encumbrances and disputes
+
+We look for mortgages, attachments, pending suits, acquisition notifications and family claims. Some appear in public records. Others surface only by asking the village, the patwari and the neighbours, in person.
+
+### Eligibility and limits
+
+Some states limit who may buy agricultural land, or how much. In Uttar Pradesh, the Revenue Code caps a holding at 12.5 acres without state permission. {tv:UP Revenue Code 2006 s.89 ceiling of 5.0586 hectares (12.5 acres)} In Himachal Pradesh, Section 118 restricts purchase by people who are not agriculturists of the state.
+
+### Value
+
+Circle rates, recent registered sales and the asking price rarely agree. We give you our own reading of value, so you negotiate from evidence and not from the seller's story.
+
+## What we do. {Our work}
+
+- Source parcels that fit the brief, including land that is not on the open market.
+- Read each parcel across the layers above, and say plainly which ones fail.
+- Walk the land, the access, and the neighbourhood with you or for you.
+- Read the corridor: what is operational, what is under construction, what is only announced.
+- Structure the purchase with your lawyers: payment stages, conditions, and registration.
+- Negotiate price and terms with the seller, on your behalf alone.
+
+## What we don't do. {Limits}
+
+- We do not take a fee from any seller, broker or developer.
+- We do not give the formal title opinion. Your lawyer does, and we work with them.
+- We do not sell land we hold ourselves, and we do not hold land to sell to clients.
+- We do not recommend a purchase because a deadline is near.
+
+## How it's paid. {Fees}
+
+A Land Value Brief, from ₹75,000, reads one parcel in writing and is credited against any mandate. A Ground Session, at ₹15,000, is the right start when the family is still deciding what to look for.
+
+An acquisition mandate is 1–2% of transaction value, with a minimum of ₹2 lakh, agreed in writing before work begins. We are paid whether or not you buy, so we have no reason to push you to.
+
+## Questions to ask before you buy. {Before you buy}
+
+1. Does every name on the revenue record match the people signing the deed?
+2. Is any mutation pending, and who will complete it before payment?
+3. What does the development plan permit on this exact parcel?
+4. Does the approach on the ground match the approach on the map?
+5. Is any part of the land notified for acquisition, or under a conservation rule?
+6. Am I eligible to buy this land, in this state, in this quantity?
+7. What have nearby parcels actually registered at in the last two years?
+8. Who is advising me, and who pays them?
+
+We also publish independent notes on the developers active in each region, in the [Developer Atlas](/developers/), because their land moves are often the market's earliest signal.
+
+!cta Bring us the parcel, or the brief. We will read it before anyone asks you for money.

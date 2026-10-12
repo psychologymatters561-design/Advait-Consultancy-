@@ -1,0 +1,89 @@
+path: /services/nri-land/
+kind: service
+title: NRI Land Advisor India: Counsel for NRI Families | Advait
+desc: Land counsel for NRIs from North Indian families: what the rules allow on agricultural land, inherited holdings, sale, power of attorney and repatriation.
+primary: NRI land investment India advisor
+crumbs: Services|/services/
+crumb: NRI land counsel
+marker: NRI land counsel
+h1: NRI land counsel for North Indian families
+lede: For an NRI, land in India is often family land seen from a distance. The rules are stricter than most people expect, and the risks of absence are real. We act as your independent land advisor in India: we read the land, explain what the rules allow, and do the work on the ground, on your side alone.
+---
+## When families call us about this. {The problem first}
+
+NRI calls usually come from a family member abroad who has been carrying a question for years.
+
+- Land inherited in Haryana or Punjab is being farmed, or occupied, by someone the family barely knows.
+- A relative holds a power of attorney, and the family is no longer sure what is being done with it.
+- The family wants to buy land near the ancestral village, and has heard that NRIs cannot.
+- An inherited parcel should be sold, and the family wants the money abroad.
+- The family visits once a year, and every decision waits for that visit.
+
+Distance turns small problems into large ones. A missed mutation, an unchallenged encroachment or a loose power of attorney can cost more than the land earns in a decade.
+
+## What the rules allow. {The rules}
+
+The rules below are general and change from time to time. Your lawyer and tax adviser should confirm them for your situation before you act.
+
+### Agricultural land
+
+Under India's foreign exchange rules, an NRI or OCI cardholder may not buy agricultural land, a plantation property or a farmhouse in India. {tv:FEMA (Non-Debt Instruments) Rules 2019: NRI/OCI may not acquire agricultural land, plantation property or farmhouse except by inheritance} Such land may be held if it was inherited. This is the rule families most often get wrong.
+
+### Other land and property
+
+An NRI may buy other immovable property in India, such as residential or commercial property, subject to the same rules. State land laws can add their own limits. In Himachal Pradesh, for example, Section 118 restricts purchase by people who are not agriculturists of the state.
+
+### Selling inherited land
+
+Inherited agricultural land may generally be sold, but only to a person resident in India. {tv:NDI Rules: NRI may transfer agricultural land only to a person resident in India who is an Indian citizen} The buyer's eligibility under the state's own land law must also be checked.
+
+### Moving the money
+
+Sale proceeds can usually be repatriated within limits set by the Reserve Bank of India, with the right certificates from a chartered accountant. {tv:RBI repatriation of property sale proceeds; USD 1 million per financial year from NRO; Form 15CA/15CB} Your tax adviser should plan this before the sale, not after.
+
+### Power of attorney
+
+A power of attorney signed abroad usually needs to be attested or apostilled, and stamped on arrival in India, before it can be used. {tv:POA executed abroad: attestation or apostille, then adjudication and stamping within the state's time limit} Its scope matters more than its form. We have acted for investors under power of attorney, and we know what a careful one says.
+
+## Working at a distance. {At a distance}
+
+Distance is manageable when the work is organised around it. We agree a written scope before we begin, so you know exactly what we will do and what we will not.
+
+Every visit to the land produces a short report with photographs, dated records and the next step. Decisions wait for you, not for your next trip home. Documents that must be signed are prepared in advance, so a single visit or a single courier is enough.
+
+Your relatives in India remain part of the conversation where you want them to be. We simply make sure that nothing is done in your name without your knowledge.
+
+## What we do. {Our work}
+
+- Read your land and its records, and tell you exactly where things stand.
+- Walk the land for you, with photographs, records and a written report.
+- Explain your options under the rules, with your lawyer and tax adviser.
+- Act under a limited, carefully drafted power of attorney where you ask us to.
+- Manage sales, leases or permissions on the ground, reporting to you at each step.
+- Design a purpose for family land you intend to keep for the next generation.
+
+## What we don't do. {Limits}
+
+- We do not help anyone acquire land the rules do not allow them to hold.
+- We do not give legal or tax advice. Your advisers in India do.
+- We do not take fees from buyers, tenants or developers.
+- We do not act beyond the written scope of any power of attorney.
+
+## How it's paid. {Fees}
+
+A Ground Session (₹15,000) can be held by video at a time that suits your country. A Land Value Brief, from ₹75,000, reads one parcel in writing, with photographs from the ground. Both are credited against any mandate.
+
+A mandate for a sale, purchase or lease is 1–2% of transaction value, with a minimum of ₹2 lakh, agreed in writing before work begins. Only you pay it.
+
+## Questions to ask before you act. {Before you act}
+
+1. Am I allowed to hold this land, and how did I come to hold it?
+2. Are the revenue records in my name, or still in a late relative's?
+3. Who is on the land today, and on what terms?
+4. What can my power of attorney holder do, and what have they done?
+5. Is the buyer eligible to buy this land under state law?
+6. How will the proceeds reach me, and what tax falls due first?
+
+Many NRI families also hold land jointly with relatives in India. Our [family land counsel](/services/family-land/) covers that work.
+
+!cta Bring us the land you are holding from a distance. We will read it as if we lived next door.

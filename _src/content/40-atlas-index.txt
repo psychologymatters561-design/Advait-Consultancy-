@@ -1,0 +1,44 @@
+path: /developers/
+title: Developer Atlas: How Developers Buy Land | Advait
+desc: The Developer Atlas: independent notes on how developers acquire land in North India, written for landowners. Not affiliated with any developer.
+primary: developer land acquisition North India
+crumb: Developer Atlas
+marker: Developer Atlas
+h1: Follow the land banks: the Developer Atlas
+lede: Developers are the market's earliest signal of Access. They buy land years before the public sees a project. This atlas reads their land moves from the landowner's side of the table, independently, and without selling anything.
+---
+## Why developers are the earliest signal. {The essay}
+
+By the time a road opens, the market has priced it. By the time a project launches, the land under it was bought years earlier. The people who bought it were reading the same signals we read, with more money at stake.
+
+That makes developers' land moves worth following. When a developer buys or signs a collaboration in a new area, it is telling you what it expects: that access will arrive, that permission is obtainable, and that buyers will follow.
+
+Developers can be wrong. Some land banks have waited decades. Some corridors never delivered. But a developer's money, committed in public filings and registered deeds, is a better signal than an advertisement.
+
+For a landowner, there is a second reason to read them. A developer active near your land may one day approach you. Knowing how it buys, whether outright, by collaboration or through authority auctions, is the start of a fair negotiation.
+
+## How to read these notes. {Method}
+
+Each note follows the same discipline. Facts come from public sources: annual reports, stock-exchange filings, regulators' portals, authority records and reputable reporting. Each is dated, and each is checked before it is relied upon.
+
+We read every developer through the same three levers we use for land: Access, Permission and Purpose. We never discuss a developer's projects as products, never give prices, and never recommend buying anything from anyone.
+
+These notes are general and educational. They are written for landowners and families holding land, not for apartment buyers.
+
+## The notes. {The atlas}
+
+!atlas
+
+More notes follow in waves, covering developers active across Gurugram, Noida, the Yamuna Expressway, Sonipat, Panipat, Karnal and the Tricity.
+
+## If a developer is at your door. {Landowners}
+
+Read our [landowner advisory](/services/landowner-advisory/) page first. It sets out the three paths every family should compare: a joint development, an outright sale, and holding the land with a purpose.
+
+We act for the landowner. We are never paid by the developer.
+
+!close
+
+!box Independence
+Advait is independent and has no affiliation, partnership or commercial arrangement with any developer named in this atlas. All trademarks belong to their owners and are used only to identify the companies discussed. These pages are not an offer to buy or sell any property. Information is from public sources as of 12 October 2026 and may change.
+!end

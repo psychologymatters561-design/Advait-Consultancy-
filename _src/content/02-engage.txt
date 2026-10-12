@@ -1,0 +1,20 @@
+path: /engage/
+title: Before We Speak: Six Questions | Advait
+desc: Six short questions to see whether Advait is the right counsel for your land or capital. Your answers stay in your browser unless you send them.
+primary: land advisory consultation Delhi
+crumb: Before we speak
+marker: Before we speak
+h1: Before we speak — six questions
+lede: We are the right counsel for few people, and we would rather both of us knew early. Six questions, one at a time. It takes about two minutes.
+---
+## Six questions. {The questions}
+
+!engage
+
+## What happens next. {After}
+
+If our way of working fits yours, the next step is a Ground Session: 60 to 75 minutes on your land, at your premises, or by video. The fee is ₹15,000, credited in full against any mandate.
+
+If it does not fit, we will say so, and point you to the research we publish. There is no follow-up and no pitch.
+
+If you are holding a problem with land, you may also simply bring it to us. We work it until we find the best answer, including when the best answer is to do nothing.

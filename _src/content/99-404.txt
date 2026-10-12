@@ -1,0 +1,17 @@
+path: /404.html
+kind: 404
+title: Page Not Found | Advait
+desc: This page has moved or never existed. The rest of Advait is a click away.
+marker: Off the map
+h1: This road is not on the map.
+lede: The page you were looking for has moved, or never existed. The land is still where it was.
+ctas: Return home →|/|solid ; Read the approach|/approach/|line
+---
+## Where you may have meant to go. {Directions}
+
+!links
+- Services :: /services/ :: Six kinds of land counsel
+- Regions :: /regions/ :: Eleven places, read on their own paper
+- Corridor Notes :: /notes/ :: Research we publish
+- Before we speak :: /engage/ :: Six questions
+!end

@@ -1,0 +1,42 @@
+path: /circle/
+title: The Advait Circle and Advait Capital | Advait
+desc: The Advait Circle: land walks, private briefings and first sight of projects, then per-project co-investment and, in time, Advait Capital.
+primary: Advait Capital
+crumb: The Circle
+marker: The Circle
+h1: The Advait Circle
+lede: A small circle forms around the work. It grows in three stages, each earned by the one before it.
+---
+## The Circle, now. {Stage one}
+
+The Circle is for families and principals who have already worked with us. It meets on the land, not in a ballroom.
+
+- Land walks on parcels we are reading, with the paper in hand.
+- Private briefings on corridors, permissions and purpose.
+- First sight of projects we are designing for mandated clients, where those clients agree.
+
+Entry follows a first engagement. There is no application form and no fee for the Circle itself.
+
+## Co-investment, project by project. {Stage two}
+
+Some projects invite partners. When they do, members may invest in their own name, or in that project's own vehicle, alongside the landowning family.
+
+Advait never pools money and never holds investor money. Each project stands on its own paper, with its own documents, its own lawyers and its own decision.
+
+We are paid for counsel on each project, by the client who mandates us, on terms agreed in writing before work begins.
+
+## Advait Capital, in time. {Stage three}
+
+When the track record earns it, the Circle may become Advait Capital: a properly registered vehicle with the governance, reporting and regulation that requires.
+
+That is a destination, not an announcement. Until it exists in law, it does not exist in practice, and we will not speak of it as if it did.
+
+## How to begin. [circle] {Beginning}
+
+The Circle begins with a first engagement: a Ground Session, a Land Value Brief, or a mandate. If you are holding a problem with land, bring it to us. We work it until we find the best answer, including when the best answer is to do nothing.
+
+!cta
+
+!box Important
+Nothing on this page is an offer or solicitation to invest.
+!end

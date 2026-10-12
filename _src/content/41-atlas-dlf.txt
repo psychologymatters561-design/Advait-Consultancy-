@@ -1,0 +1,96 @@
+path: /developers/dlf/
+kind: atlas
+title: DLF Land Strategy — Independent Read | Advait
+desc: How DLF acquires and develops land across Gurugram, Delhi and the Tricity, and what landowners should weigh before any JDA or sale. Not affiliated.
+primary: DLF land acquisition
+crumbs: Developer Atlas|/developers/
+crumb: DLF
+marker: Developer Atlas · DLF
+h1: DLF and land in North India: an independent landowner's read
+lede: DLF land acquisition shaped modern Gurugram. Few developers in India have held land for as long, or turned permission into value at such scale. What DLF's land moves tell a landowner, and how to negotiate with any developer, is the subject of this note.
+---
+## At a glance. {At a glance}
+
+| Item | What is publicly reported | Source and date |
+|---|---|---|
+| Status | Listed on the National Stock Exchange and BSE | Exchange listings, 2026 {tv:DLF Ltd listed on NSE and BSE} |
+| Headquarters | Gurugram, Haryana | DLF annual report {tv:DLF registered office, DLF City Phase I, Gurugram} |
+| Founded | 1946 | DLF corporate history {tv:DLF founded 1946} |
+| Core North India markets | Gurugram, Delhi, Panchkula, and New Chandigarh near the Tricity | DLF annual report {tv:DLF North India markets: Gurugram, Delhi, Panchkula, Mullanpur/New Chandigarh} |
+| Land model | Development largely on its own long-held land bank, with joint ventures for some assets | DLF annual report {tv:DLF land bank and JV model, incl. DCCDL with GIC} |
+
+!note Primary sources: DLF's annual reports and stock-exchange filings, at [dlf.in](https://www.dlf.in/) and the exchanges. Figures change each year; we quote none here.
+
+## Where DLF has been active. {Where}
+
+DLF's early history was in Delhi, where it built residential colonies in the decades after Independence. {tv:DLF's early Delhi colonies, pre-1957} When land development in Delhi passed largely to the state, the company turned to what was then farmland across the border in Haryana.
+
+From the 1980s, DLF assembled land around Gurugram, much of it bought directly from farming families, and obtained licences to develop it. {tv:DLF land assembly in Gurugram from the 1980s; early colony licences under the 1975 Act} That land became DLF City and, over time, the commercial district that changed the city's economy.
+
+In the decades since, its activity has spread along Golf Course Road, into New Gurugram and towards the Dwarka Expressway. In the Tricity it has developed in Panchkula and near New Chandigarh. {tv:DLF activity in Panchkula and New Chandigarh} In September 2026 it bid for a 12.5-acre Noida Authority plot in Sector 108, which went to another bidder. {tv:DLF bid in Noida Sector 108 auction, Sept 2026, lost to M3M}
+
+## What DLF's moves signal. {Signal}
+
+**Access.** DLF bought before access arrived. Gurugram's roads, metro and expressways came after DLF's land, not before it. That is the clearest lesson of its history: the large gains go to those who hold land ahead of access, and hold it long enough.
+
+**Permission.** DLF's value was made as much by licences as by roads. Agricultural land became licensed colonies, and licensed colonies became a city. For a landowner, that is a reminder that the step from farmland to permitted land is often the single largest step in value.
+
+**Purpose.** DLF's commercial district gave Gurugram a reason for people to come every day. Purpose is what turned access and permission into a lasting city, rather than a collection of plots.
+
+A developer with a long-held land bank often develops from its own land first. Its presence near your land signals long-term planning in the area. It does not necessarily signal an approach to you.
+
+## If you own land where DLF is active. {Landowners}
+
+Owning land next to a developer with a large land bank changes your position. The developer may not need your land. If it does, it is usually to complete a sector, a road or a frontage. That can make a particular parcel worth more to it than to anyone else.
+
+### Joint development, sale, or hold and design
+
+Every offer should be compared with the two paths not on the table. A joint development shares the developed value but ties your land to the developer's timetable. An outright sale gives certainty and ends your exposure. Holding and designing keeps the land, gives it a purpose, and leaves development for later, on better terms.
+
+### Revenue share or area share
+
+In a revenue share, you receive a percentage of sale proceeds as buyers pay. In an area share, you receive a percentage of the built area. Each exposes you to different risks: sales pace and pricing in one, construction and resale in the other. The definitions matter more than the headline figure.
+
+### Approvals and timelines
+
+In Haryana, development needs a licence. Until it is granted, your land is usually tied up. An agreement should set dated milestones, a refundable deposit, limits on any power of attorney, and a clean exit if the licence never comes.
+
+### Questions to ask any developer
+
+1. Why does this parcel matter to you, and what would you do without it?
+2. What exactly is my share a share of, and when do I receive it?
+3. What happens to my land if the licence is delayed or refused?
+4. What security is paid, and when does it become refundable?
+5. Which of my rights does the power of attorney give away?
+
+These are general questions. They apply to any developer, and they are not a comment on DLF's agreements, which we have not reviewed.
+
+## Land banks and patience. {Patience}
+
+A developer with a large land bank can wait. It can develop its own land first and approach neighbours only when a sector needs completing. That patience is an advantage in any negotiation.
+
+The landowner's answer is patience of their own. A family that does not need to sell, and whose land earns something while it waits, negotiates from strength. A family that needs money this year negotiates from weakness, whatever the land is worth.
+
+That is why we ask families near any large land bank to give their land a purpose before they give it a price. A working ground, a farm or a light stay does not stop a future deal. It simply means the family can say no.
+
+### Offices as a signal of access
+
+DLF's commercial district in Gurugram brought hundreds of thousands of people to the city every working day. {tv:DLF Cyber City scale and DCCDL rental portfolio} Daily footfall of that kind is the most durable form of access. Where large office districts grow, land within reach of them gains a demand that does not depend on the next road.
+
+## If you are placing capital nearby. {Capital}
+
+We don't advise on buying apartments, including theirs. What a long-established developer's presence does tell you about nearby land is this: the area has been planned for, and infrastructure is likely to keep arriving. It also tells you that the easy gains from that planning were captured long ago.
+
+Land near a mature DLF area is rarely early. The opportunity is usually in purpose and permission on land that others have overlooked, not in the next parcel along the road.
+
+## How Advait helps. {Advait}
+
+Landowner-side only. Never paid by any developer.
+
+We read offers, compare them with a sale and with holding the land, and negotiate the terms for the family. Read our [landowner advisory](/services/landowner-advisory/) page for how that work runs, and our region notes on [Gurugram](/regions/gurugram/), [Delhi](/regions/delhi/) and [Panchkula and the Tricity](/regions/panchkula-tricity/).
+
+!close
+
+!box Disclaimer
+Advait is independent and has no affiliation, partnership or commercial arrangement with DLF. All trademarks belong to their owners and are used only to identify the company discussed. This page is not an offer to buy or sell any property. Information is from public sources as of 12 October 2026 and may change.
+!end

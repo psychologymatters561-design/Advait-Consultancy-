@@ -1,0 +1,37 @@
+path: /services/
+title: Independent Real Estate Advisor, Delhi NCR | Advait Services
+desc: Independent real estate and land advisory for Delhi NCR and North India: landowner counsel, acquisition, permission, value design, family land, NRI land.
+primary: independent real estate advisor Delhi NCR
+crumb: Services
+marker: Services
+h1: Independent land and real estate advisory, Delhi NCR and North India
+lede: We are an independent real estate advisor for families who hold land, or intend to. Six kinds of work, one payer: you.
+---
+## When families call us. {The problem first}
+
+Families call about a problem, not a product. Land without a plan. A developer at the door. Heirs who don't agree. A permission that won't move.
+
+Bring us the problem. We work it until we find the best answer, including when the best answer is to do nothing.
+
+## The six services. {Services}
+
+!services
+
+Every service rests on the same method: read what reaches the land, secure what it may become, and design what it should become. [Read the approach](/approach/).
+
+## How we are paid. {Fees}
+
+We are paid only by the client. Never by a seller, a builder or a developer.
+
+!fees
+
+## What we will not do. {Limits}
+
+- We do not sell, list, price or promote any developer's project or unit.
+- We do not take a fee from the other side of any transaction.
+- We do not give legal or tax advice. We work alongside your lawyers and accountants.
+- We do not promise returns, and we do not design for quick exits.
+
+Land can return capital early, and sometimes it does. We simply don't design for it. If the money must come back within two years, we are not the right counsel — and we'll say so.
+
+!cta
