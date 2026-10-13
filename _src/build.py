@@ -537,13 +537,15 @@ def out_path(path):
 
 
 FILM = "/assets/hero/arrival"
+FRAMES = "/assets/hero/m/f-"
 
 
 def home_head(p):
     if p["kind"] != "home":
         return ""
-    return (f'\n<link rel="preload" as="image" href="{FILM}-poster-1920.webp" '
+    return (f'\n<link rel="preload" as="image" media="(orientation: landscape)" href="{FILM}-poster-1920.webp" '
             f'imagesrcset="{FILM}-poster-960.webp 960w, {FILM}-poster-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">'
+            f'\n<link rel="preload" as="image" media="(orientation: portrait)" href="{FRAMES}001.webp" fetchpriority="high">'
             f'\n<script src="/assets/hero.js?v={asset_v('hero.js')}" defer></script>')
 
 
@@ -557,10 +559,11 @@ def cine(p):
         label, url, style = [x.strip() for x in c.split("|")]
         ctas.append(f'<a class="btn btn-{style}" href="{url}">{label}</a>')
     h1 = inline(p["h1"], path)
-    return f"""<section class="cine" data-cine data-film="{FILM}" aria-labelledby="title">
+    nframes = len(list((ROOT / "assets" / "hero" / "m").glob("f-*.webp")))
+    return f"""<section class="cine" data-cine data-film="{FILM}" data-frames="{nframes}" data-frames-src="{FRAMES}" aria-labelledby="title">
 <div class="cine-stage">
 <div class="cine-media" aria-hidden="true">
-<div class="cine-zoom"><img class="cine-poster" src="{FILM}-poster-1920.webp" srcset="{FILM}-poster-960.webp 960w, {FILM}-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high"><video class="cine-video" muted playsinline disablepictureinpicture disableremoteplayback preload="none" tabindex="-1"></video></div>
+<div class="cine-zoom"><picture><source media="(orientation: portrait)" srcset="{FRAMES}001.webp"><img class="cine-poster" src="{FILM}-poster-1920.webp" srcset="{FILM}-poster-960.webp 960w, {FILM}-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high"></picture><canvas class="cine-canvas"></canvas><video class="cine-video" muted playsinline disablepictureinpicture disableremoteplayback preload="none" tabindex="-1"></video></div>
 <div class="sh sh-t"></div><div class="sh sh-b" data-sh="0"></div><div class="sh sh-l" data-sh="1"></div><div class="sh sh-r" data-sh="2"></div><div class="sh sh-a" data-sh="3"></div>
 <div class="cine-light"><i></i><b></b></div>
 </div>
