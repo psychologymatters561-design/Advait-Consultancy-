@@ -338,14 +338,14 @@ def render(body, page):
 
 # ---------- page shell ----------
 
-def nav(path):
+def nav(path, on_video=False):
     items = [("Approach", "/approach/"), ("Services", "/services/"), ("Regions", "/regions/"),
              ("Thinking", "/notes/"), ("Circle", "/circle/")]
     lis = "".join(
         f'<li><a href="{u}"{" aria-current=\"page\"" if path.startswith(u) else ""}>{n}</a></li>' for n, u in items)
     return (
         '<a class="skip" href="#main">Skip to content</a>'
-        '<header class="nav"><div class="wrap nav-in">'
+        f'<header class="nav{" on-video" if on_video else ""}"><div class="wrap nav-in">'
         '<a class="brand" href="/" aria-label="Advait, home">Advait</a>'
         f'<nav class="nav-menu" id="menu" aria-label="Primary"><ul role="list">{lis}'
         '<li class="menu-cta"><a href="/engage/">Before we speak →</a></li></ul></nav>'
@@ -483,10 +483,10 @@ def page_html(p, main):
 <link rel="stylesheet" href="/assets/site.css?v={asset_v('site.css')}">
 <script>(function(d){{d.classList.add("js");setTimeout(function(){{if(!window.ADVAIT)d.classList.remove("js")}},2500);try{{var t=localStorage.getItem("advait-theme");if(t)d.setAttribute("data-theme",t)}}catch(e){{}}}})(document.documentElement)</script>
 <script type="application/ld+json">{jsonld(p)}</script>
-<script src="/assets/site.js?v={asset_v('site.js')}" defer></script>
+<script src="/assets/site.js?v={asset_v('site.js')}" defer></script>{home_head(p)}
 </head>
 <body class="k-{p['kind']}">
-{nav(p['path'])}
+{nav(p['path'], p['kind'] == 'home')}
 <main id="main">
 {main}
 </main>
@@ -536,8 +536,56 @@ def out_path(path):
     return ROOT / path.lstrip("/") / "index.html"
 
 
-def contours():
-    """The hero motif: a few hand-irregular contour rings, like a survey sheet."""
+FILM = "/assets/hero/arrival"
+
+
+def home_head(p):
+    if p["kind"] != "home":
+        return ""
+    return (f'\n<link rel="preload" as="image" href="{FILM}-poster-1920.webp" '
+            f'imagesrcset="{FILM}-poster-960.webp 960w, {FILM}-poster-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">'
+            f'\n<script src="/assets/hero.js?v={asset_v('hero.js')}" defer></script>')
+
+
+def cine(p):
+    """Home hero: a scroll-scrubbed film that ends in light, then becomes the paper page.
+    Without script, or with reduced motion, it is a still first frame, the title, and the page."""
+    path = p["path"]
+    rings = "".join(f'<path pathLength="1" d="{d}"/>' for d in contour_paths())
+    ctas = []
+    for c in p["ctas"].split(" ; "):
+        label, url, style = [x.strip() for x in c.split("|")]
+        ctas.append(f'<a class="btn btn-{style}" href="{url}">{label}</a>')
+    h1 = inline(p["h1"], path)
+    return f"""<section class="cine" data-cine data-film="{FILM}" aria-labelledby="title">
+<div class="cine-stage">
+<div class="cine-media" aria-hidden="true">
+<div class="cine-zoom"><img class="cine-poster" src="{FILM}-poster-1920.webp" srcset="{FILM}-poster-960.webp 960w, {FILM}-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high"><video class="cine-video" muted playsinline disablepictureinpicture disableremoteplayback preload="none" tabindex="-1"></video></div>
+<div class="sh sh-t"></div><div class="sh sh-b" data-sh="0"></div><div class="sh sh-l" data-sh="1"></div><div class="sh sh-r" data-sh="2"></div><div class="sh sh-a" data-sh="3"></div>
+<div class="cine-light"><i></i><b></b></div>
+</div>
+<svg class="cine-rings" viewBox="0 0 1000 1000" fill="none" stroke="currentColor" aria-hidden="true">{rings}</svg>
+<div class="cine-copy wrap">
+<div class="band b-open" data-band="0,0,.12,.21"><p class="km">KM 000 · {html.escape(p["marker"])}</p><h1 id="title">{h1}</h1></div>
+<p class="band b-wait" data-band=".22,.30,.40,.47" aria-hidden="true">Most investors wait for value.</p>
+<p class="band b-paid" data-band=".45,.53,.62,.69" aria-hidden="true">Our clients get <em>paid to wait</em>.</p>
+<div class="band b-appt" data-band=".66,.72,.79,.85" aria-hidden="true"><p>By appointment.</p><span class="mono">One side of the table</span></div>
+</div>
+<div class="cine-settle"><div class="wrap">
+<p class="km" data-s>KM 000 · {html.escape(p["marker"])}</p>
+<p class="settle-title" data-s aria-hidden="true">{h1}</p>
+<p class="lede" data-s>{inline(p["lede"], path)}</p>
+<div class="btns" data-s>{" ".join(ctas)}</div>
+<p class="hero-meta mono" data-s>{html.escape(p["meta"])}</p>
+</div></div>
+<p class="cine-cue mono" aria-hidden="true">Scroll<i></i></p>
+<div class="cine-load" aria-hidden="true" hidden><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15"/><circle class="arc" cx="18" cy="18" r="15" pathLength="100"/></svg><span class="mono">Film 0%</span></div>
+</div>
+</section>"""
+
+
+def contour_paths():
+    """Hand-irregular contour rings, like a survey sheet. Inner ring first."""
     paths = []
     for hill, (cx, cy, base, n, ph) in enumerate([(540, 500, 40, 12, 0.4)]):
         for k in range(n):
@@ -549,7 +597,13 @@ def contours():
                           + 0.03 * math.sin(2 * a + 2.0 - k * 0.12))
                 pts.append((cx + k * 4 + r * math.cos(a), cy - k * 3 + r * 0.82 * math.sin(a)))
             d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in pts) + "Z"
-            paths.append(f'<path d="{d}"/>')
+            paths.append(d)
+    return paths
+
+
+def contours():
+    """The hero motif for inner pages, as a mask image."""
+    paths = [f'<path d="{d}"/>' for d in contour_paths()]
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none" stroke="#000" '
            'stroke-width="1.3" stroke-linejoin="round">' + "".join(paths) + "</svg>")
     (ROOT / "assets" / "contours.svg").write_text(svg)
@@ -572,7 +626,7 @@ def main():
     built = {}
     for p in pages:
         body = render(p["body"], p["path"])
-        main_html = hero(p) + "\n" + body
+        main_html = (cine(p) if p["kind"] == "home" else hero(p)) + "\n" + body
         doc = page_html(p, main_html)
         fp = out_path(p["path"])
         fp.parent.mkdir(parents=True, exist_ok=True)
@@ -637,7 +691,7 @@ def qa(built, urls):
     js_copy = js.split("};", 1)[1]  # everything after the CONFIG block
     for m in ban_re.finditer(re.sub(r"best answer", "", js_copy)):
         problems.append(f"site.js copy: banned word '{m.group(1)}'")
-    size = sum((ROOT / "assets" / f).stat().st_size for f in ("site.css", "site.js"))
+    size = sum((ROOT / "assets" / f).stat().st_size for f in ("site.css", "site.js", "hero.js"))
 
     lines = ["# Build report", "", f"Generated {TODAY} by `_src/build.py`.", "",
              f"CSS + JS combined: {size/1024:.1f} KB (budget 60 KB).", "",
