@@ -2,11 +2,11 @@
 
 Generated 2026-10-12 by `_src/build.py`.
 
-CSS + JS combined: 27.0 KB (budget 60 KB).
+CSS + JS combined: 42.7 KB (budget 60 KB).
 
 | Page | Type | Words in main | Primary keyword |
 |---|---|---:|---|
-| `/` | home | 1541 | land advisory services North India |
+| `/` | home | 1573 | land advisory services North India |
 | `/404.html` | 404 | 69 |  |
 | `/approach/` | page | 1055 | land value design |
 | `/circle/` | page | 318 | Advait Capital |
