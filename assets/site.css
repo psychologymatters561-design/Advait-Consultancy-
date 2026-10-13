@@ -229,8 +229,9 @@ input::placeholder{color:var(--muted)}
 .cine-media{position:relative;height:100vh;height:100svh;overflow:hidden;background:#0D0C0A}
 .cine-zoom{position:absolute;inset:0;transform-origin:48% 46%;transform:translate3d(0,min(76px,8.5vh),0);will-change:transform,filter}
 .cine-poster,.cine-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
-.cine-video{opacity:0;transition:opacity .5s ease}
-.has-video .cine-video{opacity:1}
+.cine-video,.cine-canvas{opacity:0;transition:opacity .5s ease}
+.cine-canvas{position:absolute;inset:0;width:100%;height:100%}
+.has-video .cine-video,.has-frames .cine-canvas{opacity:1}
 .sh{position:absolute;pointer-events:none}
 .sh-t{inset:0 0 auto;height:200px;background:linear-gradient(180deg,rgba(11,10,8,.66),rgba(11,10,8,0))}
 .sh-b{inset:auto 0 0;height:72%;background:linear-gradient(0deg,rgba(11,10,8,.82),rgba(11,10,8,.45) 42%,rgba(11,10,8,0))}
@@ -271,7 +272,8 @@ input::placeholder{color:var(--muted)}
 .cine-load circle{fill:none;stroke:rgba(244,239,230,.25);stroke-width:2}
 .cine-load .arc{stroke:#D2B07A;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .25s linear}
 /* live: the stage pins and scroll drives the film */
-.cine.is-video{height:460vh}
+.cine.is-video{height:540vh}
+.cine.is-frames{height:480vh}
 .cine.is-image{height:340vh}
 .cine.is-live .cine-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .cine.is-live .cine-media{position:absolute;inset:0;height:auto}
@@ -297,9 +299,13 @@ input::placeholder{color:var(--muted)}
   .b-paid{top:45%}
   .sh-l,.sh-r{width:100%}
   .cine.is-live .cine-cue{display:none}
-  .cine.is-live .cine-settle{align-items:flex-start;padding-top:96px}
+  .cine-load{bottom:96px}
+  .cine.is-live .cine-settle{align-items:flex-start;padding-top:82px}
+  .cine.is-live .cine-settle .btns{margin-top:20px}
+  .cine.is-live .cine-settle .hero-meta{margin-top:22px}
+  .cine.is-live .settle-title{margin:14px 0 18px}
   .cine.is-live .settle-title{font-size:min(44px,7vh)}
-  .cine.is-live .cine-settle .lede{font-size:17px}
+  .cine.is-live .cine-settle .lede{font-size:16px;line-height:1.55}
   .cine.is-live .cine-rings{left:50%;top:40%}
 }
 @media (prefers-reduced-motion:reduce){.cine-cue i{animation:none}}

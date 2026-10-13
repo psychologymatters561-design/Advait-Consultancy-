@@ -2,7 +2,7 @@
 
 Generated 2026-10-12 by `_src/build.py`.
 
-CSS + JS combined: 42.7 KB (budget 60 KB).
+CSS + JS combined: 45.8 KB (budget 60 KB).
 
 | Page | Type | Words in main | Primary keyword |
 |---|---|---:|---|
