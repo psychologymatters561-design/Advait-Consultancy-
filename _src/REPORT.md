@@ -6,7 +6,7 @@ CSS + JS combined: 45.8 KB (budget 60 KB).
 
 | Page | Type | Words in main | Primary keyword |
 |---|---|---:|---|
-| `/` | home | 1573 | land advisory services North India |
+| `/` | home | 1572 | land advisory services North India |
 | `/404.html` | 404 | 69 |  |
 | `/approach/` | page | 1055 | land value design |
 | `/circle/` | page | 318 | Advait Capital |
@@ -243,7 +243,6 @@ Each fact below is published with its source and date, and carries a `<!-- TODO-
 ## Open items
 
 - CONFIG in `/assets/site.js`: set BOOKING_URL, PAYMENT_URL and WEB3FORMS_KEY. Until then every form and booking button falls back to WhatsApp.
-- Portrait of the Principal: the slot is on the home page (`.portrait`).
 - Search Console and Bing: prefer DNS verification for the domain property; CONFIG verification is injected by script.
 - Developer Atlas: next wave of five per brief section 8, after checking each developer is active and solvent.
 - Keyword volumes: validate in Keyword Planner and Search Console before final assignment.
