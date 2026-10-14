@@ -128,8 +128,8 @@ def c_regions():
 
 def c_principal():
     paras = "".join(f"<p>{p}</p>" for p in PRINCIPAL)
-    return ('<div class="note-grid rv"><figure class="portrait" aria-label="Portrait of the Principal, to follow">'
-            '<span aria-hidden="true">A</span></figure>'
+    return ('<div class="note-grid rv"><figure class="portrait">'
+            '<img src="/assets/arjun-dixit.webp" alt="Arjun Dixit, Principal of Advait, New Delhi" width="640" height="640" loading="lazy" decoding="async"></figure>'
             f'<div class="letter">{paras}<p class="sign">— Arjun Dixit · Principal · New Delhi</p></div></div>')
 
 
@@ -390,7 +390,8 @@ def org():
         "telephone": "+91-96506-50178", "image": OG, "logo": SITE + "/favicon.svg",
         "description": "A private land value-design practice in New Delhi. Advisory and research on land across North India, paid only by the client.",
         "slogan": "Great assets are built, not bought.",
-        "founder": {"@type": "Person", "name": "Arjun Dixit", "jobTitle": "Principal"},
+        "founder": {"@type": "Person", "name": "Arjun Dixit", "jobTitle": "Principal", "image": SITE + "/assets/arjun-dixit.jpg",
+                    "worksFor": {"@id": ORG_ID}, "address": {"@type": "PostalAddress", "addressLocality": "New Delhi", "addressCountry": "IN"}},
         "address": {"@type": "PostalAddress", "addressLocality": "New Delhi", "addressRegion": "Delhi", "addressCountry": "IN"},
         "areaServed": [{"@type": "Place", "name": n} for n, _ in STRIP],
         "knowsAbout": ["Land advisory", "Joint development agreements", "Change of land use in Haryana",
@@ -709,7 +710,6 @@ def qa(built, urls):
         lines.append(f"- {note}")
     lines += ["", "## Open items", "",
               "- CONFIG in `/assets/site.js`: set BOOKING_URL, PAYMENT_URL and WEB3FORMS_KEY. Until then every form and booking button falls back to WhatsApp.",
-              "- Portrait of the Principal: the slot is on the home page (`.portrait`).",
               "- Search Console and Bing: prefer DNS verification for the domain property; CONFIG verification is injected by script.",
               "- Developer Atlas: next wave of five per brief section 8, after checking each developer is active and solvent.",
               "- Keyword volumes: validate in Keyword Planner and Search Console before final assignment."]
